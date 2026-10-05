@@ -11,7 +11,7 @@ added commands to it: `CATALOG`, `LOAD`, `SAVE`, `RUN`, `INIT`. DOS 3.3, of
 140 KB on a diskette, and was the DOS of the Apple II from then on.
 
 Every drive came with a **System Master** diskette, the one to start the
-machine with. This page starts an Apple ][+ with two drives from it, looks at
+machine with. This page starts an Apple \]\[+ with two drives from it, looks at
 what is on it, and makes a diskette of your own, which then starts the machine
 by itself.
 
@@ -42,21 +42,33 @@ head -c 143360 /dev/zero > my-disk.dsk
 
 izapple2 writes what DOS saves straight into `my-disk.dsk`.
 
+## The machine
+
+An Apple \]\[+ with two disk drives:
+
+- the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
+- a 16 KB Language Card in slot 0;
+- a Videx Videoterm 80 column card in slot 3, unused here;
+- a Disk II controller card in slot 6, with two drives: the System Master in
+  drive 1 and your blank diskette in drive 2.
+
+```bash
+izapple2 -model 2plus disks/dos33-master.dsk my-disk.dsk
+```
+
+At the end, the same machine with your diskette alone, in drive 1:
+
+```bash
+izapple2 -model 2plus my-disk.dsk
+```
+
 ## Start the System Master
 
-1. **Start izapple2 as an Apple ][+ with the two diskettes:**
-
-   ```bash
-   izapple2 -model 2plus disks/dos33-master.dsk my-disk.dsk
-   ```
-
-   The first diskette named goes in drive 1 and the second in drive 2, both
-   on the disk controller card in slot 6. The machine starts from drive 1.
-
-   The machine writes `APPLE ][` at the top of the screen and the drive reads
-   DOS into memory. Then the greeting of the System Master comes up, and it tells you it is loading
-   Integer BASIC, the BASIC of the first Apple II, into memory, so that the
-   programs written in it run on an Apple ][+ too. The recording is ten times
+1. **Start izapple2** with the first command. The machine starts from
+   drive 1: it writes `APPLE ][` at the top of the screen and the drive
+   reads DOS into memory. Then the greeting of the System Master comes up,
+   and it tells you it is loading Integer BASIC, the BASIC of the first Apple II, into memory, so that the
+   programs written in it run on an Apple \]\[+ too. The recording is ten times
    faster than the machine.
 
    ![The System Master starting](images/dos33/boot.gif)
@@ -113,18 +125,13 @@ izapple2 writes what DOS saves straight into `my-disk.dsk`.
    `,D1` and `,D2` say which drive, which stays the one used until another
    is named.
 
-6. **Close izapple2, and start it with your diskette alone:**
-
-   ```bash
-   izapple2 -model 2plus my-disk.dsk
-   ```
-
-   The machine starts from your diskette, loads its DOS and runs its
+6. **Close izapple2, and start it with your diskette alone**, with the
+   second command. The machine starts from your diskette, loads its DOS and runs its
    `HELLO`.
 
    ![Started from our own diskette](images/dos33/own-disk.png)
 
 ## What next
 
-[Switch on an Apple ][+](switch-on.md) has more on Applesoft, the BASIC
+[Switch on an Apple \]\[+](switch-on.md) has more on Applesoft, the BASIC
 these programs are written in.

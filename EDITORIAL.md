@@ -65,9 +65,17 @@ step, with what the machine showed on the way. Its parts are:
 - **"What you need"** says what to download, from where, and what to rename it
   to: the archive's page linked, the file named as it is there. Say what
   `fetch-disks.sh` does for it. Say when nothing is needed but izapple2.
-- **Give the izapple2 command for every machine started**, in a `bash` block,
-  exactly the one the generator builds, and a sentence on each option that
-  matters. The reader runs `izapple2`, the frontend of the releases.
+- **"The machine"** comes after "What you need": the configuration of the
+  machine the page uses, as a list, the model and its processor and memory,
+  then what is in each slot that matters, and the izapple2 command that starts
+  it, in a `bash` block, exactly the one the generator builds. Do not explain
+  the options of the command: the list says what the machine is. A page that
+  starts the machine twice gives both commands there. `-showConfig`, before
+  any file named, prints what a command builds. The reader runs `izapple2`,
+  the frontend of the releases.
+- **Escape the brackets of Apple ][ and Apple ][+** outside code, as
+  `Apple \]\[+`: unescaped, they break the links and the pictures they are
+  in.
 - **Number the steps once for the whole page**, across its sections.
 - **Each step starts with the action in bold**, then what happens, the
   picture, and what it shows and why it mattered.
