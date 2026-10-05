@@ -31,4 +31,5 @@ func TestActivities(t *testing.T) {
 	t.Run("ultraterm", ultratermScreenshots)
 	t.Run("total-replay", totalReplayScreenshots)
 	t.Run("forth", forthScreenshots)
+	t.Run("prodos", prodosScreenshots)
 }
