@@ -29,4 +29,5 @@ func TestActivities(t *testing.T) {
 	t.Run("apple-iie", appleIIeScreenshots)
 	t.Run("card-cat", cardCatScreenshots)
 	t.Run("ultraterm", ultratermScreenshots)
+	t.Run("total-replay", totalReplayScreenshots)
 }
