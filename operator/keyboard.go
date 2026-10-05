@@ -102,6 +102,33 @@ func (o *Operator) WaitForKeyboard(seconds float64) error {
 	return nil
 }
 
+/*
+WaitForPrompt runs the machine until it waits for a command: the program reads
+the keyboard and the screen has not changed for a while. Some systems, CP/M
+among them, look at the keyboard while they write, for a key that stops them,
+and a key typed then would be taken as that.
+*/
+func (o *Operator) WaitForPrompt(seconds float64) error {
+	last := o.Text()
+	still := 0
+	polls := o.keyboard.polls
+	if !o.WaitUntil(seconds, func() bool {
+		text := o.Text()
+		if text != last {
+			last, still, polls = text, 0, o.keyboard.polls
+			return false
+		}
+		still++
+		return still >= promptStillFrames && o.keyboard.polls > polls
+	}) {
+		return fmt.Errorf("the machine did not wait for a command in %v seconds:\n%v", seconds, o.Text())
+	}
+	return nil
+}
+
+// promptStillFrames is how long the screen stays the same for a prompt
+const promptStillFrames = 30
+
 // press hands a key to the machine and runs it until the program has read it
 func (o *Operator) press(code uint8) error {
 	o.keyboard.pending = append(o.keyboard.pending, code)
