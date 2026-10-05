@@ -76,7 +76,7 @@ mouse as the paddle.
 
 <a href="guides/pascal.md"><img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal"></a>
 
-The UCSD p-System on an Apple //e with four drives: the Filer, the editor, the
+The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
 
 ## Cards
