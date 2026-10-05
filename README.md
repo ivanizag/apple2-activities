@@ -28,6 +28,13 @@ No disk, no operating system: switched on, the Apple \]\[+ is in Applesoft BASIC
 and waiting. A few commands, a program typed, listed and run, and a loop that
 never ends stopped with Control-C.
 
+### [Switch on an Apple //e](guides/apple-iie.md)
+
+<a href="guides/apple-iie.md"><img src="guides/images/apple-iie/eighty-columns.png" width="320" alt="80 columns and MouseText"></a>
+
+The Apple II of the rest of the decade: lower case, 80 columns, the MouseText
+of the enhanced //e, and the self test in its ROM, run with both Apple keys.
+
 ### [Life with DOS 3.3](guides/dos33.md)
 
 <a href="guides/dos33.md"><img src="guides/images/dos33/catalog.png" width="320" alt="The catalog of the System Master"></a>
@@ -60,6 +67,29 @@ mouse as the paddle.
 
 The UCSD p-System on an Apple //e with four drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
+
+## Cards
+
+### [The Mockingboard](guides/mockingboard.md)
+
+<a href="guides/mockingboard.md"><img src="guides/images/mockingboard/title.png" width="320" alt="The Mockingboard demonstration"></a>
+
+The sound card of the Apple II, from its demonstration disk of 1982: its menus,
+and its sound effects, recorded to listen to.
+
+### [160 columns: the Videx Ultraterm](guides/ultraterm.md)
+
+<a href="guides/ultraterm.md"><img src="guides/images/ultraterm/modes.png" width="320" alt="The modes of the Ultraterm"></a>
+
+The card that gave the Apple \]\[+ up to 160 columns of text, in the
+demonstration of its own disk of utilities.
+
+### [What is in the slots: Card Cat](guides/card-cat.md)
+
+<a href="guides/card-cat.md"><img src="guides/images/card-cat/slots.png" width="320" alt="Card Cat"></a>
+
+A modern program that finds the card in each slot, run on a //e with all seven
+full, and the ROM of a card read by it.
 
 ## Other systems
 

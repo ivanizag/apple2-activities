@@ -14,6 +14,7 @@ import (
 	"strings"
 
 	"github.com/ivanizag/izapple2"
+	"github.com/ivanizag/izapple2/screen"
 )
 
 // CyclesPerFrame is a frame of NTSC video, 65 cycles for each of 262 lines
@@ -135,4 +136,20 @@ const resetFrames = 10
 // HasText says whether a text is on the screen now
 func (o *Operator) HasText(text string) bool {
 	return strings.Contains(o.Text(), text)
+}
+
+// InTextMode says whether the screen shows text, in 40 or 80 columns, and not
+// graphics: the text of the text page is there even when it is not shown
+func (o *Operator) InTextMode() bool {
+	mode := o.a.GetVideoSource().GetCurrentVideoMode() & screen.VideoBaseMask
+	return mode == screen.VideoText40 || mode == screen.VideoText80 || mode == screen.VideoVidex
+}
+
+// WaitForShownText runs the machine until a text is on the screen and the
+// screen shows text, for as many seconds of the machine as given
+func (o *Operator) WaitForShownText(text string, seconds float64) error {
+	if !o.WaitUntil(seconds, func() bool { return o.InTextMode() && o.HasText(text) }) {
+		return fmt.Errorf("%q was not shown after %v seconds", text, seconds)
+	}
+	return nil
 }
