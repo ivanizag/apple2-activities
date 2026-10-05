@@ -71,8 +71,9 @@ func (r *Recording) Capture(delay int) {
 			return
 		}
 	}
+	before := r.last
 	r.last = whole
-	r.frames = append(r.frames, paletted(whole, changed))
+	r.frames = append(r.frames, paletted(whole, before, changed))
 	r.delays = append(r.delays, delay)
 }
 
@@ -146,15 +147,23 @@ func changedArea(before *image.RGBA, after *image.RGBA) image.Rectangle {
 paletted is a part of a picture with a palette of its own, made of its
 colours. The screen of an Apple II has few, and only when there are more than
 a GIF can hold, as the colour television can show, are they taken to the
-nearest of a palette of all.
+nearest of a palette of all. When there is a picture before, what has not
+changed since is left transparent, to show the one before through it: two
+sprites far apart change a large rectangle, but few of its dots.
 */
-func paletted(picture *image.RGBA, area image.Rectangle) *image.Paletted {
+func paletted(picture *image.RGBA, before *image.RGBA, area image.Rectangle) *image.Paletted {
 	index := map[color.RGBA]uint8{}
 	colors := color.Palette{}
+	if before != nil {
+		colors = append(colors, color.Transparent)
+	}
+	unchanged := func(x, y int) bool {
+		return before != nil && before.RGBAAt(x, y) == picture.RGBAAt(x, y)
+	}
 	for y := area.Min.Y; y < area.Max.Y && colors != nil; y++ {
 		for x := area.Min.X; x < area.Max.X; x++ {
 			c := picture.RGBAAt(x, y)
-			if _, ok := index[c]; ok {
+			if _, ok := index[c]; ok || unchanged(x, y) {
 				continue
 			}
 			if len(colors) == 256 {
@@ -175,6 +184,9 @@ func paletted(picture *image.RGBA, area image.Rectangle) *image.Paletted {
 	out := image.NewPaletted(area, colors)
 	for y := area.Min.Y; y < area.Max.Y; y++ {
 		for x := area.Min.X; x < area.Max.X; x++ {
+			if unchanged(x, y) {
+				continue // Index 0, transparent
+			}
 			out.SetColorIndex(x, y, index[picture.RGBAAt(x, y)])
 		}
 	}

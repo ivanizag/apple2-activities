@@ -9,3 +9,6 @@
 # name	sha256	source	member
 dos33-master.dsk	caca91990b148e20062c887f0301a957b477353fbacf4e4a011f8fb3beab46a9	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/DOS%203.3%20System%20Master%20-%20680-0210-A%20%281982%29.dsk
 blank.dsk	805f89516ae3725e591d02cc0594f250fbc9ab74461f1e03faeed1649f24e9a2	blank:143360
+lode-runner.woz	5a6fa1077f2e215dc8179052e5aa57f27bcaa33ffdc274e6325858155c2035c4	https://archive.org/download/wozaday_Lode_Runner/00playable.woz
+mockingboard-demo.dsk	5745a87e1c6dfb9948ce9fa759d27504a22883c2ff0349e195c9370bbd6e238c	https://archive.org/download/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk
+total-replay.hdv	7434fb5d0fc45279f76ee7d2e5291612e72e315b00989cef9e1fe091301164be	https://archive.org/download/TotalReplay/Total%20Replay%20v6.1.hdv

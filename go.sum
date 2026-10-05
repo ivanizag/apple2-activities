@@ -1,7 +1,9 @@
+github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
+github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/ivanizag/iz6502 v1.5.0 h1:hWNfjuZHbSjBZr1lzlFNgF6O1gCI/1NIHaQwa+W2+cQ=
 github.com/ivanizag/iz6502 v1.5.0/go.mod h1:h4gbw3IK6WCYawi00kBhQ4ACeQkGWgqbUeAgDaQpy6s=
-github.com/ivanizag/izapple2 v0.0.0-20260914103026-877b75fcf00d h1:Pdg2O1L6i1/zPKwUZ7qk3o0U9whY6LOZ+bf1m7sKhOs=
-github.com/ivanizag/izapple2 v0.0.0-20260914103026-877b75fcf00d/go.mod h1:IRy0LS6BmumiGQdTFSRVOFu7ex0QMRxGx9h+Wohf4tE=
+github.com/ivanizag/izapple2 v0.0.0-20261005154323-4fc0aa665213 h1:C242PlTdsDC9FdIxBBWR4UwMwXCKtENqowRP/rUKIlM=
+github.com/ivanizag/izapple2 v0.0.0-20261005154323-4fc0aa665213/go.mod h1:IRy0LS6BmumiGQdTFSRVOFu7ex0QMRxGx9h+Wohf4tE=
 github.com/koron-go/z80 v0.10.1 h1:Jfb0esP/QFL4cvcr+eFECVG0Y/mA9JBLC4EKbMU5zAY=
 github.com/koron-go/z80 v0.10.1/go.mod h1:ry+Zl9kRKelzaDG9UzEtUpUnXy0Yv/kk1YEaX958xdk=
 golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b h1:M2rDM6z3Fhozi9O7NWsxAkg/yqS/lQJ6PmkyIV3YP+o=

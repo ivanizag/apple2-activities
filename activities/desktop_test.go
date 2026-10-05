@@ -29,7 +29,7 @@ func deskTopScreenshots(t *testing.T) {
 	opening.Glide(atDot(517, 26))
 	opening.Run(10, 2)
 	opening.DoubleClick()
-	opening.Run(90, 3)
+	opening.Run(180, 3)
 	must(t, pictures.SaveRecording(opening, "open-disk", 300))
 
 	// The Read.Me file, read, and closed with Escape
