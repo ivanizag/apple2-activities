@@ -37,6 +37,7 @@ var activities = []struct {
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
+	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
 }
 
 func TestActivities(t *testing.T) {

@@ -79,6 +79,16 @@ mouse as the paddle.
 The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
 
+## Work
+
+### [VisiCalc](guides/visicalc.md)
+
+<a href="guides/visicalc.md"><img src="guides/images/visicalc/share.png" width="320" alt="A budget in VisiCalc"></a>
+
+The first spreadsheet, from its original disk of 13 sectors: a household
+budget typed in, totalled, a formula replicated down a column, and the rent
+changed to see the whole sheet worked out again.
+
 ## Cards
 
 ### [The Mockingboard](guides/mockingboard.md)
