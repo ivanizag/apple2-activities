@@ -21,4 +21,5 @@ func TestActivities(t *testing.T) {
 	t.Run("dos33", dos33Screenshots)
 	t.Run("paddle-game", paddleScreenshots)
 	t.Run("desktop", deskTopScreenshots)
+	t.Run("apple-ii", appleIIScreenshots)
 }
