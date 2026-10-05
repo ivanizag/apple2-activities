@@ -38,6 +38,7 @@ var activities = []struct {
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
+	{"logo", []string{logoMachine}, logoScreenshots},
 }
 
 func TestActivities(t *testing.T) {
