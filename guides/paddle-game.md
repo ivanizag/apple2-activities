@@ -10,23 +10,31 @@ Magazines and books printed the listings of games, and their readers typed
 them in.
 
 This page writes one of those, a bat and a ball in the low resolution
-graphics of the Apple ][+, types it in, and plays it.
+graphics of the Apple \]\[+, types it in, and plays it.
 
 ## What you need
 
-Only izapple2, as in [Switch on an Apple ][+](switch-on.md): nothing to
+Only izapple2, as in [Switch on an Apple \]\[+](switch-on.md): nothing to
 download.
+
+## The machine
+
+An Apple \]\[+ with no disk drive:
+
+- the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
+- a 16 KB Language Card in slot 0;
+- a Videx Videoterm 80 column card in slot 3, unused here;
+- no disk controller card.
+
+```bash
+izapple2 -model 2plus -s6 empty
+```
 
 ## Type the game
 
-1. **Start izapple2 as an Apple ][+ without a disk drive:**
-
-   ```bash
-   izapple2 -model 2plus -s6 empty
-   ```
-
-   Press F6 until the screen is in colour, as on the colour television many
-   Apple IIs were plugged into: the game is in colour.
+1. **Start izapple2** with the command above, and press F6 until the screen is
+   in colour, as on the colour television many Apple IIs were plugged into:
+   the game is in colour.
 
 2. **Type the program**, each line ended with Return:
 

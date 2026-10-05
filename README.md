@@ -1,6 +1,6 @@
 # Things to do with an Apple II
 
-[izapple2](https://github.com/ivanizag/izapple2) emulates the Apple ][+ and
+[izapple2](https://github.com/ivanizag/izapple2) emulates the Apple \]\[+ and
 the Apple //e and runs their real ROMs and software, so it is a way of finding
 out first hand what using one was like. Each page here takes one thing an
 Apple II owner did, and walks through it step by step, with the command to
@@ -12,11 +12,11 @@ izapple2; the rest use disks from public archives, which
 
 ## First steps
 
-### [Switch on an Apple ][+](guides/switch-on.md)
+### [Switch on an Apple \]\[+](guides/switch-on.md)
 
 <a href="guides/switch-on.md"><img src="guides/images/switch-on/program.png" width="320" alt="A program in Applesoft BASIC"></a>
 
-No disk, no operating system: switched on, the Apple ][+ is in Applesoft BASIC
+No disk, no operating system: switched on, the Apple \]\[+ is in Applesoft BASIC
 and waiting. A few commands, a program typed, listed and run, and a loop that
 never ends stopped with Control-C.
 
@@ -43,7 +43,7 @@ Calculator.
 <a href="guides/paddle-game.md"><img src="guides/images/paddle-game/game-over.png" width="320" alt="A bat and a ball in low resolution graphics"></a>
 
 A bat on a paddle and a ball, in the low resolution colour graphics of the
-Apple ][+: typed in as the listings of the magazines were, and played with the
+Apple \]\[+: typed in as the listings of the magazines were, and played with the
 mouse as the paddle.
 
 ## The disks

@@ -17,19 +17,29 @@ a file, asks the machine what it has inside, and uses the Calculator.
 
 ## What you need
 
-Only izapple2. Its `desktop` model is an enhanced Apple //e with a mouse
-card, and with the 800 KB disk of Apple II DeskTop 1.4, which comes inside
-izapple2, on a hard disk interface card.
+Only izapple2: the 800 KB disk of Apple II DeskTop 1.4 comes inside it.
+
+## The machine
+
+An enhanced Apple //e set up for DeskTop:
+
+- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
+  with 8 MB more in its auxiliary slot, with the 80 column card and its RGB
+  modes;
+- a No-Slot Clock under the ROM;
+- a VidHD card in slot 2 and a FASTChip accelerator in slot 3, unused here;
+- a mouse card in slot 4;
+- a Disk II controller card in slot 6, with its two drives empty;
+- a hard disk interface, SmartPort, in slot 7, with the disk of Apple II
+  DeskTop 1.4.
+
+```bash
+izapple2 -model desktop
+```
 
 ## Start it
 
-1. **Start izapple2 with the `desktop` model:**
-
-   ```bash
-   izapple2 -model desktop
-   ```
-
-   The machine starts ProDOS from the disk in slot 7, and ProDOS starts
+1. **Start izapple2** with the command above. The machine starts ProDOS from the disk in slot 7, and ProDOS starts
    DeskTop. There is a disk, *A2.DeskTop*, at the top right, the Trash at the
    bottom right, a menu bar, and a pointer.
 
@@ -78,9 +88,6 @@ izapple2, on a hard disk interface card.
    and 5 are empty in this machine, which DeskTop shows as *(unknown)*. Press
    Escape to close it.
 
-   `izapple2 -model desktop -showConfig` lists the same machine as izapple2
-   sees it, without starting it.
-
 ## The Calculator
 
 6. **Choose *Calculator* from the Apple menu**, and click its keys, *1*, *2*,
@@ -94,5 +101,5 @@ izapple2, on a hard disk interface card.
 ## What next
 
 The other desk accessories of the Apple menu, and the *Toys* folder, are
-worth a look. [Switch on an Apple ][+](switch-on.md) shows the Apple II
+worth a look. [Switch on an Apple \]\[+](switch-on.md) shows the Apple II
 before all this, with nothing on the screen but a prompt.

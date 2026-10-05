@@ -1,38 +1,43 @@
-# Switch on an Apple ][+
+# Switch on an Apple \]\[+
 
 [Back to the activities](../README.md)
 
-The Apple ][+ came out in 1979, two years after the Apple ][, with Applesoft
+The Apple \]\[+ came out in 1979, two years after the Apple \]\[, with Applesoft
 BASIC in its ROM in place of the Integer BASIC Steve Wozniak had written for the
 first one. Applesoft was Microsoft's BASIC, with the floating point numbers the
 first BASIC lacked. Switch the machine on and it is there, waiting for a
 command: there is no operating system to load and no program to start. A disk
 drive was an extra, and so was the card it needed.
 
-This page switches on an Apple ][+ with no disk drive and does
+This page switches on an Apple \]\[+ with no disk drive and does
 what its owner did first: type commands, write a program, run it, and stop it.
 
 ## What you need
 
-Only izapple2. The ROM of the Apple ][+ comes inside it, and nothing has to be
+Only izapple2. The ROM of the Apple \]\[+ comes inside it, and nothing has to be
 downloaded.
+
+## The machine
+
+An Apple \]\[+ with no disk drive:
+
+- the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
+- a 16 KB Language Card in slot 0;
+- a Videx Videoterm 80 column card in slot 3, unused here;
+- no disk controller card.
+
+```bash
+izapple2 -model 2plus -s6 empty
+```
 
 ## Switch it on
 
-1. **Start izapple2 as an Apple ][+ without a disk drive:**
+1. **Start izapple2** with the command above. With no disk drive to start
+   from, the machine goes straight to BASIC: it beeps, writes `APPLE ][` at
+   the top of the screen, and shows the prompt of Applesoft, `]`, with the
+   cursor after it.
 
-   ```bash
-   izapple2 -model 2plus -s6 empty
-   ```
-
-   `-model 2plus` is the Apple ][+, and `-s6 empty` takes the disk controller
-   card out of slot 6, where the model has one. With a disk card, the machine
-   would wait for a disk to start; without one, it goes straight to BASIC.
-
-   The machine beeps, writes `APPLE ][` at the top of the screen, and shows
-   the prompt of Applesoft, `]`, with the cursor after it.
-
-   ![The Apple ][+ switched on](images/switch-on/switched-on.png)
+   ![The Apple \]\[+ switched on](images/switch-on/switched-on.png)
 
    The screen is green, as on the monochrome monitors many owners used. Press
    F6 in izapple2 to see the other screens it can show, the colour television
@@ -46,7 +51,7 @@ downloaded.
 
    ![The first commands](images/switch-on/first-commands.gif)
 
-   The Apple ][+ has no lower case: whatever you type comes out in capitals,
+   The Apple \]\[+ has no lower case: whatever you type comes out in capitals,
    and izapple2 turns your lower case letters into capitals for you.
 
 ## A program
@@ -92,12 +97,12 @@ downloaded.
    Applesoft looks for Control-C between one statement and the next, so it
    stops any program of its own, even one that never reads the keyboard. A
    program in machine code is another matter: the key above the Return key of
-   the Apple ][+, **Reset**, stops anything; in izapple2 it is Control-F2.
+   the Apple \]\[+, **Reset**, stops anything; in izapple2 it is Control-F2.
    Applesoft keeps the program in memory through a reset: type `LIST` and it
    is still there.
 
    Nothing of this is kept when the machine is switched off. To keep a
-   program, the Apple ][+ needs a cassette recorder or a disk drive.
+   program, the Apple \]\[+ needs a cassette recorder or a disk drive.
 
 ## What next
 
