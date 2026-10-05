@@ -24,4 +24,5 @@ func TestActivities(t *testing.T) {
 	t.Run("apple-ii", appleIIScreenshots)
 	t.Run("pascal", pascalScreenshots)
 	t.Run("cpm", cpmScreenshots)
+	t.Run("lode-runner", lodeRunnerScreenshots)
 }
