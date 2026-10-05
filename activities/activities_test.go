@@ -27,4 +27,5 @@ func TestActivities(t *testing.T) {
 	t.Run("lode-runner", lodeRunnerScreenshots)
 	t.Run("mockingboard", mockingboardScreenshots)
 	t.Run("apple-iie", appleIIeScreenshots)
+	t.Run("card-cat", cardCatScreenshots)
 }
