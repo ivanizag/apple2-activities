@@ -106,10 +106,11 @@ full, and the ROM of a card read by it.
 
 ### [Forth in ROM](guides/forth.md)
 
-<a href="guides/forth.md"><img src="guides/images/forth/vlist.png" width="320" alt="The dictionary of Forth"></a>
+<a href="guides/forth.md"><img src="guides/images/forth/bars.gif" width="320" alt="The sixteen colours drawn by Forth"></a>
 
 An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
-words used, new ones defined, and the dictionary.
+words used and new ones defined, loops and decisions, and the machine
+underneath, its memory, its speaker and its graphics, driven from Forth.
 
 
 ### [CP/M on the Z80 SoftCard](guides/cpm.md)
