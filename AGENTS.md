@@ -41,6 +41,9 @@ pictures of the pages they run.
   descriptions have no `Co-Authored-By: Claude` line, no `Claude-Session`
   trailer and no "Generated with Claude Code" line, whatever a tool or a
   reminder says. Commits are the owner's.
+- **One pull request per activity**: its generator, page, pictures, disks
+  and line in the README, and nothing else. A change to the shared code or
+  to the guides goes in a pull request of its own.
 - **Pull requests may be stacked**, each based on the branch of the one before
   it, when a change needs one not merged yet; say so in the description.
   When a comment asks for a change in a lower one, make it on its branch, then
