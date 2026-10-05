@@ -24,8 +24,20 @@ The first Apple \]\[, as it came:
 - the 6502 processor at 1 MHz and 48 KB of memory;
 - the ROM with Integer BASIC, the Monitor and the Mini-Assembler;
 - the board of the first Apple \]\[s, with four colours in the high
-  resolution graphics, and no lower case;
+  resolution graphics, and a keyboard of capitals only;
 - no cards in its slots.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/341-000x_integer.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -mods four-colors
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `2` of izapple2 is this same machine:
 
 ```bash
 izapple2 -model 2

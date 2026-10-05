@@ -7,11 +7,16 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// ultratermMachine is the machine of the guide, as its command line of izapple2
+const ultratermMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s3 videxultraterm \
+    -s6 diskii,disk1=disks/ultraterm-utilities.dsk`
+
 /*
 ultratermScreenshots is the demonstration of the Videx Ultraterm, the card of
 up to 160 columns, on an Apple ][+, from the disk of utilities of the card.
-
-	izapple2 -model ultraterm
 
 The card blinks its cursor by the clock of the host, and the pages of the
 demonstration do not come at the same frame on every run: the first is waited
@@ -20,7 +25,7 @@ after it.
 */
 func ultratermScreenshots(t *testing.T) {
 	pictures := newAlbum("ultraterm", album.Green)
-	o := start(t, "ultraterm", nil)
+	o := start(t, ultratermMachine, nil)
 
 	// "Videx presents", the first page, is drawn 1440 dots across
 	for {

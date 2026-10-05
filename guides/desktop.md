@@ -11,27 +11,47 @@ the 560 dots across of the 80 column graphics of a //e with 128 KB.
 
 It started as MouseDesk, by the French company Version Soft, which Apple then
 sold as Apple II DeskTop. Today a group of Apple II enthusiasts keeps it alive
-and adds to it, at [a2desktop.com](https://a2desktop.com), and izapple2
-carries their version 1.4 inside it. This page starts it, opens a disk, reads
-a file, asks the machine what it has inside, and uses the Calculator.
+and adds to it, at [a2desktop.com](https://a2desktop.com). This page starts
+their version 1.4, opens a disk, reads a file, asks the machine what it has
+inside, and uses the Calculator.
 
 ## What you need
 
-Only izapple2: the 800 KB disk of Apple II DeskTop 1.4 comes inside it.
+**`a2desktop-1.4.2mg`**, the 800 KB disk of Apple II DeskTop 1.4, from the
+[releases of the project](https://github.com/a2stuff/a2d/releases/tag/v1.4):
+download *A2DeskTop-1.4-en.zip*, take *A2DeskTop-1.4-en_800k.2mg* out of it
+and rename it `a2desktop-1.4.2mg`. `./fetch-disks.sh` in this repository
+downloads it into `disks/` and checks it.
 
 ## The machine
 
-An enhanced Apple //e set up for DeskTop:
+An enhanced Apple //e with a mouse and a hard disk:
 
-- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
-  with 8 MB more in its auxiliary slot, with the 80 column card and its RGB
-  modes;
-- a No-Slot Clock under the ROM;
-- a VidHD card in slot 2 and a FASTChip accelerator in slot 3, unused here;
+- the 65C02 processor at 1 MHz and 128 KB of memory: 64 KB on the board,
+  the top 16 KB of it the memory of a language card, which izapple2 puts in
+  slot 0, and 64 KB more on the extended 80 column card, in the auxiliary
+  slot;
+- the RGB modes of the extended 80 column card, which DeskTop uses to show
+  its double high resolution graphics in black and white;
 - a mouse card in slot 4;
-- a Disk II controller card in slot 6, with its two drives empty;
 - a hard disk interface, SmartPort, in slot 7, with the disk of Apple II
   DeskTop 1.4.
+
+```bash
+izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
+    -s0 language \
+    -s4 mouse \
+    -s7 smartport,image1=disks/a2desktop-1.4.2mg
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `desktop` of izapple2 has this machine, with 8 MB more of memory on
+a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
+Disk II controller more, and the disk of DeskTop inside izapple2:
 
 ```bash
 izapple2 -model desktop
@@ -46,9 +66,9 @@ izapple2 -model desktop
    ![The desktop](images/desktop/desktop.png)
 
    The mouse is the mouse of your computer: wherever the pointer is on the
-   izapple2 window, it is on the Apple II screen. The time on the right comes
-   from the clock of the machine, a No-Slot Clock under its ROM, which
-   izapple2 sets from the clock of your computer.
+   izapple2 window, it is on the Apple II screen. With a clock in the
+   machine, DeskTop would show the time at the right of the menu bar; this
+   one has none.
 
 ## Open a disk
 
@@ -80,13 +100,12 @@ izapple2 -model desktop
 
    ![About This Apple II](images/desktop/about.png)
 
-   It is the machine izapple2 built with the `desktop` model: an enhanced
-   Apple //e, with the 65C02 processor, and 8,256 KB of memory, the 128 KB of
-   the //e and 8 MB more on a RAMWorks memory card. Then what is in each of
-   its seven slots: the mouse card in slot 4, the Disk II controller in slot
-   6, and the hard disk card that has the disk of DeskTop in slot 7. Slots 1
-   and 5 are empty in this machine, which DeskTop shows as *(unknown)*. Press
-   Escape to close it.
+   It is the machine of the command above: an enhanced Apple //e, with the
+   65C02 processor and 128 KB of memory. Then what is in each of its seven
+   slots: the 80 column card in slot 3, as the //e shows it, the mouse card
+   in slot 4, and the hard disk card that has the disk of DeskTop in slot 7.
+   The other slots are empty in this machine, which DeskTop shows as
+   *(unknown)*. Press Escape to close it.
 
 ## The Calculator
 

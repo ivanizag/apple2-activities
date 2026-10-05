@@ -7,15 +7,19 @@ import (
 	"github.com/ivanizag/apple2-activities/operator"
 )
 
+// appleIIMachine is the machine of the guide, as its command line of izapple2
+const appleIIMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/341-000x_integer.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -mods four-colors`
+
 /*
 appleIIScreenshots is the Apple ][ of 1977, with the ROM of Integer BASIC and
 no cards: the Monitor, its Mini-Assembler, Integer BASIC and its colours.
-
-	izapple2 -model 2
 */
 func appleIIScreenshots(t *testing.T) {
 	pictures := newAlbum("apple-ii", album.Green)
-	o := start(t, "2", nil)
+	o := start(t, appleIIMachine, nil)
 
 	// Switched on, in the Monitor
 	must(t, o.WaitForKeyboard(5))

@@ -7,16 +7,22 @@ import (
 	"github.com/ivanizag/apple2-activities/operator"
 )
 
+// deskTopMachine is the machine of the guide, as its command line of izapple2
+const deskTopMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
+    -s0 language \
+    -s4 mouse \
+    -s7 smartport,image1=disks/a2desktop-1.4.2mg`
+
 /*
 deskTopScreenshots is Apple II DeskTop on an enhanced Apple //e with a mouse:
 the desktop, a disk opened, a file read, the machine described, and the
-Calculator. All of it is inside izapple2.
-
-	izapple2 -model desktop
+Calculator.
 */
 func deskTopScreenshots(t *testing.T) {
 	pictures := newAlbum("desktop", album.Color)
-	o := start(t, "desktop", nil)
+	o := start(t, deskTopMachine, nil)
 
 	// The desktop, with the pointer out of the way
 	dot(o, 280, 120)

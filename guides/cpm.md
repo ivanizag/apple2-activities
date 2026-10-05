@@ -15,16 +15,37 @@ disk, and writes a program in Microsoft BASIC-80.
 
 ## What you need
 
-Only izapple2: the diskette of CP/M 2.20B for the SoftCard comes inside it.
+**`cpm-2.20b.po`**, the CP/M 2.20B diskette of the Microsoft SoftCard, for 56
+KB. It is in `softcard.zip` on the [Asimov
+archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/):
+download it, take *CPM1.PO* out of it and rename it `cpm-2.20b.po`.
+`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
+it.
 
 ## The machine
 
 An Apple \]\[+ with the Microsoft Z80 SoftCard:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
+- the keyboard of the \]\[+, which types only capitals;
 - a 16 KB Language Card in slot 0, which makes the memory of CP/M 56 KB;
 - the Microsoft Z80 SoftCard in slot 4;
 - a Disk II controller card in slot 6, with the CP/M diskette in drive 1.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s0 language \
+    -s4 z80softcard \
+    -s6 diskii,disk1=disks/cpm-2.20b.po
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `cpm` of izapple2 is this same machine, with the CP/M diskette
+inside izapple2:
 
 ```bash
 izapple2 -model cpm

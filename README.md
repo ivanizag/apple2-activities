@@ -8,7 +8,11 @@ start izapple2 for it and what you will see on the way.
 
 Each page says what it needs and where it comes from. Some need nothing but
 izapple2; the rest use disks from public archives, which
-[`fetch-disks.sh`](fetch-disks.sh) downloads into the folder `disks`.
+[`fetch-disks.sh`](fetch-disks.sh) downloads into the folder `disks`. Each
+page gives the whole machine it uses, card by card, as a command line of
+izapple2, and after it a shorter one with a model of izapple2 that has that
+machine, and often more. The whole command needs the option `-board`, which
+izapple2 does not have yet; the shorter one works with izapple2 as it is.
 
 ## First steps
 

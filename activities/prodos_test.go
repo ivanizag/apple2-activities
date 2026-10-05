@@ -6,16 +6,21 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// prodosMachine is the machine of the guide, as its command line of izapple2
+const prodosMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s6 diskii,disk1=disks/prodos-2.4.3.po`
+
 /*
 prodosScreenshots is ProDOS 2.4.3 on an enhanced Apple //e: the program
 selector it starts with, BASIC.SYSTEM chosen in it, and the disk catalogued
 from BASIC in 80 columns.
-
-	izapple2 -model prodos
 */
 func prodosScreenshots(t *testing.T) {
 	pictures := newAlbum("prodos", album.Green)
-	o := start(t, "prodos", nil)
+	o := start(t, prodosMachine, nil)
 
 	// The program selector, Bitsy Bye
 	must(t, o.WaitForText("BITSY", 60))

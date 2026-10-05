@@ -9,17 +9,22 @@ import (
 	"github.com/ivanizag/apple2-activities/operator"
 )
 
+// totalReplayMachine is the machine of the guide, as its command line of izapple2
+const totalReplayMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s2 vidhd \
+    -s7 smartport,image1=disks/total-replay.hdv`
+
 /*
 totalReplayScreenshots is Total Replay, hundreds of games on one hard disk, on
-the enhanced Apple //e that izapple2 starts with: the launcher, the box art of
-its attract mode in Super Hi-Res, a game found by typing its name, and
-started.
-
-	izapple2 disks/total-replay.hdv
+an enhanced Apple //e with a VidHD: the launcher, the box art of its attract
+mode in Super Hi-Res, a game found by typing its name, and started.
 */
 func totalReplayScreenshots(t *testing.T) {
 	pictures := newAlbum("total-replay", album.Color)
-	o := start(t, "2enh", nil, disk(t, "total-replay.hdv"))
+	o := start(t, totalReplayMachine, nil)
 
 	// The launcher
 	must(t, o.WaitForKeyboard(30))

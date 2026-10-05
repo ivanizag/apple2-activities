@@ -25,16 +25,21 @@ readln
 end.
 `
 
+// pascalMachine is the machine of the guide, as its command line of izapple2
+const pascalMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s6 'diskii,disk1=<internal>/Apple II Pascal 1.3 APPLE1_ 680-0283-A.dsk,disk2=<internal>/Apple II Pascal 1.3 APPLE2_ 680-0284-A.dsk'`
+
 /*
-pascalScreenshots is Apple Pascal 1.3 on an enhanced Apple //e with four
+pascalScreenshots is Apple Pascal 1.3 on an enhanced Apple //e with two
 drives: the system started, a disk listed in the Filer, a program written in
 the editor, compiled and run, drawing with the turtle.
-
-	izapple2 -model pascal
 */
 func pascalScreenshots(t *testing.T) {
 	pictures := newAlbum("pascal", album.Green)
-	o := start(t, "pascal", nil)
+	o := start(t, pascalMachine, nil)
 
 	// Started, at the command line
 	must(t, o.WaitForText("[1.3]", 120))

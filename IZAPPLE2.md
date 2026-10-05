@@ -19,6 +19,43 @@ izapple2 the page needs, at least.
 
 ## Not fixed
 
+### No -board on the command line
+
+The pages give the whole machine on the command line, starting from the
+model `_base`, which has nothing, as `izapple2 -model _base -board 2plus
+-cpu 6502 -rom ...`. The board can only come from a model today: izapple2 has
+the option for each of the rest, but none for `board`. The library takes it
+in the configuration, and that is how the generators build the machines, so
+the pictures are right; a reader's izapple2 refuses the command.
+
+**Here, once done:** say in [README.md](README.md) which release of izapple2
+the commands of the pages need, at least. Until then, the preconfigured model
+each page gives after its command runs the activity.
+
+### Writing to a WOZ disk stops the emulator
+
+When a program writes to a disk in WOZ format, izapple2 panics with `Write
+not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Apple
+Pascal writes the work file to its disk, so it cannot run from the original
+disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
+
+**Here, once fixed:** [pascal.md](guides/pascal.md) uses the disks inside
+izapple2; it could use the woz-a-day ones, downloaded, but see the next one.
+
+### Apple Pascal 1.3 from its original disks stops at the start with four drives
+
+With `APPLE1` and `APPLE2` in slot 6 and `APPLE3` and `APPLE0` in slot 5, as
+the `pascal` model has them, the woz-a-day disks, or the DSK images of the
+Internet Archive (`211_Apple_II_Pascal_1.3_Apple0` to `214`), stop with a
+blank screen after `Apple //e`, the same on every run. The woz-a-day
+`APPLE1` in slot 6 and `APPLE3` alone in drive 2 of slot 5 are enough for
+it, and in drive 1 of slot 5 it starts. The disks inside izapple2, which have
+been used (their date is 10-Apr-90), start in all four drives. Not known
+whether a real //e does the same.
+
+**Here, once understood:** [pascal.md](guides/pascal.md) uses two drives; it
+would only need four for the programs on `APPLE3` and `APPLE0`.
+
 ### Pictures change from run to run: host time
 
 The machine reads the clock of the host in a few places, so the same steps do

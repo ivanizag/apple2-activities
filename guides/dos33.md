@@ -47,18 +47,38 @@ izapple2 writes what DOS saves straight into `my-disk.dsk`.
 An Apple \]\[+ with two disk drives:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
-- a 16 KB Language Card in slot 0;
-- a Videx Videoterm 80 column card in slot 3, unused here;
+- the keyboard of the \]\[+, which types only capitals;
+- a 16 KB Language Card in slot 0, where the System Master loads Integer
+  BASIC;
 - a Disk II controller card in slot 6, with two drives: the System Master in
   drive 1 and your blank diskette in drive 2.
 
 ```bash
-izapple2 -model 2plus disks/dos33-master.dsk my-disk.dsk
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s0 language \
+    -s6 diskii,disk1=disks/dos33-master.dsk,disk2=my-disk.dsk
 ```
 
 At the end, the same machine with your diskette alone, in drive 1:
 
 ```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s0 language \
+    -s6 diskii,disk1=my-disk.dsk
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `2plus` of izapple2 has this machine, with a Videx Videoterm 80
+column card more:
+
+```bash
+izapple2 -model 2plus disks/dos33-master.dsk my-disk.dsk
 izapple2 -model 2plus my-disk.dsk
 ```
 

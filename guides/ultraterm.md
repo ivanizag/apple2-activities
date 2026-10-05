@@ -15,17 +15,36 @@ of the card. This page watches it.
 
 ## What you need
 
-Only izapple2: the disk of the Ultraterm utilities comes inside it.
+**`ultraterm-utilities.dsk`**, the disk of utilities of the card, on the
+[Asimov
+archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/):
+download *Videx Ultraterm Utilities disk.dsk* and rename it
+`ultraterm-utilities.dsk`. `./fetch-disks.sh` in this repository downloads it
+into `disks/` and checks it.
 
 ## The machine
 
 An Apple \]\[+ with a Videx Ultraterm:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
-- a 16 KB Language Card in slot 0;
+- the keyboard of the \]\[+, which types only capitals;
 - a Videx Ultraterm card in slot 3;
 - a Disk II controller card in slot 6, with the disk of the Ultraterm
   utilities in drive 1.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s3 videxultraterm \
+    -s6 diskii,disk1=disks/ultraterm-utilities.dsk
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `ultraterm` of izapple2 has this machine, with a Language Card
+more and the disk of the utilities inside izapple2:
 
 ```bash
 izapple2 -model ultraterm

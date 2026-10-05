@@ -26,10 +26,12 @@ step, with what the machine showed on the way. Its parts are:
 2. **Do the activity on the emulator first**, with a throwaway test that runs
    the steps and prints the screen text and takes screenshots. Write the text
    from what the machine does, not from memory of what it did.
-3. **Write the generator.** `<name>Screenshots(t *testing.T)` starts its
-   machine with `start(t, model, overrides, disks...)`, where the model and the
-   overrides are the ones of the command line the page gives, and drives it
-   with the operator: `TypeLines`, `Key`, `WaitForText`, `WaitForKeyboard`,
+3. **Write the generator.** The command line of izapple2 the page gives is a
+   constant, `<name>Machine`, listed with the generator in `activities`, so
+   that `TestMachines` checks the page gives it word for word.
+   `<name>Screenshots(t *testing.T)` starts the machine of that command with
+   `start(t, command, files)`, where `disks/<name>` is the disk fetched and
+   `files` names any other, and drives it with the operator: `TypeLines`, `Key`, `WaitForText`, `WaitForKeyboard`,
    `TurnPaddle`, `MouseTo`, `Click`. Pictures go into an album:
    `Screenshot`, or a `Record` saved with `SaveRecording`.
 4. **Generate the pictures** and **look at every one**, every frame of the
@@ -49,13 +51,16 @@ step, with what the machine showed on the way. Its parts are:
   [wozaday](https://archive.org/details/wozaday) collection and much else.
   Prefer the original disks to the cracked ones, and WOZ when the original
   needs it.
-- **Use what izapple2 already has** when it fits: it carries DOS 3.3, ProDOS
-  2.4.3, Apple Pascal 1.3, CP/M, Apple II DeskTop and others inside it, behind
-  its models.
+- **Not the disks inside izapple2.** It carries DOS 3.3, ProDOS, Apple
+  Pascal, CP/M, Apple II DeskTop and others, for its models, but a page
+  downloads its disks like any other, so the reader knows where they come
+  from. Only when no download can be found, or none works, use the one inside
+  izapple2, `<internal>/<file>`, and say on the page where the program is
+  found today.
 - **A blank diskette** is `blank.dsk`, made by the script; the page tells the
   reader to copy it.
-- **Check it runs on the model of the page**, a ][+ or a //e, and with the
-  cards it has.
+- **Check it runs on the machine of the page**, a \]\[+ or a //e, with only
+  the cards it has.
 
 ## The page
 
@@ -65,14 +70,25 @@ step, with what the machine showed on the way. Its parts are:
 - **"What you need"** says what to download, from where, and what to rename it
   to: the archive's page linked, the file named as it is there. Say what
   `fetch-disks.sh` does for it. Say when nothing is needed but izapple2.
-- **"The machine"** comes after "What you need": the configuration of the
-  machine the page uses, as a list, the model and its processor and memory,
-  then what is in each slot that matters, and the izapple2 command that starts
-  it, in a `bash` block, exactly the one the generator builds. Do not explain
-  the options of the command: the list says what the machine is. A page that
-  starts the machine twice gives both commands there. `-showConfig`, before
-  any file named, prints what a command builds. The reader runs `izapple2`,
-  the frontend of the releases.
+- **"The machine"** comes after "What you need": the machine the page uses,
+  as a list, the board and its processor and memory, then what is in each
+  slot, and the izapple2 command that starts it, in a `bash` block, exactly
+  the one the generator builds. Do not explain the options of the command:
+  the list says what the machine is. A page that starts the machine twice
+  gives both commands there. The reader runs `izapple2`, the frontend of the
+  releases.
+- **Only the hardware the activity uses.** No card, clock or memory that the
+  page does not need, as a reader with the real machine would set it up: an
+  80 column card is out of a page that never leaves 40 columns, and a card
+  goes in only when a program uses it or the page is about it.
+- **The whole machine on the command line**, not a preconfigured model of
+  izapple2: `-model _base`, which has nothing, then `-board`, `-cpu`, `-rom`
+  and `-charrom`, the memory and the clock if any, and a `-sN` for each card,
+  with the disks in the parameters of their cards. The ROMs come from inside
+  izapple2, `<internal>/`. `-showConfig`, before any file named, prints what
+  a command builds.
+- **A preconfigured model may follow**, as a shorter command that also runs
+  the activity, saying what more it has than the machine of the page.
 - **Number the steps once for the whole page**, across its sections.
 - **Each step starts with the action in bold**, then what happens, the
   picture, and what it shows and why it mattered.
