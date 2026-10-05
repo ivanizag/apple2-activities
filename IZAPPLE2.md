@@ -110,6 +110,11 @@ has no way to say: it has no key up.
 izmac's `HoldKey` and `ReleaseKey`; then add the music demonstration to
 [mockingboard.md](guides/mockingboard.md), a tune recorded.
 
+The keys of [Karateka](guides/karateka.md) may be another case: `Q`, `A`,
+`Z`, `W`, `S` and `X`, which its manual gives to punch and kick from the
+fighting stance, made no difference to the fight, which the joystick plays.
+Once keys can be held, try them, and say so on the page.
+
 ### The SwyftCard does not see Solid-Apple
 
 The tutorial of the SwyftCard (`-model swyft`) asks to hold Solid-Apple and
