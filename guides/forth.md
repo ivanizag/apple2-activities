@@ -23,9 +23,22 @@ on the Internet Archive.
 An Apple \]\[+ with Forth in ROM:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
+- the keyboard of the \]\[+, which types only capitals;
 - the Forth ROM card of Offete Industries in slot 0;
-- a Videx Videoterm 80 column card in slot 3, unused here;
-- no disk controller card.
+- no disk controller card: Forth starts from the card.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s0 forthrom
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `forth` of izapple2 has this machine, with a Videx Videoterm 80
+column card more:
 
 ```bash
 izapple2 -model forth

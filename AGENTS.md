@@ -69,7 +69,10 @@ func TestExplore(t *testing.T) {
 		t.Skip()
 	}
 	a := album.New(os.Getenv("EXPLORE"), album.Green)
-	o := start(t, "2enh", nil, disk(t, "some.dsk"))
+	o := start(t, `izapple2 -model _base -board 2e -cpu 65c02
+		-rom "<internal>/Apple2e_Enhanced.rom"
+		-charrom "<internal>/Apple IIe Video Enhanced.bin"
+		-s0 language -s6 diskii,disk1=disks/some.dsk`, nil)
 	for i := range 10 {
 		o.RunSeconds(5)
 		fmt.Printf("== %d mode=%x\n%v\n", i, o.Apple2().GetVideoSource().GetCurrentVideoMode(), o.Text())
@@ -118,8 +121,10 @@ Not done yet, and not proposed: each needs a look on the machine first.
 - **Apple II clones**: the Base 64A and the Basis 108, models of izapple2
   with their own ROMs.
 - **CPM-65**, a CP/M for the 6502, model `cpm65`.
-- **A2AUDIT**, the test of the machine, on the disk inside izapple2.
-- **CP/M 3** on the //e, model `cpm3`, two disks inside izapple2.
+- **A2AUDIT**, the test of the machine; izapple2 has its disk inside, a page
+  needs it downloaded.
+- **CP/M 3** on the //e, model `cpm3`; its two disks are inside izapple2, a
+  page needs them downloaded.
 - **The cassette**: a program loaded from a WAV recording, through the input
   of the Apple II.
 - **Printing**: a listing sent to the parallel card, `PR#1`, and the file it

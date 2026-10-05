@@ -15,16 +15,21 @@ each slot, and looks at the ROM of one of them.
 
 ## What you need
 
-Only izapple2: the disk of Card Cat 1.7 comes inside it, named `cardcat`.
+Only izapple2: the disk of Card Cat 1.7 comes inside it. Card Cat is by Henry
+Lowe, and its latest version, which knows more cards, is on [its
+page](https://henrylowe.net/card-cat/).
 
 ## The machine
 
 An enhanced Apple //e with a card in each slot:
 
-- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
-  with 8 MB more in its auxiliary slot, with the 80 column card;
+- the 65C02 processor at 1 MHz and 64 KB of memory on the board, the top
+  16 KB of it the memory of a language card, which izapple2 puts in slot 0;
+- a RAMWorks card in the auxiliary slot, the 80 column card with 8 MB of
+  memory;
 - a No-Slot Clock under the ROM;
-- an Apple Parallel Interface card, for a printer, in slot 1;
+- an Apple Parallel Interface card, for a printer, in slot 1, which writes
+  what it prints to the file `printer.out`;
 - a VidHD card in slot 2;
 - a FASTChip accelerator in slot 3;
 - a Mockingboard sound card in slot 4;
@@ -33,7 +38,28 @@ An enhanced Apple //e with a card in each slot:
 - a mouse card in slot 7.
 
 ```bash
-izapple2 -model 2enh -s1 parallel -s5 thunderclock -s7 mouse cardcat
+izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -ramworks 8192 -nsc main \
+    -s0 language \
+    -s1 parallel,file=printer.out \
+    -s2 vidhd \
+    -s3 fastchip \
+    -s4 mockingboard \
+    -s5 thunderclock \
+    -s6 'diskii,disk1=<internal>/Card Cat 1.7.dsk' \
+    -s7 mouse
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters, and the disk.
+
+The enhanced Apple //e izapple2 starts with, its model `2enh`, has the cards
+of slots 2 to 4; the rest are added to it:
+
+```bash
+izapple2 -s1 parallel -s5 thunderclock -s7 mouse cardcat
 ```
 
 ## Run it

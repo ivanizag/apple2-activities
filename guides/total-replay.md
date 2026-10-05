@@ -9,9 +9,8 @@ they run from a hard disk. Its launcher shows the box art of the games in the
 Super Hi-Res graphics of the Apple IIgs when it finds a VidHD, a modern card
 that gives those graphics to an Apple //e.
 
-This page starts Total Replay on the enhanced //e that izapple2 starts with
-when nothing else is asked for, looks at its attract mode, and finds and
-starts a game.
+This page starts Total Replay on an enhanced //e with a VidHD, looks at its
+attract mode, and finds and starts a game.
 
 ## What you need
 
@@ -22,16 +21,30 @@ disk image. `./fetch-disks.sh` in this repository downloads it into `disks/`.
 
 ## The machine
 
-The enhanced Apple //e of izapple2, with Total Replay as its hard disk:
+An enhanced Apple //e with Total Replay as its hard disk:
 
-- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
-  with 8 MB more in its auxiliary slot, with the 80 column card;
-- a No-Slot Clock under the ROM;
+- the 65C02 processor at 1 MHz and 128 KB of memory: 64 KB on the board,
+  the top 16 KB of it the memory of a language card, which izapple2 puts in
+  slot 0, and 64 KB more on the extended 80 column card, in the auxiliary
+  slot;
 - a VidHD card in slot 2, for the Super Hi-Res graphics;
-- a FASTChip accelerator in slot 3, which Total Replay uses to load faster;
-- a Mockingboard sound card in slot 4, for the games that have music;
-- a Disk II controller card in slot 6, with the DOS 3.3 disk of izapple2;
 - a hard disk interface, SmartPort, in slot 7, with Total Replay.
+
+```bash
+izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s2 vidhd \
+    -s7 smartport,image1=disks/total-replay.hdv
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
+machine, with 8 MB more of memory on a RAMWorks card, a No-Slot Clock, a
+FASTChip accelerator, a Mockingboard and a Disk II controller more:
 
 ```bash
 izapple2 disks/total-replay.hdv

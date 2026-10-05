@@ -6,16 +6,20 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// lodeRunnerMachine is the machine of the guide, as its command line of izapple2
+const lodeRunnerMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s6 diskii,disk1=disks/lode-runner.woz`
+
 /*
 lodeRunnerScreenshots is Lode Runner of 1983 on an Apple ][+, from its
 original disk: the title, the demonstration that plays itself, and a game
 started.
-
-	izapple2 -model 2plus disks/lode-runner.woz
 */
 func lodeRunnerScreenshots(t *testing.T) {
 	pictures := newAlbum("lode-runner", album.Color)
-	o := start(t, "2plus", nil, disk(t, "lode-runner.woz"))
+	o := start(t, lodeRunnerMachine, nil)
 
 	// The title
 	o.Run(16 * 60)

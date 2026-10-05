@@ -17,22 +17,38 @@ the editor, and compiles and runs it.
 
 ## What you need
 
-Only izapple2: the four disks of Apple Pascal 1.3, `APPLE0` to `APPLE3`,
-come inside it.
+Only izapple2: the disks of Apple Pascal 1.3 come inside it. The originals,
+the four disks `APPLE0` to `APPLE3` as Apple sold them, are in the [woz-a-day
+collection](https://archive.org/details/wozaday_Apple_Pascal_v13) of the
+Internet Archive, but izapple2 cannot write to their WOZ images yet, and the
+system writes your program to its disk.
 
 ## The machine
 
-An enhanced Apple //e with four disk drives:
+An enhanced Apple //e with two disk drives:
 
-- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
-  with 8 MB more in its auxiliary slot, with the 80 column card;
-- a No-Slot Clock under the ROM;
-- a VidHD card in slot 2, a FASTChip accelerator in slot 3 and a Mockingboard
-  sound card in slot 4, unused here;
-- a Disk II controller card in slot 5, with `APPLE3` and `APPLE0` in its two
-  drives;
-- a Disk II controller card in slot 6, with `APPLE1`, the one it starts
-  from, and `APPLE2` in its two drives.
+- the 65C02 processor at 1 MHz and 128 KB of memory: 64 KB on the board,
+  the top 16 KB of it the memory of a language card, which izapple2 puts in
+  slot 0, and 64 KB more on the extended 80 column card, in the auxiliary
+  slot;
+- a Disk II controller card in slot 6, with `APPLE1`, the disk it starts
+  from, in drive 1, and `APPLE2`, with the compiler, in drive 2.
+
+```bash
+izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s6 'diskii,disk1=<internal>/Apple II Pascal 1.3 APPLE1_ 680-0283-A.dsk,disk2=<internal>/Apple II Pascal 1.3 APPLE2_ 680-0284-A.dsk'
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters, and the disks.
+
+The model `pascal` of izapple2 has this machine, with 8 MB more of memory on
+a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
+Mockingboard more, and a second Disk II controller in slot 5 with `APPLE3`
+and `APPLE0`:
 
 ```bash
 izapple2 -model pascal

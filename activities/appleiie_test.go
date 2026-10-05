@@ -6,15 +6,19 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// appleIIeMachine is the machine of the guide, as its command line of izapple2
+const appleIIeMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language`
+
 /*
 appleIIeScreenshots is an enhanced Apple //e with no disk drive: lower case,
 80 columns, MouseText, and the self test of its ROM.
-
-	izapple2 -model 2enh -s6 empty
 */
 func appleIIeScreenshots(t *testing.T) {
 	pictures := newAlbum("apple-iie", album.Green)
-	o := start(t, "2enh", map[string]string{"s6": "empty"})
+	o := start(t, appleIIeMachine, nil)
 
 	// Switched on, in Applesoft
 	must(t, o.WaitForKeyboard(5))

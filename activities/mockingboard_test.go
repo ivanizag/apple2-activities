@@ -7,16 +7,21 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// mockingboardMachine is the machine of the guide, as its command line of izapple2
+const mockingboardMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s4 mockingboard \
+    -s6 diskii,disk1=disks/mockingboard-demo.dsk`
+
 /*
 mockingboardScreenshots is the demonstration disk of the Mockingboard, the
 sound card of Sweet Micro Systems, on an Apple ][+: its title, its menus, and
 its sound effects, recorded.
-
-	izapple2 -model 2plus -s4 mockingboard disks/mockingboard-demo.dsk
 */
 func mockingboardScreenshots(t *testing.T) {
 	pictures := newAlbum("mockingboard", album.Color)
-	o := start(t, "2plus", map[string]string{"s4": "mockingboard"}, disk(t, "mockingboard-demo.dsk"))
+	o := start(t, mockingboardMachine, nil)
 	sound := album.Listen(o)
 
 	// The title page, drawn a few lines at a time, kept as it is last

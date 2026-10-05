@@ -55,16 +55,19 @@ func batPaddle(x int) uint8 {
 	return uint8(min((p-1)*255/32+4, 255))
 }
 
+// paddleMachine is the machine of the guide, as its command line of izapple2
+const paddleMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps`
+
 /*
 paddleScreenshots is a game written in Applesoft on an Apple ][+ with no disk:
 low resolution graphics, a bat on a paddle and a ball, typed, run and played,
 on a colour television.
-
-	izapple2 -model 2plus -s6 empty
 */
 func paddleScreenshots(t *testing.T) {
 	pictures := newAlbum("paddle-game", album.Color)
-	o := start(t, "2plus", map[string]string{"s6": "empty"})
+	o := start(t, paddleMachine, nil)
 	must(t, o.WaitForKeyboard(5))
 
 	// The program, typed, and its end listed

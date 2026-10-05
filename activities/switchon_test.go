@@ -6,16 +6,19 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// switchOnMachine is the machine of the guide, as its command line of izapple2
+const switchOnMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps`
+
 /*
 switchOnScreenshots is an Apple ][+ switched on with no disk drive: Applesoft
 BASIC waiting, a few commands, a program typed, listed and run, and a loop
 that never ends stopped with Control-C.
-
-	izapple2 -model 2plus -s6 empty
 */
 func switchOnScreenshots(t *testing.T) {
 	pictures := newAlbum("switch-on", album.Green)
-	o := start(t, "2plus", map[string]string{"s6": "empty"})
+	o := start(t, switchOnMachine, nil)
 
 	// Switched on: it beeps and is ready at once
 	must(t, o.WaitForText("]", 5))

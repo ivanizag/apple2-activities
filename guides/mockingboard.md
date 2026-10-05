@@ -26,11 +26,24 @@ download its `.dsk` file and rename it `mockingboard-demo.dsk`.
 An Apple \]\[+ with a Mockingboard:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
-- a 16 KB Language Card in slot 0;
-- a Videx Videoterm 80 column card in slot 3, unused here;
+- the keyboard of the \]\[+, which types only capitals;
 - a Mockingboard in slot 4, with two sound generators of three voices each,
   and no speech chip;
 - a Disk II controller card in slot 6, with the demonstration disk in drive 1.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s4 mockingboard \
+    -s6 diskii,disk1=disks/mockingboard-demo.dsk
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `2plus` of izapple2 has this machine, with a Language Card and a
+Videx Videoterm 80 column card more:
 
 ```bash
 izapple2 -model 2plus -s4 mockingboard disks/mockingboard-demo.dsk

@@ -29,9 +29,21 @@ taken out.
 An Apple \]\[+ with one disk drive:
 
 - the 6502 processor at 1 MHz, 48 KB of memory, and Applesoft BASIC in its ROM;
-- a 16 KB Language Card in slot 0;
-- a Videx Videoterm 80 column card in slot 3, unused here;
+- the keyboard of the \]\[+, which types only capitals;
 - a Disk II controller card in slot 6, with the Lode Runner disk in drive 1.
+
+```bash
+izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s6 diskii,disk1=disks/lode-runner.woz
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `2plus` of izapple2 has this machine, with a Language Card and a
+Videx Videoterm 80 column card more:
 
 ```bash
 izapple2 -model 2plus disks/lode-runner.woz

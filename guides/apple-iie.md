@@ -23,12 +23,25 @@ Only izapple2: the ROM of the enhanced Apple //e comes inside it.
 
 An enhanced Apple //e with no disk drive:
 
-- the 65C02 processor at 1 MHz, 128 KB of memory, and a RAMWorks memory card
-  with 8 MB more in its auxiliary slot, with the 80 column card;
-- a No-Slot Clock under the ROM;
-- a VidHD card in slot 2, a FASTChip accelerator in slot 3 and a Mockingboard
-  sound card in slot 4, unused here;
-- no disk controller card.
+- the 65C02 processor at 1 MHz and 128 KB of memory: 64 KB on the board,
+  the top 16 KB of it the memory of a language card, which izapple2 puts in
+  slot 0, and 64 KB more on the extended 80 column card, in the auxiliary
+  slot;
+- no cards in its slots.
+
+```bash
+izapple2 -model _base -board 2e -cpu 65c02 \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language
+```
+
+`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
+its characters.
+
+The model `2enh` of izapple2 has this machine, with 8 MB more of memory on a
+RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
+Mockingboard more:
 
 ```bash
 izapple2 -model 2enh -s6 empty

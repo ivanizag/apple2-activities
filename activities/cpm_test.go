@@ -6,16 +6,22 @@ import (
 	"github.com/ivanizag/apple2-activities/album"
 )
 
+// cpmMachine is the machine of the guide, as its command line of izapple2
+const cpmMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s0 language \
+    -s4 z80softcard \
+    -s6 diskii,disk1=disks/cpm-2.20b.po`
+
 /*
 cpmScreenshots is CP/M on an Apple ][+ with the Microsoft Z80 SoftCard: the
 system started, its disk listed, an assembler source typed on the screen, and
 a program in Microsoft BASIC-80.
-
-	izapple2 -model cpm
 */
 func cpmScreenshots(t *testing.T) {
 	pictures := newAlbum("cpm", album.Green)
-	o := start(t, "cpm", nil)
+	o := start(t, cpmMachine, nil)
 
 	// Started, at the prompt of drive A
 	must(t, o.WaitForText("A>", 120))

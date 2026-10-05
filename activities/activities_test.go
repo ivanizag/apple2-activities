@@ -10,26 +10,61 @@ package activities
 
 import (
 	"os"
+	"path/filepath"
+	"strings"
 	"testing"
 )
+
+// activities are the guides, the machines their pages give, and the
+// generators of their pictures
+var activities = []struct {
+	guide    string
+	machines []string
+	pictures func(t *testing.T)
+}{
+	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
+	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
+	{"paddle-game", []string{paddleMachine}, paddleScreenshots},
+	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
+	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
+	{"pascal", []string{pascalMachine}, pascalScreenshots},
+	{"cpm", []string{cpmMachine}, cpmScreenshots},
+	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
+	{"mockingboard", []string{mockingboardMachine}, mockingboardScreenshots},
+	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
+	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
+	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
+	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
+	{"forth", []string{forthMachine}, forthScreenshots},
+	{"prodos", []string{prodosMachine}, prodosScreenshots},
+}
 
 func TestActivities(t *testing.T) {
 	if os.Getenv("A2_ACTIVITIES") == "" {
 		t.Skip("this makes the pictures of the guides, with A2_ACTIVITIES=1")
 	}
-	t.Run("switch-on", switchOnScreenshots)
-	t.Run("dos33", dos33Screenshots)
-	t.Run("paddle-game", paddleScreenshots)
-	t.Run("desktop", deskTopScreenshots)
-	t.Run("apple-ii", appleIIScreenshots)
-	t.Run("pascal", pascalScreenshots)
-	t.Run("cpm", cpmScreenshots)
-	t.Run("lode-runner", lodeRunnerScreenshots)
-	t.Run("mockingboard", mockingboardScreenshots)
-	t.Run("apple-iie", appleIIeScreenshots)
-	t.Run("card-cat", cardCatScreenshots)
-	t.Run("ultraterm", ultratermScreenshots)
-	t.Run("total-replay", totalReplayScreenshots)
-	t.Run("forth", forthScreenshots)
-	t.Run("prodos", prodosScreenshots)
+	for _, a := range activities {
+		t.Run(a.guide, a.pictures)
+	}
+}
+
+// TestMachines checks that each page gives the command lines its pictures
+// were made with, word for word
+func TestMachines(t *testing.T) {
+	for _, a := range activities {
+		page, err := os.ReadFile(filepath.Join("../guides", a.guide+".md"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		shown := map[string]bool{}
+		for _, block := range strings.Split(string(page), "```bash\n")[1:] {
+			command, _, _ := strings.Cut(block, "```")
+			shown[strings.Join(strings.Fields(command), " ")] = true
+		}
+		for _, machine := range a.machines {
+			if !shown[strings.Join(strings.Fields(machine), " ")] {
+				t.Errorf("%v.md does not give the command line\n%v", a.guide, machine)
+			}
+		}
+	}
 }
