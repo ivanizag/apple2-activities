@@ -1,0 +1,8 @@
+# The disks, downloaded by fetch-disks.sh
+/disks/
+
+# The workspace that builds against a local izapple2, see AGENTS.md
+go.work
+go.work.sum
+
+.DS_Store

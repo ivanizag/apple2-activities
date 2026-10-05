@@ -1,0 +1,11 @@
+# The disks of the activities, fetched into disks/ by fetch-disks.sh.
+#
+# One disk a line, the fields separated by tabs:
+#   name     the file in disks/, the name the guides and the generators use
+#   sha256   of that file, "-" while it is not known yet
+#   source   the URL to download, or "blank:<bytes>" for an empty disk
+#   member   optional, the file to take out of a zip download
+#
+# name	sha256	source	member
+dos33-master.dsk	caca91990b148e20062c887f0301a957b477353fbacf4e4a011f8fb3beab46a9	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/DOS%203.3%20System%20Master%20-%20680-0210-A%20%281982%29.dsk
+blank.dsk	805f89516ae3725e591d02cc0594f250fbc9ab74461f1e03faeed1649f24e9a2	blank:143360
