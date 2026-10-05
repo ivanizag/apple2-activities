@@ -43,6 +43,13 @@ Two Disk II drives and the System Master: the catalog of a diskette, the
 program that greets you, and a blank diskette made into one that starts the
 machine with a program of your own.
 
+### [ProDOS](guides/prodos.md)
+
+<a href="guides/prodos.md"><img src="guides/images/prodos/catalog.png" width="320" alt="A ProDOS catalog in 80 columns"></a>
+
+The operating system of the Apple II from 1984 on, in its version of 2023:
+the program selector it starts with, BASIC, and a catalog in 80 columns.
+
 ### [Apple II DeskTop](guides/desktop.md)
 
 <a href="guides/desktop.md"><img src="guides/images/desktop/about.png" width="320" alt="About This Apple II"></a>
@@ -93,6 +100,14 @@ full, and the ROM of a card read by it.
 
 ## Other systems
 
+### [Forth in ROM](guides/forth.md)
+
+<a href="guides/forth.md"><img src="guides/images/forth/vlist.png" width="320" alt="The dictionary of Forth"></a>
+
+An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
+words used, new ones defined, and the dictionary.
+
+
 ### [CP/M on the Z80 SoftCard](guides/cpm.md)
 
 <a href="guides/cpm.md"><img src="guides/images/cpm/dir.png" width="320" alt="The disk of CP/M"></a>
@@ -108,6 +123,13 @@ assembler source, and Microsoft BASIC-80.
 
 Broderbund's game of 1983, from a copy of its original disk: the title, the
 demonstration that plays itself, and a game started.
+
+### [Total Replay](guides/total-replay.md)
+
+<a href="guides/total-replay.md"><img src="guides/images/total-replay/box-art.png" width="320" alt="Box art in Super Hi-Res"></a>
+
+Hundreds of games on one hard disk, with the box art in Super Hi-Res: the
+launcher, its attract mode, and a game found by typing its name.
 
 ## The disks
 

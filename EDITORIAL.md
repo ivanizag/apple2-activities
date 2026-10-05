@@ -73,9 +73,6 @@ step, with what the machine showed on the way. Its parts are:
   starts the machine twice gives both commands there. `-showConfig`, before
   any file named, prints what a command builds. The reader runs `izapple2`,
   the frontend of the releases.
-- **Escape the brackets of Apple ][ and Apple ][+** outside code, as
-  `Apple \]\[+`: unescaped, they break the links and the pictures they are
-  in.
 - **Number the steps once for the whole page**, across its sections.
 - **Each step starts with the action in bold**, then what happens, the
   picture, and what it shows and why it mattered.
@@ -95,15 +92,77 @@ step, with what the machine showed on the way. Its parts are:
   show both when the difference is the point.
 - **The frame is part of the picture**, the black of the tube around the
   screen, from `album.Frame`.
-- **Take the picture once the screen is finished.** Wait for the text that
-  says so with `WaitForText`, or for the program to ask for a key with
-  `WaitForKeyboard`, rather than for a number of frames.
+- **Take the picture once the screen is finished**, by what is on it rather
+  than by a number of frames: a program prints its last line, its prompt
+  appears, its graphics are drawn. Fixed times break when the emulator gets
+  faster or slower, as when the Disk II was fixed. See *Driving the machine*
+  for which wait to use.
 - **Show the result of each important step**, not every step.
 - **Use a GIF when the movement is the point**, typing, a program running, a
   game; a PNG when the result is. The first and the last frames must both be
   worth looking at.
-- **Real speed by default.** Speed up long waits with `Faster`, the start of a
-  diskette for one, and say so in the text. Stills are capped at
+- **Real speed by default.** Speed up only waits that would be tedious, with
+  `Faster`, and say so in the text, with the real time. Stills are capped at
   `LongestStill`.
 - **Determinism is not complete yet**: the flashing cursor follows the time
   of the host, so pictures can differ from one run to the next in the cursor.
+- **Look at every picture before committing**, every frame of the GIFs too,
+  with `tools/sheet`. A picture taken too early, of a menu half printed or a
+  title half drawn, is the most common fault.
+- **Sound** goes in WAV files, linked from the page with 🔊, as GitHub does
+  not play it inline: `album.Listen`, `Sound.Clip` and `SaveSound`. Keep a
+  clip to what the step needs, 15 seconds is 700 KB.
+- **Keep GIFs small**: the recorder stores what changed and leaves the rest
+  transparent, but a screen that changes everywhere at every frame, as the
+  self test of the //e, makes a huge one; use stills for those.
+
+## Driving the machine
+
+The operator types, turns paddles, presses buttons and moves the mouse, and
+waits for what the machine does. What it has taught:
+
+- **Which wait.**
+  - `WaitForText` is true as soon as the text is in the text memory, which
+    may not be what is shown, or may be there from before: a prompt `]` is
+    on the screen while a command still works, and `APPLE ][` has a `]` too.
+  - `WaitForShownText` also needs the screen to be in text mode: a program
+    can prepare its menu in the text page while its title is shown in
+    graphics.
+  - `WaitForKeyboard` waits until the program looks for a key. CP/M looks for
+    one while it prints, to stop, and a key typed then aborts the command.
+  - `WaitForPrompt` waits until the screen is still and the keyboard is read.
+    It never comes where the cursor blinks in the text memory itself, as in
+    ProDOS BASIC: use `WaitForText` and `WaitForKeyboard` there.
+  - For graphics, wait by the screen: the video mode, with `waitForMode`, and
+    what is drawn, counting dots, as Total Replay and the Ultraterm do. Look
+    at the screen every 30 frames, not every frame: rendering it is slow.
+- **Keys.** `Type` waits for each key to be read before the next, as a
+  person watching the screen; the Apple \]\[ and \]\[+ get capitals. Keys
+  are pressed, not held: izapple2 has no key up, so programs that wait for a
+  key to be released do not work (see [IZAPPLE2.md](IZAPPLE2.md)).
+- **The Apple keys** of the //e are the buttons of the game port: Open Apple
+  is button 0 and Closed Apple, or Solid Apple, button 1, `HoldButton`. Held
+  through `Reset` they start the self test.
+- **Reset** is Control-F2 in izapple2, `o.Reset()` for the operator. Applesoft
+  stops on Control-C between statements by itself, any program of its own.
+- **The Monitor** of the Apple \]\[: Escape and `@` clear the screen, and a
+  Return on an empty line then would dump memory.
+- **Sound** has to be listened to from the start, `album.Listen` before the
+  machine runs: the Mockingboard works out its sound only while listened to,
+  and when listened to late it has all that time to catch up with first.
+- **The mouse** of the mouse card takes a place as a part of the range the
+  program set, so a place on the screen is a fraction of it: `atDot` in the
+  DeskTop generator for its 560 by 192 dots.
+- **Paddles** for a game written in BASIC: the operator can find the ball in
+  the low resolution page with `Peek`, as `loResFind` does, and turn the
+  paddle under it.
+- **Nothing on the machine is checked by memory.** Explore first; then check
+  each claim of a page on the machine: what a key does, what a screen says,
+  how long it takes.
+
+## Markdown
+
+- **Escape the brackets of Apple \]\[** outside code, `Apple \]\[+`, or they
+  break links and pictures. `gh api markdown -f text="$(cat page.md)" -f
+  mode=gfm` renders a page as GitHub will.
+
