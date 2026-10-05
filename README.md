@@ -28,6 +28,14 @@ Two Disk II drives and the System Master: the catalog of a diskette, the
 program that greets you, and a blank diskette made into one that starts the
 machine with a program of your own.
 
+### [Apple II DeskTop](guides/desktop.md)
+
+<a href="guides/desktop.md"><img src="guides/images/desktop/about.png" width="320" alt="About This Apple II"></a>
+
+The Apple II with a mouse, windows and icons: a disk opened with a double
+click, a file read, the machine asked what it has in its slots, and the
+Calculator.
+
 ## Making things
 
 ### [A game in Applesoft](guides/paddle-game.md)

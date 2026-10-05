@@ -180,3 +180,62 @@ func paletted(picture *image.RGBA, area image.Rectangle) *image.Paletted {
 	}
 	return out
 }
+
+// glideStep is how far the pointer goes between two pictures of a glide, as
+// a part of the screen
+const glideStep = 0.03
+
+/*
+Glide takes the mouse to a place, from 0 to 1 across and down, a little at a
+time, as a hand would, with a picture at each step: in a recording the pointer
+is seen going there, where the operator's MouseTo would take it there between
+two pictures.
+*/
+func (r *Recording) Glide(toX float64, toY float64) {
+	fromX, fromY := r.op.MousePosition()
+	distance := max(abs(toX-fromX), abs(toY-fromY))
+	steps := int(distance/glideStep) + 1
+	for step := 1; step <= steps; step++ {
+		f := float64(step) / float64(steps)
+		r.op.MouseTo(fromX+(toX-fromX)*f, fromY+(toY-fromY)*f)
+		r.Capture(7)
+	}
+}
+
+func abs(f float64) float64 {
+	if f < 0 {
+		return -f
+	}
+	return f
+}
+
+// Press presses the button of the mouse, or lets go of it, and takes a
+// picture after
+func (r *Recording) Press(down bool) {
+	if down {
+		r.op.Hold()
+	} else {
+		r.op.Release()
+	}
+	r.Run(4, 2)
+}
+
+// Click presses and releases the button of the mouse, with pictures
+func (r *Recording) Click() {
+	r.Press(true)
+	r.Run(6, 2)
+	r.Press(false)
+	r.Run(10, 2)
+}
+
+// DoubleClick clicks twice in a row, close enough for a double click, with
+// pictures
+func (r *Recording) DoubleClick() {
+	r.Press(true)
+	r.Run(4, 2)
+	r.Press(false)
+	r.Run(2, 2)
+	r.Press(true)
+	r.Run(4, 2)
+	r.Press(false)
+}

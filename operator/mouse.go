@@ -66,3 +66,8 @@ func (o *Operator) DoubleClick() {
 	o.Run(doubleGapFrames)
 	o.Click()
 }
+
+// MousePosition is where the mouse is, from 0 to 1 across and down
+func (o *Operator) MousePosition() (x float64, y float64) {
+	return float64(o.mouse.x) / 65536, float64(o.mouse.y) / 65536
+}
