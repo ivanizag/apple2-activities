@@ -40,6 +40,9 @@ committed:
 go work init . ../izapple2
 ```
 
+[IZAPPLE2.md](IZAPPLE2.md) lists what the activities found in izapple2 that
+is not fixed yet, and what to change here when it is.
+
 What the activities need from the emulator goes into izapple2 itself: the
 library calls (`ScreenText`, `Peek`, `LoadDisk` and the rest) and its fixes.
 What only the pages need stays here. When izapple2 has the changes on its main
