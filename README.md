@@ -49,10 +49,12 @@ machine with a program of your own.
 
 ### [ProDOS](guides/prodos.md)
 
-<a href="guides/prodos.md"><img src="guides/images/prodos/catalog.png" width="320" alt="A ProDOS catalog in 80 columns"></a>
+<a href="guides/prodos.md"><img src="guides/images/prodos/disk-map.png" width="320" alt="The map of a diskette in Copy II Plus"></a>
 
 The operating system of the Apple II from 1984 on, in its version of 2023:
-the program selector it starts with, BASIC, and a catalog in 80 columns.
+the program selector it starts with, BASIC and a catalog in 80 columns, a
+folder and a text file on the RAM disk of the //e, and the diskette mapped
+file by file in Copy II Plus.
 
 ### [Apple II DeskTop](guides/desktop.md)
 

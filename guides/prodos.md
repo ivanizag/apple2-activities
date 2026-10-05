@@ -10,7 +10,10 @@ and Apple left it at version 2.0.3 in 1993. Enthusiasts took it up again in
 2016, and ProDOS 2.4 runs on every Apple II with 64 KB, from the first one.
 
 This page starts ProDOS 2.4.3 on an enhanced //e, chooses a program in the
-selector it starts with, and catalogues the disk from BASIC.
+selector it starts with, and catalogues the disk from BASIC. Then it makes a
+folder on the RAM disk of the //e, with a program that writes a text file
+and reads it back, and looks at the diskette with Copy II Plus, the utility
+everyone had.
 
 ## What you need
 
@@ -80,6 +83,79 @@ izapple2 -model prodos
    The diskette has 280 blocks, 140 KB, as under DOS 3.3. `CAT` gives a
    shorter list that fits in 40 columns, and `PREFIX` says which folder the
    commands work in.
+
+## The RAM disk
+
+4. **Type `HOME` and `CATALOG /RAM`.** `/RAM` is a disk that ProDOS makes in
+   the 64 KB of memory of the extended 80 column card: 127 blocks, as fast
+   as memory, and empty again when the machine is switched off.
+
+   ![The RAM disk](images/prodos/ram-disk.png)
+
+5. **Make a folder on it, and a program that writes a note there:**
+
+   ```
+   HOME
+   CREATE /RAM/NOTES
+   PREFIX /RAM/NOTES
+   10 D$ = CHR$ (4)
+   20 PRINT D$;"OPEN NOTE"
+   30 PRINT D$;"WRITE NOTE"
+   40 PRINT "MADE ON AN APPLE //E"
+   50 PRINT D$;"CLOSE NOTE"
+   60 PRINT D$;"OPEN NOTE"
+   70 PRINT D$;"READ NOTE"
+   80 INPUT A$
+   90 PRINT D$;"CLOSE NOTE"
+   100 PRINT "THE NOTE SAYS: ";A$
+   SAVE WRITE.NOTE
+   RUN
+   CATALOG
+   ```
+
+   `CREATE` makes the folder, and `PREFIX` makes it the one the commands
+   work in, so `NOTE` is `/RAM/NOTES/NOTE`. A program gives ProDOS a command
+   by printing it after Control-D, `CHR$(4)`: after `WRITE`, what it prints
+   goes to the file, and after `READ`, `INPUT` reads from the file. The
+   program writes its line, reads it back, and prints it.
+
+   ![The note written and read](images/prodos/note.png)
+
+   The catalog of the folder has the program, `BAS`, and the note, `TXT`, 21
+   bytes. There is no date: the machine has no clock.
+
+## Copy II Plus
+
+6. **Type `BYE`.** BASIC.SYSTEM ends, and Bitsy Bye comes back, on the disk
+   of the prefix, `/RAM`, with the folder on it.
+
+   ![Bitsy Bye on the RAM disk](images/prodos/bye.png)
+
+7. **Press Tab** to go to the next disk, the diskette in slot 6, and **choose
+   `COPYIIPLUS.8.4`**, the fifth. **Press Escape** when it asks for the
+   date. Copy II Plus, by Central Point Software, copied, catalogued, renamed
+   and repaired files and disks, of DOS 3.3 and of ProDOS, and its *Copy*
+   still has the bit copies, for disks protected against copying.
+
+   ![Copy II Plus](images/prodos/copy-ii-plus.png)
+
+8. **Choose *Disk Map*, with the arrows and Return, and Return again** for
+   the diskette in slot 6, drive 1. It reads the diskette and draws its
+   blocks: a column for each of its 35 tracks, numbered in hexadecimal, a
+   row for each of the 16 sectors of a track, and a star where a sector is
+   used.
+
+   ![The map of the diskette](images/prodos/disk-map.png)
+
+   The diskette is nearly full, as the catalog said: 26 blocks free.
+
+9. **Press Return, and the right arrow, a file at a time.** The map shows
+   where each file is on the diskette.
+
+   ![The map of each file](images/prodos/file-map.gif)
+
+   A file of ProDOS is in blocks wherever there is room, not always next to
+   each other, and the map shows when it is in pieces.
 
 ## What next
 
