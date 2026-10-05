@@ -11,7 +11,9 @@ BASIC on a diskette. The Apple II could then run the programs written for
 CP/M.
 
 This page starts CP/M on an Apple \]\[+ with the SoftCard, looks at its
-disk, and writes a program in Microsoft BASIC-80.
+disk, writes a program in Microsoft BASIC-80 and saves it among the files of
+CP/M, and draws in high resolution from GBASIC, the BASIC-80 of the SoftCard
+with the graphics of the Apple II.
 
 ## What you need
 
@@ -96,7 +98,41 @@ izapple2 -model cpm
    the same language with more, as `PRINT USING`, which lines up the numbers
    in columns with the decimals given.
 
-5. **Type `SYSTEM`** to leave BASIC and go back to CP/M.
+5. **Type `SAVE "ROOTS",A`**, and then **`SYSTEM`** to leave BASIC and go
+   back to CP/M. `,A` saves the program as plain text, not in the compact
+   form BASIC keeps it in, so that any program of CP/M can read it. **Type
+   `DIR` and `TYPE ROOTS.BAS`.**
+
+   ![The program among the files](images/cpm/saved.png)
+
+   `ROOTS.BAS` is on the disk now, with the programs of CP/M, and `TYPE`
+   shows it as it was typed.
+
+## Graphics from the Z80
+
+6. **Type `GBASIC`**, the same BASIC-80 with the graphics of the Apple II
+   added, and the program:
+
+   ```basic
+   10 HGR : HCOLOR = 3
+   20 FOR I = 0 TO 159 STEP 6
+   30 HPLOT 0,I TO I*1.75,159
+   40 HPLOT 279,159-I TO 279-I*1.75,0
+   50 NEXT
+   RUN
+   ```
+
+   Press F6 in izapple2 for colour.
+
+   ![Lines drawn from GBASIC](images/cpm/gbasic.gif)
+
+   `HGR`, `HCOLOR` and `HPLOT` are the words of Applesoft for the high
+   resolution graphics, 280 dots across, here run by the Z80. The lines are
+   white, and the colours at their edges are those of a colour television
+   showing white dots next to black ones. GBASIC leaves 17,393 bytes for
+   programs, where MBASIC left 26,483.
+
+7. **Type `SYSTEM`** to go back to CP/M.
 
 ## What next
 

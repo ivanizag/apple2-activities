@@ -117,7 +117,8 @@ words used, new ones defined, and the dictionary.
 <a href="guides/cpm.md"><img src="guides/images/cpm/dir.png" width="320" alt="The disk of CP/M"></a>
 
 A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
-assembler source, and Microsoft BASIC-80.
+assembler source, a program in Microsoft BASIC-80 saved among its files, and
+the high resolution graphics drawn from GBASIC.
 
 ## Play
 

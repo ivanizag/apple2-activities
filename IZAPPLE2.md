@@ -137,6 +137,15 @@ counts lit dots instead.
 
 **Here, once fixed:** wait for the text of each page.
 
+### CP/M cannot format a blank diskette
+
+`FORMAT` of the CP/M 2.20B diskette of the SoftCard, asked for drive B with a
+blank `.dsk` there, all zeros, answers `DISK I/O ERROR` after `CONTINUE
+(Y/N)? Y`. DOS 3.3 initializes the same blank diskette with `INIT`.
+
+**Here, once fixed:** [cpm.md](guides/cpm.md) could add a second drive, a
+diskette formatted by CP/M, and files copied to it with `PIP`.
+
 ### The headless frontend crashes when the machine can't be built
 
 `frontend/headless/main.go` prints the error of `CreateConfiguredApple` and
