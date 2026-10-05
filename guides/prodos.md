@@ -46,8 +46,8 @@ izapple2 -model prodos
    program, `B` a binary file, `T` text.
 
 2. **Press the down arrow three times**, to `BASIC.SYSTEM`, and **Return**.
-   BASIC.SYSTEM is Applesoft with the commands of ProDOS added. It takes a
-   while to load in izapple2, and then it gives the prompt of Applesoft.
+   BASIC.SYSTEM is Applesoft with the commands of ProDOS added. It loads,
+   and gives the prompt of Applesoft.
 
    ![ProDOS BASIC](images/prodos/basic.png)
 

@@ -102,8 +102,8 @@ step, with what the machine showed on the way. Its parts are:
 - **Use a GIF when the movement is the point**, typing, a program running, a
   game; a PNG when the result is. The first and the last frames must both be
   worth looking at.
-- **Real speed by default.** Speed up long waits with `Faster`, the start of a
-  diskette for one, and say so in the text. Stills are capped at
+- **Real speed by default.** Speed up only waits that would be tedious, with
+  `Faster`, and say so in the text, with the real time. Stills are capped at
   `LongestStill`.
 - **Determinism is not complete yet**: the flashing cursor follows the time
   of the host, so pictures can differ from one run to the next in the cursor.

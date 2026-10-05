@@ -67,9 +67,9 @@ izapple2 -model 2plus my-disk.dsk
 1. **Start izapple2** with the first command. The machine starts from
    drive 1: it writes `APPLE ][` at the top of the screen and the drive
    reads DOS into memory. Then the greeting of the System Master comes up,
-   and it tells you it is loading Integer BASIC, the BASIC of the first Apple II, into memory, so that the
-   programs written in it run on an Apple \]\[+ too. The recording is ten times
-   faster than the machine.
+   and it tells you it is loading Integer BASIC, the BASIC of the first
+   Apple II, into memory, so that the programs written in it run on an
+   Apple \]\[+ too.
 
    ![The System Master starting](images/dos33/boot.gif)
 

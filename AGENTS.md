@@ -32,9 +32,9 @@ pictures of the pages they run.
 
 ## Working with izapple2
 
-The generators need izapple2 changes that may not be released yet. To build
-against a local copy, next to this one, make a workspace, which is not
-committed:
+`go.mod` names a version of izapple2's master. To work on izapple2 and the
+activities together, against a local copy next to this one, make a
+workspace, which is not committed:
 
 ```bash
 go work init . ../izapple2
@@ -45,8 +45,8 @@ is not fixed yet, and what to change here when it is.
 
 What the activities need from the emulator goes into izapple2 itself: the
 library calls (`ScreenText`, `Peek`, `LoadDisk` and the rest) and its fixes.
-What only the pages need stays here. When izapple2 has the changes on its main
-branch, update `go.mod` with `GOWORK=off go get github.com/ivanizag/izapple2@master`.
+What only the pages need stays here. When izapple2 has the changes on its master,
+update `go.mod` with `GOWORK=off go get github.com/ivanizag/izapple2@master`.
 
 ## Code style
 

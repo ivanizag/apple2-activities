@@ -4,52 +4,18 @@ What making the activities found in [izapple2](https://github.com/ivanizag/izapp
 the state of each, and what to change here when it is fixed. When one is done
 there and done here, take it out of this list.
 
-## Changes waiting to reach izapple2's master
-
-### The library calls the operator uses
-
-`ScreenText`, `Peek`, `GetPC` and `LoadDisk` on `Apple2`, in `inspect.go`, and
-the text of a Videx card read only while it is shown. Branch `activities-api`.
-
-**Here, once on master:** `GOWORK=off go get github.com/ivanizag/izapple2@master`,
-so that `go.mod` names a version that has them and the repository builds
-without a `go.work`. Drop the workspace paragraph of [AGENTS.md](AGENTS.md)
-if nothing else needs it.
+## Fixed on master, not released
 
 ### INIT of a blank diskette hangs the emulator
 
 `nibDecodeTrack` in `storage/fileNib.go` went around the track forever when
 an address prolog started on its last bytes, which a track being written can
-have. Fixed on `activities-api`, with a test. It is in the released izapple2
-too: a reader following [Life with DOS 3.3](guides/dos33.md) with a release
-from before the fix sees the machine stop at `INIT HELLO,D2`.
+have. Fixed on master, with a test, but the releases of izapple2 before the
+fix still have it: a reader following [Life with DOS 3.3](guides/dos33.md)
+with one sees the machine stop at `INIT HELLO,D2`.
 
 **Here, once released:** say in [dos33.md](guides/dos33.md) which release of
 izapple2 the page needs, at least.
-
-### The Disk II is seven times too slow with DSK, PO and NIB images
-
-DOS checks whether the disk still turns at the start of each access, and
-izapple2 stopped the motor at once and gave a new nibble on every read, so
-DOS waited for the motor to come up to speed on every access: 36 million
-cycles to boot DOS 3.3 instead of about 5. WOZ images, on the sequencer card,
-were not affected. Branch `disk-speed`, with tests.
-
-**Here, once on master:** make the pictures again and look at them, as the
-timing of everything that reads a 5¼ diskette changes:
-
-- [dos33.md](guides/dos33.md): the boot is recorded `Faster(10)` and the page
-  says it is ten times faster; see if real speed is fine now, and fix the
-  text.
-- [prodos.md](guides/prodos.md): "it takes a while to load in izapple2" for
-  BASIC.SYSTEM, about forty seconds now; reword.
-- [pascal.md](guides/pascal.md), [cpm.md](guides/cpm.md),
-  [mockingboard.md](guides/mockingboard.md) (its title is taken at a fixed
-  110 seconds), [ultraterm.md](guides/ultraterm.md) and
-  [card-cat.md](guides/card-cat.md): check the pictures still show what the
-  text says.
-- [lode-runner.md](guides/lode-runner.md) is a WOZ and takes its pictures at
-  fixed times; check it is unchanged.
 
 ## Not fixed
 

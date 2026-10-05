@@ -21,16 +21,16 @@ func dos33Screenshots(t *testing.T) {
 	myDisk := disk(t, "blank.dsk")
 	o := start(t, "2plus", nil, disk(t, "dos33-master.dsk"), myDisk)
 
-	// Started, recorded at ten times the speed until the prompt
-	booting := pictures.Record(o).Faster(10)
+	// Started, recorded until the prompt
+	booting := pictures.Record(o)
 	booting.Capture(20)
 	for !o.HasText("COPYRIGHT") {
-		if o.Frames() > 200*60 {
+		if o.Frames() > 60*60 {
 			t.Fatal("the System Master did not start")
 		}
-		booting.Run(60, 30)
+		booting.Run(12, 6)
 	}
-	booting.Run(300, 30)
+	booting.Run(60, 6)
 	must(t, pictures.SaveRecording(booting, "boot", 300))
 
 	// The catalog, a screen at a time
