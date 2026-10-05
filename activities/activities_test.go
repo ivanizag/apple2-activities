@@ -19,4 +19,5 @@ func TestActivities(t *testing.T) {
 	}
 	t.Run("switch-on", switchOnScreenshots)
 	t.Run("dos33", dos33Screenshots)
+	t.Run("paddle-game", paddleScreenshots)
 }

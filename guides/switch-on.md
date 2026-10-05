@@ -89,10 +89,12 @@ downloaded.
 
    ![A loop stopped with Control-C](images/switch-on/break.gif)
 
-   A program that does not look at the keyboard can't be stopped with
-   Control-C. The key above the Return key of the Apple ][+, **Reset**, stops
-   anything; in izapple2 it is Control-F2. Applesoft keeps the program in
-   memory through a reset: type `LIST` and it is still there.
+   Applesoft looks for Control-C between one statement and the next, so it
+   stops any program of its own, even one that never reads the keyboard. A
+   program in machine code is another matter: the key above the Return key of
+   the Apple ][+, **Reset**, stops anything; in izapple2 it is Control-F2.
+   Applesoft keeps the program in memory through a reset: type `LIST` and it
+   is still there.
 
    Nothing of this is kept when the machine is switched off. To keep a
    program, the Apple ][+ needs a cassette recorder or a disk drive.

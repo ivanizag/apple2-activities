@@ -28,6 +28,16 @@ Two Disk II drives and the System Master: the catalog of a diskette, the
 program that greets you, and a blank diskette made into one that starts the
 machine with a program of your own.
 
+## Making things
+
+### [A game in Applesoft](guides/paddle-game.md)
+
+<a href="guides/paddle-game.md"><img src="guides/images/paddle-game/game-over.png" width="320" alt="A bat and a ball in low resolution graphics"></a>
+
+A bat on a paddle and a ball, in the low resolution colour graphics of the
+Apple ][+: typed in as the listings of the magazines were, and played with the
+mouse as the paddle.
+
 ## The disks
 
 ```bash
