@@ -63,6 +63,32 @@ func deskTopScreenshots(t *testing.T) {
 	must(t, o.Key("Escape"))
 	o.Run(2 * 60)
 
+	// The folder of samples, and a picture in it opened, each chosen by
+	// typing the start of its name and opened with Open Apple and O
+	openByName(t, o, "SAMPLE")
+	must(t, pictures.Screenshot(o, "sample-media"))
+	openByName(t, o, "MONARCH")
+	o.Run(3 * 60)
+	must(t, pictures.Screenshot(o, "monarch"))
+	must(t, o.Key("Escape"))
+	o.Run(5 * 60)
+	closeWindow(t, o)
+
+	// The screen savers, from the Apple menu, and the flying toasters until
+	// a key is pressed
+	chooseFromAppleMenu(o, 64)
+	must(t, pictures.Screenshot(o, "screen-savers"))
+	must(t, o.Type("FLY"))
+	o.Run(30)
+	toasters := pictures.Record(o)
+	toasters.Capture(50)
+	appleKey(t, o, "O")
+	toasters.Run(12*60, 6)
+	must(t, pictures.SaveRecording(toasters, "toasters", 100))
+	must(t, o.Key("Escape"))
+	o.Run(3 * 60)
+	closeWindow(t, o)
+
 	// The Calculator, and twelve times three worked out on its keys
 	chooseFromAppleMenu(o, 84)
 	calculating := pictures.Record(o)
@@ -75,6 +101,31 @@ func deskTopScreenshots(t *testing.T) {
 	must(t, pictures.SaveRecording(calculating, "calculator", 300))
 }
 
+// closeWindow closes the front window with Open Apple and W
+func closeWindow(t *testing.T, o *operator.Operator) {
+	t.Helper()
+	appleKey(t, o, "W")
+	o.Run(3 * 60)
+}
+
+// openByName selects an icon of the front window by typing the start of its
+// name, and opens it with Open Apple and O
+func openByName(t *testing.T, o *operator.Operator, name string) {
+	t.Helper()
+	must(t, o.Type(name))
+	o.Run(30)
+	appleKey(t, o, "O")
+	o.Run(5 * 60)
+}
+
+// appleKey types a key with the Open Apple key, button 0, held down
+func appleKey(t *testing.T, o *operator.Operator, key string) {
+	t.Helper()
+	o.HoldButton(0)
+	o.Run(5)
+	must(t, o.Type(key))
+	o.ReleaseButton(0)
+}
 // The screen of Apple II DeskTop, in the dots of the 80 column graphics
 const (
 	deskTopWidth  = 560
