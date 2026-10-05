@@ -12,6 +12,14 @@ izapple2; the rest use disks from public archives, which
 
 ## First steps
 
+### [The Apple \]\[ of 1977](guides/apple-ii.md)
+
+<a href="guides/apple-ii.md"><img src="guides/images/apple-ii/colours.png" width="320" alt="The sixteen colours of Integer BASIC"></a>
+
+Wozniak's machine and its ROM: the Monitor, machine code written a line at a
+time in the Mini-Assembler, and Integer BASIC, with its whole numbers and its
+sixteen colours.
+
 ### [Switch on an Apple \]\[+](guides/switch-on.md)
 
 <a href="guides/switch-on.md"><img src="guides/images/switch-on/program.png" width="320" alt="A program in Applesoft BASIC"></a>
@@ -45,6 +53,31 @@ Calculator.
 A bat on a paddle and a ball, in the low resolution colour graphics of the
 Apple \]\[+: typed in as the listings of the magazines were, and played with the
 mouse as the paddle.
+
+### [Apple Pascal](guides/pascal.md)
+
+<a href="guides/pascal.md"><img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal"></a>
+
+The UCSD p-System on an Apple //e with four drives: the Filer, the editor, the
+compiler, and a program that draws with the turtle.
+
+## Other systems
+
+### [CP/M on the Z80 SoftCard](guides/cpm.md)
+
+<a href="guides/cpm.md"><img src="guides/images/cpm/dir.png" width="320" alt="The disk of CP/M"></a>
+
+A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
+assembler source, and Microsoft BASIC-80.
+
+## Play
+
+### [Lode Runner](guides/lode-runner.md)
+
+<a href="guides/lode-runner.md"><img src="guides/images/lode-runner/title.png" width="320" alt="Lode Runner"></a>
+
+Broderbund's game of 1983, from a copy of its original disk: the title, the
+demonstration that plays itself, and a game started.
 
 ## The disks
 
