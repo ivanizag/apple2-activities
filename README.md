@@ -82,6 +82,14 @@ Apple Logo on an Apple \]\[+: words and lists, the turtle moved by hand,
 and procedures that teach it new words, a flower of squares and a spiral
 that calls itself, saved on the diskette.
 
+### [Printing](guides/printing.md)
+
+<a href="guides/printing.md"><img src="guides/images/printing/printing.png" width="320" alt="A calendar printed"></a>
+
+A program typed into an Apple \]\[+ with a parallel printer card: its
+listing printed with `PR#1`, and a calendar of 1977 three months across,
+wider than the screen, as it comes out on paper.
+
 ### [Apple Pascal](guides/pascal.md)
 
 <a href="guides/pascal.md"><img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal"></a>

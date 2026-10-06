@@ -1,0 +1,22 @@
+]LIST 10,90
+
+10  REM  A CALENDAR OF A YEAR, FO
+     R THE PRINTER
+20  DIM D(12),N$(12),R$(3,6)
+30  FOR M = 1 TO 12: READ N$(M),D
+     (M): NEXT M
+40 B$ = "                     "
+50  INPUT "YEAR? ";Y
+60  IF Y / 4 =  INT (Y / 4) AND (
+     Y / 100 <  >  INT (Y / 100) OR
+     Y / 400 =  INT (Y / 400)) THEN
+     D(2) = 29
+70  REM  THE DAY OF THE WEEK OF J
+     ANUARY 1, 0 FOR SUNDAY
+80 Z = Y - 1:W = Z +  INT (Z / 4)
+      -  INT (Z / 100) +  INT (Z /
+     400) + 1
+90 W = W -  INT (W / 7) * 7
+
+
+]PR#0
