@@ -143,6 +143,14 @@ the high resolution graphics drawn from GBASIC.
 
 ## Play
 
+### [Karateka](guides/karateka.md)
+
+<a href="guides/karateka.md"><img src="guides/images/karateka/castle.png" width="320" alt="The fortress of Akuma"></a>
+
+Jordan Mechner's game of 1984, from its original disk: its titles and
+prologue told like a film, Akuma and the princess, and the karateka up the
+cliff and past the first guard, played with the joystick.
+
 ### [Lode Runner](guides/lode-runner.md)
 
 <a href="guides/lode-runner.md"><img src="guides/images/lode-runner/title.png" width="320" alt="Lode Runner"></a>
