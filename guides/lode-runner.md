@@ -10,7 +10,8 @@ after a while. It came with 150 levels and an editor to make more, and it
 went on to most computers and consoles of the eighties.
 
 This page starts Lode Runner from a copy of its original disk, watches the
-demonstration that plays itself, and starts a game.
+demonstration that plays itself, and plays the start of a game from the
+keyboard.
 
 ## What you need
 
@@ -75,9 +76,22 @@ izapple2 -model 2plus disks/lode-runner.woz
 
    ![A game started](images/lode-runner/game.png)
 
-   Lode Runner is played with a joystick, or with the keyboard; its manual
-   has the keys. Without a joystick connected, izapple2 makes the mouse of
-   your computer the joystick of the Apple II.
+   Lode Runner is played with a joystick, or with the keyboard. Without a
+   joystick connected, izapple2 makes the mouse of your computer the
+   joystick of the Apple II.
+
+4. **Press Control-K** to play with the keyboard, then **L** to run right,
+   **I**, when he is at the ladder, to climb, and **J** to run left. One key
+   sets the runner going, and he goes on until the next key or a wall.
+
+   ![Two pieces of gold, and caught](images/lode-runner/play.gif)
+
+   He takes the gold at his right, 250 points, climbs the ladder, and takes
+   the next piece on the way left, but a guard is there, and catches him.
+   The screen closes in a circle, and the level starts again, with one
+   runner less, `MEN 004`, and the score kept. The guards are not fooled for
+   long: the way past them is to dig a hole in the bricks they walk on, and
+   go on while they climb out.
 
 ## What next
 

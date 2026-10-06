@@ -59,8 +59,8 @@ the program selector it starts with, BASIC, and a catalog in 80 columns.
 <a href="guides/desktop.md"><img src="guides/images/desktop/about.png" width="320" alt="About This Apple II"></a>
 
 The Apple II with a mouse, windows and icons: a disk opened with a double
-click, a file read, the machine asked what it has in its slots, and the
-Calculator.
+click, a file read, the machine asked what it has in its slots, a picture in
+double high resolution, the flying toasters, and the Calculator.
 
 ## Making things
 
@@ -76,8 +76,18 @@ mouse as the paddle.
 
 <a href="guides/pascal.md"><img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal"></a>
 
-The UCSD p-System on an Apple //e with four drives: the Filer, the editor, the
+The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
+
+## Work
+
+### [VisiCalc](guides/visicalc.md)
+
+<a href="guides/visicalc.md"><img src="guides/images/visicalc/share.png" width="320" alt="A budget in VisiCalc"></a>
+
+The first spreadsheet, from its original disk of 13 sectors: a household
+budget typed in, totalled, a formula replicated down a column, and the rent
+changed to see the whole sheet worked out again.
 
 ## Cards
 
@@ -106,10 +116,11 @@ full, and the ROM of a card read by it.
 
 ### [Forth in ROM](guides/forth.md)
 
-<a href="guides/forth.md"><img src="guides/images/forth/vlist.png" width="320" alt="The dictionary of Forth"></a>
+<a href="guides/forth.md"><img src="guides/images/forth/bars.gif" width="320" alt="The sixteen colours drawn by Forth"></a>
 
 An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
-words used, new ones defined, and the dictionary.
+words used and new ones defined, loops and decisions, and the machine
+underneath, its memory, its speaker and its graphics, driven from Forth.
 
 
 ### [CP/M on the Z80 SoftCard](guides/cpm.md)
@@ -117,7 +128,8 @@ words used, new ones defined, and the dictionary.
 <a href="guides/cpm.md"><img src="guides/images/cpm/dir.png" width="320" alt="The disk of CP/M"></a>
 
 A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
-assembler source, and Microsoft BASIC-80.
+assembler source, a program in Microsoft BASIC-80 saved among its files, and
+the high resolution graphics drawn from GBASIC.
 
 ## Play
 
@@ -126,7 +138,8 @@ assembler source, and Microsoft BASIC-80.
 <a href="guides/lode-runner.md"><img src="guides/images/lode-runner/title.png" width="320" alt="Lode Runner"></a>
 
 Broderbund's game of 1983, from a copy of its original disk: the title, the
-demonstration that plays itself, and a game started.
+demonstration that plays itself, and a game played from the keyboard, until
+a guard catches the runner.
 
 ### [Total Replay](guides/total-replay.md)
 
