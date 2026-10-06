@@ -194,3 +194,13 @@ func typeListing(o *operator.Operator, path string) error {
 	}
 	return nil
 }
+
+// typeText types a program of the guides whole, as one text, its lines ended
+// with Return, into an editor
+func typeText(o *operator.Operator, path string) error {
+	text, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	return o.Type(string(text))
+}

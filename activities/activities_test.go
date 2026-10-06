@@ -38,6 +38,7 @@ var activities = []struct {
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
+	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -75,6 +76,7 @@ var listings = []struct {
 	guide, listing string
 }{
 	{"ultraterm", ultratermModes},
+	{"pascal-2048", game2048Listing},
 }
 
 /*
