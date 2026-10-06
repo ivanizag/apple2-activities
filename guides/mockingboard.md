@@ -15,10 +15,9 @@ Mockingboard Sound/Speech I, and listens to its sound effects.
 
 ## What you need
 
-**`mockingboard-demo.dsk`**, the *Mockingboard Sound and Speech I Demo Disk*
-of 1982, from the
-[Internet Archive](https://archive.org/details/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982):
-download its `.dsk` file and rename it `mockingboard-demo.dsk`.
+**`Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk`**,
+the *Mockingboard Sound and Speech I Demo Disk* of 1982, from the
+[Internet Archive](https://archive.org/details/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982).
 `./fetch-disks.sh` in this repository downloads it into `disks/`.
 
 ## The machine
@@ -36,7 +35,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s4 mockingboard \
-    -s6 diskii,disk1=disks/mockingboard-demo.dsk
+    -s6 diskii,disk1=disks/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of
@@ -46,7 +45,7 @@ The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus -s4 mockingboard disks/mockingboard-demo.dsk
+izapple2 -model 2plus -s4 mockingboard disks/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk
 ```
 
 ## Start it

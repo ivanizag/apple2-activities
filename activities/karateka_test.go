@@ -12,7 +12,7 @@ import (
 const karatekaMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -s6 diskii,disk1=disks/karateka.woz`
+    -s6 diskii,disk1=disks/Karateka.woz`
 
 /*
 karatekaScreenshots is Karateka, Jordan Mechner's game of 1984, from its

@@ -12,7 +12,7 @@ const appleWorksMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s7 smartport,image1=disks/appleworks-3.0.2mg`
+    -s7 smartport,image1=disks/a2_AppleWorks_3.0_8-bit.2mg`
 
 /*
 appleWorksScreenshots is AppleWorks 3.0 on an enhanced Apple //e, its three

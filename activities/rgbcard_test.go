@@ -14,7 +14,7 @@ const rgbCardMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
-    -s6 diskii,disk1=disks/video7-rgb-demo.dsk`
+    -s6 'diskii,disk1="disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"'`
 
 /*
 rgbCardScreenshots is the demonstration disk of the Video-7 RGB card on an

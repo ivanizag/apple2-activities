@@ -18,11 +18,10 @@ Calculator.
 
 ## What you need
 
-**`a2desktop-1.4.2mg`**, the 800 KB disk of Apple II DeskTop 1.4, from the
-[releases of the project](https://github.com/a2stuff/a2d/releases/tag/v1.4):
-download *A2DeskTop-1.4-en.zip*, take *A2DeskTop-1.4-en_800k.2mg* out of it
-and rename it `a2desktop-1.4.2mg`. `./fetch-disks.sh` in this repository
-downloads it into `disks/` and checks it.
+**`A2DeskTop-1.4-en_800k.2mg`**, the 800 KB disk of Apple II DeskTop 1.4,
+from the [releases of the project](https://github.com/a2stuff/a2d/releases/tag/v1.4):
+download *A2DeskTop-1.4-en.zip* and take it out of it. `./fetch-disks.sh` in
+this repository downloads it into `disks/` and checks it.
 
 ## The machine
 
@@ -44,7 +43,7 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
     -s4 mouse \
-    -s7 smartport,image1=disks/a2desktop-1.4.2mg
+    -s7 smartport,image1=disks/A2DeskTop-1.4-en_800k.2mg
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of

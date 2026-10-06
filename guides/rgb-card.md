@@ -18,11 +18,11 @@ has and the eight the card adds.
 
 ## What you need
 
-**`video7-rgb-demo.dsk`**, the *Video-7 Apple II RGB Demo* of 1984, on the
-[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/):
-download *Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk* and rename it
-`video7-rgb-demo.dsk`. `./fetch-disks.sh` in this repository downloads it
-into `disks/` and checks it.
+**`Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk`**, the demonstration
+disk of the card, of 1984, on the
+[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/).
+`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
+it.
 
 ## The machine
 
@@ -41,7 +41,7 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
-    -s6 diskii,disk1=disks/video7-rgb-demo.dsk
+    -s6 'diskii,disk1="disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"'
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of
@@ -52,7 +52,7 @@ machine with `-rgb`, and 8 MB more of memory on a RAMWorks card, a No-Slot
 Clock, a VidHD card, a FASTChip accelerator and a Mockingboard more:
 
 ```bash
-izapple2 -rgb disks/video7-rgb-demo.dsk
+izapple2 -rgb "disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"
 ```
 
 ## The demonstration

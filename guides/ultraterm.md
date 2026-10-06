@@ -16,12 +16,10 @@ puts the card in each of its modes, one after the other.
 
 ## What you need
 
-**`ultraterm-utilities.dsk`**, the disk of utilities of the card, on the
-[Asimov
-archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/):
-download *Videx Ultraterm Utilities disk.dsk* and rename it
-`ultraterm-utilities.dsk`. `./fetch-disks.sh` in this repository downloads it
-into `disks/` and checks it.
+**`Videx Ultraterm Utilities disk.dsk`**, the disk of utilities of the card,
+on the [Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/).
+`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
+it.
 
 ## The machine
 
@@ -38,7 +36,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s3 videxultraterm \
-    -s6 diskii,disk1=disks/ultraterm-utilities.dsk
+    -s6 'diskii,disk1=disks/Videx Ultraterm Utilities disk.dsk'
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of

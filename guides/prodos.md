@@ -17,10 +17,9 @@ everyone had.
 
 ## What you need
 
-**`prodos-2.4.3.po`**, ProDOS 2.4.3, from [its
-page](https://prodos8.com/releases/prodos-243/): download *ProDOS_2_4_3.po*
-and rename it `prodos-2.4.3.po`. `./fetch-disks.sh` in this repository
-downloads it into `disks/` and checks it.
+**`ProDOS_2_4_3.po`**, ProDOS 2.4.3, from
+[its page](https://prodos8.com/releases/prodos-243/). `./fetch-disks.sh` in
+this repository downloads it into `disks/` and checks it.
 
 ## The machine
 
@@ -37,7 +36,7 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s6 diskii,disk1=disks/prodos-2.4.3.po
+    -s6 diskii,disk1=disks/ProDOS_2_4_3.po
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of

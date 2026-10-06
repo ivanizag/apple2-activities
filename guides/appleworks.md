@@ -15,9 +15,8 @@ it, keep a list of friends in the data base, and save the three.
 
 ## What you need
 
-**`appleworks-3.0.2mg`**, AppleWorks 3.0 on a disk of 800 KB, from the
-[Internet Archive](https://archive.org/details/a2_AppleWorks_3.0_8-bit):
-download *a2_AppleWorks_3.0_8-bit.2mg* and rename it `appleworks-3.0.2mg`.
+**`a2_AppleWorks_3.0_8-bit.2mg`**, AppleWorks 3.0 on a disk of 800 KB, from
+the [Internet Archive](https://archive.org/details/a2_AppleWorks_3.0_8-bit).
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it. izapple2 writes the files the page saves into it.
 
@@ -37,7 +36,7 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s7 smartport,image1=disks/appleworks-3.0.2mg
+    -s7 smartport,image1=disks/a2_AppleWorks_3.0_8-bit.2mg
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of
@@ -49,7 +48,7 @@ VidHD card, a FASTChip accelerator, a Mockingboard and a Disk II controller
 more:
 
 ```bash
-izapple2 disks/appleworks-3.0.2mg
+izapple2 disks/a2_AppleWorks_3.0_8-bit.2mg
 ```
 
 ## The main menu
