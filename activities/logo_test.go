@@ -22,7 +22,6 @@ saved on the diskette.
 */
 func logoScreenshots(t *testing.T) {
 	pictures := newAlbum("logo", album.Green)
-	color := pictures.On(album.Color)
 	o := start(t, logoMachine, nil)
 
 	// Started, waiting at its prompt, ?
@@ -41,12 +40,12 @@ func logoScreenshots(t *testing.T) {
 	must(t, pictures.Screenshot(o, "words"))
 
 	// The turtle, moved by hand
-	turtle := color.Record(o)
+	turtle := pictures.Record(o)
 	must(t, turtle.TypeLines("FORWARD 60"))
 	turtle.Run(30, 6)
 	must(t, turtle.TypeLines("RIGHT 90", "FORWARD 60", "RIGHT 135", "FORWARD 85"))
 	turtle.Run(60, 6)
-	must(t, color.SaveRecording(turtle, "turtle", 300))
+	must(t, pictures.SaveRecording(turtle, "turtle", 300))
 
 	// A procedure of its own, with an input
 	must(t, o.TypeLines(
@@ -59,7 +58,7 @@ func logoScreenshots(t *testing.T) {
 	))
 	must(t, o.WaitForText("SQUARE 70\n?", 30))
 	must(t, o.WaitForPrompt(10))
-	must(t, color.Screenshot(o, "squares"))
+	must(t, pictures.Screenshot(o, "squares"))
 	must(t, o.TypeLines("TEXTSCREEN"))
 	must(t, o.WaitForPrompt(10))
 	must(t, pictures.Screenshot(o, "procedure"))
@@ -72,12 +71,12 @@ func logoScreenshots(t *testing.T) {
 		"END",
 	))
 	must(t, o.WaitForPrompt(10))
-	flower := color.Record(o)
+	flower := pictures.Record(o)
 	must(t, flower.TypeLines("FLOWER"))
 	drawUntil(t, o, flower, "FLOWER\n?")
-	must(t, color.SaveRecording(flower, "flower", 300))
+	must(t, pictures.SaveRecording(flower, "flower", 300))
 
-	// A procedure that calls itself, in blue
+	// A procedure that calls itself
 	must(t, o.TypeLines(
 		"CLEARSCREEN",
 		"TO SPIRAL :SIDE",
@@ -86,13 +85,12 @@ func logoScreenshots(t *testing.T) {
 		"RIGHT 121",
 		"SPIRAL :SIDE + 3",
 		"END",
-		"SETPC 5",
 	))
 	must(t, o.WaitForPrompt(10))
-	spiral := color.Record(o)
+	spiral := pictures.Record(o)
 	must(t, spiral.TypeLines("SPIRAL 1"))
 	drawUntil(t, o, spiral, "SPIRAL 1\n?")
-	must(t, color.SaveRecording(spiral, "spiral", 300))
+	must(t, pictures.SaveRecording(spiral, "spiral", 300))
 
 	// The procedures listed, saved, and the diskette catalogued
 	must(t, o.TypeLines("TEXTSCREEN", "POTS", `SAVE "SHAPES`))

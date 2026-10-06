@@ -73,7 +73,7 @@ izapple2 -model 2plus disks/apple-logo.dsk
 ## The turtle
 
 3. **Move the turtle:** `FORWARD 60`, `RIGHT 90`, `FORWARD 60`, `RIGHT 135`
-   and `FORWARD 85`. Press F6 in izapple2 for colour.
+   and `FORWARD 85`.
 
    ![The turtle moved by hand](images/logo/turtle.gif)
 
@@ -120,7 +120,7 @@ izapple2 -model 2plus disks/apple-logo.dsk
    each turned 10 degrees from the one before, the whole turn. It takes
    about fifteen seconds; the recording is at the speed of the machine.
 
-6. **Make a spiral that calls itself**, and draw it in blue:
+6. **Make a spiral that calls itself:**
 
    ```logo
    CLEARSCREEN
@@ -130,7 +130,6 @@ izapple2 -model 2plus disks/apple-logo.dsk
    RIGHT 121
    SPIRAL :SIDE + 3
    END
-   SETPC 5
    SPIRAL 1
    ```
 
@@ -139,8 +138,7 @@ izapple2 -model 2plus disks/apple-logo.dsk
    `SPIRAL` draws one side, turns, and calls `SPIRAL` again with a longer
    side, until `IF` finds it longer than 120 and `STOP`s. Turning 121
    degrees, a little more than a third of a turn, turns each triangle a
-   little from the one before. `SETPC` sets the
-   colour of the pen, 5 is blue.
+   little from the one before.
 
 ## Saved on the diskette
 
