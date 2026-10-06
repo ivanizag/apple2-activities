@@ -12,6 +12,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"strings"
 	"testing"
 )
@@ -23,30 +24,30 @@ var activities = []struct {
 	machines []string
 	pictures func(t *testing.T)
 }{
-	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
-	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
-	{"paddle-game", []string{paddleMachine}, paddleScreenshots},
-	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
-	{"pascal", []string{pascalMachine}, pascalScreenshots},
-	{"cpm", []string{cpmMachine}, cpmScreenshots},
-	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
-	{"mockingboard", []string{mockingboardMachine}, mockingboardScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
+	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
+	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
-	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
-	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
+	{"cpm", []string{cpmMachine}, cpmScreenshots},
+	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
+	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
-	{"prodos", []string{prodosMachine}, prodosScreenshots},
-	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
-	{"logo", []string{logoMachine}, logoScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
+	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
+	{"logo", []string{logoMachine}, logoScreenshots},
+	{"merlin", []string{merlinMachine}, merlinScreenshots},
+	{"mockingboard", []string{mockingboardMachine}, mockingboardScreenshots},
+	{"paddle-game", []string{paddleMachine}, paddleScreenshots},
+	{"pascal", []string{pascalMachine}, pascalScreenshots},
 	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 	{"printing", []string{printingMachine}, printingScreenshots},
-	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
-	{"merlin", []string{merlinMachine}, merlinScreenshots},
+	{"prodos", []string{prodosMachine}, prodosScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
-	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
+	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
+	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
+	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
+	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -79,15 +80,46 @@ func TestMachines(t *testing.T) {
 	}
 }
 
+// TestOrder checks that the activities, their listings and the disks are in
+// the order of their names, so that two pull requests adding to them add in
+// different places and don't conflict
+func TestOrder(t *testing.T) {
+	var guides, listed []string
+	for _, a := range activities {
+		guides = append(guides, a.guide)
+	}
+	for _, l := range listings {
+		listed = append(listed, l.guide)
+	}
+	list, err := os.ReadFile("../disks.tsv")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var disks []string
+	for _, line := range strings.Split(string(list), "\n") {
+		if line != "" && !strings.HasPrefix(line, "#") {
+			name, _, _ := strings.Cut(line, "\t")
+			disks = append(disks, name)
+		}
+	}
+	for what, names := range map[string][]string{
+		"activities": guides, "listings": listed, "disks.tsv": disks,
+	} {
+		if !slices.IsSorted(names) {
+			t.Errorf("%v are not in the order of their names: %v", what, names)
+		}
+	}
+}
+
 // listings are the programs of the guides, and the pages that show them
 var listings = []struct {
 	guide, listing string
 }{
-	{"ultraterm", ultratermModes},
-	{"pascal-2048", game2048Listing},
-	{"printing", calendarListing},
 	{"applesoft-snake", snakeListing},
 	{"merlin", barsListing},
+	{"pascal-2048", game2048Listing},
+	{"printing", calendarListing},
+	{"ultraterm", ultratermModes},
 }
 
 /*

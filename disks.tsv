@@ -1,24 +1,24 @@
 # The disks of the activities, fetched into disks/ by fetch-disks.sh.
 #
-# One disk a line, the fields separated by tabs:
+# One disk a line, in the order of their names, the fields separated by tabs:
 #   name     the file in disks/, the name the guides and the generators use
 #   sha256   of that file, "-" while it is not known yet
 #   source   the URL to download, or "blank:<bytes>" for an empty disk
 #   member   optional, the file to take out of a zip download
 #
 # name	sha256	source	member
-dos33-master.dsk	caca91990b148e20062c887f0301a957b477353fbacf4e4a011f8fb3beab46a9	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/DOS%203.3%20System%20Master%20-%20680-0210-A%20%281982%29.dsk
+a2desktop-1.4.2mg	f089cba2ed7bdd1558570e85419983322247317f5d21d4ad670e7a9182cbb9a5	https://github.com/a2stuff/a2d/releases/download/v1.4/A2DeskTop-1.4-en.zip	A2DeskTop-1.4-en_800k.2mg
+apple-logo.dsk	66c12cf5907d316c6e69c8b053ebb1d289a36bb5095c809a8822a77823a50568	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/logo/Apple%20LOGO.dsk
+appleworks-3.0.2mg	4d4e1f2d3630e9eaf17a550603aecbe36c7ee74a0b3d7905bfaf7383d7133e79	https://archive.org/download/a2_AppleWorks_3.0_8-bit/a2_AppleWorks_3.0_8-bit.2mg
 blank.dsk	805f89516ae3725e591d02cc0594f250fbc9ab74461f1e03faeed1649f24e9a2	blank:143360
+cpm-2.20b.po	1ca686becaab2905dbb40de47a0c891a6dfa4abfe22e3cbf1aa4609e30ea44f4	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/softcard.zip	CPM1.PO
+dos33-master.dsk	caca91990b148e20062c887f0301a957b477353fbacf4e4a011f8fb3beab46a9	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/DOS%203.3%20System%20Master%20-%20680-0210-A%20%281982%29.dsk
+karateka.woz	50fe73537b994a62125d7a1f797285c94f391f03245fd269cc12f0023dfed75a	https://archive.org/download/wozaday_Karateka/00playable.woz
 lode-runner.woz	5a6fa1077f2e215dc8179052e5aa57f27bcaa33ffdc274e6325858155c2035c4	https://archive.org/download/wozaday_Lode_Runner/00playable.woz
+merlin.dsk	04fd090c2068816a32c884b298f853f993f65e9bc9ded8b084cbe6277cddfc53	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/assembler/merlin/Merlin%20Macroassembler%20Side%201%20%28SDS%2C%201983%29.dsk
 mockingboard-demo.dsk	5745a87e1c6dfb9948ce9fa759d27504a22883c2ff0349e195c9370bbd6e238c	https://archive.org/download/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk
+prodos-2.4.3.po	398d333cb2ab92df9f8bb2cf64b946f2567116910eb8359cf4bdee5d4194f0fa	http://releases.prodos8.com/ProDOS_2_4_3.po
 total-replay.hdv	7434fb5d0fc45279f76ee7d2e5291612e72e315b00989cef9e1fe091301164be	https://archive.org/download/TotalReplay/Total%20Replay%20v6.1.hdv
 ultraterm-utilities.dsk	13846bc098166d6504346d8c1f21fa4bf75938011eb8c811295eef8df5332608	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/Videx%20Ultraterm%20Utilities%20disk.dsk
-cpm-2.20b.po	1ca686becaab2905dbb40de47a0c891a6dfa4abfe22e3cbf1aa4609e30ea44f4	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/softcard.zip	CPM1.PO
-prodos-2.4.3.po	398d333cb2ab92df9f8bb2cf64b946f2567116910eb8359cf4bdee5d4194f0fa	http://releases.prodos8.com/ProDOS_2_4_3.po
-a2desktop-1.4.2mg	f089cba2ed7bdd1558570e85419983322247317f5d21d4ad670e7a9182cbb9a5	https://github.com/a2stuff/a2d/releases/download/v1.4/A2DeskTop-1.4-en.zip	A2DeskTop-1.4-en_800k.2mg
-visicalc.woz	5d95d2bc4157d6fadb1ec17e4b49244ca03ac222a1a933fb2104a699db51e3a8	https://archive.org/download/wozaday_VisiCalc_v137/00playable.woz
-apple-logo.dsk	66c12cf5907d316c6e69c8b053ebb1d289a36bb5095c809a8822a77823a50568	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/logo/Apple%20LOGO.dsk
-karateka.woz	50fe73537b994a62125d7a1f797285c94f391f03245fd269cc12f0023dfed75a	https://archive.org/download/wozaday_Karateka/00playable.woz
-merlin.dsk	04fd090c2068816a32c884b298f853f993f65e9bc9ded8b084cbe6277cddfc53	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/assembler/merlin/Merlin%20Macroassembler%20Side%201%20%28SDS%2C%201983%29.dsk
 video7-rgb-demo.dsk	1b1503a9156f2f3bfc42fb3ef9fb606c502ea3f31bb7ef085c8ce070bc4ff885	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/Video-7%20Apple%20II%20RGB%20Demo%20%28Video-7%2C%20Inc.%29%281984%29.dsk
-appleworks-3.0.2mg	4d4e1f2d3630e9eaf17a550603aecbe36c7ee74a0b3d7905bfaf7383d7133e79	https://archive.org/download/a2_AppleWorks_3.0_8-bit/a2_AppleWorks_3.0_8-bit.2mg
+visicalc.woz	5d95d2bc4157d6fadb1ec17e4b49244ca03ac222a1a933fb2104a699db51e3a8	https://archive.org/download/wozaday_VisiCalc_v137/00playable.woz
