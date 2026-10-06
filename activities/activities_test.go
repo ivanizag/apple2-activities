@@ -11,6 +11,7 @@ package activities
 import (
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"testing"
 )
@@ -94,14 +95,9 @@ func TestListings(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		fence := "```" + listingLanguage(l.listing) + "\n"
-		var blocks strings.Builder
-		for _, block := range strings.Split(string(page), fence)[1:] {
-			code, _, _ := strings.Cut(block, "```")
-			blocks.WriteString(dedent(code))
-		}
-		if blocks.String() != string(listing) {
-			t.Errorf("the %v blocks of %v.md are not %v", fence[3:len(fence)-1], l.guide, l.listing)
+		language := listingLanguage(l.listing)
+		if blocks := strings.Join(codeBlocks(string(page), language), ""); blocks != string(listing) {
+			t.Errorf("the %v blocks of %v.md are not %v", language, l.guide, l.listing)
 		}
 	}
 }
@@ -120,14 +116,21 @@ func listingLanguage(path string) string {
 	return strings.TrimPrefix(filepath.Ext(path), ".")
 }
 
-// dedent takes off the indentation of a code block inside a list item
-func dedent(code string) string {
-	lines := strings.Split(code, "\n")
-	indent := len(lines[0]) - len(strings.TrimLeft(lines[0], " "))
-	for i, line := range lines {
-		if len(line) >= indent {
-			lines[i] = line[indent:]
+/*
+codeBlocks are the code blocks of a language of a page, each without the
+indentation of its fence, as Markdown takes it off inside a list item
+*/
+func codeBlocks(page string, language string) []string {
+	fence := regexp.MustCompile("(?m)^( *)```" + language + "\n")
+	var blocks []string
+	for _, at := range fence.FindAllStringSubmatchIndex(page, -1) {
+		indent := page[at[2]:at[3]]
+		code, _, _ := strings.Cut(page[at[1]:], indent+"```")
+		var lines []string
+		for _, line := range strings.SplitAfter(code, "\n") {
+			lines = append(lines, strings.TrimPrefix(line, indent))
 		}
+		blocks = append(blocks, strings.Join(lines, ""))
 	}
-	return strings.TrimRight(strings.Join(lines, "\n"), " ")
+	return blocks
 }
