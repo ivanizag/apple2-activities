@@ -33,7 +33,7 @@ An Apple \]\[+ with one disk drive of 13 sectors:
   those of 1978, with the VisiCalc disk in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 'diskii,sectors13=true,disk1=disks/VisiCalc v1.37.woz'
@@ -51,7 +51,7 @@ izapple2 runs it too, with a Language Card and a Videx Videoterm 80 column
 card more:
 
 ```bash
-izapple2 -model 2plus "disks/VisiCalc v1.37.woz"
+izapple2 -model 2plus -screen green "disks/VisiCalc v1.37.woz"
 ```
 
 VisiCalc uses the memory of the Language Card too, and says 35 kilobytes

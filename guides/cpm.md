@@ -34,7 +34,7 @@ An Apple \]\[+ with the Microsoft Z80 SoftCard:
 - a Disk II controller card in slot 6, with the CP/M diskette in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
@@ -49,7 +49,7 @@ The model `cpm` of izapple2 is this same machine, with the CP/M diskette
 inside izapple2:
 
 ```bash
-izapple2 -model cpm
+izapple2 -model cpm -screen green
 ```
 
 ## Start it

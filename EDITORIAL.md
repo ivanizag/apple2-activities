@@ -93,13 +93,17 @@ step, with what the machine showed on the way. Its parts are:
   80 column card is out of a page that never leaves 40 columns, and a card
   goes in only when a program uses it or the page is about it.
 - **The whole machine on the command line**, not a preconfigured model of
-  izapple2: `-model _base`, which has nothing, then `-board`, `-cpu`, `-rom`
-  and `-charrom`, the memory and the clock if any, and a `-sN` for each card,
-  with the disks in the parameters of their cards. The ROMs come from inside
-  izapple2, `<internal>/`. `-showConfig`, before any file named, prints what
-  a command builds.
+  izapple2: `-model none`, which has nothing, then `-board`, `-cpu`, `-rom`
+  and `-charrom`, `-screen`, the memory and the clock if any, and a `-sN` for
+  each card, with the disks in the parameters of their cards. The ROMs come
+  from inside izapple2, `<internal>/`. `-showConfig`, before any file named,
+  prints what a command builds.
+- **The monitor on the command line**, `-screen green` or `-screen color`, the
+  one most pictures of the page are in, so the reader doesn't press F6 to
+  start. F6 is for a picture in the other one, said where it shows.
 - **A preconfigured model may follow**, as a shorter command that also runs
-  the activity, saying what more it has than the machine of the page.
+  the activity, saying what more it has than the machine of the page. It has
+  the `-screen` of the page too.
 - **Number the steps once for the whole page**, across its sections.
 - **Each step starts with the action in bold**, then what happens, the
   picture, and what it shows and why it mattered.

@@ -30,7 +30,7 @@ An enhanced Apple //e with no disk drive:
 - no cards in its slots.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language
@@ -44,7 +44,7 @@ RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more:
 
 ```bash
-izapple2 -model 2enh -s6 empty
+izapple2 -model 2enh -screen green -s6 empty
 ```
 
 ## Switch it on

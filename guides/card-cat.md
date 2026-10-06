@@ -38,7 +38,7 @@ An enhanced Apple //e with a card in each slot:
 - a mouse card in slot 7.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -ramworks 8192 -nsc main \
@@ -59,7 +59,7 @@ The enhanced Apple //e izapple2 starts with, its model `2enh`, has the cards
 of slots 2 to 4; the rest are added to it:
 
 ```bash
-izapple2 -s1 parallel -s5 thunderclock -s7 mouse cardcat
+izapple2 -screen green -s1 parallel -s5 thunderclock -s7 mouse cardcat
 ```
 
 ## Run it

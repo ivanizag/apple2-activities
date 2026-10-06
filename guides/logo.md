@@ -32,7 +32,7 @@ An Apple \]\[+ with 64 KB and one disk drive:
 - a Disk II controller card in slot 6, with the Logo disk in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
@@ -46,7 +46,7 @@ The model `2plus` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 
 ```bash
-izapple2 -model 2plus "disks/Apple LOGO.dsk"
+izapple2 -model 2plus -screen green "disks/Apple LOGO.dsk"
 ```
 
 ## Words and lists

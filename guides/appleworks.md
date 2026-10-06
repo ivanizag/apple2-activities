@@ -32,7 +32,7 @@ An enhanced Apple //e with a disk of 800 KB:
   as a 3.5 inch drive would have it.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
@@ -48,7 +48,7 @@ VidHD card, a FASTChip accelerator, a Mockingboard and a Disk II controller
 more:
 
 ```bash
-izapple2 disks/a2_AppleWorks_3.0_8-bit.2mg
+izapple2 -screen green disks/a2_AppleWorks_3.0_8-bit.2mg
 ```
 
 ## The main menu

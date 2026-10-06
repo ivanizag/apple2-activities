@@ -32,7 +32,7 @@ An Apple \]\[+ with a Videx Ultraterm:
   utilities in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s3 videxultraterm \
@@ -46,7 +46,7 @@ The model `ultraterm` of izapple2 has this machine, with a Language Card
 more and the disk of the utilities inside izapple2:
 
 ```bash
-izapple2 -model ultraterm
+izapple2 -model ultraterm -screen green
 ```
 
 ## Watch the demonstration

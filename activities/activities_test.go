@@ -60,7 +60,7 @@ func TestActivities(t *testing.T) {
 }
 
 // TestMachines checks that each page gives the command lines its pictures
-// were made with, word for word
+// were made with, word for word, each a whole machine with its monitor
 func TestMachines(t *testing.T) {
 	for _, a := range activities {
 		page, err := os.ReadFile(filepath.Join("../guides", a.guide+".md"))
@@ -75,6 +75,9 @@ func TestMachines(t *testing.T) {
 		for _, machine := range a.machines {
 			if !shown[strings.Join(strings.Fields(machine), " ")] {
 				t.Errorf("%v.md does not give the command line\n%v", a.guide, machine)
+			}
+			if !strings.HasPrefix(machine, "izapple2 -model none ") || !strings.Contains(machine, " -screen ") {
+				t.Errorf("the machine of %v.md is not whole, from -model none and with -screen\n%v", a.guide, machine)
 			}
 		}
 	}

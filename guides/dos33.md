@@ -52,7 +52,7 @@ An Apple \]\[+ with two disk drives:
   drive 1 and your blank diskette in drive 2.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
@@ -62,7 +62,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
 At the end, the same machine with your diskette alone, in drive 1:
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
@@ -76,8 +76,8 @@ The model `2plus` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 
 ```bash
-izapple2 -model 2plus "disks/DOS 3.3 System Master - 680-0210-A (1982).dsk" my-disk.dsk
-izapple2 -model 2plus my-disk.dsk
+izapple2 -model 2plus -screen green "disks/DOS 3.3 System Master - 680-0210-A (1982).dsk" my-disk.dsk
+izapple2 -model 2plus -screen green my-disk.dsk
 ```
 
 ## Start the System Master

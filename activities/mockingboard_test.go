@@ -8,7 +8,7 @@ import (
 )
 
 // mockingboardMachine is the machine of the guide, as its command line of izapple2
-const mockingboardMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const mockingboardMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s4 mockingboard \
