@@ -63,7 +63,8 @@ izapple2 -model 2plus disks/karateka.woz
    your way in and free the princess Mariko.
 
 3. **Wait.** The first scene: Akuma in his fortress, and the princess
-   Mariko, his captive.
+   Mariko, his captive. He sends her away, to a room of her own, where she
+   faints.
 
    ![Akuma and the princess](images/karateka/akuma.gif)
 
@@ -72,7 +73,8 @@ izapple2 -model 2plus disks/karateka.woz
 
 ## The game
 
-4. **Press Space.** The fortress, on its cliff against the moon.
+4. **Press Space** when the demonstration starts. The fortress, on its
+   cliff against the moon.
 
    ![The fortress](images/karateka/castle.png)
 

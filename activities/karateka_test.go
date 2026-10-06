@@ -17,8 +17,9 @@ const karatekaMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
 /*
 karatekaScreenshots is Karateka, Jordan Mechner's game of 1984, from its
 original disk on an Apple ][+: the titles, the prologue, Akuma and the
-princess in the dungeon, and a game started, the karateka climbing up from
-the cliff and beating the first guard, played with the joystick.
+princess until she faints in her room, and a game started, the karateka
+climbing up from the cliff and beating the first guard, played with the
+joystick.
 
 The parts of the game are waited for by their colours, counted on the
 screen: the orange of the title, the white of the prologue, the blue of the
@@ -47,19 +48,23 @@ func karatekaScreenshots(t *testing.T) {
 	waitForColours(t, o, colours, 60, func(c dotColours) bool { return c.white > 14000 })
 	must(t, pictures.Screenshot(o, "prologue"))
 
-	// Akuma and the princess, until the scene changes
+	// Akuma and the princess, and the princess in her room until she
+	// faints, when there is less orange of her standing on the screen
 	waitForColours(t, o, colours, 60, func(c dotColours) bool { return c.blue > 17000 })
 	dungeon := pictures.Record(o)
 	dungeon.Capture(10)
-	for colours().blue > 15000 {
+	for c := colours(); c.blue > 15500 || c.orange > 420; c = colours() {
 		if o.Frames() > 4*60*60 {
-			t.Fatal("the scene of Akuma did not end")
+			t.Fatal("the princess did not faint")
 		}
 		dungeon.Run(6, 6)
 	}
+	dungeon.Run(2*60, 6)
 	must(t, pictures.SaveRecording(dungeon, "akuma", 100))
 
-	// A game started with a key: the castle, and the cliff
+	// A game started with a key, in the demonstration that follows: the
+	// castle, and the cliff
+	waitForColours(t, o, colours, 30, func(c dotColours) bool { return c.blue > 100000 })
 	must(t, o.Key("Space"))
 	waitForColours(t, o, colours, 30, func(c dotColours) bool { return c.white > 30000 })
 	o.RunSeconds(1)
