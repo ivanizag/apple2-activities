@@ -15,7 +15,8 @@ const lodeRunnerMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
 /*
 lodeRunnerScreenshots is Lode Runner of 1983 on an Apple ][+, from its
 original disk: the title, the demonstration that plays itself, and a game
-started.
+started and played from the keyboard, two pieces of gold taken before a
+guard catches the runner.
 */
 func lodeRunnerScreenshots(t *testing.T) {
 	pictures := newAlbum("lode-runner", album.Color)
@@ -36,4 +37,19 @@ func lodeRunnerScreenshots(t *testing.T) {
 	must(t, o.Key("Space"))
 	o.Run(10 * 60)
 	must(t, pictures.Screenshot(o, "game"))
+
+	// Played from the keyboard: Control-K, then a key sets the runner going
+	// until the next one. Right to the gold, up the ladder, and left to the
+	// next gold, until a guard catches him.
+	must(t, o.Key("Ctrl+K"))
+	o.Run(30)
+	play := pictures.Record(o)
+	play.Capture(10)
+	must(t, o.Type("L"))
+	play.Run(210, 6)
+	must(t, o.Type("I"))
+	play.Run(72, 6)
+	must(t, o.Type("J"))
+	play.Run(10*60, 6)
+	must(t, pictures.SaveRecording(play, "play", 200))
 }
