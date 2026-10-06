@@ -42,6 +42,7 @@ var activities = []struct {
 	{"logo", []string{logoMachine}, logoScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
 	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
+	{"printing", []string{printingMachine}, printingScreenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -80,6 +81,7 @@ var listings = []struct {
 }{
 	{"ultraterm", ultratermModes},
 	{"pascal-2048", game2048Listing},
+	{"printing", calendarListing},
 }
 
 /*
@@ -100,6 +102,36 @@ func TestListings(t *testing.T) {
 		language := listingLanguage(l.listing)
 		if blocks := strings.Join(codeBlocks(string(page), language), ""); blocks != string(listing) {
 			t.Errorf("the %v blocks of %v.md are not %v", language, l.guide, l.listing)
+		}
+	}
+}
+
+// printouts are what the generators printed, and the pages that show them
+var printouts = []struct {
+	guide, printout string
+}{
+	{"printing", "../guides/images/printing/listing.txt"},
+	{"printing", "../guides/images/printing/calendar.txt"},
+}
+
+// TestPrintouts checks that each page shows what its generator printed, whole,
+// in a block of text
+func TestPrintouts(t *testing.T) {
+	for _, p := range printouts {
+		printout, err := os.ReadFile(p.printout)
+		if err != nil {
+			t.Fatal(err)
+		}
+		page, err := os.ReadFile(filepath.Join("../guides", p.guide+".md"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		shown := false
+		for _, block := range codeBlocks(string(page), "text") {
+			shown = shown || block == string(printout)
+		}
+		if !shown {
+			t.Errorf("%v.md does not show %v", p.guide, p.printout)
 		}
 	}
 }
