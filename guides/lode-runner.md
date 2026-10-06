@@ -15,10 +15,10 @@ keyboard.
 
 ## What you need
 
-**`lode-runner.woz`**, a copy of the original Lode Runner disk, from the
+**`Lode Runner.woz`**, a copy of the original Lode Runner disk, from the
 [woz-a-day collection](https://archive.org/details/wozaday_Lode_Runner) of
-the Internet Archive: download *00playable.woz* and rename it
-`lode-runner.woz`. `./fetch-disks.sh` in this repository downloads it into
+the Internet Archive: download *Lode Runner (woz-a-day collection).zip* and
+take it out of it. `./fetch-disks.sh` in this repository downloads it into
 `disks/`.
 
 A WOZ file records a diskette bit by bit, its copy protection included, so
@@ -34,23 +34,23 @@ An Apple \]\[+ with one disk drive:
 - a Disk II controller card in slot 6, with the Lode Runner disk in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -s6 diskii,disk1=disks/lode-runner.woz
+    -s6 'diskii,disk1=disks/Lode Runner.woz'
 ```
 
 The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus disks/lode-runner.woz
+izapple2 -model 2plus -screen color "disks/Lode Runner.woz"
 ```
 
 ## Start it
 
-1. **Start izapple2** with the command above, and press F6 until the screen
-   is in colour. After a few seconds of the drive, the title comes up.
+1. **Start izapple2** with the command above. After a few seconds of the
+   drive, the title comes up.
 
    ![The title](images/lode-runner/title.png)
 

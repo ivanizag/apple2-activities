@@ -14,10 +14,10 @@ attract mode, and finds and starts a game.
 
 ## What you need
 
-**`total-replay.hdv`**, Total Replay 6.1, from the
-[Internet Archive](https://archive.org/details/TotalReplay): download
-*Total Replay v6.1.hdv* and rename it `total-replay.hdv`. It is a 32 MB hard
-disk image. `./fetch-disks.sh` in this repository downloads it into `disks/`.
+**`Total Replay v6.1.hdv`**, Total Replay 6.1, from the
+[Internet Archive](https://archive.org/details/TotalReplay). It is a 32 MB
+hard disk image. `./fetch-disks.sh` in this repository downloads it into
+`disks/`.
 
 ## The machine
 
@@ -31,12 +31,12 @@ An enhanced Apple //e with Total Replay as its hard disk:
 - a hard disk interface, SmartPort, in slot 7, with Total Replay.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
     -s2 vidhd \
-    -s7 smartport,image1=disks/total-replay.hdv
+    -s7 'smartport,image1=disks/Total Replay v6.1.hdv'
 ```
 
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
@@ -44,15 +44,15 @@ machine, with 8 MB more of memory on a RAMWorks card, a No-Slot Clock, a
 FASTChip accelerator, a Mockingboard and a Disk II controller more:
 
 ```bash
-izapple2 disks/total-replay.hdv
+izapple2 -screen color "disks/Total Replay v6.1.hdv"
 ```
 
 ## The launcher
 
-1. **Start izapple2** with the command above, and press F6 until the screen
-   is in colour. The machine starts from the hard disk in slot 7, and the
-   launcher of Total Replay comes up: the characters of its games around
-   its name, and the number of games at the bottom.
+1. **Start izapple2** with the command above. The machine starts from the
+   hard disk in slot 7, and the launcher of Total Replay comes up: the
+   characters of its games around its name, and the number of games at the
+   bottom.
 
    ![The launcher](images/total-replay/launcher.png)
 

@@ -28,7 +28,7 @@ The first Apple \]\[, as it came:
 - no cards in its slots.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/341-000x_integer.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -mods four-colors
@@ -37,7 +37,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
 The model `2` of izapple2 is this same machine:
 
 ```bash
-izapple2 -model 2
+izapple2 -model 2 -screen green
 ```
 
 ## The Monitor

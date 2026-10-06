@@ -16,12 +16,12 @@ each item, and changes the rent to see the whole sheet worked out again.
 
 ## What you need
 
-**`visicalc.woz`**, VisiCalc 1.37 in the
+**`VisiCalc v1.37.woz`**, VisiCalc 1.37 in the
 [woz-a-day collection](https://archive.org/details/wozaday_VisiCalc_v137) of
-the Internet Archive: download *00playable.woz* and rename it
-`visicalc.woz`. It is the original disk, copy protection and all, in the WOZ
-format that keeps it as it was. `./fetch-disks.sh` in this repository
-downloads it into `disks/` and checks it.
+the Internet Archive: download *VisiCalc v1.37 (woz-a-day collection).zip*
+and take it out of it. It is the original disk, copy protection and all, in
+the WOZ format that keeps it as it was. `./fetch-disks.sh` in this
+repository downloads it into `disks/` and checks it.
 
 ## The machine
 
@@ -33,10 +33,10 @@ An Apple \]\[+ with one disk drive of 13 sectors:
   those of 1978, with the VisiCalc disk in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -s6 diskii,sectors13=true,disk1=disks/visicalc.woz
+    -s6 'diskii,sectors13=true,disk1=disks/VisiCalc v1.37.woz'
 ```
 
 VisiCalc came on a disk of 13 sectors a track, the format of DOS 3.2 and
@@ -48,7 +48,7 @@ izapple2 runs it too, with a Language Card and a Videx Videoterm 80 column
 card more:
 
 ```bash
-izapple2 -model 2plus disks/visicalc.woz
+izapple2 -model 2plus -screen green "disks/VisiCalc v1.37.woz"
 ```
 
 VisiCalc uses the memory of the Language Card too, and says 35 kilobytes

@@ -8,7 +8,7 @@ import (
 )
 
 // appleIIMachine is the machine of the guide, as its command line of izapple2
-const appleIIMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const appleIIMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/341-000x_integer.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -mods four-colors`

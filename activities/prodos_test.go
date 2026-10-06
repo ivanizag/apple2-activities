@@ -7,11 +7,11 @@ import (
 )
 
 // prodosMachine is the machine of the guide, as its command line of izapple2
-const prodosMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+const prodosMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s6 diskii,disk1=disks/prodos-2.4.3.po`
+    -s6 diskii,disk1=disks/ProDOS_2_4_3.po`
 
 /*
 prodosScreenshots is ProDOS 2.4.3 on an enhanced Apple //e: the program

@@ -8,11 +8,11 @@ import (
 )
 
 // mockingboardMachine is the machine of the guide, as its command line of izapple2
-const mockingboardMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const mockingboardMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s4 mockingboard \
-    -s6 diskii,disk1=disks/mockingboard-demo.dsk`
+    -s6 diskii,disk1=disks/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982.dsk`
 
 /*
 mockingboardScreenshots is the demonstration disk of the Mockingboard, the

@@ -10,11 +10,11 @@ import (
 )
 
 // merlinMachine is the machine of the guide, as its command line of izapple2
-const merlinMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const merlinMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
-    -s6 diskii,disk1=disks/merlin.dsk`
+    -s6 'diskii,disk1="disks/Merlin Macroassembler Side 1 (SDS, 1983).dsk"'`
 
 // barsListing is the program of the page, in the assembly language of Merlin
 const barsListing = "../guides/listings/bars.s"

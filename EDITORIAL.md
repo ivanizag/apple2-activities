@@ -75,9 +75,12 @@ step, with what the machine showed on the way. Its parts are:
 - **Start with a link back**, `[Back to the activities](../README.md)`.
 - **Then the history.** One or two paragraphs on what this was in its day and
   why people did it, then one on what the page does.
-- **"What you need"** says what to download, from where, and what to rename it
-  to: the archive's page linked, the file named as it is there. Say what
-  `fetch-disks.sh` does for it. Say when nothing is needed but izapple2.
+- **"What you need"** says what to download and from where: the archive's
+  page linked, the file named as it is there. The disk keeps that name, even
+  if it is not a pretty one; don't ask the reader to rename it. A name with
+  spaces goes in quotes on the command line, and one with a comma in double
+  quotes inside the parameters of its card too. Say what `fetch-disks.sh`
+  does for it. Say when nothing is needed but izapple2.
 - **"The machine"** comes after "What you need": the machine the page uses,
   as a list, the board and its processor and memory, then what is in each
   slot, and the izapple2 command that starts it, in a `bash` block, exactly
@@ -90,13 +93,17 @@ step, with what the machine showed on the way. Its parts are:
   80 column card is out of a page that never leaves 40 columns, and a card
   goes in only when a program uses it or the page is about it.
 - **The whole machine on the command line**, not a preconfigured model of
-  izapple2: `-model _base`, which has nothing, then `-board`, `-cpu`, `-rom`
-  and `-charrom`, the memory and the clock if any, and a `-sN` for each card,
-  with the disks in the parameters of their cards. The ROMs come from inside
-  izapple2, `<internal>/`. `-showConfig`, before any file named, prints what
-  a command builds.
+  izapple2: `-model none`, which has nothing, then `-board`, `-cpu`, `-rom`
+  and `-charrom`, `-screen`, the memory and the clock if any, and a `-sN` for
+  each card, with the disks in the parameters of their cards. The ROMs come
+  from inside izapple2, `<internal>/`. `-showConfig`, before any file named,
+  prints what a command builds.
+- **The monitor on the command line**, `-screen green` or `-screen color`, the
+  one most pictures of the page are in, so the reader doesn't press F6 to
+  start. F6 is for a picture in the other one, said where it shows.
 - **A preconfigured model may follow**, as a shorter command that also runs
-  the activity, saying what more it has than the machine of the page.
+  the activity, saying what more it has than the machine of the page. It has
+  the `-screen` of the page too.
 - **Number the steps once for the whole page**, across its sections.
 - **Each step starts with the action in bold**, then what happens, the
   picture, and what it shows and why it mattered.

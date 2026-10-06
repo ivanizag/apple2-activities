@@ -17,11 +17,9 @@ by itself.
 
 ## What you need
 
-- **`dos33-master.dsk`**, the DOS 3.3 System Master of January 1983, Apple's
-  part number 680-0210-A. It is on the
-  [Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/):
-  download *DOS 3.3 System Master - 680-0210-A (1982).dsk* and rename it
-  `dos33-master.dsk`.
+- **`DOS 3.3 System Master - 680-0210-A (1982).dsk`**, the DOS 3.3 System
+  Master of January 1983, Apple's part number 680-0210-A, on the
+  [Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/).
 - **`my-disk.dsk`**, a blank diskette: a file of 143,360 zero bytes, 35 tracks
   of 16 sectors of 256 bytes. DOS formats it, so nothing has to be on it.
 
@@ -54,17 +52,17 @@ An Apple \]\[+ with two disk drives:
   drive 1 and your blank diskette in drive 2.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
-    -s6 diskii,disk1=disks/dos33-master.dsk,disk2=my-disk.dsk
+    -s6 'diskii,disk1=disks/DOS 3.3 System Master - 680-0210-A (1982).dsk,disk2=my-disk.dsk'
 ```
 
 At the end, the same machine with your diskette alone, in drive 1:
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
@@ -75,8 +73,8 @@ The model `2plus` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 
 ```bash
-izapple2 -model 2plus disks/dos33-master.dsk my-disk.dsk
-izapple2 -model 2plus my-disk.dsk
+izapple2 -model 2plus -screen green "disks/DOS 3.3 System Master - 680-0210-A (1982).dsk" my-disk.dsk
+izapple2 -model 2plus -screen green my-disk.dsk
 ```
 
 ## Start the System Master

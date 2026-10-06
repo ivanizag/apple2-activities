@@ -8,11 +8,11 @@ import (
 )
 
 // logoMachine is the machine of the guide, as its command line of izapple2
-const logoMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const logoMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
-    -s6 diskii,disk1=disks/apple-logo.dsk`
+    -s6 'diskii,disk1=disks/Apple LOGO.dsk'`
 
 /*
 logoScreenshots is Apple Logo on an Apple ][+ with 64 KB: words and lists

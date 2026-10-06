@@ -80,9 +80,15 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 		return name
 	}
 	for key, value := range overrides {
-		params := strings.Split(value, ",")
+		params := splitParams(value)
 		for i, param := range params {
-			if name, file, ok := strings.Cut(param, "="); ok {
+			name, file, ok := strings.Cut(param, "=")
+			if !ok {
+				continue
+			}
+			if unquoted, ok := strings.CutPrefix(file, `"`); ok {
+				params[i] = name + `="` + path(strings.TrimSuffix(unquoted, `"`)) + `"`
+			} else {
 				params[i] = name + "=" + path(file)
 			}
 		}
@@ -97,6 +103,24 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 		t.Fatal(err)
 	}
 	return o
+}
+
+// splitParams splits the parameters of a card at its commas, as izapple2
+// does, but not at the ones in double quotes, in the name of a disk
+func splitParams(value string) []string {
+	var params []string
+	quoted := false
+	start := 0
+	for i, c := range value {
+		switch {
+		case c == '"':
+			quoted = !quoted
+		case c == ',' && !quoted:
+			params = append(params, value[start:i])
+			start = i + 1
+		}
+	}
+	return append(params, value[start:])
 }
 
 // izapple2Switches are the options of izapple2 that take no value

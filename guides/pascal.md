@@ -35,7 +35,7 @@ An enhanced Apple //e with two disk drives:
   from, in drive 1, and `APPLE2`, with the compiler, in drive 2.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
@@ -48,7 +48,7 @@ Mockingboard more, and a second Disk II controller in slot 5 with `APPLE3`
 and `APPLE0`:
 
 ```bash
-izapple2 -model pascal
+izapple2 -model pascal -screen green
 ```
 
 ## Start it

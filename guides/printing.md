@@ -32,7 +32,7 @@ An Apple \]\[+ with a printer:
 - no disk drive.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s1 parallel,file=printer.out
@@ -43,7 +43,7 @@ Language Card, a Videx Videoterm 80 column card and a Disk II controller
 with DOS 3.3 more:
 
 ```bash
-izapple2 -model 2plus -s1 parallel
+izapple2 -model 2plus -screen green -s1 parallel
 ```
 
 ## The program

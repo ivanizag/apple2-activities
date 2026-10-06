@@ -8,12 +8,12 @@ import (
 )
 
 // deskTopMachine is the machine of the guide, as its command line of izapple2
-const deskTopMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+const deskTopMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
     -s4 mouse \
-    -s7 smartport,image1=disks/a2desktop-1.4.2mg`
+    -s7 smartport,image1=disks/A2DeskTop-1.4-en_800k.2mg`
 
 /*
 deskTopScreenshots is Apple II DeskTop on an enhanced Apple //e with a mouse:

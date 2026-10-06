@@ -15,9 +15,8 @@ it, keep a list of friends in the data base, and save the three.
 
 ## What you need
 
-**`appleworks-3.0.2mg`**, AppleWorks 3.0 on a disk of 800 KB, from the
-[Internet Archive](https://archive.org/details/a2_AppleWorks_3.0_8-bit):
-download *a2_AppleWorks_3.0_8-bit.2mg* and rename it `appleworks-3.0.2mg`.
+**`a2_AppleWorks_3.0_8-bit.2mg`**, AppleWorks 3.0 on a disk of 800 KB, from
+the [Internet Archive](https://archive.org/details/a2_AppleWorks_3.0_8-bit).
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it. izapple2 writes the files the page saves into it.
 
@@ -33,11 +32,11 @@ An enhanced Apple //e with a disk of 800 KB:
   as a 3.5 inch drive would have it.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s7 smartport,image1=disks/appleworks-3.0.2mg
+    -s7 smartport,image1=disks/a2_AppleWorks_3.0_8-bit.2mg
 ```
 
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
@@ -46,7 +45,7 @@ VidHD card, a FASTChip accelerator, a Mockingboard and a Disk II controller
 more:
 
 ```bash
-izapple2 disks/appleworks-3.0.2mg
+izapple2 -screen green disks/a2_AppleWorks_3.0_8-bit.2mg
 ```
 
 ## The main menu

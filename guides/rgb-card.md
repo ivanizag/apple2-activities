@@ -18,11 +18,11 @@ has and the eight the card adds.
 
 ## What you need
 
-**`video7-rgb-demo.dsk`**, the *Video-7 Apple II RGB Demo* of 1984, on the
-[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/):
-download *Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk* and rename it
-`video7-rgb-demo.dsk`. `./fetch-disks.sh` in this repository downloads it
-into `disks/` and checks it.
+**`Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk`**, the demonstration
+disk of the card, of 1984, on the
+[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/hardware/video/).
+`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
+it.
 
 ## The machine
 
@@ -37,11 +37,11 @@ An enhanced Apple //e with an RGB card:
   drive 1.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
-    -s6 diskii,disk1=disks/video7-rgb-demo.dsk
+    -s6 'diskii,disk1="disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"'
 ```
 
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
@@ -49,14 +49,14 @@ machine with `-rgb`, and 8 MB more of memory on a RAMWorks card, a No-Slot
 Clock, a VidHD card, a FASTChip accelerator and a Mockingboard more:
 
 ```bash
-izapple2 -rgb disks/video7-rgb-demo.dsk
+izapple2 -screen color -rgb "disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"
 ```
 
 ## The demonstration
 
-1. **Start izapple2** with the command above, and press F6 until the
-   screen is in colour. The menu of the demonstration, drawn in double high
-   resolution, in the colours of the card.
+1. **Start izapple2** with the command above. The menu of the
+   demonstration, drawn in double high resolution, in the colours of the
+   card.
 
    ![The menu](images/rgb-card/menu.png)
 

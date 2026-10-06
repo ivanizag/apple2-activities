@@ -26,7 +26,7 @@ An Apple \]\[+ with no disk drive:
 - no cards in its slots.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps
 ```
@@ -35,13 +35,12 @@ The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus -s6 empty
+izapple2 -model 2plus -screen color -s6 empty
 ```
 
 ## The program
 
-1. **Start izapple2** with the command above, and press F6 until the screen
-   is in colour.
+1. **Start izapple2** with the command above.
 
 2. **Type the program**, each line with Return. Here it is in parts, with
    what each does.
