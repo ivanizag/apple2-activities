@@ -74,6 +74,14 @@ A bat on a paddle and a ball, in the low resolution colour graphics of the
 Apple \]\[+: typed in as the listings of the magazines were, and played with the
 mouse as the paddle.
 
+### [Logo and its turtle](guides/logo.md)
+
+<a href="guides/logo.md"><img src="guides/images/logo/flower.gif" width="320" alt="A flower of squares drawn by the turtle"></a>
+
+Apple Logo on an Apple \]\[+: words and lists, the turtle moved by hand,
+and procedures that teach it new words, a flower of squares and a spiral
+that calls itself, saved on the diskette.
+
 ### [Apple Pascal](guides/pascal.md)
 
 <a href="guides/pascal.md"><img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal"></a>
