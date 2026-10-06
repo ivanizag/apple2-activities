@@ -89,6 +89,13 @@ that calls itself, saved on the diskette.
 The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
 
+### [A game in Apple Pascal: 2048](guides/pascal-2048.md)
+
+<a href="guides/pascal-2048.md"><img src="guides/images/pascal-2048/end.png" width="320" alt="2048 in Apple Pascal"></a>
+
+A whole game written in Apple Pascal, its listing in this repository: typed
+into the editor, compiled, and played to the end, 200 moves.
+
 ## Work
 
 ### [VisiCalc](guides/visicalc.md)

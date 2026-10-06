@@ -41,6 +41,7 @@ var activities = []struct {
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
 	{"logo", []string{logoMachine}, logoScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
+	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -78,6 +79,7 @@ var listings = []struct {
 	guide, listing string
 }{
 	{"ultraterm", ultratermModes},
+	{"pascal-2048", game2048Listing},
 }
 
 /*
