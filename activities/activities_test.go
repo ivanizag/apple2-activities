@@ -44,6 +44,7 @@ var activities = []struct {
 	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 	{"printing", []string{printingMachine}, printingScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
+	{"merlin", []string{merlinMachine}, merlinScreenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -84,6 +85,7 @@ var listings = []struct {
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},
 	{"applesoft-snake", snakeListing},
+	{"merlin", barsListing},
 }
 
 /*

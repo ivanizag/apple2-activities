@@ -111,6 +111,14 @@ into the editor, compiled, and played to the end, 200 moves.
 A whole game of 35 lines of Applesoft, its listing in this repository: the
 snake in the low resolution graphics, typed in, explained, and played.
 
+### [Assembly language with Merlin](guides/merlin.md)
+
+<a href="guides/merlin.md"><img src="guides/images/merlin/assembled.png" width="320" alt="A program assembled by Merlin"></a>
+
+A program in the language of the 6502, its source in this repository: typed
+into the Merlin assembler of 1983, assembled into 120 bytes, and run, bars
+of colour moving many times a second.
+
 ## Work
 
 ### [VisiCalc](guides/visicalc.md)
