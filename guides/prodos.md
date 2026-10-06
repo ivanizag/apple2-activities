@@ -39,9 +39,6 @@ izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -s6 diskii,disk1=disks/ProDOS_2_4_3.po
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `prodos` of izapple2 has this machine, with 8 MB more of memory on
 a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more, and the ProDOS disk inside izapple2:

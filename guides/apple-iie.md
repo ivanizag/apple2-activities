@@ -36,9 +36,6 @@ izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -s0 language
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `2enh` of izapple2 has this machine, with 8 MB more of memory on a
 RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more:

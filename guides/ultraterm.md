@@ -39,9 +39,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s6 'diskii,disk1=disks/Videx Ultraterm Utilities disk.dsk'
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `ultraterm` of izapple2 has this machine, with a Language Card
 more and the disk of the utilities inside izapple2:
 

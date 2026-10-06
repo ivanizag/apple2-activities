@@ -37,9 +37,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s0 forthrom
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `forth` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 

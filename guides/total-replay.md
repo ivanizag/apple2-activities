@@ -39,9 +39,6 @@ izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -s7 'smartport,image1=disks/Total Replay v6.1.hdv'
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
 machine, with 8 MB more of memory on a RAMWorks card, a No-Slot Clock, a
 FASTChip accelerator, a Mockingboard and a Disk II controller more:

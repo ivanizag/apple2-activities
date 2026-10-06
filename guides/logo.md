@@ -39,9 +39,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s6 'diskii,disk1=disks/Apple LOGO.dsk'
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `2plus` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 

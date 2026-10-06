@@ -44,9 +44,6 @@ izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -s6 'diskii,disk1="disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(1984).dsk"'
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has this
 machine with `-rgb`, and 8 MB more of memory on a RAMWorks card, a No-Slot
 Clock, a VidHD card, a FASTChip accelerator and a Mockingboard more:

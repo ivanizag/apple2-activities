@@ -38,9 +38,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s1 parallel,file=printer.out
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `2plus` of izapple2 has this machine with `-s1 parallel`, and a
 Language Card, a Videx Videoterm 80 column card and a Disk II controller
 with DOS 3.3 more:

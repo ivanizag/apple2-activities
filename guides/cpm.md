@@ -42,9 +42,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s6 diskii,disk1=disks/CPM1.PO
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `cpm` of izapple2 is this same machine, with the CP/M diskette
 inside izapple2:
 
