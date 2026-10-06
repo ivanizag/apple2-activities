@@ -43,7 +43,11 @@ pictures of the pages they run.
   reminder says. Commits are the owner's.
 - **One pull request per activity**: its generator, page, pictures, disks
   and line in the README, and nothing else. A change to the shared code or
-  to the guides goes in a pull request of its own.
+  to the guides goes in a pull request of its own. The lists of activities
+  and of listings in `activities_test.go` and the disks in `disks.tsv` are
+  in the order of their names, which `TestOrder` checks: a new one goes in
+  its place, not at the end, so that pull requests open together don't
+  conflict.
 - **Pull requests may be stacked**, each based on the branch of the one before
   it, when a change needs one not merged yet; say so in the description.
   When a comment asks for a change in a lower one, make it on its branch, then
