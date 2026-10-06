@@ -33,8 +33,6 @@ func prodosScreenshots(t *testing.T) {
 	for range 3 {
 		must(t, o.Key("Down"))
 	}
-	o.Run(30)
-	must(t, pictures.Screenshot(o, "selected"))
 	must(t, o.Key("Return"))
 	must(t, o.WaitForText("PRODOS BASIC", 120))
 	must(t, o.WaitForKeyboard(30))
