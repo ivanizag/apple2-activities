@@ -46,6 +46,7 @@ var activities = []struct {
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 	{"merlin", []string{merlinMachine}, merlinScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
+	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
 }
 
 func TestActivities(t *testing.T) {
