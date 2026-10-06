@@ -89,6 +89,13 @@ that calls itself, saved on the diskette.
 The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
 compiler, and a program that draws with the turtle.
 
+### [A game in Apple Pascal: 2048](guides/pascal-2048.md)
+
+<a href="guides/pascal-2048.md"><img src="guides/images/pascal-2048/end.png" width="320" alt="2048 in Apple Pascal"></a>
+
+A whole game written in Apple Pascal, its listing in this repository: typed
+into the editor, compiled, and played to the end, 200 moves.
+
 ## Work
 
 ### [VisiCalc](guides/visicalc.md)
@@ -110,10 +117,11 @@ and its sound effects, recorded to listen to.
 
 ### [160 columns: the Videx Ultraterm](guides/ultraterm.md)
 
-<a href="guides/ultraterm.md"><img src="guides/images/ultraterm/modes.png" width="320" alt="The modes of the Ultraterm"></a>
+<a href="guides/ultraterm.md"><img src="guides/images/ultraterm/mode-3.png" width="320" alt="160 columns by 24 lines"></a>
 
-The card that gave the Apple \]\[+ up to 160 columns of text, in the
-demonstration of its own disk of utilities.
+The card that gave the Apple \]\[+ up to 160 columns of text: the
+demonstration of its own disk of utilities, and a program that shows each
+of its modes, up to 160 by 24 and 80 by 48.
 
 ### [What is in the slots: Card Cat](guides/card-cat.md)
 

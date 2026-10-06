@@ -11,6 +11,7 @@ package activities
 import (
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"testing"
 )
@@ -40,6 +41,7 @@ var activities = []struct {
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
 	{"logo", []string{logoMachine}, logoScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
+	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -70,4 +72,67 @@ func TestMachines(t *testing.T) {
 			}
 		}
 	}
+}
+
+// listings are the programs of the guides, and the pages that show them
+var listings = []struct {
+	guide, listing string
+}{
+	{"ultraterm", ultratermModes},
+	{"pascal-2048", game2048Listing},
+}
+
+/*
+TestListings checks that each page shows its programs whole, as the files
+the generators type and the reader downloads: the code blocks of the
+language of a listing, one after the other, are the listing
+*/
+func TestListings(t *testing.T) {
+	for _, l := range listings {
+		listing, err := os.ReadFile(l.listing)
+		if err != nil {
+			t.Fatal(err)
+		}
+		page, err := os.ReadFile(filepath.Join("../guides", l.guide+".md"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		language := listingLanguage(l.listing)
+		if blocks := strings.Join(codeBlocks(string(page), language), ""); blocks != string(listing) {
+			t.Errorf("the %v blocks of %v.md are not %v", language, l.guide, l.listing)
+		}
+	}
+}
+
+// listingLanguage is the language of the code blocks of a listing, by its
+// extension
+func listingLanguage(path string) string {
+	switch filepath.Ext(path) {
+	case ".bas":
+		return "basic"
+	case ".pas":
+		return "pascal"
+	case ".s":
+		return "asm"
+	}
+	return strings.TrimPrefix(filepath.Ext(path), ".")
+}
+
+/*
+codeBlocks are the code blocks of a language of a page, each without the
+indentation of its fence, as Markdown takes it off inside a list item
+*/
+func codeBlocks(page string, language string) []string {
+	fence := regexp.MustCompile("(?m)^( *)```" + language + "\n")
+	var blocks []string
+	for _, at := range fence.FindAllStringSubmatchIndex(page, -1) {
+		indent := page[at[2]:at[3]]
+		code, _, _ := strings.Cut(page[at[1]:], indent+"```")
+		var lines []string
+		for _, line := range strings.SplitAfter(code, "\n") {
+			lines = append(lines, strings.TrimPrefix(line, indent))
+		}
+		blocks = append(blocks, strings.Join(lines, ""))
+	}
+	return blocks
 }
