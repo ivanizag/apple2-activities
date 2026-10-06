@@ -17,12 +17,11 @@ with the graphics of the Apple II.
 
 ## What you need
 
-**`cpm-2.20b.po`**, the CP/M 2.20B diskette of the Microsoft SoftCard, for 56
-KB. It is in `softcard.zip` on the [Asimov
+**`CPM1.PO`**, the CP/M 2.20B diskette of the Microsoft SoftCard, for 56 KB.
+It is in `softcard.zip` on the [Asimov
 archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/):
-download it, take *CPM1.PO* out of it and rename it `cpm-2.20b.po`.
-`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
-it.
+download it and take *CPM1.PO* out of it. `./fetch-disks.sh` in this
+repository downloads it into `disks/` and checks it.
 
 ## The machine
 
@@ -40,7 +39,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
     -s4 z80softcard \
-    -s6 diskii,disk1=disks/cpm-2.20b.po
+    -s6 diskii,disk1=disks/CPM1.PO
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of

@@ -15,7 +15,7 @@ const totalReplayMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
     -s2 vidhd \
-    -s7 smartport,image1=disks/total-replay.hdv`
+    -s7 'smartport,image1=disks/Total Replay v6.1.hdv'`
 
 /*
 totalReplayScreenshots is Total Replay, hundreds of games on one hard disk, on

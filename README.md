@@ -222,7 +222,7 @@ launcher, its attract mode, and a game found by typing its name.
 downloads every disk the pages use into `disks/`, from the archives
 [`disks.tsv`](disks.tsv) lists, and checks each against its SHA-256. It only
 downloads what is missing or has changed, so it can be run again at any time.
-`./fetch-disks.sh dos33-master.dsk` gets only the disks named.
+`./fetch-disks.sh CPM1.PO` gets only the disks named.
 
 ## How the pictures are made
 

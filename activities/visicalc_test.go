@@ -10,7 +10,7 @@ import (
 const visiCalcMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -s6 diskii,sectors13=true,disk1=disks/visicalc.woz`
+    -s6 'diskii,sectors13=true,disk1=disks/VisiCalc v1.37.woz'`
 
 /*
 visiCalcScreenshots is VisiCalc 1.37, the first spreadsheet, on an Apple ][+

@@ -75,9 +75,12 @@ step, with what the machine showed on the way. Its parts are:
 - **Start with a link back**, `[Back to the activities](../README.md)`.
 - **Then the history.** One or two paragraphs on what this was in its day and
   why people did it, then one on what the page does.
-- **"What you need"** says what to download, from where, and what to rename it
-  to: the archive's page linked, the file named as it is there. Say what
-  `fetch-disks.sh` does for it. Say when nothing is needed but izapple2.
+- **"What you need"** says what to download and from where: the archive's
+  page linked, the file named as it is there. The disk keeps that name, even
+  if it is not a pretty one; don't ask the reader to rename it. A name with
+  spaces goes in quotes on the command line, and one with a comma in double
+  quotes inside the parameters of its card too. Say what `fetch-disks.sh`
+  does for it. Say when nothing is needed but izapple2.
 - **"The machine"** comes after "What you need": the machine the page uses,
   as a list, the board and its processor and memory, then what is in each
   slot, and the izapple2 command that starts it, in a `bash` block, exactly

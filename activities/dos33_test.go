@@ -14,7 +14,7 @@ const dos33Machine = `izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
-    -s6 diskii,disk1=disks/dos33-master.dsk,disk2=my-disk.dsk`
+    -s6 'diskii,disk1=disks/DOS 3.3 System Master - 680-0210-A (1982).dsk,disk2=my-disk.dsk'`
 
 // dos33OwnDisk is the same machine with the reader's diskette alone
 const dos33OwnDisk = `izapple2 -model _base -board 2plus -cpu 6502 \

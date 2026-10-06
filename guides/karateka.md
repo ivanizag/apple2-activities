@@ -14,11 +14,12 @@ first guard.
 
 ## What you need
 
-**`karateka.woz`**, Karateka in the
+**`Karateka.woz`**, Karateka in the
 [woz-a-day collection](https://archive.org/details/wozaday_Karateka) of the
-Internet Archive: download *00playable.woz* and rename it `karateka.woz`.
-It is the original disk, copy protection and all. `./fetch-disks.sh` in this
-repository downloads it into `disks/` and checks it.
+Internet Archive: download *Karateka (woz-a-day collection).zip* and take it
+out of it. It is the original disk, copy protection and all.
+`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
+it.
 
 ## The machine
 
@@ -34,7 +35,7 @@ An Apple \]\[+ with one disk drive and a joystick:
 izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -s6 diskii,disk1=disks/karateka.woz
+    -s6 diskii,disk1=disks/Karateka.woz
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of
@@ -44,7 +45,7 @@ The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus disks/karateka.woz
+izapple2 -model 2plus disks/Karateka.woz
 ```
 
 ## The film

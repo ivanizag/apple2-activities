@@ -17,7 +17,7 @@ const ultratermMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s3 videxultraterm \
-    -s6 diskii,disk1=disks/ultraterm-utilities.dsk`
+    -s6 'diskii,disk1=disks/Videx Ultraterm Utilities disk.dsk'`
 
 /*
 ultratermScreenshots is the demonstration of the Videx Ultraterm, the card of

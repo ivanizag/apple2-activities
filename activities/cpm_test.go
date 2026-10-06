@@ -12,7 +12,7 @@ const cpmMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
     -s4 z80softcard \
-    -s6 diskii,disk1=disks/cpm-2.20b.po`
+    -s6 diskii,disk1=disks/CPM1.PO`
 
 /*
 cpmScreenshots is CP/M on an Apple ][+ with the Microsoft Z80 SoftCard: the

@@ -16,10 +16,9 @@ graphics, drawn and moved many times a second, the picture
 
 ## What you need
 
-**`merlin.dsk`**, Merlin 1983, on the
-[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/assembler/merlin/):
-download *Merlin Macroassembler Side 1 (SDS, 1983).dsk* and rename it
-`merlin.dsk`. It is a copy with its protection taken out, as its
+**`Merlin Macroassembler Side 1 (SDS, 1983).dsk`**, Merlin 1983, on the
+[Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/assembler/merlin/).
+It is a copy with its protection taken out, as its
 [readme](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/assembler/merlin/Merlin%20Macroassembler%20-%20readme%20-%20softkey.txt)
 says. `./fetch-disks.sh` in this repository downloads it into `disks/` and
 checks it. The program is in this repository too,
@@ -40,7 +39,7 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 language \
-    -s6 diskii,disk1=disks/merlin.dsk
+    -s6 'diskii,disk1="disks/Merlin Macroassembler Side 1 (SDS, 1983).dsk"'
 ```
 
 `<internal>/` names a file inside izapple2: the ROMs, of the machine and of
@@ -51,7 +50,7 @@ a black screen after its title. The model `2plus` of izapple2 has this
 machine, with a Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus disks/merlin.dsk
+izapple2 -model 2plus "disks/Merlin Macroassembler Side 1 (SDS, 1983).dsk"
 ```
 
 ## Merlin
