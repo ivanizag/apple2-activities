@@ -146,6 +146,14 @@ The card that gave the Apple \]\[+ up to 160 columns of text: the
 demonstration of its own disk of utilities, and a program that shows each
 of its modes, up to 160 by 24 and 80 by 48.
 
+### [The RGB card and its fourteen video modes](guides/rgb-card.md)
+
+<a href="guides/rgb-card.md"><img src="guides/images/rgb-card/mode-9.png" width="320" alt="Double low resolution on the RGB card"></a>
+
+The demonstration disk of the Video-7 RGB card for the //e: each of the
+fourteen video modes it lists, the six of the //e and the eight the card
+adds, text in sixteen colours, 160 and 560 dots across.
+
 ### [What is in the slots: Card Cat](guides/card-cat.md)
 
 <a href="guides/card-cat.md"><img src="guides/images/card-cat/slots.png" width="320" alt="Card Cat"></a>
