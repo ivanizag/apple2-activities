@@ -1,0 +1,19 @@
+# The site of GitHub Pages: the README and the pages of guides/, with their
+# pictures and listings. The code that makes the pictures stays out.
+title: Apple II activities
+description: Things to do with an Apple II on izapple2, a step at a time, with pictures
+theme: jekyll-theme-cayman
+exclude:
+  - activities
+  - album
+  - operator
+  - tools
+  - go.mod
+  - go.sum
+  - fetch-disks.sh
+  - disks.tsv
+  - disks
+  - AGENTS.md
+  - CLAUDE.md
+  - EDITORIAL.md
+  - IZAPPLE2.md
