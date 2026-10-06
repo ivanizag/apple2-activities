@@ -13,7 +13,8 @@ It started as MouseDesk, by the French company Version Soft, which Apple then
 sold as Apple II DeskTop. Today a group of Apple II enthusiasts keeps it alive
 and adds to it, at [a2desktop.com](https://a2desktop.com). This page starts
 their version 1.4, opens a disk, reads a file, asks the machine what it has
-inside, and uses the Calculator.
+inside, opens a picture in colour, runs a screen saver, and uses the
+Calculator.
 
 ## What you need
 
@@ -107,18 +108,54 @@ izapple2 -model desktop
    The other slots are empty in this machine, which DeskTop shows as
    *(unknown)*. Press Escape to close it.
 
+## Pictures
+
+6. **Type `SAMPLE`**, the start of the name of the folder *Sample.Media*,
+   and **press Open Apple and O.** Typing a name selects the icon that
+   starts with it, and Open Apple-O, the left Alt or Option key with O, is
+   *Open* in the *File* menu. The folder has pictures, texts, music and
+   fonts that come with DeskTop.
+
+   ![The samples](images/desktop/sample-media.png)
+
+7. **Type `MONARCH` and press Open Apple and O.** DeskTop shows the
+   picture on the whole screen.
+
+   ![A picture in double high resolution](images/desktop/monarch.png)
+
+   It is in the double high resolution graphics of the //e, 140 dots across
+   in 16 colours, the graphics of the 80 column card: DeskTop shows them in
+   colour, and its own screen in black and white, with the RGB modes of the
+   card. Press Escape to go back, and **Open Apple and W** to close the
+   window of the folder.
+
+## The screen savers
+
+8. **Choose *Screen Savers* from the Apple menu.** It is a folder, of
+   programs that keep the picture of the desktop from burning into the tube
+   when the machine is left alone.
+
+   ![The screen savers](images/desktop/screen-savers.png)
+
+9. **Type `FLY` and press Open Apple and O**, for *Flying Toasters*, after
+   the screen saver of the Macintosh *After Dark*.
+
+   ![Flying toasters](images/desktop/toasters.gif)
+
+   Press a key to stop it, and Open Apple and W to close the window.
+
 ## The Calculator
 
-6. **Choose *Calculator* from the Apple menu**, and click its keys, *1*, *2*,
-   *\**, *3* and *=*.
+10. **Choose *Calculator* from the Apple menu**, and click its keys, *1*, *2*,
+    *\**, *3* and *=*.
 
-   ![Twelve times three](images/desktop/calculator.gif)
+    ![Twelve times three](images/desktop/calculator.gif)
 
-   The Calculator stays open over the desktop until it is closed with the box
-   at the left of its title.
+    The Calculator stays open over the desktop until it is closed with the
+    box at the left of its title.
 
 ## What next
 
-The other desk accessories of the Apple menu, and the *Toys* folder, are
-worth a look. [Switch on an Apple \]\[+](switch-on.md) shows the Apple II
-before all this, with nothing on the screen but a prompt.
+The other desk accessories of the Apple menu, the other screen savers, and
+the *Toys* folder, are worth a look. [Switch on an Apple \]\[+](switch-on.md)
+shows the Apple II before all this, with nothing on the screen but a prompt.

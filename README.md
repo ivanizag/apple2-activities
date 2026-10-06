@@ -59,8 +59,8 @@ the program selector it starts with, BASIC, and a catalog in 80 columns.
 <a href="guides/desktop.md"><img src="guides/images/desktop/about.png" width="320" alt="About This Apple II"></a>
 
 The Apple II with a mouse, windows and icons: a disk opened with a double
-click, a file read, the machine asked what it has in its slots, and the
-Calculator.
+click, a file read, the machine asked what it has in its slots, a picture in
+double high resolution, the flying toasters, and the Calculator.
 
 ## Making things
 
