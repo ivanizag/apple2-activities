@@ -68,3 +68,63 @@ func TestMachines(t *testing.T) {
 		}
 	}
 }
+
+// listings are the programs of the guides, and the pages that show them
+var listings = []struct {
+	guide, listing string
+}{
+	{"ultraterm", ultratermModes},
+}
+
+/*
+TestListings checks that each page shows its programs whole, as the files
+the generators type and the reader downloads: the code blocks of the
+language of a listing, one after the other, are the listing
+*/
+func TestListings(t *testing.T) {
+	for _, l := range listings {
+		listing, err := os.ReadFile(l.listing)
+		if err != nil {
+			t.Fatal(err)
+		}
+		page, err := os.ReadFile(filepath.Join("../guides", l.guide+".md"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		fence := "```" + listingLanguage(l.listing) + "\n"
+		var blocks strings.Builder
+		for _, block := range strings.Split(string(page), fence)[1:] {
+			code, _, _ := strings.Cut(block, "```")
+			blocks.WriteString(dedent(code))
+		}
+		if blocks.String() != string(listing) {
+			t.Errorf("the %v blocks of %v.md are not %v", fence[3:len(fence)-1], l.guide, l.listing)
+		}
+	}
+}
+
+// listingLanguage is the language of the code blocks of a listing, by its
+// extension
+func listingLanguage(path string) string {
+	switch filepath.Ext(path) {
+	case ".bas":
+		return "basic"
+	case ".pas":
+		return "pascal"
+	case ".s":
+		return "asm"
+	}
+	return strings.TrimPrefix(filepath.Ext(path), ".")
+}
+
+// dedent takes off the indentation of a code block inside a list item
+func dedent(code string) string {
+	lines := strings.Split(code, "\n")
+	indent := len(lines[0]) - len(strings.TrimLeft(lines[0], " "))
+	for i, line := range lines {
+		if len(line) >= indent {
+			lines[i] = line[indent:]
+		}
+	}
+	return strings.TrimRight(strings.Join(lines, "\n"), " ")
+}

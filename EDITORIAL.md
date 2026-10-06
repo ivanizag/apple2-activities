@@ -57,6 +57,11 @@ step, with what the machine showed on the way. Its parts are:
   from. Only when no download can be found, or none works, use the one inside
   izapple2, `<internal>/<file>`, and say on the page where the program is
   found today.
+- **Programs of the page** are files in `guides/listings/`, typed into the
+  machine by the generator with `typeListing`, and shown on the page in code
+  blocks of their language (`basic`, `pascal`...). The blocks, one after the
+  other, are the whole file, which `TestListings` checks; the page links to
+  the file for the reader to download.
 - **A blank diskette** is `blank.dsk`, made by the script; the page tells the
   reader to copy it.
 - **Check it runs on the machine of the page**, a \]\[+ or a //e, with only
