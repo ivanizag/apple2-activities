@@ -34,9 +34,6 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -mods four-colors
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `2` of izapple2 is this same machine:
 
 ```bash

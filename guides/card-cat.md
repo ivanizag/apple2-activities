@@ -52,9 +52,6 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -s7 mouse
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters, and the disk.
-
 The enhanced Apple //e izapple2 starts with, its model `2enh`, has the cards
 of slots 2 to 4; the rest are added to it:
 

@@ -41,9 +41,6 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -s6 diskii,disk1=disks/ultraterm-utilities.dsk
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `ultraterm` of izapple2 has this machine, with a Language Card
 more and the disk of the utilities inside izapple2:
 

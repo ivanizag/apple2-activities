@@ -39,9 +39,6 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -s6 diskii,disk1=disks/mockingboard-demo.dsk
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 

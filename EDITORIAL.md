@@ -81,8 +81,8 @@ step, with what the machine showed on the way. Its parts are:
 - **"The machine"** comes after "What you need": the machine the page uses,
   as a list, the board and its processor and memory, then what is in each
   slot, and the izapple2 command that starts it, in a `bash` block, exactly
-  the one the generator builds. Do not explain the options of the command:
-  the list says what the machine is. A page that starts the machine twice
+  the one the generator builds. Do not explain the options of the command,
+  nor what `<internal>/` is: the list says what the machine is. A page that starts the machine twice
   gives both commands there. The reader runs `izapple2`, the frontend of the
   releases.
 - **Only the hardware the activity uses.** No card, clock or memory that the

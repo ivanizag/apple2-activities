@@ -39,9 +39,6 @@ izapple2 -model _base -board 2plus -cpu 6502 \
     -s6 diskii,sectors13=true,disk1=disks/visicalc.woz
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 VisiCalc came on a disk of 13 sectors a track, the format of DOS 3.2 and
 before. Apple changed the Disk II to 16 sectors in 1980, with DOS 3.3, and
 the disks of before needed the old ROMs of the controller, or a program

@@ -37,9 +37,6 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -s6 'diskii,disk1=<internal>/Apple II Pascal 1.3 APPLE1_ 680-0283-A.dsk,disk2=<internal>/Apple II Pascal 1.3 APPLE2_ 680-0284-A.dsk'
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters, and the disks.
-
 The model `pascal` of izapple2 has this machine, with 8 MB more of memory on
 a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more, and a second Disk II controller in slot 5 with `APPLE3`
