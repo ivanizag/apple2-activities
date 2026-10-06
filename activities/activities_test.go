@@ -43,6 +43,7 @@ var activities = []struct {
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
 	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 	{"printing", []string{printingMachine}, printingScreenshots},
+	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 }
 
 func TestActivities(t *testing.T) {
@@ -82,6 +83,7 @@ var listings = []struct {
 	{"ultraterm", ultratermModes},
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},
+	{"applesoft-snake", snakeListing},
 }
 
 /*

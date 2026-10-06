@@ -104,6 +104,13 @@ compiler, and a program that draws with the turtle.
 A whole game written in Apple Pascal, its listing in this repository: typed
 into the editor, compiled, and played to the end, 200 moves.
 
+### [A game in Applesoft: the snake](guides/applesoft-snake.md)
+
+<a href="guides/applesoft-snake.md"><img src="guides/images/applesoft-snake/long.png" width="320" alt="The snake in low resolution"></a>
+
+A whole game of 35 lines of Applesoft, its listing in this repository: the
+snake in the low resolution graphics, typed in, explained, and played.
+
 ## Work
 
 ### [VisiCalc](guides/visicalc.md)
