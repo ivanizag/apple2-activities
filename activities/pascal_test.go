@@ -26,7 +26,7 @@ end.
 `
 
 // pascalMachine is the machine of the guide, as its command line of izapple2
-const pascalMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+const pascalMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \

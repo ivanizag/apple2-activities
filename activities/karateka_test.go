@@ -9,7 +9,7 @@ import (
 )
 
 // karatekaMachine is the machine of the guide, as its command line of izapple2
-const karatekaMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const karatekaMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 diskii,disk1=disks/Karateka.woz`

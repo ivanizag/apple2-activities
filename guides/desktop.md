@@ -38,7 +38,7 @@ An enhanced Apple //e with a mouse and a hard disk:
   DeskTop 1.4.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \
@@ -54,7 +54,7 @@ a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Disk II controller more, and the disk of DeskTop inside izapple2:
 
 ```bash
-izapple2 -model desktop
+izapple2 -model desktop -screen color
 ```
 
 ## Start it

@@ -32,7 +32,7 @@ An enhanced Apple //e with one disk drive:
 - a Disk II controller card in slot 6, with ProDOS 2.4.3 in drive 1.
 
 ```bash
-izapple2 -model _base -board 2e -cpu 65c02 \
+izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
@@ -47,7 +47,7 @@ a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more, and the ProDOS disk inside izapple2:
 
 ```bash
-izapple2 -model prodos
+izapple2 -model prodos -screen green
 ```
 
 ## The program selector

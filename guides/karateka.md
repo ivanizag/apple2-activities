@@ -32,7 +32,7 @@ An Apple \]\[+ with one disk drive and a joystick:
 - a Disk II controller card in slot 6, with the Karateka disk in drive 1.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 diskii,disk1=disks/Karateka.woz
@@ -45,13 +45,13 @@ The model `2plus` of izapple2 has this machine, with a Language Card and a
 Videx Videoterm 80 column card more:
 
 ```bash
-izapple2 -model 2plus disks/Karateka.woz
+izapple2 -model 2plus -screen color disks/Karateka.woz
 ```
 
 ## The film
 
-1. **Start izapple2** with the command above, and press F6 until the screen
-   is in colour. After the drive, the titles, one after the other.
+1. **Start izapple2** with the command above. After the drive, the titles,
+   one after the other.
 
    ![The titles](images/karateka/titles.gif)
 

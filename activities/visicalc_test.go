@@ -7,7 +7,7 @@ import (
 )
 
 // visiCalcMachine is the machine of the guide, as its command line of izapple2
-const visiCalcMachine = `izapple2 -model _base -board 2plus -cpu 6502 \
+const visiCalcMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 'diskii,sectors13=true,disk1=disks/VisiCalc v1.37.woz'`

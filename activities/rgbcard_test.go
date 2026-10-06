@@ -10,7 +10,7 @@ import (
 )
 
 // rgbCardMachine is the machine of the guide, as its command line of izapple2
-const rgbCardMachine = `izapple2 -model _base -board 2e -cpu 65c02 \
+const rgbCardMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen color \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" -rgb \
     -s0 language \

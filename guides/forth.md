@@ -31,7 +31,7 @@ An Apple \]\[+ with Forth in ROM:
 - no disk controller card: Forth starts from the card.
 
 ```bash
-izapple2 -model _base -board 2plus -cpu 6502 \
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s0 forthrom
@@ -44,7 +44,7 @@ The model `forth` of izapple2 has this machine, with a Videx Videoterm 80
 column card more:
 
 ```bash
-izapple2 -model forth
+izapple2 -model forth -screen green
 ```
 
 ## Switch it on

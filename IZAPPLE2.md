@@ -17,20 +17,19 @@ with one sees the machine stop at `INIT HELLO,D2`.
 **Here, once released:** say in [dos33.md](guides/dos33.md) which release of
 izapple2 the page needs, at least.
 
-## Not fixed
-
 ### No -board on the command line
 
-The pages give the whole machine on the command line, starting from the
-model `_base`, which has nothing, as `izapple2 -model _base -board 2plus
--cpu 6502 -rom ...`. The board can only come from a model today: izapple2 has
-the option for each of the rest, but none for `board`. The library takes it
-in the configuration, and that is how the generators build the machines, so
-the pictures are right; a reader's izapple2 refuses the command.
+The pages give the whole machine on the command line, as `izapple2 -model
+none -board 2plus -cpu 6502 -screen green -rom ...`. izapple2 had no
+`-board` option, no model `none` and no `-screen`, so a reader's izapple2
+refused the commands of the pages. Master has them now, but the releases of
+izapple2 don't yet.
 
-**Here, once done:** say in [README.md](README.md) which release of izapple2
-the commands of the pages need, at least. Until then, the preconfigured model
-each page gives after its command runs the activity.
+**Here, once released:** say in [README.md](README.md) which release of
+izapple2 the commands of the pages need, at least. Until then, the
+preconfigured model each page gives after its command runs the activity.
+
+## Not fixed
 
 ### Writing to a WOZ disk stops the emulator
 
