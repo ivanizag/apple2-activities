@@ -110,10 +110,11 @@ and its sound effects, recorded to listen to.
 
 ### [160 columns: the Videx Ultraterm](guides/ultraterm.md)
 
-<a href="guides/ultraterm.md"><img src="guides/images/ultraterm/modes.png" width="320" alt="The modes of the Ultraterm"></a>
+<a href="guides/ultraterm.md"><img src="guides/images/ultraterm/mode-3.png" width="320" alt="160 columns by 24 lines"></a>
 
-The card that gave the Apple \]\[+ up to 160 columns of text, in the
-demonstration of its own disk of utilities.
+The card that gave the Apple \]\[+ up to 160 columns of text: the
+demonstration of its own disk of utilities, and a program that shows each
+of its modes, up to 160 by 24 and 80 by 48.
 
 ### [What is in the slots: Card Cat](guides/card-cat.md)
 

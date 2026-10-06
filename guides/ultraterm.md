@@ -11,7 +11,8 @@ draws the screen itself: the monitor is plugged into the card, not into the
 Apple II.
 
 The Ultraterm came with a disk of utilities that starts with a demonstration
-of the card. This page watches it.
+of the card. This page watches it, and then runs a program of its own that
+puts the card in each of its modes, one after the other.
 
 ## What you need
 
@@ -75,6 +76,91 @@ izapple2 -model ultraterm
 
    BASIC, Pascal and CP/M used the card through its firmware, and Videx had
    *pre-boot* disks to start Apple Writer \]\[ and VisiCalc with it.
+
+## The modes, one by one
+
+4. **Press Control-F2**, Reset, to stop the demonstration, and type
+   `PR#3` to give the screen back to the card, and `NEW`.
+
+5. **Type the program**, each line with Return. It is also in
+   [listings/ultraterm-modes.bas](listings/ultraterm-modes.bas).
+
+   ```basic
+   10 REM THE EIGHT MODES OF THE ULTRATERM
+   20 V$ = CHR$ (22):L$ = CHR$ (12)
+   30 FOR M = 1 TO 8
+   40 READ C,L,N$
+   50 PRINT V$; CHR$ (48 + M);L$;
+   60 R$ = ""
+   70 FOR X = 3 TO C
+   80 D = X - INT (X / 10) * 10:T = INT (X / 10) - INT (X / 100) * 10
+   90 C$ = ".": IF D = 5 THEN C$ = "+"
+   100 IF D = 0 THEN C$ = STR$ (T)
+   110 R$ = R$ + C$
+   120 NEXT X
+   130 PRINT "MODE ";M;": ";C;" COLUMNS BY ";L;" LINES";N$
+   140 FOR Y = 2 TO L
+   150 PRINT RIGHT$ (" " + STR$ (Y),2);
+   160 IF Y < L THEN PRINT R$;
+   170 NEXT Y
+   180 GET K$
+   190 NEXT M
+   200 PRINT V$;"1";L$;
+   210 END
+   300 DATA 80,24,"",96,24,"",160,24,""
+   310 DATA 80,24,", INTERLACED",80,32,", INTERLACED"
+   320 DATA 80,48,", INTERLACED",132,24,", INTERLACED"
+   330 DATA 128,32,", INTERLACED"
+   ```
+
+   A program chooses the mode by printing Control-V, `CHR$(22)`, and its
+   number, from 1 to 8; from the keyboard it is Escape and the number.
+   Control-L, `CHR$(12)`, clears the screen. For each mode the program
+   writes its name, and then a ruler on every line: a `+` every five
+   columns, the tens every ten, and the number of the line at the left, so
+   that the picture tells how many columns and lines there are.
+
+6. **Type `RUN`**, and press Space for each next mode. The pictures are the
+   size of the screen the card draws: wider for more columns, taller for
+   more lines.
+
+   Mode 1, 80 columns by 24 lines, as the Videoterm before it:
+
+   ![80 by 24](images/ultraterm/mode-1.png)
+
+   Mode 2, 96 by 24, the characters closer together:
+
+   ![96 by 24](images/ultraterm/mode-2.png)
+
+   Mode 3, 160 by 24, twice the dots across:
+
+   ![160 by 24](images/ultraterm/mode-3.png)
+
+   Mode 4, 80 by 24 interlaced: the odd lines of dots in one frame and the
+   even ones in the next, with the finer characters of the card, those of
+   the demonstration:
+
+   ![80 by 24, interlaced](images/ultraterm/mode-4.png)
+
+   Mode 5, 80 by 32, interlaced:
+
+   ![80 by 32](images/ultraterm/mode-5.png)
+
+   Mode 6, 80 by 48, interlaced, with the plain characters, half as tall,
+   for word processing:
+
+   ![80 by 48](images/ultraterm/mode-6.png)
+
+   Mode 7 is 132 by 24, interlaced, the width of a printer's line; izapple2
+   does not show it right yet, its lines run on across the screen, so it
+   has no picture here.
+
+   Mode 8, 128 by 32, interlaced, which the demonstration offered for
+   spreadsheets:
+
+   ![128 by 32](images/ultraterm/mode-8.png)
+
+   After the last one the program sets mode 1 again.
 
 ## What next
 

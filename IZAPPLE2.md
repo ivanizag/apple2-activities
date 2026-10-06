@@ -151,6 +151,18 @@ blank `.dsk` there, all zeros, answers `DISK I/O ERROR` after `CONTINUE
 **Here, once fixed:** [cpm.md](guides/cpm.md) could add a second drive, a
 diskette formatted by CP/M, and files copied to it with `PIP`.
 
+### The 132 columns of the Ultraterm are shown 160 wide
+
+In the mode 7 of the Ultraterm, 132 columns by 24 lines, interlaced, the
+firmware writes 144 to the register 1 of the 6845, the characters across,
+and `MC6845.Write` in `component/mc6845.go` turns it into 160, a hack for
+that mode. The lines of the firmware then run on across the screen instead
+of starting at the left.
+
+**Here, once fixed:** take the picture of mode 7 in
+[ultraterm_test.go](activities/ultraterm_test.go), and show it in
+[ultraterm.md](guides/ultraterm.md) with the others.
+
 ### The headless frontend crashes when the machine can't be built
 
 `frontend/headless/main.go` prints the error of `CreateConfiguredApple` and

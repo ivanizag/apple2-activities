@@ -180,3 +180,17 @@ func must(t testing.TB, err error) {
 		t.Fatal(err)
 	}
 }
+
+// typeListing types a program of the guides, a line at a time
+func typeListing(o *operator.Operator, path string) error {
+	text, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	for _, line := range strings.Split(strings.TrimRight(string(text), "\n"), "\n") {
+		if err := o.TypeLines(line); err != nil {
+			return fmt.Errorf("typing %q: %w", line, err)
+		}
+	}
+	return nil
+}
