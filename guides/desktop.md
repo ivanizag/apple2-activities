@@ -47,9 +47,6 @@ izapple2 -model _base -board 2e -cpu 65c02 \
     -s7 smartport,image1=disks/a2desktop-1.4.2mg
 ```
 
-`<internal>/` names a file inside izapple2: the ROMs, of the machine and of
-its characters.
-
 The model `desktop` of izapple2 has this machine, with 8 MB more of memory on
 a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Disk II controller more, and the disk of DeskTop inside izapple2:
