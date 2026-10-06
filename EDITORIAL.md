@@ -49,8 +49,11 @@ step, with what the machine showed on the way. Its parts are:
   first, for the masters of Apple's own software and the classics, and the
   [Internet Archive](https://archive.org/), for the WOZ images of the
   [wozaday](https://archive.org/details/wozaday) collection and much else.
-  Prefer the original disks to the cracked ones, and WOZ when the original
-  needs it.
+  WOZ is not better in itself: a clean crack, as 4am's, in DSK or PO, is
+  often the better choice, and the only one when the program writes to its
+  disk, as izapple2 cannot write a WOZ image yet (see
+  [IZAPPLE2.md](IZAPPLE2.md)). Use a WOZ when no good copy in another
+  format runs.
 - **Not the disks inside izapple2.** It carries DOS 3.3, ProDOS, Apple
   Pascal, CP/M, Apple II DeskTop and others, for its models, but a page
   downloads its disks like any other, so the reader knows where they come
