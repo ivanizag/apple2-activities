@@ -267,20 +267,22 @@ func timeZoneScreenshots(t *testing.T) {
 	shown := timeZoneCommand{name: "0001"}
 	answer(&shown)
 	var walkthrough strings.Builder
-	number := 0
+	walkthrough.WriteString(timeZoneIndex(steps))
+	number, section := 0, 0
 	for _, step := range steps {
 		if step.section != "" {
-			fmt.Fprintf(&walkthrough, "### %v\n\n", step.section)
+			section++
+			fmt.Fprintf(&walkthrough, "### %v\n\n", timeZoneSection(section, step.section))
 			continue
 		}
 		number++
-		timeZoneWrite(&walkthrough, number, shown, step.command)
+		timeZoneWrite(&walkthrough, shown, step.command)
 		must(t, o.Type(step.command+"\n"))
 		shown = timeZoneCommand{name: fmt.Sprintf("%04d", number+1), command: step.command}
 		answer(&shown)
 	}
-	walkthrough.WriteString("### The end\n\n")
-	timeZoneWrite(&walkthrough, 0, shown, "")
+	fmt.Fprintf(&walkthrough, "### %v\n\n", timeZoneTheEnd)
+	timeZoneWrite(&walkthrough, shown, "")
 	if !o.HasText(timeZoneEnding) {
 		t.Fatalf("the walkthrough did not end the game:\n%v", o.Text())
 	}
@@ -292,12 +294,47 @@ func timeZoneDiskFile(t *testing.T, letter string) string {
 	return disk(t, fmt.Sprintf(timeZoneDiskNamed, letter))
 }
 
-// timeZoneWrite writes a step on the page: its number, what the game shows,
-// the disks it asks for, and the command to type then
-func timeZoneWrite(w *strings.Builder, number int, c timeZoneCommand, command string) {
-	if number > 0 {
-		fmt.Fprintf(w, "**%d.**\n\n", number)
+// timeZoneTheEnd is the title of the last section, the ending of the game
+const timeZoneTheEnd = "The end"
+
+// timeZoneSection is the title of a section, with its number
+func timeZoneSection(number int, title string) string {
+	return fmt.Sprintf("%d. %v", number, title)
+}
+
+// timeZoneAnchor is the name GitHub gives a title, to link to it: in small
+// letters, without punctuation, the spaces made hyphens
+func timeZoneAnchor(title string) string {
+	var b strings.Builder
+	for _, r := range strings.ToLower(title) {
+		switch {
+		case r >= 'a' && r <= 'z', r >= '0' && r <= '9', r == '-', r == '_':
+			b.WriteRune(r)
+		case r == ' ':
+			b.WriteRune('-')
+		}
 	}
+	return b.String()
+}
+
+// timeZoneIndex is the list of the sections, each a link to it
+func timeZoneIndex(steps []timeZoneStep) string {
+	var b strings.Builder
+	section := 0
+	for _, step := range steps {
+		if step.section != "" {
+			section++
+			title := timeZoneSection(section, step.section)
+			fmt.Fprintf(&b, "- [%v](#%v)\n", title, timeZoneAnchor(title))
+		}
+	}
+	fmt.Fprintf(&b, "- [%v](#%v)\n\n", timeZoneTheEnd, timeZoneAnchor(timeZoneTheEnd))
+	return b.String()
+}
+
+// timeZoneWrite writes a step on the page: what the game shows, the disks it
+// asks for, and the command to type then
+func timeZoneWrite(w *strings.Builder, c timeZoneCommand, command string) {
 	for i, p := range c.pictures {
 		if i > 0 {
 			// The pictures one under the other, the text under its picture
@@ -345,21 +382,23 @@ func TestTimeZoneWalkthrough(t *testing.T) {
 	page, err := os.ReadFile(timeZonePage)
 	must(t, err)
 	var want, got []string
-	number := 0
+	section := 0
 	for _, s := range steps {
 		if s.section != "" {
-			want = append(want, "### "+s.section)
+			section++
+			want = append(want, "### "+timeZoneSection(section, s.section))
 		} else {
-			number++
-			want = append(want, fmt.Sprintf("**%d.**", number), fmt.Sprintf("**Type `%v`**", s.command))
+			want = append(want, fmt.Sprintf("**Type `%v`**", s.command))
 		}
 	}
-	want = append(want, "### The end")
-	step := regexp.MustCompile("^\\*\\*([0-9]+\\.|Type `.*`)\\*\\*$")
+	want = append(want, "### "+timeZoneTheEnd)
 	for _, line := range strings.Split(string(page), "\n") {
-		if strings.HasPrefix(line, "### ") || step.MatchString(line) {
+		if strings.HasPrefix(line, "### ") || strings.HasPrefix(line, "**Type `") {
 			got = append(got, line)
 		}
+	}
+	if !strings.Contains(string(page), timeZoneIndex(steps)) {
+		t.Errorf("the index of %v is not the one of %v: run its generator", timeZonePage, timeZoneWalkthrough)
 	}
 	if strings.Join(got, "\n") != strings.Join(want, "\n") {
 		t.Errorf("the walkthrough of %v is not the one of %v: run its generator", timeZonePage, timeZoneWalkthrough)
