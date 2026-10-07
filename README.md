@@ -289,6 +289,14 @@ Broderbund's game of 1983, from a copy of its original disk: the title, the
 demonstration that plays itself, and a game played from the keyboard, until
 a guard catches the runner.
 
+### [Mission: Asteroid, from the start to the end](guides/missionasteroid.md)
+
+[<img src="guides/images/missionasteroid/0001.png" width="320" alt="In front of the space center">](guides/missionasteroid.md)
+
+Hi-Res Adventure #0 of Ken and Roberta Williams, of 1980: an asteroid to blow
+up before it hits the Earth, in a rocket flown by its buttons. Played to its
+end, a picture of the screen after each command.
+
 ### [Time Zone, from the start to the end](guides/timezone.md)
 
 [<img src="guides/images/timezone/title.png" width="320" alt="The title of Time Zone">](guides/timezone.md)
