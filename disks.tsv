@@ -7,6 +7,7 @@
 #   member   optional, the file to take out of a zip download
 #
 # name	sha256	source	member
+
 A2DeskTop-1.4-en_800k.2mg	f089cba2ed7bdd1558570e85419983322247317f5d21d4ad670e7a9182cbb9a5	https://github.com/a2stuff/a2d/releases/download/v1.4/A2DeskTop-1.4-en.zip	A2DeskTop-1.4-en_800k.2mg
 Apple DOS 3.2 Plus.nib	470e541bdc87cef9322f2b041095427d3d5374bc4495511ef541e6565aa51e94	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/Apple%20DOS%203.2%20Plus.nib
 Apple LOGO.dsk	66c12cf5907d316c6e69c8b053ebb1d289a36bb5095c809a8822a77823a50568	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/programming/logo/Apple%20LOGO.dsk
@@ -21,12 +22,11 @@ Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982
 Mystery House (4am crack).dsk	d15bb2ab7d7058ff4aa22406db7ba6e21533e8b8d905df4cfbc5a8b86aee1840	https://archive.org/download/MysteryHouse4amCrack/Mystery%20House%20%284am%20crack%29.zip	Mystery House (4am crack)/Mystery House (4am crack).dsk
 ProDOS_2_4_3.po	398d333cb2ab92df9f8bb2cf64b946f2567116910eb8359cf4bdee5d4194f0fa	http://releases.prodos8.com/ProDOS_2_4_3.po
 SwyftWare_-_SwyftCard_Tutorial.woz	f0d44c339b34f6a62dfa44950226d94cc66d77d91490b4b8a09302fa4cae617a	https://archive.org/download/swyftware-a2r-woz/SwyftWare_-_SwyftCard_Tutorial.woz
-The Wizard and the Princess (1980-On-Line Systems).nib	7ce2ff5f5e93aec699398078bb2d17659f953f0065654a52e58d75a5a949f1e0	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/games/adventure/wizard_and_the_princess/The%20Wizard%20and%20the%20Princess%20%281980-On-Line%20Systems%29.nib
-
 The Dark Crystal (4am and san inc crack) disk 1A.dsk	6e342c5b8643c5890688308f1fb12ab6c69827223c46638ca4d8f0825834c2ac	https://archive.org/download/TheDarkCrystal4amCrack/The%20Dark%20Crystal%20%284am%20and%20san%20inc%20crack%29.zip	The Dark Crystal (4am and san inc crack)/The Dark Crystal (4am and san inc crack) disk 1A.dsk
 The Dark Crystal (4am and san inc crack) disk 1B.dsk	b1040e990bbb33f67722835775630efa1b196de8caa1fe5a28de4e595a8c34ff	https://archive.org/download/TheDarkCrystal4amCrack/The%20Dark%20Crystal%20%284am%20and%20san%20inc%20crack%29.zip	The Dark Crystal (4am and san inc crack)/The Dark Crystal (4am and san inc crack) disk 1B.dsk
 The Dark Crystal (4am and san inc crack) disk 2A.dsk	283d858df86d7ec5628b72d33b628612ccf86611ef6d0ae7023ed779698a589c	https://archive.org/download/TheDarkCrystal4amCrack/The%20Dark%20Crystal%20%284am%20and%20san%20inc%20crack%29.zip	The Dark Crystal (4am and san inc crack)/The Dark Crystal (4am and san inc crack) disk 2A.dsk
 The Dark Crystal (4am and san inc crack) disk 2B.dsk	7372310db4b0835260e40b75d35ee9ab98f279eb51f9b16330c71a8eca0cd793	https://archive.org/download/TheDarkCrystal4amCrack/The%20Dark%20Crystal%20%284am%20and%20san%20inc%20crack%29.zip	The Dark Crystal (4am and san inc crack)/The Dark Crystal (4am and san inc crack) disk 2B.dsk
+The Wizard and the Princess (1980-On-Line Systems).nib	7ce2ff5f5e93aec699398078bb2d17659f953f0065654a52e58d75a5a949f1e0	https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/games/adventure/wizard_and_the_princess/The%20Wizard%20and%20the%20Princess%20%281980-On-Line%20Systems%29.nib
 Time Zone (4am and san inc crack) disk A.dsk	d784caee775441de044b4aa5340036902c635542ce48a7fde5580342ac399f72	https://archive.org/download/TimeZone4amCrack/Time%20Zone%20%284am%20and%20san%20inc%20crack%29.zip	Time Zone (4am and san inc crack)/Time Zone (4am and san inc crack) disk A.dsk
 Time Zone (4am and san inc crack) disk B.dsk	bdff21b635bc571a85a86d53498edced9c75e020be100ebb5bfdac33ff49f05b	https://archive.org/download/TimeZone4amCrack/Time%20Zone%20%284am%20and%20san%20inc%20crack%29.zip	Time Zone (4am and san inc crack)/Time Zone (4am and san inc crack) disk B.dsk
 Time Zone (4am and san inc crack) disk C.dsk	a1e1e39c6d2c975dbb10203c558047849d5889b4d250b08ad0501549dbafa9f4	https://archive.org/download/TimeZone4amCrack/Time%20Zone%20%284am%20and%20san%20inc%20crack%29.zip	Time Zone (4am and san inc crack)/Time Zone (4am and san inc crack) disk C.dsk
