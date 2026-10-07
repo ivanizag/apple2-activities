@@ -26,6 +26,7 @@ var activities = []struct {
 }{
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
+	{"apple-iie-models", []string{iieOriginal, iieEnhanced}, iieModelsScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},

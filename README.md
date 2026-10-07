@@ -39,6 +39,14 @@ never ends stopped with Control-C.
 The Apple II of the rest of the decade: lower case, 80 columns, the MouseText
 of the enhanced //e, and the self test in its ROM, run with both Apple keys.
 
+### [The Apple //e, original and enhanced](guides/apple-iie-models.md)
+
+[<img src="guides/images/apple-iie-models/enhanced-mousetext.png" width="320" alt="MouseText on the enhanced Apple //e">](guides/apple-iie-models.md)
+
+The //e of 1983 and the enhanced one of 1985, side by side: Applesoft in
+small letters, MouseText where there were inverse capitals, and the
+Mini-Assembler back in the Monitor.
+
 ### [Life with DOS 3.3](guides/dos33.md)
 
 [<img src="guides/images/dos33/catalog.png" width="320" alt="The catalog of the System Master">](guides/dos33.md)
