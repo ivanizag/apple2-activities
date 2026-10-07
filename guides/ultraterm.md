@@ -21,6 +21,10 @@ on the [Asimov archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/image
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it.
 
+The
+[Quick Reference Guide of the Ultraterm](https://archive.org/details/Videx-UltraTerm_Quick_Reference_Guide)
+is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with a Videx Ultraterm:

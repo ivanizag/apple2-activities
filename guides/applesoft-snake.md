@@ -17,6 +17,9 @@ Only izapple2, as in [Switch on an Apple \]\[+](switch-on.md): nothing
 to download. The program is in this repository,
 [listings/snake.bas](listings/snake.bas).
 
+[The Applesoft Tutorial](https://archive.org/details/The_Applesoft_Tutorial),
+Apple's manual to learn Applesoft, is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with no disk drive:

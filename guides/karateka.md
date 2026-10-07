@@ -21,6 +21,9 @@ out of it. It is the original disk, copy protection and all.
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it.
 
+[Broderbund's manual of Karateka](https://archive.org/details/karatekabroderbund)
+is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with one disk drive and a joystick:

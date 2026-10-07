@@ -23,6 +23,10 @@ archive](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/):
 download it and take *CPM1.PO* out of it. `./fetch-disks.sh` in this
 repository downloads it into `disks/` and checks it.
 
+The
+[SoftCard CP/M Reference Manual](https://archive.org/details/Microsoft_SoftCard_CPM_Reference_Manual)
+of Microsoft is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with the Microsoft Z80 SoftCard:

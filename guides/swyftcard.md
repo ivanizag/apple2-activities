@@ -28,6 +28,10 @@ Internet Archive. `./fetch-disks.sh` in this repository downloads it into
 `disks/` and checks it. The program itself is in the ROM of the card, which
 izapple2 carries.
 
+The [SwyftCard Manual](https://archive.org/details/SwyftCardManual) and its
+[Quick Reference Guide](https://archive.org/details/SwyftCard_Quick_Reference_Guide)
+are on the Internet Archive.
+
 ## The machine
 
 An enhanced Apple //e with the SwyftCard and one disk drive:

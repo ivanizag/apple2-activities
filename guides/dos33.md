@@ -40,6 +40,9 @@ head -c 143360 /dev/zero > my-disk.dsk
 
 izapple2 writes what DOS saves straight into `my-disk.dsk`.
 
+[The DOS Manual](https://archive.org/details/The_DOS_Manual_HQ) of DOS 3.3 is
+on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with two disk drives:

@@ -20,6 +20,10 @@ prints to a file.
 Only izapple2. The ROM of the Apple \]\[+ and the one of the card come
 inside it, and the program is typed in.
 
+The manual of the card, the
+[Apple II Parallel Printer Interface Card Installation and Operating Manual](https://archive.org/details/Apple_II_Parallel_Printer_Interface_Card_Installation_and_Operating_Manual),
+is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with a printer:

@@ -23,6 +23,11 @@ and take it out of it. It is the original disk, copy protection and all, in
 the WOZ format that keeps it as it was. `./fetch-disks.sh` in this
 repository downloads it into `disks/` and checks it.
 
+The
+[VisiCalc User's Guide](https://archive.org/details/visicalc-users-guide-apple-ii-and-ii-48k-16-sector)
+for the Apple \]\[ and \]\[+, of the version for 16 sectors, is on the
+Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with one disk drive of 13 sectors:
