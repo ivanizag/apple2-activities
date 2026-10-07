@@ -122,8 +122,6 @@ update `go.mod` with `GOWORK=off go get github.com/ivanizag/izapple2@master`.
 
 Not done yet, and not proposed: each needs a look on the machine first.
 
-- **Apple II clones**: the Base 64A and the Basis 108, models of izapple2
-  with their own ROMs.
 - **CPM-65**, a CP/M for the 6502, model `cpm65`.
 - **A2AUDIT**, the test of the machine; izapple2 has its disk inside, a page
   needs it downloaded.

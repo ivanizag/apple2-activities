@@ -30,6 +30,7 @@ var activities = []struct {
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
 	{"base64a", []string{base64aMachine, base64aDOS}, base64aScreenshots},
+	{"basis108", []string{basis108Machine, basis108DOS}, basis108Screenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
