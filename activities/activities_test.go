@@ -25,6 +25,7 @@ var activities = []struct {
 	pictures func(t *testing.T)
 }{
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
+	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires, cassettesRevision1}, cassettesScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
 	{"apple-iie-models", []string{iieOriginal, iieEnhanced}, iieModelsScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
@@ -125,6 +126,7 @@ func TestOrder(t *testing.T) {
 var listings = []struct {
 	guide, listing string
 }{
+	{"apple-ii-cassettes", coloursListing},
 	{"applesoft-snake", snakeListing},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
