@@ -33,10 +33,11 @@ func iieModelsScreenshots(t *testing.T) {
 	pictures := newAlbum("apple-iie-models", album.Green)
 	for _, model := range []struct {
 		name    string
+		label   string
 		command string
 	}{
-		{"original", iieOriginal},
-		{"enhanced", iieEnhanced},
+		{"original", "Apple //e of 1983", iieOriginal},
+		{"enhanced", "Enhanced Apple //e of 1985", iieEnhanced},
 	} {
 		o := start(t, model.command, nil)
 		must(t, o.WaitForText("Apple ", 10))
@@ -47,13 +48,13 @@ func iieModelsScreenshots(t *testing.T) {
 		must(t, o.TypeLines(`print "hello"`))
 		must(t, o.WaitForKeyboard(10))
 		o.Run(30)
-		must(t, pictures.Screenshot(o, model.name+"-lower"))
+		must(t, pictures.ScreenshotOf(o, model.name+"-lower", model.label))
 
 		// The inverse capitals, in 80 columns, with MouseText turned on
 		must(t, o.TypeLines("PR#3", mouseTextLine))
 		must(t, o.WaitForKeyboard(10))
 		o.Run(30)
-		must(t, pictures.Screenshot(o, model.name+"-mousetext"))
+		must(t, pictures.ScreenshotOf(o, model.name+"-mousetext", model.label))
 
 		// The Monitor, and ! for the Mini-Assembler
 		must(t, o.TypeLines("CALL -151", "!"))
@@ -62,7 +63,7 @@ func iieModelsScreenshots(t *testing.T) {
 			iieAssemble(t, o)
 		}
 		o.Run(30)
-		must(t, pictures.Screenshot(o, model.name+"-monitor"))
+		must(t, pictures.ScreenshotOf(o, model.name+"-monitor", model.label))
 	}
 }
 

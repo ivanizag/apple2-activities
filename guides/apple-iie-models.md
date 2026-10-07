@@ -19,11 +19,19 @@ The Apple //e lived for ten years, in three models that look alike:
 
 This page does the same things on the first two, side by side: switches
 them on, gives Applesoft a command in small letters, prints the characters
-that became MouseText, and asks the Monitor for its Mini-Assembler.
+that became MouseText, and asks the Monitor for its Mini-Assembler. The
+pictures of the //e of 1983 are on the left, and say *Apple //e of 1983*
+under the screen; those of the enhanced one are on the right, and say
+*Enhanced Apple //e of 1985*.
 
 ## What you need
 
 Only izapple2: the ROMs of both come inside it.
+
+The manual of the
+[Apple IIe Enhancement Kit](https://archive.org/details/a2eekg), and the
+[Apple IIe Technical Reference Manual](https://archive.org/details/a2etrm) of
+1985, are on the Internet Archive.
 
 ## The machine
 
@@ -62,9 +70,10 @@ of the Platinum //e.
    in small letters. Then **quit izapple2, start it with the second
    command**, and type the same.
 
-   ![The //e of 1983](images/apple-iie-models/original-lower.png)
-
-   ![The enhanced //e](images/apple-iie-models/enhanced-lower.png)
+   <table><tr>
+   <td><img src="images/apple-iie-models/original-lower.png" alt="The //e of 1983"></td>
+   <td><img src="images/apple-iie-models/enhanced-lower.png" alt="The enhanced //e"></td>
+   </tr></table>
 
    The first says `Apple ][` when it starts, the second `Apple //e`: the
    way to tell them apart, as the manuals of the time said. The first does
@@ -83,9 +92,10 @@ of the Platinum //e.
    `CHR$(24)`, Control-X, ends it; between them the 32 characters from `@`
    to `_`, in inverse.
 
-   ![Inverse capitals on the //e of 1983](images/apple-iie-models/original-mousetext.png)
-
-   ![MouseText on the enhanced //e](images/apple-iie-models/enhanced-mousetext.png)
+   <table><tr>
+   <td><img src="images/apple-iie-models/original-mousetext.png" alt="Inverse capitals on the //e of 1983"></td>
+   <td><img src="images/apple-iie-models/enhanced-mousetext.png" alt="MouseText on the enhanced //e"></td>
+   </tr></table>
 
    On the first, inverse capitals. On the enhanced one, MouseText: an
    apple, a pointer, an hourglass, a check mark, arrows, the pieces of
@@ -107,9 +117,10 @@ of the Platinum //e.
    an empty line to leave it, and **`300G`** to run the program, which
    prints an `A`, as on [the Apple \]\[ of 1977](apple-ii.md).
 
-   ![The Monitor of the //e of 1983](images/apple-iie-models/original-monitor.png)
-
-   ![The Mini-Assembler of the enhanced //e](images/apple-iie-models/enhanced-monitor.png)
+   <table><tr>
+   <td><img src="images/apple-iie-models/original-monitor.png" alt="The Monitor of the //e of 1983"></td>
+   <td><img src="images/apple-iie-models/enhanced-monitor.png" alt="The Mini-Assembler of the enhanced //e"></td>
+   </tr></table>
 
    The Monitor of the //e of 1983 has no Mini-Assembler, and `!` does
    nothing. It was in the ROM of the first Apple \]\[, with Integer BASIC,
