@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/ivanizag/apple2-activities/album"
+	"github.com/ivanizag/apple2-activities/operator"
 )
 
 // darkCrystalMachine is the machine of the guide, as its command line of
@@ -16,11 +17,16 @@ const darkCrystalMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen 
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 'diskii,disk1=disks/The Dark Crystal (4am and san inc crack) disk 1A.dsk'`
 
+// darkCrystalShort is the model 2plus of izapple2, an Apple ][+ with more cards,
+// with the disk of the game
+const darkCrystalShort = `izapple2 -model 2plus 'disks/The Dark Crystal (4am and san inc crack) disk 1A.dsk'`
+
 // darkCrystalDisk is the game asking for a side of its two disks
 var darkCrystalDisk = regexp.MustCompile(`INSERT DISK #(\d), SIDE "([AB])"`)
 
 // darkCrystal is the game, on the four sides of two disks
 var darkCrystal = adventure{
+	short:       darkCrystalShort,
 	name:        "darkcrystal",
 	walkthrough: "../guides/listings/darkcrystal.txt",
 	disk: func(lines []string) (string, string, bool) {
@@ -44,12 +50,12 @@ as the walkthrough says, a picture of the screen for each command, and
 writes the walkthrough of the page with the pictures.
 */
 func darkCrystalScreenshots(t *testing.T) {
-	pictures := newAlbum("darkcrystal", album.ColorWhiteText)
-	o := start(t, darkCrystalMachine, nil)
+	darkCrystal.screenshots(t, darkCrystalMachine, darkCrystalBegin)
+}
 
+// darkCrystalBegin takes the game to its first prompt
+func darkCrystalBegin(t *testing.T, o *operator.Operator, pictures *album.Album) {
 	// The game asks for the side of its disks it starts from
-
-	darkCrystal.play(t, o, pictures)
 }
 
 // TestDarkCrystalWalkthrough checks that the page has the walkthrough

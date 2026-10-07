@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/ivanizag/apple2-activities/album"
+	"github.com/ivanizag/apple2-activities/operator"
 )
 
 // timeZoneMachine is the machine of the guide, as its command line of
@@ -16,6 +17,10 @@ const timeZoneMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen col
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 'diskii,disk1=disks/Time Zone (4am and san inc crack) disk A.dsk'`
 
+// timeZoneShort is the model 2plus of izapple2, an Apple ][+ with more cards,
+// with the disk of the game
+const timeZoneShort = `izapple2 -model 2plus 'disks/Time Zone (4am and san inc crack) disk A.dsk'`
+
 // timeZoneDisk is the game asking for a side of its six disks, 1A to 6L; the
 // letter names the file
 var timeZoneDisk = regexp.MustCompile(`INSERT DISK NUMBER (\d([A-L]))`)
@@ -23,6 +28,7 @@ var timeZoneDisk = regexp.MustCompile(`INSERT DISK NUMBER (\d([A-L]))`)
 // timeZone is the game: it pauses at $4780 in the time machine before its
 // prompt, reading the keyboard
 var timeZone = adventure{
+	short:       timeZoneShort,
 	name:        "timezone",
 	walkthrough: "../guides/listings/timezone.txt",
 	waits: []adventureWait{
@@ -45,9 +51,11 @@ one for each page of a longer answer. It changes the disks when the game asks
 for them, and writes the walkthrough of the page with the pictures.
 */
 func timeZoneScreenshots(t *testing.T) {
-	pictures := newAlbum("timezone", album.ColorWhiteText)
-	o := start(t, timeZoneMachine, nil)
+	timeZone.screenshots(t, timeZoneMachine, timeZoneBegin)
+}
 
+// timeZoneBegin takes the game to its first prompt
+func timeZoneBegin(t *testing.T, o *operator.Operator, pictures *album.Album) {
 	// The title, until a key, and the menu
 	must(t, o.WaitForKeyboard(60))
 	must(t, pictures.Screenshot(o, "title"))
@@ -58,8 +66,6 @@ func timeZoneScreenshots(t *testing.T) {
 	must(t, pictures.Screenshot(o, "menu"))
 	must(t, o.Type("\n"))
 	must(t, o.WaitForText("INSERT DISK", 60))
-
-	timeZone.play(t, o, pictures)
 }
 
 // TestTimeZoneWalkthrough checks that the page has the walkthrough
