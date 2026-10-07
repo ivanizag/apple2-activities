@@ -127,10 +127,11 @@ type timeZonePicture struct {
 	text []string
 }
 
-// timeZoneCommand is a command played, the pictures of its answer, and the
-// disks asked for on the way
+// timeZoneCommand is the answer of the game to a command, its pictures, named
+// after the step of the page that shows them, and the disks asked for on the
+// way
 type timeZoneCommand struct {
-	number   int
+	name     string
 	command  string
 	pictures []timeZonePicture
 	disks    []string
@@ -215,7 +216,7 @@ func timeZoneScreenshots(t *testing.T) {
 
 	// Each command and its answer, a picture each time the game waits
 	answer := func(c *timeZoneCommand) {
-		name := fmt.Sprintf("%04d", c.number)
+		name := c.name
 		page := func() {
 			must(t, c.take(o, pictures, fmt.Sprintf("%v-%d", name, len(c.pictures)+1)))
 		}
@@ -233,10 +234,10 @@ func timeZoneScreenshots(t *testing.T) {
 				must(t, o.Type("\n"))
 				continue
 			case strings.Contains(o.Text(), "WRONG DISK"):
-				t.Fatalf("%v %v: the game did not take the disk:\n%v", c.number, c.command, o.Text())
+				t.Fatalf("%v %v: the game did not take the disk:\n%v", c.name, c.command, o.Text())
 			case disk != nil && last == "AND PRESS RETURN.":
 				if disk[0] == asked {
-					t.Fatalf("%v %v: the game asked for the disk again:\n%v", c.number, c.command, o.Text())
+					t.Fatalf("%v %v: the game asked for the disk again:\n%v", c.name, c.command, o.Text())
 				}
 				asked = disk[0]
 				page()
@@ -247,7 +248,7 @@ func timeZoneScreenshots(t *testing.T) {
 				must(t, o.Type("\n"))
 				continue
 			case strings.Contains(last, "PLAY AGAIN"):
-				t.Fatalf("%v %v: the game was lost:\n%v", c.number, c.command, o.Text())
+				t.Fatalf("%v %v: the game was lost:\n%v", c.name, c.command, o.Text())
 			case !strings.HasPrefix(last, timeZonePrompt) && !strings.HasSuffix(last, "?"):
 				// A message that waits for a key
 				page()
@@ -255,20 +256,17 @@ func timeZoneScreenshots(t *testing.T) {
 				continue
 			}
 			// The prompt, or a question the next command answers
-			file := name
-			if c.number == 0 {
-				file = "start"
-			}
-			must(t, c.take(o, pictures, file))
+			must(t, c.take(o, pictures, name))
 			return
 		}
-		t.Fatalf("%v %v: the game never asked for the next command", c.number, c.command)
+		t.Fatalf("%v %v: the game never asked for the next command", c.name, c.command)
 	}
 
-	start := timeZoneCommand{}
-	answer(&start)
+	// Each step of the page is what the game shows, and the command typed
+	// then
+	shown := timeZoneCommand{name: "0001"}
+	answer(&shown)
 	var walkthrough strings.Builder
-	timeZoneWrite(&walkthrough, start)
 	number := 0
 	for _, step := range steps {
 		if step.section != "" {
@@ -276,11 +274,13 @@ func timeZoneScreenshots(t *testing.T) {
 			continue
 		}
 		number++
-		c := timeZoneCommand{number: number, command: step.command}
+		timeZoneWrite(&walkthrough, number, shown, step.command)
 		must(t, o.Type(step.command+"\n"))
-		answer(&c)
-		timeZoneWrite(&walkthrough, c)
+		shown = timeZoneCommand{name: fmt.Sprintf("%04d", number+1), command: step.command}
+		answer(&shown)
 	}
+	walkthrough.WriteString("### The end\n\n")
+	timeZoneWrite(&walkthrough, 0, shown, "")
 	if !o.HasText(timeZoneEnding) {
 		t.Fatalf("the walkthrough did not end the game:\n%v", o.Text())
 	}
@@ -292,11 +292,11 @@ func timeZoneDiskFile(t *testing.T, letter string) string {
 	return disk(t, fmt.Sprintf(timeZoneDiskNamed, letter))
 }
 
-// timeZoneWrite writes a command, its pictures, and the disks it asked for,
-// on the page
-func timeZoneWrite(w *strings.Builder, c timeZoneCommand) {
-	if c.number > 0 {
-		fmt.Fprintf(w, "**%d.** `%v`\n\n", c.number, c.command)
+// timeZoneWrite writes a step on the page: its number, what the game shows,
+// the disks it asks for, and the command to type then
+func timeZoneWrite(w *strings.Builder, number int, c timeZoneCommand, command string) {
+	if number > 0 {
+		fmt.Fprintf(w, "**%d.**\n\n", number)
 	}
 	for i, p := range c.pictures {
 		if i > 0 {
@@ -312,6 +312,9 @@ func timeZoneWrite(w *strings.Builder, c timeZoneCommand) {
 	for _, d := range c.disks {
 		fmt.Fprintf(w, "*Side %v: drop `%v` on drive 1, and press Return.*\n\n",
 			d, fmt.Sprintf(timeZoneDiskNamed, d[1:]))
+	}
+	if command != "" {
+		fmt.Fprintf(w, "**Type `%v`**\n\n", command)
 	}
 }
 
@@ -348,11 +351,13 @@ func TestTimeZoneWalkthrough(t *testing.T) {
 			want = append(want, "### "+s.section)
 		} else {
 			number++
-			want = append(want, fmt.Sprintf("**%d.** `%v`", number, s.command))
+			want = append(want, fmt.Sprintf("**%d.**", number), fmt.Sprintf("**Type `%v`**", s.command))
 		}
 	}
+	want = append(want, "### The end")
+	step := regexp.MustCompile("^\\*\\*([0-9]+\\.|Type `.*`)\\*\\*$")
 	for _, line := range strings.Split(string(page), "\n") {
-		if strings.HasPrefix(line, "### ") || strings.HasPrefix(line, "**") && strings.Contains(line, ".** `") {
+		if strings.HasPrefix(line, "### ") || step.MatchString(line) {
 			got = append(got, line)
 		}
 	}
