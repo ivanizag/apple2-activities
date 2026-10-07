@@ -184,6 +184,17 @@ machine would hang or crash it, not the computer it is emulated on.
 
 **Here, once fixed:** nothing to change.
 
+### The text of the Basis 108 in 80 columns is read a column out of two
+
+In 80 columns the Basis 108 keeps its text in a memory of its own, columns
+in an order of its own (`VideoText80AltOrder`). `ScreenText` gives one
+column out of two of it: `PRINT "Hello"` shows on the screen as it is, and
+comes back as `RN Hlo` and `Hlo`. So the operator can't wait for a text, and
+[basis108_test.go](activities/basis108_test.go) waits for the keyboard to
+be read and the screen to be still instead.
+
+**Here, once fixed:** wait for the text of each step in basis108_test.go.
+
 ### CP/M cannot format a blank diskette
 
 `FORMAT` of the CP/M 2.20B diskette of the SoftCard, asked for drive B with a
