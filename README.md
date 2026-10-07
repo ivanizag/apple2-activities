@@ -313,6 +313,14 @@ The biggest adventure of 1982, on twelve sides of diskettes, by Ken and
 Roberta Williams: played to its end, all 1,058 commands, with a picture of
 the screen after each one, and the disks changed when the game asks.
 
+### [Ulysses and the Golden Fleece, from the start to the end](guides/ulysses.md)
+
+[<img src="guides/images/ulysses/0002.png" width="320" alt="A small town of ancient Greece">](guides/ulysses.md)
+
+Hi-Res Adventure #4, on two sides of a diskette: a ship and a crew from
+ancient Greece to the Golden Fleece, past the sirens and the Cyclops. Played
+to its end, a picture of the screen after each command.
+
 ### [Total Replay](guides/total-replay.md)
 
 [<img src="guides/images/total-replay/box-art.png" width="320" alt="Box art in Super Hi-Res">](guides/total-replay.md)

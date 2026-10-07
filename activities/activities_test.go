@@ -60,6 +60,7 @@ var activities = []struct {
 	{"timezone", []string{timeZoneMachine}, timeZoneScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
+	{"ulysses", []string{ulyssesMachine}, ulyssesScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
 }
 
