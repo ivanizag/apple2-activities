@@ -196,6 +196,16 @@ A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
 assembler source, a program in Microsoft BASIC-80 saved among its files, and
 the high resolution graphics drawn from GBASIC.
 
+## Clones
+
+### [The Base 64A, an Apple \]\[+ from Taiwan](guides/base64a.md)
+
+[<img src="guides/images/base64a/writer.png" width="320" alt="The menu of Mini-Writer on the Base 64A">](guides/base64a.md)
+
+A copy of the Apple \]\[+ with small letters on the screen and a word
+processor in its ROM, started with `WRITER`: a letter written, a name
+replaced in it and the letter printed, and Apple's DOS 3.3 started on it.
+
 ## Play
 
 ### [Karateka](guides/karateka.md)
