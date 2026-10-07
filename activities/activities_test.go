@@ -45,6 +45,7 @@ var activities = []struct {
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
+	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},

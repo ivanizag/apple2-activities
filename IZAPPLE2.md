@@ -114,15 +114,35 @@ The keys of [Karateka](guides/karateka.md) may be another case: `Q`, `A`,
 fighting stance, made no difference to the fight, which the joystick plays.
 Once keys can be held, try them, and say so on the page.
 
-### The SwyftCard does not see Solid-Apple
+### Calc of the SwyftCard stays in Applesoft
 
-The tutorial of the SwyftCard (`-model swyft`) asks to hold Solid-Apple and
-tap `=` three times. With button 1 of the game port held, the `=` are typed
-as text, and with button 0, or both, the same. Possibly the same cause as the
-previous one, the card looking at keys held down.
+The command *Calc* of the SwyftCard, Use Front `G`, Control-G, gives the
+highlighted line to Applesoft and should put the answer in the Text. On page
+61 of the tutorial, with `? 5.6 + 3` typed, Applesoft prints `8.6` over the
+80 column page and stays at its `]` prompt: the hooks of output and input,
+`$36` to `$39`, are the ones of the ROM, `$FDF0` and `$FD1B`, and the
+processor waits for a key in the firmware of the 80 column card, at `$C83D`,
+so nothing takes the answer back to the card.
 
-**Here, once fixed:** an activity of the SwyftCard, Jef Raskin's work before
-the Canon Cat, through the first pages of its tutorial.
+**Here, once fixed:** add Calc to [swyftcard.md](guides/swyftcard.md), the
+sum of the tutorial worked out in the Text.
+
+### The SwyftCard can't save its Text
+
+The command *Disk* of the SwyftCard, Use Front `L`, saves the Text only on
+a diskette that is blank, never formatted, and in a format of its own.
+izapple2 has no such diskette that can be written: a `.dsk`, even of zeros,
+is a formatted DOS diskette to the card, which refuses it as not blank, and
+writes to it would be decoded as the 16 sectors of DOS and ProDOS
+(`saveTrack` in `storage/fileNib.go`); a `.nib` is never written
+(`newFileNib` does not allow it); and a `.woz` can't be written either (see
+*Writing to a WOZ disk stops the emulator*). An all-zero `.nib` makes the
+card wait forever at `$D745`, as a real drive gives noise there and not
+nothing.
+
+**Here, once fixed:** in [swyftcard.md](guides/swyftcard.md), save the
+letter on a blank diskette with Disk, and switch on again with it in the
+drive to see it come back.
 
 ### Card Cat finds no printer on the parallel card
 
