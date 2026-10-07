@@ -26,6 +26,9 @@ Apple's DOS 3.3 System Master, on the
 it. The rest needs nothing but izapple2, which carries the ROMs of the
 Base 64A.
 
+The [user's manual of the Base 64A](https://archive.org/details/base64a) is
+on the Internet Archive, with a chapter on Mini-Writer, its seventh.
+
 ## The machine
 
 A Base 64A with a printer:
