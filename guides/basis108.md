@@ -22,6 +22,9 @@ Apple's DOS 3.3 System Master, on the
 it. The rest needs nothing but izapple2, which carries the ROMs of the
 Basis 108.
 
+The [instruction manual of the Basis 108](https://www.applefritter.com/files/Basis%201982%20basis%20108%20instruction%20manual.pdf),
+of 1982, in German, is on Applefritter, a scan of 100 MB.
+
 ## The machine
 
 A Basis 108:
