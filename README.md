@@ -305,6 +305,14 @@ Hi-Res Adventure #0 of Ken and Roberta Williams, of 1980: an asteroid to blow
 up before it hits the Earth, in a rocket flown by its buttons. Played to its
 end, a picture of the screen after each command.
 
+### [Mystery House, from the start to the end](guides/mysteryhouse.md)
+
+[<img src="guides/images/mysteryhouse/title.png" width="320" alt="The title of Mystery House">](guides/mysteryhouse.md)
+
+The first Hi-Res Adventure of Ken and Roberta Williams, of 1980: a house, a
+killer and hidden jewels, in pictures drawn in lines. Played to its end, a
+picture of the screen after each command.
+
 ### [Time Zone, from the start to the end](guides/timezone.md)
 
 [<img src="guides/images/timezone/title.png" width="320" alt="The title of Time Zone">](guides/timezone.md)
