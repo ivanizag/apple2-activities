@@ -141,9 +141,9 @@ type timeZoneCommand struct {
 
 /*
 take keeps the screen of the answer of a command as a picture. When the
-picture above the text is the same as the last one, it keeps only the four
-lines of text, cut from the screen, which the page shows under that picture;
-when they are the same too, nothing.
+picture above the text is the same as the last one, it keeps only the lines
+of text that are new since then, cut from the bottom of the screen, which the
+page shows under that picture; when there are none, nothing.
 */
 func (c *timeZoneCommand) take(o *operator.Operator, pictures *album.Album, file string) error {
 	screen := pictures.Screen(o)
@@ -156,11 +156,13 @@ func (c *timeZoneCommand) take(o *operator.Operator, pictures *album.Album, file
 	text := timeZoneLines(o, 4)
 	var picture image.Image = screen
 	if mixed && c.graphics != nil && bytes.Equal(graphics, c.graphics) {
-		if strings.Join(text, "\n") == strings.Join(c.text, "\n") {
+		lines := timeZoneNewLines(c.text, text)
+		if lines == 0 {
 			return nil
 		}
+		// Each line of text is 8 lines of the screen, drawn twice
 		b := screen.Bounds()
-		picture = screen.SubImage(image.Rect(b.Min.X, 2*timeZoneTextTop, b.Max.X, b.Max.Y))
+		picture = screen.SubImage(image.Rect(b.Min.X, b.Max.Y-2*8*lines, b.Max.X, b.Max.Y))
 	}
 	if err := pictures.Write(picture, file); err != nil {
 		return err
@@ -168,6 +170,20 @@ func (c *timeZoneCommand) take(o *operator.Operator, pictures *album.Album, file
 	c.pictures = append(c.pictures, timeZonePicture{file: file, text: text})
 	c.graphics, c.text = graphics, text
 	return nil
+}
+
+// timeZoneNewLines is how many lines at the bottom of the text after are not
+// in the text before, which scrolled up to make room for them
+func timeZoneNewLines(before, after []string) int {
+	if strings.Join(before, "\n") == strings.Join(after, "\n") {
+		return 0
+	}
+	for k := min(len(before), len(after)) - 1; k > 0; k-- {
+		if strings.Join(before[len(before)-k:], "\n") == strings.Join(after[:k], "\n") {
+			return len(after) - k
+		}
+	}
+	return len(after)
 }
 
 // timeZoneTextTop is the first line of the four of text, of the 192 of the

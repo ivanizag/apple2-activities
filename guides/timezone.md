@@ -82,8 +82,8 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
    the middle of an answer to let you read it, **press Return** to go on.
    When the picture changes on the way, as when you walk into another
    place, the page shows each picture; when it stays the same, the page
-   shows it once, and under it only the four lines of text of each stop
-   that followed.
+   shows it once, and under it only the lines of text that each stop
+   added.
 
 ## The walkthrough
 
