@@ -51,6 +51,7 @@ var activities = []struct {
 	{"printing", []string{printingMachine}, printingScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
+	{"romx", []string{romxMachine}, romxScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
 	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
 	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
@@ -132,6 +133,7 @@ var listings = []struct {
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},
+	{"romx", romxListing},
 	{"thunderclock", clockListing},
 	{"ultraterm", ultratermModes},
 }
