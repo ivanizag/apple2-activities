@@ -37,6 +37,7 @@ var activities = []struct {
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
 	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
 	{"logo", []string{logoMachine}, logoScreenshots},
+	{"memory-expansion", []string{memexpMachine, memexpDOS}, memexpScreenshots},
 	{"merlin", []string{merlinMachine}, merlinScreenshots},
 	{"mockingboard", []string{mockingboardMachine}, mockingboardScreenshots},
 	{"paddle-game", []string{paddleMachine}, paddleScreenshots},
