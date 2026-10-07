@@ -28,6 +28,7 @@ var activities = []struct {
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
+	{"base64a", []string{base64aMachine, base64aDOS}, base64aScreenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
@@ -151,6 +152,7 @@ func TestListings(t *testing.T) {
 var printouts = []struct {
 	guide, printout string
 }{
+	{"base64a", "../guides/images/base64a/letter.txt"},
 	{"printing", "../guides/images/printing/listing.txt"},
 	{"printing", "../guides/images/printing/calendar.txt"},
 }
