@@ -34,6 +34,7 @@ var activities = []struct {
 	{"basis108", []string{basis108Machine, basis108DOS}, basis108Screenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
+	{"cranston", []string{cranstonManorMachine}, cranstonManorScreenshots},
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
 	{"dos32", []string{dos32Machine, dos32Upgraded}, dos32Screenshots},
 	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
