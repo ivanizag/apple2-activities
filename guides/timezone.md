@@ -19,7 +19,10 @@ its disks by its number and letter, `1B` to `6L`, each time it needs another.
 
 This page plays the whole game, all 1,058 commands, with a picture of the
 screen after each one, and one for each page of text when the game stops to
-let you read: 1,465 pictures. It is long: the game was.
+let you read: 1,465 pictures. It is long: the game was. The pictures are of
+a colour television, with the four lines of text under them drawn white and
+sharp, as a monochrome monitor showed them: the television blurred them into
+fringes of colour, hard to read.
 
 ## What you need
 

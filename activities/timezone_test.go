@@ -71,18 +71,18 @@ func timeZoneSteps(path string) ([]timeZoneStep, error) {
 type timeZoneWait int
 
 const (
-	timeZoneLine timeZoneWait = iota // a line, in the keyboard routine of the ROM or its own
+	timeZoneLine timeZoneWait = iota // a line, in the keyboard routine of the ROM or its pause
 	timeZoneMore                     // Return, after a page of text
 	timeZoneOver                     // nothing, the game is won
 )
 
 /*
 timeZoneWaitForKeys runs the machine until the game waits for keys, by where
-the processor is: in the keyboard routine of the ROM at $FD1B, or in the loop
-at $4780 that hums the time machine while it reads the keyboard, for a line;
-in the loop at $6477, for Return to go on. The screen is still by then, the
-picture drawn and the text printed. At the end of the game it plays a tune
-and waits for nothing.
+the processor is: in the keyboard routine of the ROM at $FD1B, or in the
+pause at $4780 that the game makes in the time machine before its prompt,
+reading the keyboard, for a line; in the loop at $6477, for Return to go on.
+The screen is still by then, the picture drawn and the text printed. At the
+end of the game it waits for nothing.
 */
 func timeZoneWaitForKeys(o *operator.Operator) (timeZoneWait, error) {
 	wait, frames := timeZoneWait(-1), 0
@@ -139,7 +139,7 @@ one for each page of a longer answer. It changes the disks when the game asks
 for them, and writes the walkthrough of the page with the pictures.
 */
 func timeZoneScreenshots(t *testing.T) {
-	pictures := newAlbum("timezone", album.Color)
+	pictures := newAlbum("timezone", album.ColorWhiteText)
 	steps, err := timeZoneSteps(timeZoneWalkthrough)
 	must(t, err)
 	o := start(t, timeZoneMachine, nil)
