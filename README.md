@@ -281,6 +281,14 @@ Hi-Res Adventure #3, of 1981: the treasures of a manor, its tower, its
 cistern and the caves under it, gathered and carried out of its gate. Played
 to its end, a picture of the screen after each command.
 
+### [The Dark Crystal, from the start to the end](guides/darkcrystal.md)
+
+[<img src="guides/images/darkcrystal/0002.png" width="320" alt="Jen in the Valley of the Stones">](guides/darkcrystal.md)
+
+The adventure of Sierra On-Line after the film of Jim Henson, of 1982, on
+four sides of two diskettes: Jen, a Gelfling, heals the Dark Crystal.
+Played to its end, a picture of the screen after each command.
+
 ### [Karateka](guides/karateka.md)
 
 [<img src="guides/images/karateka/castle.png" width="320" alt="The fortress of Akuma">](guides/karateka.md)
