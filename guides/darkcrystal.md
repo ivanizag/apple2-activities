@@ -54,6 +54,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -s6 'diskii,disk1=disks/The Dark Crystal (4am and san inc crack) disk 1A.dsk'
 ```
 
+Shorter, the model `2plus` of izapple2 plays it too: the same Apple \]\[+,
+with the 16 KB of a language card in slot 0 and a Videx 80 column card in
+slot 3 more, on a colour monitor with its scan lines.
+
+```bash
+izapple2 -model 2plus 'disks/The Dark Crystal (4am and san inc crack) disk 1A.dsk'
+```
+
 ## Playing it
 
 1. **Start izapple2** with the command above. The game asks for disk 1,

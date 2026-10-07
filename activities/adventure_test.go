@@ -39,6 +39,9 @@ type adventure struct {
 	ending string
 	// prompt is where the game reads a command, if not adventurePrompt
 	prompt string
+	// short is the shorter command line the page also gives, a model of
+	// izapple2 with the disk of the game
+	short string
 }
 
 // commandPrompt is where the game reads a command
@@ -110,8 +113,9 @@ func (a adventure) steps() ([]adventureStep, error) {
 
 /*
 waitForKeys runs the machine until the game waits for keys, by where the
-processor is: in the keyboard routine of the ROM at $FD1B, or in the loop at
-$6474 for Return after a page of text, or in one of the places of the game. The screen is still by then, the picture drawn and the
+processor is: in the keyboard routine of the ROM at $FD1B, or at $C27D on the
+enhanced //e, or in the loop at $6474 for Return after a page of text, or in
+one of the places of the game. The screen is still by then, the picture drawn and the
 text printed. At the end of the game it waits for nothing.
 */
 func (a adventure) waitForKeys(o *operator.Operator) (adventureKeys, error) {
@@ -121,7 +125,7 @@ func (a adventure) waitForKeys(o *operator.Operator) (adventureKeys, error) {
 		pc := o.Apple2().GetPC()
 		now := adventureKeys(-1)
 		switch {
-		case pc >= 0xfd1b && pc <= 0xfd2e:
+		case pc >= 0xfd1b && pc <= 0xfd2e, pc >= 0xc27d && pc <= 0xc28e:
 			now = adventureLine
 		case pc >= 0x6474 && pc <= 0x647b:
 			now = adventureMore
@@ -299,11 +303,31 @@ func (a adventure) answer(t *testing.T, o *operator.Operator, pictures *album.Al
 }
 
 /*
-play plays the walkthrough, from the first prompt of the game, the one it is
-coming to now, to the end, and writes it on the page: each step is what the
-game shows, and the command typed then.
+screenshots plays the game on the machine of its page, from begin, which
+takes it to its first prompt, to its end, and writes the walkthrough of the
+page. Then it plays it again on the short command line the page also gives,
+a model of izapple2 with the disk, into a folder that is thrown away, to
+check that it plays to the end there too.
 */
-func (a adventure) play(t *testing.T, o *operator.Operator, pictures *album.Album) {
+func (a adventure) screenshots(t *testing.T, machine string,
+	begin func(t *testing.T, o *operator.Operator, pictures *album.Album)) {
+	pictures := newAlbum(a.name, album.ColorWhiteText)
+	o := start(t, machine, nil)
+	begin(t, o, pictures)
+	a.play(t, o, pictures, true)
+
+	scratch := album.New(t.TempDir(), album.ColorWhiteText)
+	o = start(t, a.short, nil)
+	begin(t, o, scratch)
+	a.play(t, o, scratch, false)
+}
+
+/*
+play plays the walkthrough, from the first prompt of the game, the one it is
+coming to now, to the end, and writes it on the page if asked: each step is
+what the game shows, and the command typed then.
+*/
+func (a adventure) play(t *testing.T, o *operator.Operator, pictures *album.Album, write bool) {
 	steps, err := a.steps()
 	must(t, err)
 	shown := adventureShown{name: "0001"}
@@ -328,8 +352,10 @@ func (a adventure) play(t *testing.T, o *operator.Operator, pictures *album.Albu
 	if !o.HasText(a.ending) {
 		t.Fatalf("the walkthrough did not end the game:\n%v", o.Text())
 	}
-	must(t, a.writePage(walkthrough.String()))
-	must(t, a.prune())
+	if write {
+		must(t, a.writePage(walkthrough.String()))
+		must(t, a.prune())
+	}
 }
 
 // prune removes the pictures of the folder of the game that its page does
@@ -436,7 +462,8 @@ func (a adventure) writePage(walkthrough string) error {
 /*
 checkPage checks that the page has the walkthrough the generator played, its
 index, its sections and its commands in their order, so that a change to the
-walkthrough is not left out of the page
+walkthrough is not left out of the page, and the short command line the
+generator played it with too
 */
 func (a adventure) checkPage(t *testing.T) {
 	steps, err := a.steps()
@@ -464,6 +491,9 @@ func (a adventure) checkPage(t *testing.T) {
 	}
 	if strings.Join(got, "\n") != strings.Join(want, "\n") {
 		t.Errorf("the walkthrough of %v is not the one of %v: run its generator", a.page(), a.walkthrough)
+	}
+	if !strings.Contains(string(page), "```bash\n"+a.short+"\n```") {
+		t.Errorf("%v does not give the short command line\n%v", a.page(), a.short)
 	}
 }
 
