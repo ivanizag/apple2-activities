@@ -19,6 +19,10 @@ in its ROM.
 
 Only izapple2: the ROM of the enhanced Apple //e comes inside it.
 
+The
+[Apple IIe Owner's Manual](https://archive.org/details/Apple_IIe_Owners_Manual)
+is on the Internet Archive.
+
 ## The machine
 
 An enhanced Apple //e with no disk drive:

@@ -81,6 +81,11 @@ step, with what the machine showed on the way. Its parts are:
   spaces goes in quotes on the command line, and one with a comma in double
   quotes inside the parameters of its card too. Say what `fetch-disks.sh`
   does for it. Say when nothing is needed but izapple2.
+- **Link the manuals** of the machine, the card or the program, where they
+  can be read, at the end of "What you need": the
+  [Internet Archive](https://archive.org/) has many of them, scanned. Prefer
+  the ones anyone can read to the ones that must be borrowed, and say what a
+  manual is when its name does not.
 - **"The machine"** comes after "What you need": the machine the page uses,
   as a list, the board and its processor and memory, then what is in each
   slot, and the izapple2 command that starts it, in a `bash` block, exactly

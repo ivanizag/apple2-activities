@@ -20,6 +20,10 @@ the *Mockingboard Sound and Speech I Demo Disk* of 1982, from the
 [Internet Archive](https://archive.org/details/Mockingboard_Sound_and_Speech_I_Demo_Disk_Apple_II_Plus_Sweet_Micro_Systems_1982).
 `./fetch-disks.sh` in this repository downloads it into `disks/`.
 
+The
+[documents of the Mockingboard](https://archive.org/details/Mockingboard_Docs)
+are on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with a Mockingboard:

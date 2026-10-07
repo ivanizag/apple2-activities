@@ -25,6 +25,9 @@ A WOZ file records a diskette bit by bit, its copy protection included, so
 it is the disk Broderbund sold, as it was, and not a copy with the protection
 taken out.
 
+[Broderbund's manual of Lode Runner](https://archive.org/details/stx_Broderbund_Lode_Runner_manual)
+is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with one disk drive:

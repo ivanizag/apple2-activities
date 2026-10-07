@@ -17,6 +17,9 @@ This page switches that machine on and goes through all three.
 
 Only izapple2: the ROM of the Apple \]\[ comes inside it.
 
+The [Apple II Reference Manual](https://archive.org/details/aiirm) of January
+1978, the "Red Book", is on the Internet Archive.
+
 ## The machine
 
 The first Apple \]\[, as it came:

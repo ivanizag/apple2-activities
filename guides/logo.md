@@ -21,6 +21,10 @@ itself, and saves what it learnt on the diskette.
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it. izapple2 writes into it the procedures the page saves.
 
+The
+[Apple Logo Reference Manual](https://archive.org/details/apple-logo-reference-manual_202610)
+of 1982 is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with 64 KB and one disk drive:

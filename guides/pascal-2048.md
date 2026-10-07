@@ -18,6 +18,10 @@ Only izapple2: the disks of Apple Pascal 1.3 come inside it, as on
 [Apple Pascal](pascal.md). The program is in this repository,
 [listings/2048.pas](listings/2048.pas).
 
+The
+[Apple Pascal Operating System Reference Manual](https://archive.org/details/Apple_Pascal_Operating_System_Reference_Manual)
+is on the Internet Archive.
+
 ## The machine
 
 An enhanced Apple //e with two disk drives:

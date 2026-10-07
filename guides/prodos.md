@@ -21,6 +21,10 @@ everyone had.
 [its page](https://prodos8.com/releases/prodos-243/). `./fetch-disks.sh` in
 this repository downloads it into `disks/` and checks it.
 
+The
+[ProDOS User's Manual](https://archive.org/details/Apple_II_Prodos_Users_Manual)
+is on the Internet Archive.
+
 ## The machine
 
 An enhanced Apple //e with one disk drive:

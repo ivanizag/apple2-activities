@@ -23,6 +23,10 @@ collection](https://archive.org/details/wozaday_Apple_Pascal_v13) of the
 Internet Archive, but izapple2 cannot write to their WOZ images yet, and the
 system writes your program to its disk.
 
+The
+[Apple Pascal Operating System Reference Manual](https://archive.org/details/Apple_Pascal_Operating_System_Reference_Manual)
+is on the Internet Archive.
+
 ## The machine
 
 An enhanced Apple //e with two disk drives:

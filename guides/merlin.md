@@ -24,6 +24,9 @@ says. `./fetch-disks.sh` in this repository downloads it into `disks/` and
 checks it. The program is in this repository too,
 [listings/bars.s](listings/bars.s).
 
+The [manual of Merlin](https://archive.org/details/merlin-manual), by Glen
+Bredon, of 1982, is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with 64 KB and one disk drive:

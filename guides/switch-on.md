@@ -17,6 +17,9 @@ what its owner did first: type commands, write a program, run it, and stop it.
 Only izapple2. The ROM of the Apple \]\[+ comes inside it, and nothing has to be
 downloaded.
 
+[The Applesoft Tutorial](https://archive.org/details/The_Applesoft_Tutorial),
+Apple's manual to learn Applesoft, is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with no disk drive:
