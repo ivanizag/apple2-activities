@@ -38,6 +38,13 @@ as sound files:
 Each comes in a `.zip` of the same name. `./fetch-disks.sh` in this repository
 downloads them into `disks/`, takes the recordings out and checks them.
 
+Wozniak's note is in the
+[Byte of June 1979](https://archive.org/details/byte-magazine-1979-06), on the
+Internet Archive, after Allen Watson's article, from page 60; and Apple's
+manual of its tapes for the Apple \]\[,
+[The Apple Tapes](https://www.brutaldeluxe.fr/projects/cassettes/apple/apple_theappletapes_appleii_manual.pdf),
+of 1979, is on Brutal Deluxe.
+
 ## The machine
 
 The first Apple \]\[, as it came:
