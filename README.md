@@ -218,6 +218,14 @@ sixth of the time, the test in its ROM, and the card from DOS 3.3.
 A modern program that finds the card in each slot, run on a //e with all seven
 full, and the ROM of a card read by it.
 
+### [The time from a ThunderClock](guides/thunderclock.md)
+
+[<img src="guides/images/thunderclock/time.png" width="320" alt="The time read from a ThunderClock">](guides/thunderclock.md)
+
+A clock card for the Apple \]\[+: the time read from BASIC through its
+firmware, as its manual shows, and a program saved by ProDOS with the date
+it takes from the card.
+
 ## Other systems
 
 ### [Forth in ROM](guides/forth.md)

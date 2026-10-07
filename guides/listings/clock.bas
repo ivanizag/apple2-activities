@@ -1,0 +1,5 @@
+10 D$ = CHR$ (4)
+20 PRINT D$;"PR#4": PRINT D$;"IN#4"
+30 INPUT "%";T$: INPUT "&";U$
+40 PRINT D$;"PR#0": PRINT D$;"IN#0"
+50 PRINT T$: PRINT U$

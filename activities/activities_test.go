@@ -53,6 +53,7 @@ var activities = []struct {
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
 	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
+	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
@@ -131,6 +132,7 @@ var listings = []struct {
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},
+	{"thunderclock", clockListing},
 	{"ultraterm", ultratermModes},
 }
 
