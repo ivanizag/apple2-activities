@@ -18,11 +18,10 @@ there; the button next to the lever goes home. The game asks for a side of
 its disks by its number and letter, `1B` to `6L`, each time it needs another.
 
 This page plays the whole game, all 1,058 commands, with a picture of the
-screen after each one, and one for each page of text when the game stops to
-let you read: 1,465 pictures. It is long: the game was. The pictures are of
-a colour television, with the four lines of text under them drawn white and
-sharp, as a monochrome monitor showed them: the television blurred them into
-fringes of colour, hard to read.
+screen after each one: 1,158 pictures. It is long: the game was. The
+pictures are of a colour television, with the four lines of text under them
+drawn white and sharp, as a monochrome monitor showed them: the television
+blurred them into fringes of colour, hard to read.
 
 ## What you need
 
@@ -80,15 +79,18 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
    comes.
 
 4. **Type the commands**, each followed by Return. When the game stops in
-   the middle of an answer to let you read it, **press Return** to go on;
-   the pictures of those stops come before the one of the next prompt,
-   `ENTER COMMAND?`.
+   the middle of an answer to let you read it, **press Return** to go on.
+   When the picture changes on the way, as when you walk into another
+   place, the page shows each picture; when it stays the same, the page
+   shows it once, with the four lines it had under it, and then, in a
+   block, the text that followed.
 
 ## The walkthrough
 
 <!-- The walkthrough, written by the generator -->
 
 <img src="images/timezone/0000-1.png" width="400" alt="WHICH WOULD YOU LIKE? 1 PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/start.png" width="400" alt="YOU ARE IN FRONT OF YOUR OWN HOUSE.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
@@ -98,10 +100,21 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1.** `NORTH`
 
 <img src="images/timezone/0001-1.png" width="400" alt="AS YOU AWAKEN FROM A HEAVY NIGHT&#39;S SLEEP, YOU ARE HAUNTED BY THE MEMORY OF A STRANGE DREAM. ALTHOUGH IT IS NOT ENTIRELY CLEAR, YOU CAN REMEMBER">
-<img src="images/timezone/0001-2.png" width="400" alt="SIGNIFICANT PORTIONS OF IT ... A TERRESTIAL GUARDIAN OR KEEPER, OF SORTS, HAS CHOSEN YOU FOR THE TASK OF SECURING THE EARTH&#39;S FUTURE BY">
-<img src="images/timezone/0001-3.png" width="400" alt="DESTROYING THE EVIL RULER OF THE DISTANT PLANET NEBURON AND OFFERS YOU THE ABILITY OF TIME AND SPACE TRAVEL IN ORDER TO DO SO. SOMEWHAT">
-<img src="images/timezone/0001-4.png" width="400" alt="NERVOUS BY THE REALISM OF YOUR DREAM, YOU DECIDE TO TAKE A WALK TO CLEAR YOUR HEAD. YOU ARE IN FRONT OF YOUR OWN HOUSE.">
-<img src="images/timezone/0001.png" width="400" alt="YOU DECIDE TO TAKE A WALK TO CLEAR YOUR HEAD. YOU ARE IN FRONT OF YOUR OWN HOUSE.">
+
+```
+SIGNIFICANT PORTIONS OF IT ...
+A TERRESTIAL GUARDIAN OR KEEPER, OF
+SORTS, HAS CHOSEN YOU FOR THE TASK OF
+SECURING THE EARTH'S FUTURE BY
+DESTROYING THE EVIL RULER OF THE
+DISTANT PLANET NEBURON AND OFFERS
+YOU THE ABILITY OF TIME AND SPACE
+TRAVEL IN ORDER TO DO SO. SOMEWHAT
+NERVOUS BY THE REALISM OF YOUR DREAM,
+YOU DECIDE TO TAKE A WALK TO CLEAR YOUR
+HEAD.
+YOU ARE IN FRONT OF YOUR OWN HOUSE.
+```
 
 **2.** `NORTH`
 
@@ -110,19 +123,25 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **3.** `GO MACHINE`
 
 <img src="images/timezone/0003-1.png" width="400" alt="LOOKING AT THE STRANGE OBJECT, YOU ARE AT FIRST CURIOUS. SUDDENLY, THE DREAM COMES RUSHING BACK TO YOU. YOU STAND THERE WITH YOUR HEART LEAPING">
-<img src="images/timezone/0003-2.png" width="400" alt="OUT OF YOUR CHEST, TOO STUNNED TO MOVE AND FILLED WITH A STRANGE MIXTURE OF FEAR AND EXCITEMENT AS YOU REALIZE ..... IT WASN&#39;T A DREAM AT ALL.">
-<img src="images/timezone/0003-3.png" width="400" alt="THE ADVENTURE BEGINS ..... YOU ARE IN A FIELD OF DRY GRASS. THERE IS A STRANGE LOOKING MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0003.png" width="400" alt="YOU ARE IN A FIELD OF DRY GRASS. THERE IS A STRANGE LOOKING MACHINE HERE. IT APPEARS TO BE PULSATING.">
+
+```
+OUT OF YOUR CHEST, TOO STUNNED TO MOVE
+AND FILLED WITH A STRANGE MIXTURE OF
+FEAR AND EXCITEMENT AS YOU REALIZE
+..... IT WASN'T A DREAM AT ALL.
+THE ADVENTURE BEGINS .....
+YOU ARE IN A FIELD OF DRY GRASS. THERE
+IS A STRANGE LOOKING MACHINE HERE. IT
+APPEARS TO BE PULSATING.
+```
 
 **4.** `GO MACHINE`
 
 <img src="images/timezone/0004-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0004.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **5.** `GET MASK`
 
 <img src="images/timezone/0005-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0005.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **6.** `EXIT MACHINE`
 
@@ -135,39 +154,59 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **8.** `GO MACHINE`
 
 <img src="images/timezone/0008-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0008.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **9.** `SIT`
 
 <img src="images/timezone/0009-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0009.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **10.** `SET ORANGE`
 
 <img src="images/timezone/0010-1.png" width="400" alt="TO WHAT? YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0010.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **11.** `400MILBC`
 
 <img src="images/timezone/0011-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0011.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **12.** `SET BLUE`
 
 <img src="images/timezone/0012-1.png" width="400" alt="TO WHAT? YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0012.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **13.** `EUROPE`
 
 <img src="images/timezone/0013-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0013.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **14.** `PULL LEVER`
 
 <img src="images/timezone/0014-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0014-2.png" width="400" alt="THE CONTINENTS, AS WE KNOW THEM, DID NOT EXIST IN THAT ERA. YOU ARE IN THE PREHISTORIC AGE.">
-<img src="images/timezone/0014-3.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0014.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+THE CONTINENTS, AS WE KNOW THEM, DID
+NOT EXIST IN THAT ERA. YOU ARE IN THE
+PREHISTORIC AGE.
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **15.** `EXIT MACHINE`
 
@@ -238,36 +277,45 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **31.** `GO MACHINE`
 
 <img src="images/timezone/0031-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0031.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **32.** `SIT`
 
 <img src="images/timezone/0032-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0032.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **33.** `10000 BC`
 
 <img src="images/timezone/0033-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0033.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **34.** `PULL LEVER`
 
 <img src="images/timezone/0034-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0034-2.png" width="400" alt="THE CONTINENTS, AS WE KNOW THEM, DID NOT EXIST IN THAT ERA. YOU ARE IN THE STONE AGE.">
-<img src="images/timezone/0034-3.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0034.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+THE CONTINENTS, AS WE KNOW THEM, DID
+NOT EXIST IN THAT ERA. YOU ARE IN THE
+STONE AGE.
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **35.** `EXIT MACHINE`
 
 <img src="images/timezone/0035-1.png" width="400" alt="YOU ARE IN A NORTH/SOUTH CANYON. STEEP CLIFFS LEAD UPWARDS TOWARDS THE EAST AND WEST. THERE IS A TIME MACHINE HERE.IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0035.png" width="400" alt="CLIFFS LEAD UPWARDS TOWARDS THE EAST AND WEST. THERE IS A TIME MACHINE HERE.IT APPEARS TO BE PULSATING.">
 
 ### Europe, 10,000 BC
 
 **36.** `NORTH`
 
 <img src="images/timezone/0036-1.png" width="400" alt="THERE IS A ROCK HERE. YOU ARE STANDING IN A ROCKY CANYON. CLIMBABLE CLIFFS LEAD UP TOWARDS THE NORTH AND WEST.">
-<img src="images/timezone/0036.png" width="400" alt="YOU ARE STANDING IN A ROCKY CANYON. CLIMBABLE CLIFFS LEAD UP TOWARDS THE NORTH AND WEST.">
 
 **37.** `GET ROCK`
 
@@ -332,6 +380,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **52.** `THROW STICK`
 
 <img src="images/timezone/0052-1.png" width="400" alt="AS THE SABERTOOTH TIGER LEAPS, YOU THROW THE POINTED STICK WHICH LODGES IN HIS BODY. STARTLED, THE BIG CAT RUNS AWAY WITH THE STICK STILL IN HIM.">
+
 <img src="images/timezone/0052.png" width="400" alt="HIS BODY. STARTLED, THE BIG CAT RUNS AWAY WITH THE STICK STILL IN HIM. YOU ARE IN THE MOUNTAINS.">
 
 **53.** `NORTH`
@@ -357,6 +406,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **58.** `THROW ROCK`
 
 <img src="images/timezone/0058-1.png" width="400" alt="YOU THROW THE ROCK AT THE HARE AND KILL IT. THERE IS A ROCK HERE. THERE IS A LARGE HARE HERE.">
+
 <img src="images/timezone/0058.png" width="400" alt="THERE IS A ROCK HERE. THERE IS A LARGE HARE HERE. YOU ARE IN THE MOUNTAINS.">
 
 **59.** `GET HARE`
@@ -382,13 +432,20 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **64.** `MAKE FIRE`
 
 <img src="images/timezone/0064-1.png" width="400" alt="YOU QUICKLY RUB THE TWO STICKS TOGETHER AND A SMALL FIRE STARTS. THE CAVEMEN ARE DELIGHTED AND AMAZED. IN GRATITUDE FOR YOUR TEACHING THEM">
+
 <img src="images/timezone/0064-2.png" width="400" alt="ABOUT FIRE, THE CAVEMEN OFFER THE HAMMER TO YOU. THERE IS A STONE HAMMER HERE. YOU ARE INSIDE A LARGE CAVE. THERE ARE">
-<img src="images/timezone/0064.png" width="400" alt="THERE IS A STONE HAMMER HERE. YOU ARE INSIDE A LARGE CAVE. THERE ARE TWO MEAN-LOOKING CAVEMEN HERE.">
+
+```
+TWO MEAN-LOOKING CAVEMEN HERE.
+```
 
 **65.** `GIVE HARE`
 
 <img src="images/timezone/0065-1.png" width="400" alt="THE CAVEMEN TAKE THE HARE AND GRUDGINGLY DECIDE NOT TO KILL YOU. THERE IS A STONE HAMMER HERE. YOU ARE INSIDE A LARGE CAVE. THERE ARE">
-<img src="images/timezone/0065.png" width="400" alt="THERE IS A STONE HAMMER HERE. YOU ARE INSIDE A LARGE CAVE. THERE ARE TWO MEAN-LOOKING CAVEMEN HERE.">
+
+```
+TWO MEAN-LOOKING CAVEMEN HERE.
+```
 
 **66.** `GET HAMMER`
 
@@ -437,37 +494,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **77.** `SOUTH`
 
 <img src="images/timezone/0077-1.png" width="400" alt="YOU ARE IN A NORTH/SOUTH CANYON. STEEP CLIFFS LEAD UPWARDS TOWARDS THE EAST AND WEST. THERE IS A TIME MACHINE HERE.IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0077.png" width="400" alt="CLIFFS LEAD UPWARDS TOWARDS THE EAST AND WEST. THERE IS A TIME MACHINE HERE.IT APPEARS TO BE PULSATING.">
 
 **78.** `GO MACHINE`
 
 <img src="images/timezone/0078-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0078.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **79.** `SIT`
 
 <img src="images/timezone/0079-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0079.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **80.** `SA`
 
 <img src="images/timezone/0080-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0080.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **81.** `1000AD`
 
 <img src="images/timezone/0081-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0081.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **82.** `PULL LEVER`
 
 <img src="images/timezone/0082-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0082-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0082.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **83.** `EXIT MACHINE`
 
 <img src="images/timezone/0083-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 5I AND PRESS RETURN.">
+
 <img src="images/timezone/0083.png" width="400" alt="YOU ARE ON A PLATEAU OF A MOUNTAIN IN THE ANDES. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 5I: drop `Time Zone (4am and san inc crack) disk I.dsk` on drive 1, and press Return.*
@@ -521,12 +590,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **95.** `DOWN`
 
 <img src="images/timezone/0095-1.png" width="400" alt="YOU ARE AT THE BOTTOM OF THE LADDER. THERE IS A SMALL PASSAGE GOING SOUTH. THERE IS AN EERIE LIGHT COMING FROM UP THE LADDER.">
-<img src="images/timezone/0095.png" width="400" alt="THERE IS A SMALL PASSAGE GOING SOUTH. THERE IS AN EERIE LIGHT COMING FROM UP THE LADDER.">
 
 **96.** `SOUTH`
 
 <img src="images/timezone/0096-1.png" width="400" alt="THERE IS A TORCH HERE. YOU ARE IN AN SMALL TOMB. THERE IS AN EERIE LIGHT COMING FROM THE DOORWAY TO THE NORTH.">
-<img src="images/timezone/0096.png" width="400" alt="YOU ARE IN AN SMALL TOMB. THERE IS AN EERIE LIGHT COMING FROM THE DOORWAY TO THE NORTH.">
 
 **97.** `GET TORCH`
 
@@ -535,7 +602,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **98.** `NORTH`
 
 <img src="images/timezone/0098-1.png" width="400" alt="YOU ARE AT THE BOTTOM OF THE LADDER. THERE IS A SMALL PASSAGE GOING SOUTH. THERE IS AN EERIE LIGHT COMING FROM UP THE LADDER.">
-<img src="images/timezone/0098.png" width="400" alt="THERE IS A SMALL PASSAGE GOING SOUTH. THERE IS AN EERIE LIGHT COMING FROM UP THE LADDER.">
 
 **99.** `UP`
 
@@ -548,7 +614,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **101.** `THROW TORCH`
 
 <img src="images/timezone/0101-1.png" width="400" alt="YOU THROW THE TORCH DOWN TO THE BOTTOM OF THE PYRAMID. AS IT FALLS, IT GOES OUT. YOU ARE AT THE TOP OF A PYRAMID. THERE">
-<img src="images/timezone/0101.png" width="400" alt="OUT. YOU ARE AT THE TOP OF A PYRAMID. THERE IS A DOOR HERE.">
+
+```
+IS A DOOR HERE.
+```
 
 **102.** `DOWN`
 
@@ -593,35 +662,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **112.** `GO MACHINE`
 
 <img src="images/timezone/0112-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0112-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0112.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **113.** `SIT`
 
 <img src="images/timezone/0113-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0113.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **114.** `ASIA`
 
 <img src="images/timezone/0114-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0114.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **115.** `50BC`
 
 <img src="images/timezone/0115-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0115.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **116.** `PULL LEVER`
 
 <img src="images/timezone/0116-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0116-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0116.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **117.** `EXIT MACHINE`
 
 <img src="images/timezone/0117-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4G AND PRESS RETURN.">
+
 <img src="images/timezone/0117.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY.THERE IS A TIME MACHINE HERE IT APPEARS TO BE PULSATING.">
 
 *Side 4G: drop `Time Zone (4am and san inc crack) disk G.dsk` on drive 1, and press Return.*
@@ -647,7 +730,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **122.** `NORTH`
 
 <img src="images/timezone/0122-1.png" width="400" alt="THERE IS A LONG POLE HERE. YOU ARE AT THE WEST EDGE OF THE YANGTZE RIVER. THE RIVER IS RUNNING NORTH AND SOUTH">
-<img src="images/timezone/0122.png" width="400" alt="YOU ARE AT THE WEST EDGE OF THE YANGTZE RIVER. THE RIVER IS RUNNING NORTH AND SOUTH">
 
 **123.** `GET POLE`
 
@@ -676,7 +758,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **129.** `EAST`
 
 <img src="images/timezone/0129-1.png" width="400" alt="USING THE POLE, YOU GUIDE THE BOAT ACROSS THE RIVER, THROUGH THE TRICKY CURRENTS. YOU ARE IN A CHINESE JUNK (BOAT).">
-<img src="images/timezone/0129.png" width="400" alt="ACROSS THE RIVER, THROUGH THE TRICKY CURRENTS. YOU ARE IN A CHINESE JUNK (BOAT).">
 
 **130.** `EXIT BOAT`
 
@@ -705,7 +786,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **136.** `NORTH`
 
 <img src="images/timezone/0136-1.png" width="400" alt="YOU ARE INSIDE THE BUDDHIST TEMPLE.YOU SEE A STATUE OF BUDDHA WITH AN EMERALD IN HIS NAVEL. THERE ARE DOORWAYS TO THE WEST AND SOUTH.">
-<img src="images/timezone/0136.png" width="400" alt="SEE A STATUE OF BUDDHA WITH AN EMERALD IN HIS NAVEL. THERE ARE DOORWAYS TO THE WEST AND SOUTH.">
 
 **137.** `WEST`
 
@@ -718,7 +798,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **139.** `DIG`
 
 <img src="images/timezone/0139-1.png" width="400" alt="AFTER DIGGING IN THE DIRT FOR A WHILE, YOU UNCOVER A BEAUTIFUL JADE STONE! YOU ARE IN A CHINESE ROCK GARDEN. THE GARDEN IS ALL FENCED IN.">
-<img src="images/timezone/0139.png" width="400" alt="YOU UNCOVER A BEAUTIFUL JADE STONE! YOU ARE IN A CHINESE ROCK GARDEN. THE GARDEN IS ALL FENCED IN.">
 
 **140.** `GET JADE`
 
@@ -727,7 +806,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **141.** `DIG`
 
 <img src="images/timezone/0141-1.png" width="400" alt="AFTER DIGGING IN THE DIRT FOR A WHILE, YOU UNCOVER A SECOND BEAUTIFUL JADE STONE. YOU ARE IN A CHINESE ROCK GARDEN. THE">
-<img src="images/timezone/0141.png" width="400" alt="STONE. YOU ARE IN A CHINESE ROCK GARDEN. THE GARDEN IS ALL FENCED IN.">
+
+```
+GARDEN IS ALL FENCED IN.
+```
 
 **142.** `GET JADE`
 
@@ -740,7 +822,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **144.** `EAST`
 
 <img src="images/timezone/0144-1.png" width="400" alt="YOU ARE INSIDE THE BUDDHIST TEMPLE.YOU SEE A STATUE OF BUDDHA WITH AN EMERALD IN HIS NAVEL. THERE ARE DOORWAYS TO THE WEST AND SOUTH.">
-<img src="images/timezone/0144.png" width="400" alt="SEE A STATUE OF BUDDHA WITH AN EMERALD IN HIS NAVEL. THERE ARE DOORWAYS TO THE WEST AND SOUTH.">
 
 **145.** `SOUTH`
 
@@ -777,27 +858,44 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **153.** `EAST`
 
 <img src="images/timezone/0153-1.png" width="400" alt="THERE IS A BAG OF RICE HERE. THE PEASANT HAS A ROPE AROUND HIS WAIST. YOU ARE IN A SOGGY RICE PADDY. THERE IS">
-<img src="images/timezone/0153.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS SEVERAL BAGS OF RICE NEAR HIM.">
+
+```
+A PEASANT HARVESTING RICE. HE HAS
+SEVERAL BAGS OF RICE NEAR HIM.
+```
 
 **154.** `BUY ROPE`
 
 <img src="images/timezone/0154-1.png" width="400" alt="WITH WHAT? THERE IS A BAG OF RICE HERE. THE PEASANT HAS A ROPE AROUND HIS WAIST.">
-<img src="images/timezone/0154.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS SEVERAL BAGS OF RICE NEAR HIM.">
+
+```
+YOU ARE IN A SOGGY RICE PADDY. THERE IS
+A PEASANT HARVESTING RICE. HE HAS
+SEVERAL BAGS OF RICE NEAR HIM.
+```
 
 **155.** `WITH JADE`
 
 <img src="images/timezone/0155-1.png" width="400" alt="THE PEASANT IS VERY INTERESTED IN JADE.HE TAKES IT AND GIVES YOU THE ROPE. THERE IS A BAG OF RICE HERE.">
+
 <img src="images/timezone/0155.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS SEVERAL BAGS OF RICE NEAR HIM.">
 
 **156.** `BUY RICE`
 
 <img src="images/timezone/0156-1.png" width="400" alt="WITH WHAT? THERE IS A BAG OF RICE HERE. YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS">
-<img src="images/timezone/0156.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS SEVERAL BAGS OF RICE NEAR HIM.">
+
+```
+SEVERAL BAGS OF RICE NEAR HIM.
+```
 
 **157.** `WITH JADE`
 
 <img src="images/timezone/0157-1.png" width="400" alt="THE PEASANT IS VERY INTERESTED IN JADE.HE TAKES IT AND GIVES YOU A BAG OF RICE. YOU ARE IN A SOGGY RICE PADDY. THERE IS">
-<img src="images/timezone/0157.png" width="400" alt="YOU ARE IN A SOGGY RICE PADDY. THERE IS A PEASANT HARVESTING RICE. HE HAS SEVERAL BAGS OF RICE NEAR HIM.">
+
+```
+A PEASANT HARVESTING RICE. HE HAS
+SEVERAL BAGS OF RICE NEAR HIM.
+```
 
 **158.** `WEST`
 
@@ -818,7 +916,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **162.** `WEST`
 
 <img src="images/timezone/0162-1.png" width="400" alt="USING THE POLE, YOU GUIDE THE BOAT ACROSS THE RIVER, THROUGH THE TRICKY CURRENTS. YOU ARE IN THE CHINESE JUNK (BOAT).">
-<img src="images/timezone/0162.png" width="400" alt="ACROSS THE RIVER, THROUGH THE TRICKY CURRENTS. YOU ARE IN THE CHINESE JUNK (BOAT).">
 
 **163.** `EXIT BOAT`
 
@@ -847,37 +944,50 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **169.** `GO MACHINE`
 
 <img src="images/timezone/0169-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0169-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0169.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **170.** `SIT`
 
 <img src="images/timezone/0170-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0170.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **171.** `EUROPE`
 
 <img src="images/timezone/0171-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0171.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **172.** `1400AD`
 
 <img src="images/timezone/0172-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0172.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **173.** `PULL LEVER`
 
 <img src="images/timezone/0173-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0173-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0173.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **174.** `EXIT MACHINE`
 
 <img src="images/timezone/0174-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2C AND PRESS RETURN.">
+
 <img src="images/timezone/0174-2.png" width="400" alt="YOU ARE AT THE EDGE OF AN OCEAN, HILLS ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0174.png" width="400" alt="ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 2C: drop `Time Zone (4am and san inc crack) disk C.dsk` on drive 1, and press Return.*
 
@@ -906,12 +1016,19 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **180.** `SIGN UP`
 
 <img src="images/timezone/0180-1.png" width="400" alt="THE MAN SIGNS YOU UP AS A CREW MEMBER FOR THE SANTA MARIA. WOULD YOU LIKE TO WORK IN THE GALLEY, CARGO HOLD, OR ON DECK HANDLING THE SAILS AND MASTS?">
-<img src="images/timezone/0180.png" width="400" alt="DECK HANDLING THE SAILS AND MASTS? YOU ARE INSIDE THE HOUSE. THERE IS A MAN SEATED BEHIND THE TABLE.">
+
+```
+YOU ARE INSIDE THE HOUSE.  THERE IS A
+MAN SEATED BEHIND THE TABLE.
+```
 
 **181.** `ON DECK`
 
 <img src="images/timezone/0181-1.png" width="400" alt="YOU ARE OFFICIALLY WORKING WITH THE SAILS AND MASTS ON DECK. THE MAN HANDS YOU A BOARDING PASS. YOU ARE INSIDE THE HOUSE. THERE IS A">
-<img src="images/timezone/0181.png" width="400" alt="YOU A BOARDING PASS. YOU ARE INSIDE THE HOUSE. THERE IS A MAN SEATED BEHIND THE TABLE.">
+
+```
+MAN SEATED BEHIND THE TABLE.
+```
 
 **182.** `SOUTH`
 
@@ -932,12 +1049,15 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **186.** `SHOW PASS`
 
 <img src="images/timezone/0186-1.png" width="400" alt="THE SAILOR LOOKS AT YOUR BOARDING PASS AND TELLS YOU TO GO TO THE DECK AT THE FRONT OF THE SHIP. THE SANTA MARIA IS DOCKED. THERE IS A">
-<img src="images/timezone/0186.png" width="400" alt="THE SANTA MARIA IS DOCKED. THERE IS A SAILOR HERE. YOU ARE AT THE END OF THE PIER.">
+
+```
+SAILOR HERE.
+YOU ARE AT THE END OF THE PIER.
+```
 
 **187.** `NORTH`
 
 <img src="images/timezone/0187-1.png" width="400" alt="YOU ARE ON DECK AT THE STERN. CHRISTOPHER COLUMBUS IS STANDING HERE. THERE IS A DOOR LEADING NORTH TO THE GALLEY.">
-<img src="images/timezone/0187.png" width="400" alt="CHRISTOPHER COLUMBUS IS STANDING HERE. THERE IS A DOOR LEADING NORTH TO THE GALLEY.">
 
 **188.** `WEST`
 
@@ -954,7 +1074,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **191.** `LOOK TELESCOPE`
 
 <img src="images/timezone/0191-1.png" width="400" alt="YOU SEE A FARM HOUSE IN THE DISTANCE TO THE SOUTHEAST. THE FARM HOUSE IS SURROUNDED BY HILLS. YOU ARE IN A CROWSNEST AT THE TOP OF">
-<img src="images/timezone/0191.png" width="400" alt="YOU ARE IN A CROWSNEST AT THE TOP OF THE MAST. THERE IS A PARROT SITTING ON TOP OF A TELESCOPE HERE.">
+
+```
+THE MAST.  THERE IS A PARROT SITTING ON
+TOP OF A TELESCOPE HERE.
+```
 
 **192.** `DOWN`
 
@@ -967,7 +1091,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **194.** `EAST`
 
 <img src="images/timezone/0194-1.png" width="400" alt="YOU ARE ON DECK AT THE STERN. CHRISTOPHER COLUMBUS IS STANDING HERE. THERE IS A DOOR LEADING NORTH TO THE GALLEY.">
-<img src="images/timezone/0194.png" width="400" alt="CHRISTOPHER COLUMBUS IS STANDING HERE. THERE IS A DOOR LEADING NORTH TO THE GALLEY.">
 
 **195.** `SOUTH`
 
@@ -1036,45 +1159,57 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **211.** `NORTH`
 
 <img src="images/timezone/0211-1.png" width="400" alt="YOU ARE AT THE EDGE OF AN OCEAN, HILLS ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0211.png" width="400" alt="ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 **212.** `DROP PASS`
 
 <img src="images/timezone/0212-1.png" width="400" alt="YOU ARE AT THE EDGE OF AN OCEAN, HILLS ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0212.png" width="400" alt="ARE AROUND YOU. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 **213.** `GO MACHINE`
 
 <img src="images/timezone/0213-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0213-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0213.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **214.** `SIT`
 
 <img src="images/timezone/0214-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0214.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **215.** `AUSTRALIA`
 
 <img src="images/timezone/0215-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0215.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **216.** `1700AD`
 
 <img src="images/timezone/0216-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0216.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **217.** `PULL LEVER`
 
 <img src="images/timezone/0217-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0217-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0217.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **218.** `EXIT MACHINE`
 
 <img src="images/timezone/0218-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4H AND PRESS RETURN.">
+
 <img src="images/timezone/0218.png" width="400" alt="YOU ARE IN A MEADOW. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 4H: drop `Time Zone (4am and san inc crack) disk H.dsk` on drive 1, and press Return.*
@@ -1108,7 +1243,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **225.** `WITH BAR`
 
 <img src="images/timezone/0225-1.png" width="400" alt="USING THE IRON BAR, YOU BREAK THE PADLOCK. IT FALLS TO THE GROUND. THERE IS A PADLOCK HERE. YOU ARE IN FRONT OF AN OLD BARN.">
-<img src="images/timezone/0225.png" width="400" alt="PADLOCK. IT FALLS TO THE GROUND. THERE IS A PADLOCK HERE. YOU ARE IN FRONT OF AN OLD BARN.">
 
 **226.** `OPEN DOOR`
 
@@ -1149,35 +1283,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **235.** `GO MACHINE`
 
 <img src="images/timezone/0235-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0235-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0235.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **236.** `SIT`
 
 <img src="images/timezone/0236-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0236.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **237.** `NA`
 
 <img src="images/timezone/0237-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0237.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **238.** `1700AD`
 
 <img src="images/timezone/0238-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0238.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **239.** `PULL LEVER`
 
 <img src="images/timezone/0239-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0239-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0239.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **240.** `EXIT MACHINE`
 
 <img src="images/timezone/0240-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 5J AND PRESS RETURN.">
+
 <img src="images/timezone/0240.png" width="400" alt="YOU ARE IN THE WOODS. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 5J: drop `Time Zone (4am and san inc crack) disk J.dsk` on drive 1, and press Return.*
@@ -1215,22 +1363,32 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **248.** `NORTH`
 
 <img src="images/timezone/0248-1.png" width="400" alt="THERE IS A KITE HERE. YOU ARE IN THE BACKROOM OF BENJAMIN FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO">
-<img src="images/timezone/0248.png" width="400" alt="FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO THE SOUTH.">
+
+```
+THE SOUTH.
+```
 
 **249.** `USE SAW`
 
 <img src="images/timezone/0249-1.png" width="400" alt="USING THE SAW, YOU CUT THROUGH THE TOP HALF OF THE TRUNK AND OPEN IT. THERE IS A KITE HERE. YOU ARE IN THE BACKROOM OF BENJAMIN">
-<img src="images/timezone/0249.png" width="400" alt="FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO THE SOUTH.">
+
+```
+FRANKLIN'S PRINT SHOP.  A WOODEN TRUNK
+IS IN THE CORNER.  THE DOORWAY IS TO
+THE SOUTH.
+```
 
 **250.** `LOOK CHEST`
 
 <img src="images/timezone/0250-1.png" width="400" alt="THERE IS A SKELETON KEY HERE. YOU ARE IN THE BACKROOM OF BENJAMIN FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO">
-<img src="images/timezone/0250.png" width="400" alt="FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO THE SOUTH.">
+
+```
+THE SOUTH.
+```
 
 **251.** `GET KEY`
 
 <img src="images/timezone/0251-1.png" width="400" alt="YOU ARE IN THE BACKROOM OF BENJAMIN FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO THE SOUTH.">
-<img src="images/timezone/0251.png" width="400" alt="FRANKLIN&#39;S PRINT SHOP. A WOODEN TRUNK IS IN THE CORNER. THE DOORWAY IS TO THE SOUTH.">
 
 **252.** `SOUTH`
 
@@ -1263,37 +1421,50 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **259.** `GO MACHINE`
 
 <img src="images/timezone/0259-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0259-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0259.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **260.** `SIT`
 
 <img src="images/timezone/0260-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0260.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **261.** `ASIA`
 
 <img src="images/timezone/0261-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0261.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **262.** `2082AD`
 
 <img src="images/timezone/0262-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0262.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **263.** `PULL LEVER`
 
 <img src="images/timezone/0263-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0263-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0263.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **264.** `EXIT MACHINE`
 
 <img src="images/timezone/0264-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 3F AND PRESS RETURN.">
+
 <img src="images/timezone/0264-2.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A TIME MACHINE HERE, IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0264.png" width="400" alt="STREET DEAD-ENDS TO THE SOUTH. THERE IS A TIME MACHINE HERE, IT APPEARS TO BE PULSATING.">
 
 *Side 3F: drop `Time Zone (4am and san inc crack) disk F.dsk` on drive 1, and press Return.*
 
@@ -1342,12 +1513,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **275.** `USE KEY`
 
 <img src="images/timezone/0275-1.png" width="400" alt="O.K. YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
-<img src="images/timezone/0275.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
 
 **276.** `GET PADLOCK`
 
 <img src="images/timezone/0276-1.png" width="400" alt="O.K. YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
-<img src="images/timezone/0276.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
 
 **277.** `DROP PADLOCK`
 
@@ -1356,7 +1525,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **278.** `OPEN DOOR`
 
 <img src="images/timezone/0278-1.png" width="400" alt="O.K. YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
-<img src="images/timezone/0278.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A WAREHOUSE TO THE EAST.">
 
 **279.** `EAST`
 
@@ -1393,6 +1561,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **287.** `SIT`
 
 <img src="images/timezone/0287-1.png" width="400" alt="O.K. YOU ARE SITTING. AS SOON AS YOU SIT DOWN IN THE TRAIN, THE DOOR CLOSES AND QUICKLY THE TRAIN SPEEDS OFF TO ITS&#39; DESTINATION.">
+
 <img src="images/timezone/0287.png" width="400" alt="THE DOOR CLOSES AND QUICKLY THE TRAIN SPEEDS OFF TO ITS&#39; DESTINATION. YOU ARE INSIDE THE SUBWAY TRAIN.">
 
 **288.** `LOOK`
@@ -1410,7 +1579,12 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **291.** `SIT`
 
 <img src="images/timezone/0291-1.png" width="400" alt="O.K. YOU ARE SITTING. AS SOON AS YOU SIT DOWN IN THE TRAIN, A VOICE FROM AN INTERCOM ASKS IF YOU WOULD LIKE TO GO TO THE NORTH SIDE, THE">
-<img src="images/timezone/0291.png" width="400" alt="SOUTH SIDE, THE EAST SIDE OR THE WEST SIDE? YOU ARE INSIDE THE SUBWAY TRAIN.">
+
+```
+SOUTH SIDE, THE EAST SIDE OR THE WEST
+SIDE?
+YOU ARE INSIDE THE SUBWAY TRAIN.
+```
 
 **292.** `NORTH SIDE`
 
@@ -1443,7 +1617,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **299.** `OPEN DOOR`
 
 <img src="images/timezone/0299-1.png" width="400" alt="O.K. YOU ARE ON A CITY STREET IN TOKYO. THERE IS A JAPANESE RESTAURANT TO THE NORTH.">
-<img src="images/timezone/0299.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THERE IS A JAPANESE RESTAURANT TO THE NORTH.">
 
 **300.** `NORTH`
 
@@ -1452,6 +1625,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **301.** `LOOK`
 
 <img src="images/timezone/0301-1.png" width="400" alt="YOU SEE NOTHING SPECIAL. AS YOU ARE SITTING AT THE TABLE, A JAPANESE WAITER SHOWS UP AND HANDS YOU A MENU.">
+
 <img src="images/timezone/0301.png" width="400" alt="A MENU. YOU ARE SITTING AT A TABLE IN A JAPANESE RESTAURANT.">
 
 **302.** `READ MENU`
@@ -1461,18 +1635,26 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **303.** `LOOK`
 
 <img src="images/timezone/0303-1.png" width="400" alt="THE WAITER LOOKS AT YOU AND SAYS, &#34;WOULD YOU LIKE TO ORDER DINNER NUMBER 1,2 OR 3?&#34;. YOU ARE SITTING AT A TABLE IN A">
-<img src="images/timezone/0303.png" width="400" alt="1,2 OR 3?&#34;. YOU ARE SITTING AT A TABLE IN A JAPANESE RESTAURANT.">
+
+```
+JAPANESE RESTAURANT.
+```
 
 **304.** `2`
 
 <img src="images/timezone/0304-1.png" width="400" alt="THE WAITER THANKS YOU AND TAKES BACK THE MENU. IN A FEW MINUTES, HE COMES BACK WITH A BOWL OF SUKIYAKI AND SETS IT ON THE TABLE IN FRONT OF YOU.">
+
 <img src="images/timezone/0304.png" width="400" alt="IT ON THE TABLE IN FRONT OF YOU. YOU ARE SITTING AT A TABLE IN A JAPANESE RESTAURANT.">
 
 **305.** `EAT`
 
 <img src="images/timezone/0305-1.png" width="400" alt="THE WAITER TAKES BACK YOUR BOWL AND SAYS,&#34;THAT WILL BE TWO YEN PLEASE&#34;. WHEN YOU GIVE HIM YOUR YEN, HE SAYS, &#34;I TOLD YOU TWO YEN, NOT ONE YEN. TO PAY">
+
 <img src="images/timezone/0305-2.png" width="400" alt="FOR YOUR MEAL, I ORDER YOU TO GO IN THE KITCHEN AND WASH DISHES!!&#34; ANGRILY HE STALKS AWAY. YOU ARE SITTING AT A TABLE IN A">
-<img src="images/timezone/0305.png" width="400" alt="STALKS AWAY. YOU ARE SITTING AT A TABLE IN A JAPANESE RESTAURANT.">
+
+```
+JAPANESE RESTAURANT.
+```
 
 **306.** `NORTH`
 
@@ -1481,22 +1663,23 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **307.** `WASH DISHES`
 
 <img src="images/timezone/0307-1.png" width="400" alt="O.K. YOU PATIENTLY WASH A SINK FULL OF DISHES. YOU ARE IN THE KITCHEN OF THE JAPANESE">
-<img src="images/timezone/0307.png" width="400" alt="YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
+
+```
+RESTAURANT. THERE IS A JAPANESE COOK
+HERE. THE DOORWAY IS TO THE SOUTH.
+```
 
 **308.** `OPEN DRAWER`
 
 <img src="images/timezone/0308-1.png" width="400" alt="O.K. YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
-<img src="images/timezone/0308.png" width="400" alt="YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
 
 **309.** `LOOK DRAWER`
 
 <img src="images/timezone/0309-1.png" width="400" alt="THERE ARE SOME MATCHES HERE. YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
-<img src="images/timezone/0309.png" width="400" alt="YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
 
 **310.** `GET MATCHES`
 
 <img src="images/timezone/0310-1.png" width="400" alt="O.K. YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
-<img src="images/timezone/0310.png" width="400" alt="YOU ARE IN THE KITCHEN OF THE JAPANESE RESTAURANT. THERE IS A JAPANESE COOK HERE. THE DOORWAY IS TO THE SOUTH.">
 
 **311.** `SOUTH`
 
@@ -1529,6 +1712,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **318.** `SIT`
 
 <img src="images/timezone/0318-1.png" width="400" alt="O.K. YOU ARE SITTING. AS SOON AS YOU SIT DOWN IN THE TRAIN, THE DOOR CLOSES AND QUICKLY THE TRAIN SPEEDS OFF TO ITS&#39; DESTINATION.">
+
 <img src="images/timezone/0318.png" width="400" alt="THE DOOR CLOSES AND QUICKLY THE TRAIN SPEEDS OFF TO ITS&#39; DESTINATION. YOU ARE INSIDE THE SUBWAY TRAIN.">
 
 **319.** `LOOK`
@@ -1546,26 +1730,32 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **322.** `SOUTH`
 
 <img src="images/timezone/0322-1.png" width="400" alt="YOU ARE ON A CITY STREET IN TOKYO. THE STREET DEAD-ENDS TO THE SOUTH. THERE IS A TIME MACHINE HERE, IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0322.png" width="400" alt="STREET DEAD-ENDS TO THE SOUTH. THERE IS A TIME MACHINE HERE, IT APPEARS TO BE PULSATING.">
 
 **323.** `GO MACHINE`
 
 <img src="images/timezone/0323-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0323-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0323.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **324.** `SIT`
 
 <img src="images/timezone/0324-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0324.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **325.** `PUSH BUTTON`
 
 <img src="images/timezone/0325-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0325-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0325.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **326.** `EXIT MACHINE`
 
@@ -1596,32 +1786,45 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **332.** `GO MACHINE`
 
 <img src="images/timezone/0332-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0332.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **333.** `SIT`
 
 <img src="images/timezone/0333-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0333.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **334.** `EUROPE`
 
 <img src="images/timezone/0334-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0334.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **335.** `1700AD`
 
 <img src="images/timezone/0335-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0335.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **336.** `PULL LEVER`
 
 <img src="images/timezone/0336-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0336-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0336.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **337.** `EXIT MACHINE`
 
 <img src="images/timezone/0337-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 3F AND PRESS RETURN.">
+
 <img src="images/timezone/0337.png" width="400" alt="YOU ARE IN A GENTLE GREEN VALLEY. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 3F: drop `Time Zone (4am and san inc crack) disk F.dsk` on drive 1, and press Return.*
@@ -1775,35 +1978,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **374.** `GO MACHINE`
 
 <img src="images/timezone/0374-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0374-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0374.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **375.** `SIT`
 
 <img src="images/timezone/0375-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0375.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **376.** `NA`
 
 <img src="images/timezone/0376-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0376.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **377.** `1400AD`
 
 <img src="images/timezone/0377-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0377.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **378.** `PULL LEVER`
 
 <img src="images/timezone/0378-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0378-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0378.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **379.** `EXIT MACHINE`
 
 <img src="images/timezone/0379-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2C AND PRESS RETURN.">
+
 <img src="images/timezone/0379.png" width="400" alt="YOU ARE ON A PRAIRIE. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 2C: drop `Time Zone (4am and san inc crack) disk C.dsk` on drive 1, and press Return.*
@@ -1821,11 +2038,15 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **382.** `SOUTH`
 
 <img src="images/timezone/0382-1.png" width="400" alt="THE RUMBLING NOISE HAS CHANGED TO A LOUD ROAR AND YOU SEE A HERD OF BUFFALO HEADED YOUR WAY!! YOU ARE IN A PRAIRIE. THERE IS A GULLEY">
-<img src="images/timezone/0382.png" width="400" alt="HEADED YOUR WAY!! YOU ARE IN A PRAIRIE. THERE IS A GULLEY HERE.">
+
+```
+HERE.
+```
 
 **383.** `GO GULLEY`
 
 <img src="images/timezone/0383-1.png" width="400" alt="THE STAMPEDE OF BUFFALO PASSES OVER YOU AS YOU LAY IN THE GULLEY. AS SOON AS THE BUFFALO PASS BY, YOU GET OUT OF THE GULLEY AND DUST YOURSELF OFF.">
+
 <img src="images/timezone/0383.png" width="400" alt="GULLEY AND DUST YOURSELF OFF. YOU ARE IN A PRAIRIE. THERE IS A GULLEY HERE.">
 
 **384.** `NORTH`
@@ -1847,7 +2068,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **388.** `NORTH`
 
 <img src="images/timezone/0388-1.png" width="400" alt="THERE IS AN INDIAN WITH BOW AND ARROWS DRAWN!! THERE IS A DEAD BUFFALO BESIDE HIM. YOU ARE IN A PRAIRIE. THERE IS A DEEP">
-<img src="images/timezone/0388.png" width="400" alt="YOU ARE IN A PRAIRIE. THERE IS A DEEP RAVINE TO THE NORTH. A BRIDGE CROSSES THE RAVINE.">
+
+```
+RAVINE TO THE NORTH. A BRIDGE CROSSES
+THE RAVINE.
+```
 
 **389.** `NORTH`
 
@@ -1864,6 +2089,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **392.** `TRADE COMB`
 
 <img src="images/timezone/0392-1.png" width="400" alt="THE INDIAN CHIEF IS INTRIGUED BY THE PRETTY COMB. HE RUNS IT THROUGH HIS HAIR AND DECIDES TO KEEP IT. HE GIVES YOU THE BOW AND ARROWS.">
+
 <img src="images/timezone/0392.png" width="400" alt="YOU THE BOW AND ARROWS. YOU ARE INSIDE THE TEEPEE. THE INDIAN CHIEF IS SITTING HERE.">
 
 **393.** `SOUTH`
@@ -1897,35 +2123,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **400.** `GO MACHINE`
 
 <img src="images/timezone/0400-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0400-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0400.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **401.** `SIT`
 
 <img src="images/timezone/0401-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0401.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **402.** `EUROPE`
 
 <img src="images/timezone/0402-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0402.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **403.** `1000AD`
 
 <img src="images/timezone/0403-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0403.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **404.** `PULL LEVER`
 
 <img src="images/timezone/0404-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0404-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0404.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **405.** `EXIT MACHINE`
 
 <img src="images/timezone/0405-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 3E AND PRESS RETURN.">
+
 <img src="images/timezone/0405.png" width="400" alt="AND PRESS RETURN. YOU ARE IN THE FOREST. THERE IS A TIME MACHINE HERE.">
 
 *Side 3E: drop `Time Zone (4am and san inc crack) disk E.dsk` on drive 1, and press Return.*
@@ -1943,11 +2183,15 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **408.** `TALK ROBIN`
 
 <img src="images/timezone/0408-1.png" width="400" alt="WHEN YOU SPEAK TO ROBIN HOOD HE ASKS IF YOU WOULD LIKE TO JOIN HIS BAND OF MERRY MEN, BUT WARNS YOU THAT THE TEST IS DANGEROUS.">
-<img src="images/timezone/0408.png" width="400" alt="MERRY MEN, BUT WARNS YOU THAT THE TEST IS DANGEROUS. YOU ARE IN THE FOREST.">
+
+```
+YOU ARE IN THE FOREST.
+```
 
 **409.** `YES`
 
 <img src="images/timezone/0409-1.png" width="400" alt="ROBIN SAYS,&#34;THEN YOU MUST PROVE YOURSELF CAPABLE BY SLAYING THE EVIL DRYAD THAT HAUNTS THE BLACK FOREST. DON&#39;T RETURN UNLESS YOU SUCCEED&#34;.">
+
 <img src="images/timezone/0409.png" width="400" alt="WITH THAT, YOU ARE CAST INTO THE DARK FOREST IN SEARCH OF YOUR WICKED PREY. YOU ARE LOST IN THE DARK FOREST.">
 
 **410.** `SOUTH`
@@ -1961,11 +2205,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **412.** `EAST`
 
 <img src="images/timezone/0412-1.png" width="400" alt="YOU FEEL AN EVIL PRESENCE IN THE AIR. SUDDENLY, A HIDEOUS CREATURE STEPS FROM BEHIND A TREE. YOU ARE LOST IN THE DARK FOREST.">
-<img src="images/timezone/0412.png" width="400" alt="SUDDENLY, A HIDEOUS CREATURE STEPS FROM BEHIND A TREE. YOU ARE LOST IN THE DARK FOREST.">
 
 **413.** `USE BOW`
 
 <img src="images/timezone/0413-1.png" width="400" alt="YOU EXPERTLY LET FLY AN ARROW AND IT FINDS ITS WAY STRAIGHT TO THE DRYAD&#39;S HEART, HE STANDS THERE STUNNNED FOR A MOMENT, THEN CHANGES BACK TO HIS">
+
 <img src="images/timezone/0413.png" width="400" alt="MOMENT, THEN CHANGES BACK TO HIS ORIGINAL, WITHERED, FORM. YOU ARE LOST IN THE DARK FOREST.">
 
 **414.** `SOUTH`
@@ -1983,8 +2227,8 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **417.** `WEST`
 
 <img src="images/timezone/0417-1.png" width="400" alt="YOU HAVE PROVEN YOUR BRAVERY AND SKILL!YOU ARE OFFICIALLY ONE OF ROBIN HOOD&#39;S MERRY MEN. ROBIN HOOD NOW HAS A TASK FOR YOU TO DO. THERE IS A BAG OF">
+
 <img src="images/timezone/0417-2.png" width="400" alt="MONEY IN THE BACK ROOM OF THE SHERIFF&#39;S OFFICE. GET IT, AND BRING IT BACK TO ROBIN HOOD. YOU ARE IN THE FOREST.">
-<img src="images/timezone/0417.png" width="400" alt="OFFICE. GET IT, AND BRING IT BACK TO ROBIN HOOD. YOU ARE IN THE FOREST.">
 
 **418.** `WEST`
 
@@ -2013,7 +2257,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **424.** `WEST`
 
 <img src="images/timezone/0424-1.png" width="400" alt="YOU ARE ON AN EAST/WEST ROAD. AN ALLEY IS GOING NORTH FROM HERE. YOU SEE THE SOUTH-EAST CORNER OF THE SHERIFF&#39;S OFFICE.">
-<img src="images/timezone/0424.png" width="400" alt="IS GOING NORTH FROM HERE. YOU SEE THE SOUTH-EAST CORNER OF THE SHERIFF&#39;S OFFICE.">
 
 **425.** `WEST`
 
@@ -2022,7 +2265,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **426.** `WEST`
 
 <img src="images/timezone/0426-1.png" width="400" alt="YOU ARE ON AN EAST/WEST ROAD. AN ALLEY GOES NORTH FROM HERE. YOU SEE THE SOUTHWEST CORNER OF THE SHERIFF&#39;S OFFICE.">
-<img src="images/timezone/0426.png" width="400" alt="GOES NORTH FROM HERE. YOU SEE THE SOUTHWEST CORNER OF THE SHERIFF&#39;S OFFICE.">
 
 **427.** `WEST`
 
@@ -2047,7 +2289,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **432.** `EAST`
 
 <img src="images/timezone/0432-1.png" width="400" alt="YOU ARE ON AN EAST/WEST ROAD. AN ALLEY GOES NORTH FROM HERE. YOU SEE THE SOUTHWEST CORNER OF THE SHERIFF&#39;S OFFICE.">
-<img src="images/timezone/0432.png" width="400" alt="GOES NORTH FROM HERE. YOU SEE THE SOUTHWEST CORNER OF THE SHERIFF&#39;S OFFICE.">
 
 **433.** `NORTH`
 
@@ -2076,11 +2317,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **439.** `SHOOT ARROW`
 
 <img src="images/timezone/0439-1.png" width="400" alt="YOU SHOOT THE ARROW AND IT PIERCES THE BAG OF MONEY. YOU ARE LOOKING THROUGH THE WINDOW AT THE BACK OF A BUILDING.">
-<img src="images/timezone/0439.png" width="400" alt="BAG OF MONEY. YOU ARE LOOKING THROUGH THE WINDOW AT THE BACK OF A BUILDING.">
 
 **440.** `PULL ROPE`
 
 <img src="images/timezone/0440-1.png" width="400" alt="YOU PULL ON THE ROPE AND THE ARROW AND THE BAG OF MONEY COME TO YOU. YOU PULL THE ARROW OUT OF THE BAG AND UNTIE THE ROPE.">
+
 <img src="images/timezone/0440.png" width="400" alt="ROPE. YOU ARE LOOKING THROUGH THE WINDOW AT THE BACK OF A BUILDING.">
 
 **441.** `DROP BOW`
@@ -2098,7 +2339,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **444.** `SOUTH`
 
 <img src="images/timezone/0444-1.png" width="400" alt="YOU ARE ON AN EAST/WEST ROAD. AN ALLEY IS GOING NORTH FROM HERE. YOU SEE THE SOUTH-EAST CORNER OF THE SHERIFF&#39;S OFFICE.">
-<img src="images/timezone/0444.png" width="400" alt="IS GOING NORTH FROM HERE. YOU SEE THE SOUTH-EAST CORNER OF THE SHERIFF&#39;S OFFICE.">
 
 **445.** `EAST`
 
@@ -2131,30 +2371,41 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **452.** `GO MACHINE`
 
 <img src="images/timezone/0452-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0452-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0452.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **453.** `SIT`
 
 <img src="images/timezone/0453-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0453.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **454.** `AUSTRALIA`
 
 <img src="images/timezone/0454-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0454.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **455.** `PULL LEVER`
 
 <img src="images/timezone/0455-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0455-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0455.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **456.** `EXIT MACHINE`
 
 <img src="images/timezone/0456-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4H AND PRESS RETURN.">
+
 <img src="images/timezone/0456.png" width="400" alt="YOU ARE IN THE GRASSLAND. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 4H: drop `Time Zone (4am and san inc crack) disk H.dsk` on drive 1, and press Return.*
@@ -2184,11 +2435,13 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **462.** `NORTH`
 
 <img src="images/timezone/0462-1.png" width="400" alt="THERE ARE A COUPLE OF ABORIGINES HERE. YOU HAD BETTER BE CAREFUL WITH THEM. THEY MIGHT KILL YOU WITH THEIR BOOMERANG.">
+
 <img src="images/timezone/0462.png" width="400" alt="THEY MIGHT KILL YOU WITH THEIR BOOMERANG. YOU ARE IN THE BUSHLANDS.">
 
 **463.** `GIVE MIRROR`
 
 <img src="images/timezone/0463-1.png" width="400" alt="THE ABORIGINES TAKE THE MIRROR AND LOOK AT IT CURIOUSLY. THEY LIKE THE MIRROR. THEY GIVE YOU THE BOOMERANG IN RETURN AND WALK AWAY.">
+
 <img src="images/timezone/0463.png" width="400" alt="THEY GIVE YOU THE BOOMERANG IN RETURN AND WALK AWAY. YOU ARE IN THE BUSHLANDS.">
 
 **464.** `SOUTH`
@@ -2218,30 +2471,41 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **470.** `GO MACHINE`
 
 <img src="images/timezone/0470-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0470-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0470.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **471.** `SIT`
 
 <img src="images/timezone/0471-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0471.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **472.** `EUROPE`
 
 <img src="images/timezone/0472-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0472.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **473.** `PULL LEVER`
 
 <img src="images/timezone/0473-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0473-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0473.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **474.** `EXIT MACHINE`
 
 <img src="images/timezone/0474-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 3E AND PRESS RETURN.">
+
 <img src="images/timezone/0474.png" width="400" alt="AND PRESS RETURN. YOU ARE IN THE FOREST. THERE IS A TIME MACHINE HERE.">
 
 *Side 3E: drop `Time Zone (4am and san inc crack) disk E.dsk` on drive 1, and press Return.*
@@ -2259,7 +2523,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **477.** `GIVE MONEY`
 
 <img src="images/timezone/0477-1.png" width="400" alt="ROBIN HOOD TAKES THE BAG OF MONEY, THANKS YOU, AND THEN LEAVES WITH HIS MEN. YOU ARE IN THE FOREST.">
-<img src="images/timezone/0477.png" width="400" alt="THANKS YOU, AND THEN LEAVES WITH HIS MEN. YOU ARE IN THE FOREST.">
 
 **478.** `WEST`
 
@@ -2268,6 +2531,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **479.** `THROW BOOMERANG`
 
 <img src="images/timezone/0479-1.png" width="400" alt="YOU THROW THE BOOMERANG AS HARD AS YOU CAN AND HIT THE KNIGHT ON THE HEAD AND KNOCK HIM FROM THE HORSE. THE KNIGHT IS DEAD.">
+
 <img src="images/timezone/0479.png" width="400" alt="DEAD. THERE IS A LANCE LAYING HERE. YOU ARE IN THE FOREST.">
 
 **480.** `GET LANCE`
@@ -2281,35 +2545,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **482.** `GO MACHINE`
 
 <img src="images/timezone/0482-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0482-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0482.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **483.** `SIT`
 
 <img src="images/timezone/0483-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0483.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **484.** `AFRICA`
 
 <img src="images/timezone/0484-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0484.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **485.** `50BC`
 
 <img src="images/timezone/0485-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0485.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **486.** `PULL LEVER`
 
 <img src="images/timezone/0486-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0486-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0486.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **487.** `EXIT MACHINE`
 
 <img src="images/timezone/0487-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2D AND PRESS RETURN.">
+
 <img src="images/timezone/0487.png" width="400" alt="YOU ARE IN A DESERT ALONG THE NILE RIVER. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 2D: drop `Time Zone (4am and san inc crack) disk D.dsk` on drive 1, and press Return.*
@@ -2347,7 +2625,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **495.** `GIVE PERFUME`
 
 <img src="images/timezone/0495-1.png" width="400" alt="CLEOPTRA LOVES PERFUME. SHE TAKES THE PERFUME AND GIVES YOU SOME EGYPTIAN MONEY. YOU ARE IN CLEOPATRA&#39;S BATHING ROOM.">
-<img src="images/timezone/0495.png" width="400" alt="YOU ARE IN CLEOPATRA&#39;S BATHING ROOM. CLEOPATRA IS TAKING A BATH IN MILK AND HONEY. SHE HAS SERVANTS HELPING HER.">
+
+```
+CLEOPATRA IS TAKING A BATH IN MILK AND
+HONEY. SHE HAS SERVANTS HELPING HER.
+```
 
 **496.** `EAST`
 
@@ -2376,12 +2658,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **502.** `USE MONEY`
 
 <img src="images/timezone/0502-1.png" width="400" alt="EGYPTIAN MONEY? YOU ARE IN THE MARKETPLACE OF THEBES. A ROAD IS GOING NORTH AND EAST. A PEASANT WOMAN IS SELLING FRUIT.">
-<img src="images/timezone/0502.png" width="400" alt="YOU ARE IN THE MARKETPLACE OF THEBES. A ROAD IS GOING NORTH AND EAST. A PEASANT WOMAN IS SELLING FRUIT.">
 
 **503.** `YES`
 
 <img src="images/timezone/0503-1.png" width="400" alt="THE PEASANT WOMAN TAKES THE EGYPTIAN MONEY AND GIVES YOU SOME DATES. YOU ARE IN THE MARKETPLACE OF THEBES. A ROAD IS GOING NORTH AND EAST. A PEASANT">
-<img src="images/timezone/0503.png" width="400" alt="YOU ARE IN THE MARKETPLACE OF THEBES. A ROAD IS GOING NORTH AND EAST. A PEASANT WOMAN IS SELLING FRUIT.">
+
+```
+WOMAN IS SELLING FRUIT.
+```
 
 **504.** `EAST`
 
@@ -2398,17 +2682,22 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **507.** `NORTH`
 
 <img src="images/timezone/0507-1.png" width="400" alt="YOU ARE GETTING VERY HUNGRY AND THIRSTY. YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND">
-<img src="images/timezone/0507.png" width="400" alt="YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND SOUTH.">
+
+```
+SOUTH.
+```
 
 **508.** `DRINK WATER`
 
 <img src="images/timezone/0508-1.png" width="400" alt="AHHH! THAT WATER WAS REFRESHING. YOU ARE VERY HUNGRY. YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND">
-<img src="images/timezone/0508.png" width="400" alt="YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND SOUTH.">
+
+```
+SOUTH.
+```
 
 **509.** `EAT DATES`
 
 <img src="images/timezone/0509-1.png" width="400" alt="MMMM! THOSE DATES JUST HIT THE SPOT. YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND SOUTH.">
-<img src="images/timezone/0509.png" width="400" alt="YOU ARE IN A DESERT ALONG THE NILE RIVER. THE NILE IS RUNNING NORTH AND SOUTH.">
 
 **510.** `WEST`
 
@@ -2445,7 +2734,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **518.** `GO DOOR`
 
 <img src="images/timezone/0518-1.png" width="400" alt="YOU ARE IN A SMALL, CRAMPED ROOM JUST INSIDE THE PYRAMID. THERE IS A DOOR TO THE WEST AND STEEP STAIRS LEADING DOWNWARD.">
-<img src="images/timezone/0518.png" width="400" alt="INSIDE THE PYRAMID. THERE IS A DOOR TO THE WEST AND STEEP STAIRS LEADING DOWNWARD.">
 
 **519.** `DOWN`
 
@@ -2462,7 +2750,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **522.** `MOVE STONE`
 
 <img src="images/timezone/0522-1.png" width="400" alt="BY MOVING THE STONE, YOU HAVE UNCOVERED A HOLE IN THE WALL. THERE IS A HOLE IN THE WALL. YOU ARE AT THE BOTTOM OF A STEEP">
-<img src="images/timezone/0522.png" width="400" alt="THERE IS A HOLE IN THE WALL. YOU ARE AT THE BOTTOM OF A STEEP STAIRWAY. THERE IS A LARGE STONE HERE.">
+
+```
+STAIRWAY. THERE IS A LARGE STONE HERE.
+```
 
 **523.** `GO HOLE`
 
@@ -2495,7 +2786,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **530.** `UP`
 
 <img src="images/timezone/0530-1.png" width="400" alt="YOU ARE IN A SMALL, CRAMPED ROOM JUST INSIDE THE PYRAMID. THERE IS A DOOR TO THE WEST AND STEEP STAIRS LEADING DOWNWARD.">
-<img src="images/timezone/0530.png" width="400" alt="INSIDE THE PYRAMID. THERE IS A DOOR TO THE WEST AND STEEP STAIRS LEADING DOWNWARD.">
 
 **531.** `GO DOOR`
 
@@ -2536,35 +2826,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **540.** `GO MACHINE`
 
 <img src="images/timezone/0540-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0540-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0540.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **541.** `SIT`
 
 <img src="images/timezone/0541-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0541.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **542.** `ASIA`
 
 <img src="images/timezone/0542-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0542.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **543.** `1400AD`
 
 <img src="images/timezone/0543-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0543.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **544.** `PULL LEVER`
 
 <img src="images/timezone/0544-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0544-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0544.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **545.** `EXIT MACHINE`
 
 <img src="images/timezone/0545-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4G AND PRESS RETURN.">
+
 <img src="images/timezone/0545.png" width="400" alt="YOU ARE IN A FOREST. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 4G: drop `Time Zone (4am and san inc crack) disk G.dsk` on drive 1, and press Return.*
@@ -2590,6 +2894,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **550.** `THROW BOOMERANG`
 
 <img src="images/timezone/0550-1.png" width="400" alt="DEFTLY, YOU THROW THE BOOMERANG AT THE SAMURAI AND KILL HIM WITH A BLOW TO THE HEAD. THERE IS A DEAD SAMURAI WARRIOR HERE.">
+
 <img src="images/timezone/0550.png" width="400" alt="THERE IS A DEAD SAMURAI WARRIOR HERE. THERE IS A SWORD HERE. YOU ARE AT THE EDGE OF AN OCEAN.">
 
 **551.** `GET SWORD`
@@ -2615,7 +2920,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **556.** `TRADE RICE`
 
 <img src="images/timezone/0556-1.png" width="400" alt="THE JAPANESE LADY LOVES RICE. SHE TAKES THE BAG OF RICE AND GIVES YOU A ROLL OF SILK. YOU ARE IN FRONT OF A SMALL SILK">
-<img src="images/timezone/0556.png" width="400" alt="YOU ARE IN FRONT OF A SMALL SILK SHOP.THERE IS A JAPANESE LADY SELLING SILK HERE.">
+
+```
+SHOP.THERE IS A JAPANESE LADY SELLING
+SILK HERE.
+```
 
 **557.** `WEST`
 
@@ -2636,35 +2945,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **561.** `GO MACHINE`
 
 <img src="images/timezone/0561-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0561-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0561.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **562.** `SIT`
 
 <img src="images/timezone/0562-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0562.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **563.** `EUROPE`
 
 <img src="images/timezone/0563-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0563.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **564.** `50BC`
 
 <img src="images/timezone/0564-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0564.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **565.** `PULL LEVER`
 
 <img src="images/timezone/0565-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0565-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0565.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **566.** `EXIT MACHINE`
 
 <img src="images/timezone/0566-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2C AND PRESS RETURN.">
+
 <img src="images/timezone/0566.png" width="400" alt="YOUR ARE IN THE HILLS. THERE IS A TIME MACHINE HERE, IT APPEARS TO BE PULSATING.">
 
 *Side 2C: drop `Time Zone (4am and san inc crack) disk C.dsk` on drive 1, and press Return.*
@@ -2778,6 +3101,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **593.** `USE TWEEZERS`
 
 <img src="images/timezone/0593-1.png" width="400" alt="YOU GRAB THE THORN WITH THE TWEEZERS AND PULL IT OUT OF THE LION&#39;S PAW,YOU THEN DISCARD IT. THE LION MOVES TO THE OTHER SIDE OF THE CAGE.">
+
 <img src="images/timezone/0593.png" width="400" alt="THEN DISCARD IT. THE LION MOVES TO THE OTHER SIDE OF THE CAGE. YOU ARE IN A LION&#39;S CAGE.">
 
 **594.** `OPEN DOOR`
@@ -2823,8 +3147,12 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **604.** `LOOK`
 
 <img src="images/timezone/0604-1.png" width="400" alt="THE GUARDS GRAB YOU AND THROW YOU INTO THE ARENA TO FIGHT A GLADIATOR. WITH YOUR SWORD AND SHIELD YOU QUICKLY MAKE MINCEMEAT OF HIM. YOU ARE PROCLAIMED A">
+
 <img src="images/timezone/0604-2.png" width="400" alt="HERO AND RECEIVE AN INVITATION TO VISIT JULIUS CAESAR. THERE IS A PAIR OF TWEEZERS HERE. YOU ARE IN THE ARENA OF THE ROMAN">
-<img src="images/timezone/0604.png" width="400" alt="THERE IS A PAIR OF TWEEZERS HERE. YOU ARE IN THE ARENA OF THE ROMAN COLOSSEUM.">
+
+```
+COLOSSEUM.
+```
 
 **605.** `SOUTH`
 
@@ -2893,35 +3221,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **621.** `GO MACHINE`
 
 <img src="images/timezone/0621-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0621-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0621.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **622.** `SIT`
 
 <img src="images/timezone/0622-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0622.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **623.** `AFRICA`
 
 <img src="images/timezone/0623-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0623.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **624.** `1000AD`
 
 <img src="images/timezone/0624-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0624.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **625.** `PULL LEVER`
 
 <img src="images/timezone/0625-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0625-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0625.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **626.** `EXIT MACHINE`
 
 <img src="images/timezone/0626-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2D AND PRESS RETURN.">
+
 <img src="images/timezone/0626.png" width="400" alt="YOU ARE IN A JUNGLE. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 2D: drop `Time Zone (4am and san inc crack) disk D.dsk` on drive 1, and press Return.*
@@ -2935,12 +3277,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **628.** `NORTH`
 
 <img src="images/timezone/0628-1.png" width="400" alt="THERE IS A LOG HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0628.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **629.** `WEST`
 
 <img src="images/timezone/0629-1.png" width="400" alt="THERE IS A LOG HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0629.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **630.** `GET LOG`
 
@@ -2949,17 +3289,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **631.** `EAST`
 
 <img src="images/timezone/0631-1.png" width="400" alt="THERE IS A LOG HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0631.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **632.** `DROP LOG`
 
 <img src="images/timezone/0632-1.png" width="400" alt="THERE ARE TWO LOGS HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0632.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **633.** `EAST`
 
 <img src="images/timezone/0633-1.png" width="400" alt="THERE IS A LOG HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0633.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **634.** `GET LOG`
 
@@ -2968,22 +3305,18 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **635.** `WEST`
 
 <img src="images/timezone/0635-1.png" width="400" alt="THERE ARE TWO LOGS HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0635.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **636.** `DROP LOG`
 
 <img src="images/timezone/0636-1.png" width="400" alt="THERE ARE THREE LOGS HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0636.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **637.** `MAKE RAFT`
 
 <img src="images/timezone/0637-1.png" width="400" alt="O.K. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0637.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **638.** `CROSS RIVER`
 
 <img src="images/timezone/0638-1.png" width="400" alt="YOU ARE IN THE MIDDLE OF THE CONGO RIVER ON A SMALL, FLIMSY RAFT. USING THE LONG POLE, YOU ARE ABLE TO GUIDE THE RAFT ACROSS THE RIVER.">
-<img src="images/timezone/0638.png" width="400" alt="RIVER ON A SMALL, FLIMSY RAFT. USING THE LONG POLE, YOU ARE ABLE TO GUIDE THE RAFT ACROSS THE RIVER.">
 
 **639.** `NORTH`
 
@@ -3012,12 +3345,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **645.** `WITH HAMMER`
 
 <img src="images/timezone/0645-1.png" width="400" alt="YOU BREAK OFF THE TUSKS WITH THE STONE HAMMER AND TAKE THEM. YOU HAVE FALLEN INTO A DEEP PIT. THERE IS THE SKELETON OF AN ELEPHANT HERE.">
-<img src="images/timezone/0645.png" width="400" alt="HAMMER AND TAKE THEM. YOU HAVE FALLEN INTO A DEEP PIT. THERE IS THE SKELETON OF AN ELEPHANT HERE.">
 
 **646.** `USE LADDER`
 
 <img src="images/timezone/0646-1.png" width="400" alt="USING THE LADDER, YOU CLIMB OUT OF THE PIT YOU ARE IN A JUNGLE. YOU ARE HOT AND STICKY.">
-<img src="images/timezone/0646.png" width="400" alt="PIT YOU ARE IN A JUNGLE. YOU ARE HOT AND STICKY.">
 
 **647.** `SOUTH`
 
@@ -3034,7 +3365,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **650.** `CROSS RIVER`
 
 <img src="images/timezone/0650-1.png" width="400" alt="YOU ARE IN THE MIDDLE OF THE CONGO RIVER ON A SMALL, FLIMSY RAFT. USING THE LONG POLE, YOU ARE ABLE TO GUIDE THE RAFT ACROSS THE RIVER.">
-<img src="images/timezone/0650.png" width="400" alt="RIVER ON A SMALL, FLIMSY RAFT. USING THE LONG POLE, YOU ARE ABLE TO GUIDE THE RAFT ACROSS THE RIVER.">
 
 **651.** `SOUTH`
 
@@ -3043,7 +3373,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **652.** `GET ROPE`
 
 <img src="images/timezone/0652-1.png" width="400" alt="THERE ARE THREE LOGS HERE. YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
-<img src="images/timezone/0652.png" width="400" alt="YOU ARE ON THE SOUTH SIDE OF THE CONGO RIVER. THE RIVER IS RUNNING EAST AND WEST.">
 
 **653.** `SOUTH`
 
@@ -3056,35 +3385,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **655.** `GO MACHINE`
 
 <img src="images/timezone/0655-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0655-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0655.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **656.** `SIT`
 
 <img src="images/timezone/0656-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0656.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **657.** `AFRICA`
 
 <img src="images/timezone/0657-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0657.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **658.** `1400AD`
 
 <img src="images/timezone/0658-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0658.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **659.** `PULL LEVER`
 
 <img src="images/timezone/0659-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0659-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0659.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **660.** `EXIT MACHINE`
 
 <img src="images/timezone/0660-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 2D AND PRESS RETURN.">
+
 <img src="images/timezone/0660.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 2D: drop `Time Zone (4am and san inc crack) disk D.dsk` on drive 1, and press Return.*
@@ -3110,7 +3453,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **665.** `TRADE TUSKS`
 
 <img src="images/timezone/0665-1.png" width="400" alt="THE MERCHANT INSPECTS THE IVORY, SEEMS PLEASED WITH IT AND GIVES YOU THE KNIFE. YOU ARE IN A MORROCCAN BAZAAR. YOU SEE">
-<img src="images/timezone/0665.png" width="400" alt="KNIFE. YOU ARE IN A MORROCCAN BAZAAR. YOU SEE AN ARAB MERCHANT HERE.">
+
+```
+AN ARAB MERCHANT HERE.
+```
 
 **666.** `NORTH`
 
@@ -3123,7 +3469,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **668.** `TRADE SILK`
 
 <img src="images/timezone/0668-1.png" width="400" alt="THE MERCHANT INSPECTS THE SILK, SEEMS PLEASED WITH IT AND GIVES YOU THE PERSIAN RUG. YOU ARE IN A MORROCCAN BAZAAR. YOU SEE">
-<img src="images/timezone/0668.png" width="400" alt="PERSIAN RUG. YOU ARE IN A MORROCCAN BAZAAR. YOU SEE AN ARAB MERCHANT HERE.">
+
+```
+AN ARAB MERCHANT HERE.
+```
 
 **669.** `SOUTH`
 
@@ -3140,40 +3489,57 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **672.** `SOUTH`
 
 <img src="images/timezone/0672-1.png" width="400" alt="YOU ARE GETTING VERY HOT AND THIRSTY. I THINK YOU HAD BETTER DRINK SOME WATER. YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE">
-<img src="images/timezone/0672.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
+
+```
+PULSATING.
+```
 
 **673.** `GO MACHINE`
 
 <img src="images/timezone/0673-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0673-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0673.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **674.** `SIT`
 
 <img src="images/timezone/0674-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0674.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **675.** `ASIA`
 
 <img src="images/timezone/0675-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0675.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **676.** `1000AD`
 
 <img src="images/timezone/0676-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0676.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **677.** `PULL LEVER`
 
 <img src="images/timezone/0677-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0677-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0677.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **678.** `EXIT MACHINE`
 
 <img src="images/timezone/0678-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4G AND PRESS RETURN.">
+
 <img src="images/timezone/0678.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 4G: drop `Time Zone (4am and san inc crack) disk G.dsk` on drive 1, and press Return.*
@@ -3199,12 +3565,16 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **683.** `TRADE RUG`
 
 <img src="images/timezone/0683-1.png" width="400" alt="THE MERCHANT LOOKS AT THE PERSIAN RUG AND IS VERY PLEASED. HE TAKES THE RUG AND GIVES YOU A CAMEL. THERE IS A CAMEL FOLLOWING YOU.">
-<img src="images/timezone/0683.png" width="400" alt="YOU ARE IN THE MARKETPLACE OF BAGHDAD. THERE IS A MERCHANT SELLING CAMELS HERE.">
+
+```
+YOU ARE IN THE MARKETPLACE OF BAGHDAD.
+THERE IS A MERCHANT SELLING CAMELS
+HERE.
+```
 
 **684.** `RIDE CAMEL`
 
 <img src="images/timezone/0684-1.png" width="400" alt="YOU ARE RIDING A CAMEL. YOU ARE IN THE MARKETPLACE OF BAGHDAD. THERE IS A MERCHANT SELLING CAMELS HERE.">
-<img src="images/timezone/0684.png" width="400" alt="YOU ARE IN THE MARKETPLACE OF BAGHDAD. THERE IS A MERCHANT SELLING CAMELS HERE.">
 
 **685.** `WEST`
 
@@ -3245,22 +3615,24 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **694.** `NORTH`
 
 <img src="images/timezone/0694-1.png" width="400" alt="YOU ARE RIDING A CAMEL. YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
-<img src="images/timezone/0694.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
 
 **695.** `DISMOUNT CAMEL`
 
 <img src="images/timezone/0695-1.png" width="400" alt="THERE IS A CAMEL FOLLOWING YOU. YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
-<img src="images/timezone/0695.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
 
 **696.** `OPEN SESAME`
 
 <img src="images/timezone/0696-1.png" width="400" alt="MAGICALLY, THE NARROW SLIT IN THE MOUNTAIN WIDENS TO A LARGE CAVE OPENING. THERE IS A CAMEL FOLLOWING YOU.">
+
 <img src="images/timezone/0696.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
 
 **697.** `GO CAVE`
 
 <img src="images/timezone/0697-1.png" width="400" alt="AS SOON AS YOU ENTER THE CAVE, THE ENTRANCE TO THE SOUTH, (BEHIND YOU), CLOSES. YOU ARE INSIDE A CAVE. THERE IS A">
-<img src="images/timezone/0697.png" width="400" alt="CLOSES. YOU ARE INSIDE A CAVE. THERE IS A PASSAGE TO THE NORTH.">
+
+```
+PASSAGE TO THE NORTH.
+```
 
 **698.** `NORTH`
 
@@ -3285,17 +3657,19 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **703.** `OPEN SESAME`
 
 <img src="images/timezone/0703-1.png" width="400" alt="THE CAVE ENTRANCE TO THE SOUTH MAGICALLY OPENS! YOU ARE INSIDE A CAVE. THERE IS A PASSAGE TO THE NORTH.">
-<img src="images/timezone/0703.png" width="400" alt="MAGICALLY OPENS! YOU ARE INSIDE A CAVE. THERE IS A PASSAGE TO THE NORTH.">
 
 **704.** `SOUTH`
 
 <img src="images/timezone/0704-1.png" width="400" alt="MAGICALLY, THE CAVE OPENING IN THE MOUNTAIN CLOSES TO A NARROW SLIT. THERE IS A CAMEL FOLLOWING YOU. YOU ARE IN A DESERT. THERE IS A">
-<img src="images/timezone/0704.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
+
+```
+STRANGE LOOKING MOUNTAIN IN FRONT OF
+YOU.
+```
 
 **705.** `RIDE CAMEL`
 
 <img src="images/timezone/0705-1.png" width="400" alt="YOU ARE RIDING A CAMEL. YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
-<img src="images/timezone/0705.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A STRANGE LOOKING MOUNTAIN IN FRONT OF YOU.">
 
 **706.** `SOUTH`
 
@@ -3328,45 +3702,57 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **713.** `EAST`
 
 <img src="images/timezone/0713-1.png" width="400" alt="YOU ARE RIDING A CAMEL. YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0713.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 **714.** `DISMOUNT CAMEL`
 
 <img src="images/timezone/0714-1.png" width="400" alt="THERE IS A CAMEL FOLLOWING YOU. YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0714.png" width="400" alt="YOU ARE IN A DESERT. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 **715.** `GO MACHINE`
 
 <img src="images/timezone/0715-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0715-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0715.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **716.** `SIT`
 
 <img src="images/timezone/0716-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0716.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **717.** `AUSTRALIA`
 
 <img src="images/timezone/0717-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0717.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **718.** `2082AD`
 
 <img src="images/timezone/0718-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0718.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **719.** `PULL LEVER`
 
 <img src="images/timezone/0719-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0719-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0719.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **720.** `EXIT MACHINE`
 
 <img src="images/timezone/0720-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 3E AND PRESS RETURN.">
+
 <img src="images/timezone/0720.png" width="400" alt="YOU ARE IN AN OPEN FIELD. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 3E: drop `Time Zone (4am and san inc crack) disk E.dsk` on drive 1, and press Return.*
@@ -3384,12 +3770,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **723.** `BREAK WINDOW`
 
 <img src="images/timezone/0723-1.png" width="400" alt="AS YOU BREAK OPEN THE WINDOW, A LOUD BURGLAR ALARM IS ACTIVATED . YOU ARE IN THE SUBURB OF SIDNEY. THERE IS A HOUSE TO THE NORTH HERE.">
-<img src="images/timezone/0723.png" width="400" alt="BURGLAR ALARM IS ACTIVATED . YOU ARE IN THE SUBURB OF SIDNEY. THERE IS A HOUSE TO THE NORTH HERE.">
 
 **724.** `GO WINDOW`
 
 <img src="images/timezone/0724-1.png" width="400" alt="YOU ARE IN THE COMFORTABLE LIVING ROOM OF THE HOUSE. THE FRONT DOOR IS TO THE SOUTH. THERE IS A BROKEN WINDOW TO THE SOUTH.">
-<img src="images/timezone/0724.png" width="400" alt="OF THE HOUSE. THE FRONT DOOR IS TO THE SOUTH. THERE IS A BROKEN WINDOW TO THE SOUTH.">
 
 **725.** `WEST`
 
@@ -3406,7 +3790,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **728.** `EAST`
 
 <img src="images/timezone/0728-1.png" width="400" alt="YOU ARE IN THE COMFORTABLE LIVING ROOM OF THE HOUSE. THE FRONT DOOR IS TO THE SOUTH. THERE IS A BROKEN WINDOW TO THE SOUTH.">
-<img src="images/timezone/0728.png" width="400" alt="OF THE HOUSE. THE FRONT DOOR IS TO THE SOUTH. THERE IS A BROKEN WINDOW TO THE SOUTH.">
 
 **729.** `GO WINDOW`
 
@@ -3423,35 +3806,49 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **732.** `GO MACHINE`
 
 <img src="images/timezone/0732-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0732-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0732.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **733.** `SIT`
 
 <img src="images/timezone/0733-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0733.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **734.** `ASIA`
 
 <img src="images/timezone/0734-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0734.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **735.** `1700AD`
 
 <img src="images/timezone/0735-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0735.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **736.** `PULL LEVER`
 
 <img src="images/timezone/0736-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0736-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0736.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **737.** `EXIT MACHINE`
 
 <img src="images/timezone/0737-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 4H AND PRESS RETURN.">
+
 <img src="images/timezone/0737.png" width="400" alt="YOU ARE IN THE SNOW AND ICE. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 4H: drop `Time Zone (4am and san inc crack) disk H.dsk` on drive 1, and press Return.*
@@ -3461,7 +3858,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **738.** `WEAR COAT`
 
 <img src="images/timezone/0738-1.png" width="400" alt="O.K. YOU ARE WEARING THE COAT. YOU ARE IN THE SNOW AND ICE. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
-<img src="images/timezone/0738.png" width="400" alt="YOU ARE IN THE SNOW AND ICE. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 **739.** `SOUTH`
 
@@ -3490,12 +3886,19 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **745.** `EAST`
 
 <img src="images/timezone/0745-1.png" width="400" alt="THERE IS A MEAN LOOKING KOSSACK HERE. I THINK HE IS GOING TO KILL YOU. YOU ARE IN THE ICE AND SNOW. THERE IS A WATERWAY TO THE WEST. THERE IS A BRIDGE">
-<img src="images/timezone/0745.png" width="400" alt="YOU ARE IN THE ICE AND SNOW. THERE IS A WATERWAY TO THE WEST. THERE IS A BRIDGE CROSSING THE WATERWAY.">
+
+```
+CROSSING THE WATERWAY.
+```
 
 **746.** `KILL KOSSACK`
 
 <img src="images/timezone/0746-1.png" width="400" alt="USING YOUR SWORD, YOU MAKE A BIG GASH IN THE KOSSACK&#39;S ARM. AFRAID FOR HIS LIFE, THE KOSSACK RUNS AWAY. YOU ARE IN THE ICE AND SNOW. THERE IS A">
-<img src="images/timezone/0746.png" width="400" alt="YOU ARE IN THE ICE AND SNOW. THERE IS A WATERWAY TO THE WEST. THERE IS A BRIDGE CROSSING THE WATERWAY.">
+
+```
+WATERWAY TO THE WEST. THERE IS A BRIDGE
+CROSSING THE WATERWAY.
+```
 
 **747.** `EAST`
 
@@ -3532,19 +3935,18 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **755.** `LOOK`
 
 <img src="images/timezone/0755-1.png" width="400" alt="YOU SEE NOTHING SPECIAL. THE DOOR OF THE CASTLE SUDDENLY OPENS AND A COACH DRAWN BY TWO HORSES LEAVES THE CASTLE. PETER THE GREAT AND">
+
 <img src="images/timezone/0755-2.png" width="400" alt="CATHERINE THE FIRST ARE INSIDE THE COACH. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
-<img src="images/timezone/0755.png" width="400" alt="COACH. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
 
 **756.** `LOOK`
 
 <img src="images/timezone/0756-1.png" width="400" alt="YOU SEE NOTHING SPECIAL. CATHERINE RAISES HER HAND TO WAVE TO YOU, AND WHEN SHE DOES, SOMETHING FALLS OUT OF HER HAND ONTO THE GROUND.QUICKLY">
+
 <img src="images/timezone/0756-2.png" width="400" alt="THEY RIDE OFF INTO THE COUNTRYSIDE. THERE IS A HAT PIN HERE. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
-<img src="images/timezone/0756.png" width="400" alt="THERE IS A HAT PIN HERE. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
 
 **757.** `LOOK`
 
 <img src="images/timezone/0757-1.png" width="400" alt="YOU SEE NOTHING SPECIAL. THERE IS A HAT PIN HERE. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
-<img src="images/timezone/0757.png" width="400" alt="THERE IS A HAT PIN HERE. YOU ARE IN FRONT OF A CASTLE DOOR. THERE ARE TWO KOSSACKS HERE.">
 
 **758.** `GET PIN`
 
@@ -3597,21 +3999,28 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **770.** `GO MACHINE`
 
 <img src="images/timezone/0770-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0770-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0770.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **771.** `SIT`
 
 <img src="images/timezone/0771-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0771.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **772.** `PUSH BUTTON`
 
 <img src="images/timezone/0772-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0772-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0772.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **773.** `EXIT MACHINE`
 
@@ -3654,32 +4063,45 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **782.** `GO MACHINE`
 
 <img src="images/timezone/0782-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0782.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **783.** `SIT`
 
 <img src="images/timezone/0783-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0783.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **784.** `NA`
 
 <img src="images/timezone/0784-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0784.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **785.** `2082AD`
 
 <img src="images/timezone/0785-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0785.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **786.** `PULL LEVER`
 
 <img src="images/timezone/0786-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0786-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0786.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **787.** `EXIT MACHINE`
 
 <img src="images/timezone/0787-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 5I AND PRESS RETURN.">
+
 <img src="images/timezone/0787.png" width="400" alt="YOU ARE IN A VACANT LOT IN LOS ANGELES.THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 5I: drop `Time Zone (4am and san inc crack) disk I.dsk` on drive 1, and press Return.*
@@ -3737,17 +4159,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **800.** `UNLOCK TRUNK`
 
 <img src="images/timezone/0800-1.png" width="400" alt="O.K. THE TRUNK IS UNLOCKED. YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
-<img src="images/timezone/0800.png" width="400" alt="YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
 
 **801.** `OPEN TRUNK`
 
 <img src="images/timezone/0801-1.png" width="400" alt="O.K. YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
-<img src="images/timezone/0801.png" width="400" alt="YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
 
 **802.** `LOOK TRUNK`
 
 <img src="images/timezone/0802-1.png" width="400" alt="THERE IS DYNAMITE HERE. YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
-<img src="images/timezone/0802.png" width="400" alt="YOU ARE ON A RESIDENTIAL STREET IN LOS ANGELES. THERE IS A HOUSE TO THE NORTH WITH A CAR PARKED IN FRONT OF IT.">
 
 **803.** `GET DYNAMITE`
 
@@ -3784,31 +4203,44 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **811.** `GO MACHINE`
 
 <img src="images/timezone/0811-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/0811-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0811.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **812.** `SIT`
 
 <img src="images/timezone/0812-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0812.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **813.** `EUROPE`
 
 <img src="images/timezone/0813-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0813.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **814.** `2082AD`
 
 <img src="images/timezone/0814-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0814.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **815.** `PULL LEVER`
 
 <img src="images/timezone/0815-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0815-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0815.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **816.** `EXIT MACHINE`
 
@@ -3843,22 +4275,33 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **823.** `WEST`
 
 <img src="images/timezone/0823-1.png" width="400" alt="YOU ARE INSIDE THE SCOTLAND YARD BUILDING. THERE IS A MAN SITTING BEHIND A DESK. THERE IS A PIECE OF PAPER ON THE DESK.">
-<img src="images/timezone/0823.png" width="400" alt="BUILDING. THERE IS A MAN SITTING BEHIND A DESK. THERE IS A PIECE OF PAPER ON THE DESK.">
 
 **824.** `GET DOG`
 
 <img src="images/timezone/0824-1.png" width="400" alt="THE MAN GIVES YOU A DOG. THERE IS A POLICE DOG FOLLOWING YOU. YOU ARE INSIDE THE SCOTLAND YARD BUILDING. THERE IS A MAN SITTING BEHIND">
-<img src="images/timezone/0824.png" width="400" alt="BUILDING. THERE IS A MAN SITTING BEHIND A DESK. THERE IS A PIECE OF PAPER ON THE DESK.">
+
+```
+A DESK. THERE IS A PIECE OF PAPER ON
+THE DESK.
+```
 
 **825.** `TIE ROPE`
 
 <img src="images/timezone/0825-1.png" width="400" alt="TO WHAT? THERE IS A POLICE DOG FOLLOWING YOU. YOU ARE INSIDE THE SCOTLAND YARD BUILDING. THERE IS A MAN SITTING BEHIND">
-<img src="images/timezone/0825.png" width="400" alt="BUILDING. THERE IS A MAN SITTING BEHIND A DESK. THERE IS A PIECE OF PAPER ON THE DESK.">
+
+```
+A DESK. THERE IS A PIECE OF PAPER ON
+THE DESK.
+```
 
 **826.** `TO DOG`
 
 <img src="images/timezone/0826-1.png" width="400" alt="THE ROPE IS NOW TIED TO THE DOG. THERE IS A POLICE DOG FOLLOWING YOU. YOU ARE INSIDE THE SCOTLAND YARD BUILDING. THERE IS A MAN SITTING BEHIND">
-<img src="images/timezone/0826.png" width="400" alt="BUILDING. THERE IS A MAN SITTING BEHIND A DESK. THERE IS A PIECE OF PAPER ON THE DESK.">
+
+```
+A DESK. THERE IS A PIECE OF PAPER ON
+THE DESK.
+```
 
 **827.** `EAST`
 
@@ -3895,12 +4338,20 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **835.** `NORTH`
 
 <img src="images/timezone/0835-1.png" width="400" alt="OH,OH. THERE IS A THIEF WITH A GUN HERE. THERE IS A POLICE DOG FOLLOWING YOU. YOU ARE ON A CITY STREET IN LONDON. THE">
-<img src="images/timezone/0835.png" width="400" alt="YOU ARE ON A CITY STREET IN LONDON. THE STREET DEAD-ENDS TO THE NORTH AND GOES SOUTH.">
+
+```
+STREET DEAD-ENDS TO THE NORTH AND GOES
+SOUTH.
+```
 
 **836.** `UNTIE DOG`
 
 <img src="images/timezone/0836-1.png" width="400" alt="THE POLICE DOG ATTACKS THE THIEF, MAKING HIM DROP HIS GUN. HE RUNS AWAY WITH THE DOG FOLLOWING HIM. YOU ARE ON A CITY STREET IN LONDON. THE">
-<img src="images/timezone/0836.png" width="400" alt="YOU ARE ON A CITY STREET IN LONDON. THE STREET DEAD-ENDS TO THE NORTH AND GOES SOUTH.">
+
+```
+STREET DEAD-ENDS TO THE NORTH AND GOES
+SOUTH.
+```
 
 **837.** `GET GUN`
 
@@ -3925,37 +4376,53 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **842.** `GO MACHINE`
 
 <img src="images/timezone/0842-1.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/0842.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 **843.** `SIT`
 
 <img src="images/timezone/0843-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/0843.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **844.** `4082AD`
 
 <img src="images/timezone/0844-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0844.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **845.** `IP`
 
 <img src="images/timezone/0845-1.png" width="400" alt="O.K. IT IS NOW SET. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0845.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **846.** `PULL LEVER`
 
 <img src="images/timezone/0846-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/0846-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0846.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **847.** `WEAR MASK`
 
 <img src="images/timezone/0847-1.png" width="400" alt="O.K. YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/0847.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+IT.
+```
 
 **848.** `EXIT MACHINE`
 
 <img src="images/timezone/0848-1.png" width="400" alt="NE PLEASE INSERT DISK NUMBER 6K AND PRESS RETURN.">
+
 <img src="images/timezone/0848.png" width="400" alt="YOU ARE IN A BARREN WASTELAND. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
 
 *Side 6K: drop `Time Zone (4am and san inc crack) disk K.dsk` on drive 1, and press Return.*
@@ -3997,7 +4464,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **857.** `USE HAMMER`
 
 <img src="images/timezone/0857-1.png" width="400" alt="USING THE STONE HAMMER, YOU POUND AT THE GRATE UNTIL MOST OF THE RUST HAS FALLEN OFF. YOU CAN PROBABLY OPEN IT NOW.">
-<img src="images/timezone/0857.png" width="400" alt="NOW. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE TO THE WEST.">
+
+```
+YOU ARE IN AN UNDERGROUND SEWER
+SYSTEM.THERE IS A GRATE TO THE WEST.
+```
 
 **858.** `DROP HAMMER`
 
@@ -4026,7 +4497,11 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **864.** `USE KNIFE`
 
 <img src="images/timezone/0864-1.png" width="400" alt="THE KNIFE FITS IN THE CRACK BETWEEN THE COVER AND THE MANHOLE PERFECTLY. CAREFULLY, YOU SCRAPE AWAY THE RUST, FREEING THE MANHOLE COVER.">
-<img src="images/timezone/0864.png" width="400" alt="FREEING THE MANHOLE COVER. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A MANHOLE ABOVE YOU.">
+
+```
+YOU ARE IN AN UNDERGROUND SEWER
+SYSTEM.THERE IS A MANHOLE ABOVE YOU.
+```
 
 **865.** `DROP KNIFE`
 
@@ -4035,12 +4510,18 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **866.** `OPEN COVER`
 
 <img src="images/timezone/0866-1.png" width="400" alt="YOU PUSH WITH ALL YOUR STRENGTH ON THE MANHOLE COVER UNTIL IT TURNS OVER ON THE STREET ABOVE. YOU ARE IN AN UNDERGROUND SEWER">
-<img src="images/timezone/0866.png" width="400" alt="THE STREET ABOVE. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A MANHOLE ABOVE YOU.">
+
+```
+SYSTEM.THERE IS A MANHOLE ABOVE YOU.
+```
 
 **867.** `UP`
 
 <img src="images/timezone/0867-1.png" width="400" alt="THERE IS OXYGEN HERE. YOU CAN BREATHE WITHOUT THE OXYGEN MASK. THERE IS A WALLET HERE. YOU ARE ON A DEAD-END STREET. THERE IS">
-<img src="images/timezone/0867.png" width="400" alt="THERE IS A WALLET HERE. YOU ARE ON A DEAD-END STREET. THERE IS A MANHOLE HERE.">
+
+```
+A MANHOLE HERE.
+```
 
 **868.** `GET WALLET`
 
@@ -4077,17 +4558,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **876.** `TIE ROPE`
 
 <img src="images/timezone/0876-1.png" width="400" alt="TIE ROPE TO WHAT? YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE HERE. THERE IS A HOLE IN THE WALL OF THE SEWER.">
-<img src="images/timezone/0876.png" width="400" alt="YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE HERE. THERE IS A HOLE IN THE WALL OF THE SEWER.">
 
 **877.** `TO ROCK`
 
 <img src="images/timezone/0877-1.png" width="400" alt="O.K. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE HERE. THERE IS A HOLE IN THE WALL OF THE SEWER.">
-<img src="images/timezone/0877.png" width="400" alt="YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE HERE. THERE IS A HOLE IN THE WALL OF THE SEWER.">
 
 **878.** `DOWN`
 
 <img src="images/timezone/0878-1.png" width="400" alt="YOU ARE IN A LARGE UNDERGROUND CAVERN. THERE IS A ROPE HANGING FROM A PIT WAY UP IN THE CEILING OF THE CAVERN. THERE IS A STREAM HERE.">
-<img src="images/timezone/0878.png" width="400" alt="THERE IS A ROPE HANGING FROM A PIT WAY UP IN THE CEILING OF THE CAVERN. THERE IS A STREAM HERE.">
 
 **879.** `WEST`
 
@@ -4120,7 +4598,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **886.** `NORTH`
 
 <img src="images/timezone/0886-1.png" width="400" alt="THERE IS OXYGEN HERE. YOU CAN BREATHE WITHOUT THE OXYGEN MASK. YOU ARE IN AN AIR CONDITIONING DUCT. THERE IS A GRATE TO THE SOUTH.">
-<img src="images/timezone/0886.png" width="400" alt="WITHOUT THE OXYGEN MASK. YOU ARE IN AN AIR CONDITIONING DUCT. THERE IS A GRATE TO THE SOUTH.">
 
 **887.** `REMOVE MASK`
 
@@ -4141,12 +4618,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **891.** `DOWN`
 
 <img src="images/timezone/0891-1.png" width="400" alt="YOU HEAR FOOTSTEPS COMING FROM THE NORTH. YOU ARE IN A NORTH/SOUTH HALLWAY. YOU SEE AN OPEN GRATE OVERHEAD.">
-<img src="images/timezone/0891.png" width="400" alt="NORTH. YOU ARE IN A NORTH/SOUTH HALLWAY. YOU SEE AN OPEN GRATE OVERHEAD.">
 
 **892.** `SOUTH`
 
 <img src="images/timezone/0892-1.png" width="400" alt="YOU STILL HEAR FOOTSTEPS COMING FROM THE NORTH. YOU ARE IN A HALLWAY. THERE IS A DOOR TO THE EAST.">
-<img src="images/timezone/0892.png" width="400" alt="THE NORTH. YOU ARE IN A HALLWAY. THERE IS A DOOR TO THE EAST.">
 
 **893.** `EAST`
 
@@ -4155,12 +4630,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **894.** `CLOSE DOOR`
 
 <img src="images/timezone/0894-1.png" width="400" alt="YOU HEAR SOMEONE RIGHT OUTSIDE THE CLOSET. THERE IS A PEEPHOLE IN THE DOOR. YOU ARE INSIDE AN EMPTY CLOSET.">
-<img src="images/timezone/0894.png" width="400" alt="CLOSET. THERE IS A PEEPHOLE IN THE DOOR. YOU ARE INSIDE AN EMPTY CLOSET.">
 
 **895.** `LOOK PEEPHOLE`
 
 <img src="images/timezone/0895-1.png" width="400" alt="YOU SEE A GUARD STANDING OUTSIDE THE CLOSET. HE IS WEARING A FUNNY LOOKING UNIFORM. YOU ARE INSIDE AN EMPTY CLOSET.">
-<img src="images/timezone/0895.png" width="400" alt="CLOSET. HE IS WEARING A FUNNY LOOKING UNIFORM. YOU ARE INSIDE AN EMPTY CLOSET.">
 
 **896.** `LOOK`
 
@@ -4205,6 +4678,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **906.** `NORTH`
 
 <img src="images/timezone/0906-1.png" width="400" alt="AS SOON AS YOU LEAVE THE COMMUNAL DORMITORY, THE GOVERNMENT POLICE ARREST YOU AND THROW YOU IN JAIL FOR THE ALLEGED MURDER OF A GUARD IN THE">
+
 <img src="images/timezone/0906.png" width="400" alt="ALLEGED MURDER OF A GUARD IN THE DORMITORY. YOU ARE IN A JAIL CELL.">
 
 **907.** `USE SAW`
@@ -4218,12 +4692,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **909.** `EAST`
 
 <img src="images/timezone/0909-1.png" width="400" alt="OH NO!! THERE IS A THIEF WITH A RAY GUN HERE. HE SAYS,&#34;YOUR MONEY OR YOUR LIFE.&#34; YOU ARE IN A PARK. A STREET GOES NORTH">
-<img src="images/timezone/0909.png" width="400" alt="LIFE.&#34; YOU ARE IN A PARK. A STREET GOES NORTH AND SOUTH. AN ALLEY LEADS WEST.">
+
+```
+AND SOUTH. AN ALLEY LEADS WEST.
+```
 
 **910.** `GIVE GOLD`
 
 <img src="images/timezone/0910-1.png" width="400" alt="YOU HAND THE GOLD OVER TO THE THIEF, WHO GRABS IT THEN RUNS AWAY. YOU ARE IN A PARK. A STREET GOES NORTH AND SOUTH. AN ALLEY LEADS WEST.">
-<img src="images/timezone/0910.png" width="400" alt="WHO GRABS IT THEN RUNS AWAY. YOU ARE IN A PARK. A STREET GOES NORTH AND SOUTH. AN ALLEY LEADS WEST.">
 
 **911.** `NORTH`
 
@@ -4264,18 +4740,20 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **920.** `NORTH`
 
 <img src="images/timezone/0920-1.png" width="400" alt="YOU ARE ON THE WEST SIDE OF THE GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE IS A CEMENT BLOCK HERE.">
-<img src="images/timezone/0920.png" width="400" alt="GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE IS A CEMENT BLOCK HERE.">
 
 **921.** `USE BAR`
 
 <img src="images/timezone/0921-1.png" width="400" alt="USING THE IRON BAR, YOU CAREFULLY LIFT UP THE CEMENT BLOCK UNTIL IT TURNS OVER. THERE IS A HOLE IN THE GROUND UNDER THE BLOCK.">
+
 <img src="images/timezone/0921-2.png" width="400" alt="YOU ARE ON THE WEST SIDE OF THE GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE IS A CEMENT BLOCK HERE.">
-<img src="images/timezone/0921.png" width="400" alt="GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE IS A CEMENT BLOCK HERE.">
 
 **922.** `WEAR MASK`
 
 <img src="images/timezone/0922-1.png" width="400" alt="O.K. YOU ARE ON THE WEST SIDE OF THE GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE">
-<img src="images/timezone/0922.png" width="400" alt="GOVERNMENT BUILDING. AN ALLEY GOES TO THE SOUTH. A HIGH FENCE IS HERE. THERE IS A CEMENT BLOCK HERE.">
+
+```
+IS A CEMENT BLOCK HERE.
+```
 
 **923.** `DOWN`
 
@@ -4292,7 +4770,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **926.** `USE LADDER`
 
 <img src="images/timezone/0926-1.png" width="400" alt="YOU LEAN THE LADDER AGAINST THE SEWER WALLS. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE OVERHEAD.">
-<img src="images/timezone/0926.png" width="400" alt="WALLS. YOU ARE IN AN UNDERGROUND SEWER SYSTEM.THERE IS A GRATE OVERHEAD.">
 
 **927.** `OPEN GRATE`
 
@@ -4301,12 +4778,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **928.** `UP`
 
 <img src="images/timezone/0928-1.png" width="400" alt="THERE IS OXYGEN HERE. YOU CAN BREATHE WITHOUT THE OXYGEN MASK. YOU ARE IN A BASEMENT. THERE ARE STAIRS GOING UP. THERE IS A GRATE IN THE">
-<img src="images/timezone/0928.png" width="400" alt="YOU ARE IN A BASEMENT. THERE ARE STAIRS GOING UP. THERE IS A GRATE IN THE FLOOR.">
+
+```
+FLOOR.
+```
 
 **929.** `REMOVE MASK`
 
 <img src="images/timezone/0929-1.png" width="400" alt="O.K. YOU ARE IN A BASEMENT. THERE ARE STAIRS GOING UP. THERE IS A GRATE IN THE FLOOR.">
-<img src="images/timezone/0929.png" width="400" alt="YOU ARE IN A BASEMENT. THERE ARE STAIRS GOING UP. THERE IS A GRATE IN THE FLOOR.">
 
 **930.** `UP`
 
@@ -4323,6 +4802,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **933.** `NORTH`
 
 <img src="images/timezone/0933-1.png" width="400" alt="--------------- ENTER COMMAND?NORTH PLEASE INSERT DISK NUMBER 6L AND PRESS RETURN.">
+
 <img src="images/timezone/0933.png" width="400" alt="AND PRESS RETURN. YOU ARE AT A JUNCTION OF HALLWAYS. THERE IS A DOORWAY TO THE NORTH.">
 
 *Side 6L: drop `Time Zone (4am and san inc crack) disk L.dsk` on drive 1, and press Return.*
@@ -4362,7 +4842,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **942.** `USE PIN`
 
 <img src="images/timezone/0942-1.png" width="400" alt="YOU POKE THE HAT PIN INTO THE LOCK AND JIGGLE IT AROUND A BIT. SUDDENLY YOU HEAR A CLICK AND THE SAFE IS UNLOCKED. YOU ARE IN AN OFFICE. THERE IS A DESK,">
-<img src="images/timezone/0942.png" width="400" alt="HEAR A CLICK AND THE SAFE IS UNLOCKED. YOU ARE IN AN OFFICE. THERE IS A DESK, A CHAIR AND A SAFE HERE.">
+
+```
+A CHAIR AND A SAFE HERE.
+```
 
 **943.** `OPEN SAFE`
 
@@ -4379,7 +4862,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **946.** `READ NOTE`
 
 <img src="images/timezone/0946-1.png" width="400" alt="THE NOTE SAYS,&#34;THE PASSWORD IS ALLEGIANCE.&#34; YOU ARE IN AN OFFICE. THERE IS A DESK, A CHAIR AND A SAFE HERE.">
-<img src="images/timezone/0946.png" width="400" alt="ALLEGIANCE.&#34; YOU ARE IN AN OFFICE. THERE IS A DESK, A CHAIR AND A SAFE HERE.">
 
 **947.** `NORTH`
 
@@ -4444,12 +4926,14 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **962.** `INSERT MC`
 
 <img src="images/timezone/0962-1.png" width="400" alt="WHEN YOU INSERT THE MILITARY CARD INTO THE SLOT, THE DOOR OPENS. YOU ARE IN A HALLWAY. THERE IS A DOOR TO THE NORTH WITH A SLOT NEXT TO IT.">
-<img src="images/timezone/0962.png" width="400" alt="THE SLOT, THE DOOR OPENS. YOU ARE IN A HALLWAY. THERE IS A DOOR TO THE NORTH WITH A SLOT NEXT TO IT.">
 
 **963.** `NORTH`
 
 <img src="images/timezone/0963-1.png" width="400" alt="YOU ARE IN A YARD. THE BACK OF THE GOVERNMENT BUILDING IS TO THE SOUTH.THERE IS A DOOR IN THE BUILDING WITH A SLOT NEXT TO IT. YOU SEE A FENCE">
-<img src="images/timezone/0963.png" width="400" alt="SOUTH.THERE IS A DOOR IN THE BUILDING WITH A SLOT NEXT TO IT. YOU SEE A FENCE IN THE DISTANCE.">
+
+```
+IN THE DISTANCE.
+```
 
 **964.** `WEST`
 
@@ -4514,7 +4998,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **979.** `LOOK`
 
 <img src="images/timezone/0979-1.png" width="400" alt="YOU SEE NOTHING SPECIAL. YOU HEAR VOICES OUTSIDE THE SHED, BUT THEY DO NOT LOOK INSIDE. IN A MINUTE, YOU HEAR THEM GO AWAY.">
-<img src="images/timezone/0979.png" width="400" alt="THEY DO NOT LOOK INSIDE. IN A MINUTE, YOU HEAR THEM GO AWAY. YOU ARE INSIDE AN EMPTY SHED.">
+
+```
+YOU ARE INSIDE AN EMPTY SHED.
+```
 
 **980.** `OPEN DOOR`
 
@@ -4527,7 +5014,10 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **982.** `EAST`
 
 <img src="images/timezone/0982-1.png" width="400" alt="YOU ARE IN A YARD. THE BACK OF THE GOVERNMENT BUILDING IS TO THE SOUTH.THERE IS A DOOR IN THE BUILDING WITH A SLOT NEXT TO IT. YOU SEE A FENCE">
-<img src="images/timezone/0982.png" width="400" alt="SOUTH.THERE IS A DOOR IN THE BUILDING WITH A SLOT NEXT TO IT. YOU SEE A FENCE IN THE DISTANCE.">
+
+```
+IN THE DISTANCE.
+```
 
 **983.** `NORTH`
 
@@ -4536,7 +5026,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **984.** `USE KEY`
 
 <img src="images/timezone/0984-1.png" width="400" alt="USING THE SKELETON KEY, YOU MANAGE TO UNLOCK THE GATE. YOU ARE IN FRONT OF A TALL FENCE WITH A GATE.">
-<img src="images/timezone/0984.png" width="400" alt="UNLOCK THE GATE. YOU ARE IN FRONT OF A TALL FENCE WITH A GATE.">
 
 **985.** `OPEN GATE`
 
@@ -4553,38 +5042,58 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **988.** `LOOK`
 
 <img src="images/timezone/0988-1.png" width="400" alt="THE GUARDS TELL YOU THAT THEIR GREAT LEADER (RAMADU), HAS BEEN KILLED. THEY ARE CHECKING-OUT EVERYBODY WHO COMES HERE. QUICKLY THEY FRISK YOU. THEY FIND">
-<img src="images/timezone/0988-2.png" width="400" alt="NO GUN ON YOU. YOU ARE CLEARED. YOU ARE IN FRONT OF A TALL WIRE FENCE. THERE IS A GATE IN THE FENCE. TWO GUARDS ARE HERE.">
-<img src="images/timezone/0988.png" width="400" alt="YOU ARE IN FRONT OF A TALL WIRE FENCE. THERE IS A GATE IN THE FENCE. TWO GUARDS ARE HERE.">
+
+```
+NO GUN ON YOU. YOU ARE CLEARED.
+YOU ARE IN FRONT OF A TALL WIRE FENCE.
+THERE IS A GATE IN THE FENCE. TWO
+GUARDS ARE HERE.
+```
 
 **989.** `ALLEGIANCE`
 
 <img src="images/timezone/0989-1.png" width="400" alt="WHEN YOU SAY THE PASSWORD, THE GUARDS OPEN THE GATES. YOU ARE IN FRONT OF A TALL WIRE FENCE. THERE IS A GATE IN THE FENCE. TWO">
-<img src="images/timezone/0989.png" width="400" alt="YOU ARE IN FRONT OF A TALL WIRE FENCE. THERE IS A GATE IN THE FENCE. TWO GUARDS ARE HERE.">
+
+```
+GUARDS ARE HERE.
+```
 
 **990.** `NORTH`
 
 <img src="images/timezone/0990-1.png" width="400" alt="YOU ARE IN FRONT OF THE MILITARY INSTALLATION. THE DOOR IS WIDE OPEN. THERE IS A TALL WIRE FENCE BEHIND YOU.THERE IS A GATE IN THE FENCE. TWO">
-<img src="images/timezone/0990.png" width="400" alt="THERE IS A TALL WIRE FENCE BEHIND YOU.THERE IS A GATE IN THE FENCE. TWO GUARDS ARE ON THE OTHER SIDE.">
+
+```
+GUARDS ARE ON THE OTHER SIDE.
+```
 
 **991.** `NORTH`
 
 <img src="images/timezone/0991-1.png" width="400" alt="YOU ARE IN THE LOBBY OF THE MILITARY INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN DOORWAYS TO THE WEST AND SOUTH.">
-<img src="images/timezone/0991.png" width="400" alt="INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN DOORWAYS TO THE WEST AND SOUTH.">
 
 **992.** `LOOK`
 
 <img src="images/timezone/0992-1.png" width="400" alt="THE GUARD ASKS TO SEE YOUR ID CARD AND YOUR MILITARY CARD (MC). YOU ARE IN THE LOBBY OF THE MILITARY INSTALLATION. THERE IS A MAN SITTING">
-<img src="images/timezone/0992.png" width="400" alt="INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN DOORWAYS TO THE WEST AND SOUTH.">
+
+```
+BEHIND A DESK HERE. THERE ARE OPEN
+DOORWAYS TO THE WEST AND SOUTH.
+```
 
 **993.** `SHOW ID`
 
 <img src="images/timezone/0993-1.png" width="400" alt="O.K. YOU ARE IN THE LOBBY OF THE MILITARY INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN">
-<img src="images/timezone/0993.png" width="400" alt="INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN DOORWAYS TO THE WEST AND SOUTH.">
+
+```
+DOORWAYS TO THE WEST AND SOUTH.
+```
 
 **994.** `SHOW MC`
 
 <img src="images/timezone/0994-1.png" width="400" alt="O.K. YOU ARE IN THE LOBBY OF THE MILITARY INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN">
-<img src="images/timezone/0994.png" width="400" alt="INSTALLATION. THERE IS A MAN SITTING BEHIND A DESK HERE. THERE ARE OPEN DOORWAYS TO THE WEST AND SOUTH.">
+
+```
+DOORWAYS TO THE WEST AND SOUTH.
+```
 
 **995.** `WEST`
 
@@ -4605,12 +5114,12 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **999.** `GIVE FLOWER`
 
 <img src="images/timezone/0999-1.png" width="400" alt="THIS GUY HAPPENS TO LOVE FLOWERS. HE TAKES THE FLOWER AND HOLDS IT TO HIS NOSE AND SNIFFS IT. IMMEDIATELY HE FALLS ASLEEP.">
+
 <img src="images/timezone/0999.png" width="400" alt="YOU ARE IN A HALLWAY WHICH DEAD ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST. THERE IS AN ARMED GUARD BY THE DOOR.">
 
 **1000.** `OPEN DOOR`
 
 <img src="images/timezone/1000-1.png" width="400" alt="O.K. YOU ARE IN A HALLWAY WHICH DEAD ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST. THERE IS AN ARMED GUARD BY THE DOOR.">
-<img src="images/timezone/1000.png" width="400" alt="YOU ARE IN A HALLWAY WHICH DEAD ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST. THERE IS AN ARMED GUARD BY THE DOOR.">
 
 **1001.** `WEST`
 
@@ -4623,7 +5132,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1003.** `USE LANCE`
 
 <img src="images/timezone/1003-1.png" width="400" alt="YOU HOLD THE LANCE OUT IN FRONT OF YOU AND TAP THE GROUND AS YOU WALK. YOU ARE IN A MAZE OF HALLWAYS. THERE IS A DOOR HERE.">
-<img src="images/timezone/1003.png" width="400" alt="AND TAP THE GROUND AS YOU WALK. YOU ARE IN A MAZE OF HALLWAYS. THERE IS A DOOR HERE.">
 
 **1004.** `WEST`
 
@@ -4636,7 +5144,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1006.** `SOUTH`
 
 <img src="images/timezone/1006-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1006.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1007.** `SOUTH`
 
@@ -4657,7 +5164,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1011.** `SOUTH`
 
 <img src="images/timezone/1011-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1011.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1012.** `SOUTH`
 
@@ -4694,7 +5200,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1020.** `SOUTH`
 
 <img src="images/timezone/1020-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1020.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1021.** `SOUTH`
 
@@ -4711,27 +5216,35 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1024.** `INSERT MC`
 
 <img src="images/timezone/1024-1.png" width="400" alt="YOU INSERT RAMADU&#39;S MILITARY CARD INTO THE SLOT AND THE DOOR OPENS. YOU ARE IN A HALLWAY THAT DEAD-ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST.">
-<img src="images/timezone/1024.png" width="400" alt="YOU ARE IN A HALLWAY THAT DEAD-ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST.">
+
+```
+
+```
 
 **1025.** `WEST`
 
 <img src="images/timezone/1025-1.png" width="400" alt="THERE IS A GIANT RAY MACHINE POINTING OUT INTO SPACE. YOU ARE IN A LARGE ROOM WITH A DOMED CEILING.">
-<img src="images/timezone/1025.png" width="400" alt="OUT INTO SPACE. YOU ARE IN A LARGE ROOM WITH A DOMED CEILING.">
 
 **1026.** `DROP DYNAMITE`
 
 <img src="images/timezone/1026-1.png" width="400" alt="THERE IS A GIANT RAY MACHINE POINTING OUT INTO SPACE. YOU ARE IN A LARGE ROOM WITH A DOMED CEILING.">
-<img src="images/timezone/1026.png" width="400" alt="OUT INTO SPACE. YOU ARE IN A LARGE ROOM WITH A DOMED CEILING.">
 
 **1027.** `LIGHT FUSE`
 
 <img src="images/timezone/1027-1.png" width="400" alt="YOU LIGHT THE FUSE TO THE DYNAMITE. THE FUSE IS BURNING QUICKLY. THERE IS A GIANT RAY MACHINE POINTING OUT INTO SPACE.">
-<img src="images/timezone/1027.png" width="400" alt="OUT INTO SPACE. YOU ARE IN A LARGE ROOM WITH A DOMED CEILING.">
+
+```
+YOU ARE IN A LARGE ROOM WITH A DOMED
+CEILING.
+```
 
 **1028.** `EAST`
 
 <img src="images/timezone/1028-1.png" width="400" alt="--------------- ENTER COMMAND?EAST BOOOM!! THE DYNAMITE EXPLODES. YOU ARE IN A HALLWAY THAT DEAD-ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST.">
-<img src="images/timezone/1028.png" width="400" alt="YOU ARE IN A HALLWAY THAT DEAD-ENDS TO THE SOUTH. THERE IS A DOOR TO THE WEST.">
+
+```
+
+```
 
 **1029.** `NORTH`
 
@@ -4744,7 +5257,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1031.** `NORTH`
 
 <img src="images/timezone/1031-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1031.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1032.** `NORTH`
 
@@ -4781,7 +5293,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1040.** `NORTH`
 
 <img src="images/timezone/1040-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1040.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1041.** `NORTH`
 
@@ -4818,7 +5329,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1049.** `WEST`
 
 <img src="images/timezone/1049-1.png" width="400" alt="ZZZZAP!! THE TIP OF YOUR LANCE JUST TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
-<img src="images/timezone/1049.png" width="400" alt="TRIGGERED A LASER MINE, BUT YOU ARE OKAY. YOU ARE IN A MAZE OF HALLWAYS.">
 
 **1050.** `SOUTH`
 
@@ -4831,36 +5341,56 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1052.** `STAND CIRCLE`
 
 <img src="images/timezone/1052-1.png" width="400" alt="O.K. YOU ARE IN A MAZE OF HALLWAYS WITH A BUTTON ON THE WALL. THERE IS A CIRCLE ON THE FLOOR HERE.">
-<img src="images/timezone/1052.png" width="400" alt="YOU ARE IN A MAZE OF HALLWAYS WITH A BUTTON ON THE WALL. THERE IS A CIRCLE ON THE FLOOR HERE.">
 
 **1053.** `PUSH BUTTON`
 
 <img src="images/timezone/1053-1.png" width="400" alt="AS YOU STAND IN THE CIRCLE AND PRESS THE BUTTON SIMULTANEOUSLY, YOU ACTIVATE THE TELE-TRANSPORTER. YOU HEAR A FAINT HUMMING, THAT GROWS RAPIDLY LOUDER">
-<img src="images/timezone/1053-2.png" width="400" alt="SURFACE. PLEASE INSERT DISK NUMBER 6K AND PRESS RETURN.">
-<img src="images/timezone/1053-3.png" width="400" alt="PLEASE INSERT DISK NUMBER 6K AND PRESS RETURN. YOU ARE IN A BARREN WASTELAND. THERE IS">
-<img src="images/timezone/1053.png" width="400" alt="YOU ARE IN A BARREN WASTELAND. THERE IS A TIME MACHINE HERE. IT APPEARS TO BE PULSATING.">
+
+```
+SURFACE.
+
+PLEASE INSERT DISK NUMBER 6K
+AND PRESS RETURN.
+```
+
+<img src="images/timezone/1053-2.png" width="400" alt="PLEASE INSERT DISK NUMBER 6K AND PRESS RETURN. YOU ARE IN A BARREN WASTELAND. THERE IS">
+
+```
+A TIME MACHINE HERE. IT APPEARS TO BE
+PULSATING.
+```
 
 *Side 6K: drop `Time Zone (4am and san inc crack) disk K.dsk` on drive 1, and press Return.*
 
 **1054.** `GO MACHINE`
 
 <img src="images/timezone/1054-1.png" width="400" alt="PLEASE INSERT DISK NUMBER 1B AND PRESS RETURN.">
+
 <img src="images/timezone/1054-2.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
-<img src="images/timezone/1054.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
 
 *Side 1B: drop `Time Zone (4am and san inc crack) disk B.dsk` on drive 1, and press Return.*
 
 **1055.** `SIT`
 
 <img src="images/timezone/1055-1.png" width="400" alt="O.K. THE CHAIR IS COMFORTABLE. AS YOU SIT DOWN, THE MACHINE SEEMS TO COME TO LIFE. YOU ARE INSIDE A TIME MACHINE. YOU HEAR">
+
 <img src="images/timezone/1055.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT. --------------- ENTER COMMAND">
 
 **1056.** `PUSH BUTTON`
 
 <img src="images/timezone/1056-1.png" width="400" alt="THE MACHINE STARTS VIBRATING VIOLENTLY AND YOU FEEL DIZZY, ALMOST TO THE POINT OF PASSING OUT. SUDDENLY YOU FEEL A TERRIBLE JOLT AND THE MACHINE IS STILL.">
-<img src="images/timezone/1056-2.png" width="400" alt="YOU HAVE TRIED TO TAKE SOMETHING TOO FAR BACK IN TIME. IT HAS BEEN LOST.">
-<img src="images/timezone/1056-3.png" width="400" alt="YOU ARE INSIDE A TIME MACHINE. YOU HEAR A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO">
-<img src="images/timezone/1056.png" width="400" alt="A FAINT HUMMING SOUND. THERE ARE TWO DIALS AND A LEVER WITH A BUTTON NEXT TO IT.">
+
+```
+
+
+YOU HAVE TRIED TO TAKE SOMETHING TOO
+FAR BACK IN TIME.  IT HAS BEEN LOST.
+
+YOU ARE INSIDE A TIME MACHINE. YOU HEAR
+A FAINT HUMMING SOUND. THERE ARE TWO
+DIALS AND A LEVER WITH A BUTTON NEXT TO
+IT.
+```
 
 **1057.** `EXIT MACHINE`
 
@@ -4869,8 +5399,12 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 **1058.** `SOUTH`
 
 <img src="images/timezone/1058-1.png" width="400" alt="AS YOU RETURN HOME, NEWS OF YOUR DARING ADVENTURES HAS REACHED YOUR FRIENDS AND FAMILY. YOU RECIEVE A HERO&#39;S WELCOME, COMPLETE WITH FANFARE AND A KEY TO THE">
-<img src="images/timezone/1058-2.png" width="400" alt="COMPLETE WITH FANFARE AND A KEY TO THE CITY. YOU ARE HEREBY DECLARED AN...&#34;ULTIMATE ADVENTURER.&#34; THANK YOU FOR PLAYING TIME ZONE.">
-<img src="images/timezone/1058.png" width="400" alt="COMPLETE WITH FANFARE AND A KEY TO THE CITY. YOU ARE HEREBY DECLARED AN...&#34;ULTIMATE ADVENTURER.&#34; THANK YOU FOR PLAYING TIME ZONE.">
+
+```
+CITY. YOU ARE HEREBY DECLARED
+AN..."ULTIMATE ADVENTURER."
+THANK YOU FOR PLAYING TIME ZONE.
+```
 
 <!-- End of the walkthrough -->
 

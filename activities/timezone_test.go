@@ -2,6 +2,7 @@ package activities
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"html"
 	"os"
@@ -11,6 +12,7 @@ import (
 
 	"github.com/ivanizag/apple2-activities/album"
 	"github.com/ivanizag/apple2-activities/operator"
+	izscreen "github.com/ivanizag/izapple2/screen"
 )
 
 // timeZoneMachine is the machine of the guide, as its command line of
@@ -117,9 +119,10 @@ func timeZoneLines(o *operator.Operator, n int) []string {
 	return lines[max(len(lines)-n, 0):]
 }
 
-// timeZonePicture is a picture of the walkthrough, and the text under it
+// timeZonePicture is a picture of the walkthrough and the text under it, or
+// only the lines the text got after the one before
 type timeZonePicture struct {
-	file string
+	file string // none when the picture is the one before, with more text
 	text []string
 }
 
@@ -130,6 +133,50 @@ type timeZoneCommand struct {
 	command  string
 	pictures []timeZonePicture
 	disks    []string
+	// The picture above the text, and the text, of the last one taken
+	graphics []byte
+	text     []string
+}
+
+/*
+take keeps the screen of the answer of a command: as a picture, or, when the
+picture above the text is the same as the last one, only the new lines of
+text, which the page shows under that picture
+*/
+func (c *timeZoneCommand) take(o *operator.Operator, pictures *album.Album, file string) error {
+	screen := pictures.Screen(o)
+	graphics := screen.Pix
+	if o.Apple2().GetVideoSource().GetCurrentVideoMode()&izscreen.VideoMixTextMask != 0 {
+		// The lines above the four of text, drawn twice
+		graphics = graphics[:2*timeZoneTextTop*screen.Stride]
+	}
+	text := timeZoneLines(o, 4)
+	if c.graphics != nil && bytes.Equal(graphics, c.graphics) {
+		c.pictures = append(c.pictures, timeZonePicture{text: timeZoneNewLines(c.text, text)})
+	} else {
+		if err := pictures.Write(screen, file); err != nil {
+			return err
+		}
+		c.pictures = append(c.pictures, timeZonePicture{file: file, text: text})
+		c.graphics = graphics
+	}
+	c.text = text
+	return nil
+}
+
+// timeZoneTextTop is the first line of the four of text, of the 192 of the
+// screen
+const timeZoneTextTop = 160
+
+// timeZoneNewLines are the lines of the text after that are not in the one
+// before, which scrolled up to make room for them
+func timeZoneNewLines(before, after []string) []string {
+	for k := min(len(before), len(after)); k > 0; k-- {
+		if strings.Join(before[len(before)-k:], "\n") == strings.Join(after[:k], "\n") {
+			return after[k:]
+		}
+	}
+	return after
 }
 
 /*
@@ -159,9 +206,13 @@ func timeZoneScreenshots(t *testing.T) {
 	answer := func(c *timeZoneCommand) {
 		name := fmt.Sprintf("%04d", c.number)
 		page := func() {
-			file := fmt.Sprintf("%v-%d", name, len(c.pictures)+1)
-			must(t, pictures.Screenshot(o, file))
-			c.pictures = append(c.pictures, timeZonePicture{file, timeZoneLines(o, 4)})
+			saved := 0
+			for _, p := range c.pictures {
+				if p.file != "" {
+					saved++
+				}
+			}
+			must(t, c.take(o, pictures, fmt.Sprintf("%v-%d", name, saved+1)))
 		}
 		asked := ""
 		for range 50 {
@@ -203,8 +254,7 @@ func timeZoneScreenshots(t *testing.T) {
 			if c.number == 0 {
 				file = "start"
 			}
-			must(t, pictures.Screenshot(o, file))
-			c.pictures = append(c.pictures, timeZonePicture{file, timeZoneLines(o, 4)})
+			must(t, c.take(o, pictures, file))
 			return
 		}
 		t.Fatalf("%v %v: the game never asked for the next command", c.number, c.command)
@@ -243,16 +293,30 @@ func timeZoneWrite(w *strings.Builder, c timeZoneCommand) {
 	if c.number > 0 {
 		fmt.Fprintf(w, "**%d.** `%v`\n\n", c.number, c.command)
 	}
-	for i, p := range c.pictures {
-		if i > 0 {
-			w.WriteString("\n")
+	var text []string
+	flush := func() {
+		if len(text) > 0 {
+			fmt.Fprintf(w, "```\n%v\n```\n\n", strings.Join(text, "\n"))
+			text = nil
 		}
+	}
+	for _, p := range c.pictures {
+		if p.file == "" {
+			for _, line := range p.text {
+				// The prompt is left out: the next command follows
+				if !strings.HasPrefix(strings.TrimSpace(line), timeZonePrompt) {
+					text = append(text, strings.TrimRight(line, " "))
+				}
+			}
+			continue
+		}
+		flush()
 		alt := strings.Join(strings.Fields(strings.Join(p.text, " ")), " ")
 		alt = strings.TrimSpace(strings.TrimSuffix(alt, timeZonePrompt+"?"))
-		fmt.Fprintf(w, `<img src="images/timezone/%v.png" width="400" alt="%v">`,
+		fmt.Fprintf(w, "<img src=\"images/timezone/%v.png\" width=\"400\" alt=\"%v\">\n\n",
 			p.file, html.EscapeString(alt))
 	}
-	w.WriteString("\n\n")
+	flush()
 	for _, d := range c.disks {
 		fmt.Fprintf(w, "*Side %v: drop `%v` on drive 1, and press Return.*\n\n",
 			d, fmt.Sprintf(timeZoneDiskNamed, d[1:]))
