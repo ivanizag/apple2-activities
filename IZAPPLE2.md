@@ -161,6 +161,29 @@ counts lit dots instead.
 
 **Here, once fixed:** wait for the text of each page.
 
+### The shift mod does nothing
+
+`-mods shift` is in the help of izapple2, but `setupShiftedKeyboard` is
+commented out in `setup.go`: the mod is not there. On a real Apple \]\[+ it
+wired the Shift key to the input of button 2, `$C063`, and word processors
+in 80 columns, as Apple Writer II with a Videx Videoterm, read it there to
+type capitals with Shift. The keyboard of izapple2 would have to tell when
+Shift is held, as it does not now.
+
+**Here, once done:** an activity of the shift mod, an Apple \]\[+ with a
+Videoterm and a word processor of the time typing capitals and small
+letters with Shift.
+
+### A program that runs into an undefined opcode stops izapple2
+
+On a 6502, an opcode that is not defined does something, or hangs the
+processor; in izapple2 it panics, and the whole emulator stops: `panic:
+Unknown opcode 0x0b`, from `iz6502` `ExecuteInstruction`. It came up when
+`RUN` followed a `LOAD` that had failed, so running garbage, which on a real
+machine would hang or crash it, not the computer it is emulated on.
+
+**Here, once fixed:** nothing to change.
+
 ### CP/M cannot format a blank diskette
 
 `FORMAT` of the CP/M 2.20B diskette of the SoftCard, asked for drive B with a
