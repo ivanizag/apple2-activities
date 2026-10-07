@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"html"
+	"image"
 	"os"
 	"regexp"
 	"strings"
@@ -119,10 +120,10 @@ func timeZoneLines(o *operator.Operator, n int) []string {
 	return lines[max(len(lines)-n, 0):]
 }
 
-// timeZonePicture is a picture of the walkthrough and the text under it, or
-// only the lines the text got after the one before
+// timeZonePicture is a picture of the walkthrough, of the screen or of its
+// four lines of text, and that text
 type timeZonePicture struct {
-	file string // none when the picture is the one before, with more text
+	file string
 	text []string
 }
 
@@ -139,45 +140,39 @@ type timeZoneCommand struct {
 }
 
 /*
-take keeps the screen of the answer of a command: as a picture, or, when the
-picture above the text is the same as the last one, only the new lines of
-text, which the page shows under that picture
+take keeps the screen of the answer of a command as a picture. When the
+picture above the text is the same as the last one, it keeps only the four
+lines of text, cut from the screen, which the page shows under that picture;
+when they are the same too, nothing.
 */
 func (c *timeZoneCommand) take(o *operator.Operator, pictures *album.Album, file string) error {
 	screen := pictures.Screen(o)
 	graphics := screen.Pix
-	if o.Apple2().GetVideoSource().GetCurrentVideoMode()&izscreen.VideoMixTextMask != 0 {
+	mixed := o.Apple2().GetVideoSource().GetCurrentVideoMode()&izscreen.VideoMixTextMask != 0
+	if mixed {
 		// The lines above the four of text, drawn twice
 		graphics = graphics[:2*timeZoneTextTop*screen.Stride]
 	}
 	text := timeZoneLines(o, 4)
-	if c.graphics != nil && bytes.Equal(graphics, c.graphics) {
-		c.pictures = append(c.pictures, timeZonePicture{text: timeZoneNewLines(c.text, text)})
-	} else {
-		if err := pictures.Write(screen, file); err != nil {
-			return err
+	var picture image.Image = screen
+	if mixed && c.graphics != nil && bytes.Equal(graphics, c.graphics) {
+		if strings.Join(text, "\n") == strings.Join(c.text, "\n") {
+			return nil
 		}
-		c.pictures = append(c.pictures, timeZonePicture{file: file, text: text})
-		c.graphics = graphics
+		b := screen.Bounds()
+		picture = screen.SubImage(image.Rect(b.Min.X, 2*timeZoneTextTop, b.Max.X, b.Max.Y))
 	}
-	c.text = text
+	if err := pictures.Write(picture, file); err != nil {
+		return err
+	}
+	c.pictures = append(c.pictures, timeZonePicture{file: file, text: text})
+	c.graphics, c.text = graphics, text
 	return nil
 }
 
 // timeZoneTextTop is the first line of the four of text, of the 192 of the
 // screen
 const timeZoneTextTop = 160
-
-// timeZoneNewLines are the lines of the text after that are not in the one
-// before, which scrolled up to make room for them
-func timeZoneNewLines(before, after []string) []string {
-	for k := min(len(before), len(after)); k > 0; k-- {
-		if strings.Join(before[len(before)-k:], "\n") == strings.Join(after[:k], "\n") {
-			return after[k:]
-		}
-	}
-	return after
-}
 
 /*
 timeZoneScreenshots plays Time Zone from the start to the end, on an Apple
@@ -206,13 +201,7 @@ func timeZoneScreenshots(t *testing.T) {
 	answer := func(c *timeZoneCommand) {
 		name := fmt.Sprintf("%04d", c.number)
 		page := func() {
-			saved := 0
-			for _, p := range c.pictures {
-				if p.file != "" {
-					saved++
-				}
-			}
-			must(t, c.take(o, pictures, fmt.Sprintf("%v-%d", name, saved+1)))
+			must(t, c.take(o, pictures, fmt.Sprintf("%v-%d", name, len(c.pictures)+1)))
 		}
 		asked := ""
 		for range 50 {
@@ -293,30 +282,17 @@ func timeZoneWrite(w *strings.Builder, c timeZoneCommand) {
 	if c.number > 0 {
 		fmt.Fprintf(w, "**%d.** `%v`\n\n", c.number, c.command)
 	}
-	var text []string
-	flush := func() {
-		if len(text) > 0 {
-			fmt.Fprintf(w, "```\n%v\n```\n\n", strings.Join(text, "\n"))
-			text = nil
+	for i, p := range c.pictures {
+		if i > 0 {
+			// The pictures one under the other, the text under its picture
+			w.WriteString("<br>\n")
 		}
-	}
-	for _, p := range c.pictures {
-		if p.file == "" {
-			for _, line := range p.text {
-				// The prompt is left out: the next command follows
-				if !strings.HasPrefix(strings.TrimSpace(line), timeZonePrompt) {
-					text = append(text, strings.TrimRight(line, " "))
-				}
-			}
-			continue
-		}
-		flush()
 		alt := strings.Join(strings.Fields(strings.Join(p.text, " ")), " ")
 		alt = strings.TrimSpace(strings.TrimSuffix(alt, timeZonePrompt+"?"))
-		fmt.Fprintf(w, "<img src=\"images/timezone/%v.png\" width=\"400\" alt=\"%v\">\n\n",
+		fmt.Fprintf(w, "<img src=\"images/timezone/%v.png\" width=\"400\" alt=\"%v\">",
 			p.file, html.EscapeString(alt))
 	}
-	flush()
+	w.WriteString("\n\n")
 	for _, d := range c.disks {
 		fmt.Fprintf(w, "*Side %v: drop `%v` on drive 1, and press Return.*\n\n",
 			d, fmt.Sprintf(timeZoneDiskNamed, d[1:]))
