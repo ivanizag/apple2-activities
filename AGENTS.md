@@ -63,32 +63,33 @@ pictures of the pages they run.
 
 ## Exploring a program
 
-Before writing the generator of a page, explore with a throwaway test in
-`activities/`, not committed, that starts the machine, runs it, prints
-`o.Text()` and writes screenshots to a folder outside the repository:
-
-```go
-func TestExplore(t *testing.T) {
-	if os.Getenv("EXPLORE") == "" {
-		t.Skip()
-	}
-	a := album.New(os.Getenv("EXPLORE"), album.Green)
-	o := start(t, `izapple2 -model none -board 2e -cpu 65c02 -screen green
-		-rom "<internal>/Apple2e_Enhanced.rom"
-		-charrom "<internal>/Apple IIe Video Enhanced.bin"
-		-s0 language -s6 diskii,disk1=disks/some.dsk`, nil)
-	for i := range 10 {
-		o.RunSeconds(5)
-		fmt.Printf("== %d mode=%x\n%v\n", i, o.Apple2().GetVideoSource().GetCurrentVideoMode(), o.Text())
-		must(t, a.Screenshot(o, fmt.Sprintf("s%02d", i)))
-	}
-}
-```
+Before writing the generator of a page, explore with `TestExplore`, in
+[explore_test.go](activities/explore_test.go): it starts the machine of a
+command line and runs a script of steps, both from the environment, prints
+the text of the screen and writes a picture at each `shot` to a folder
+outside the repository. Its comment lists the steps: typing, keys, the Apple
+keys, waiting for a text or for the keyboard, the joystick and the mouse,
+disks put in, Reset.
 
 ```bash
-EXPLORE=/tmp/explore go test -count=1 -run TestExplore -v ./activities
+EXPLORE=/tmp/explore MONITOR=green \
+MACHINE='izapple2 -model none -board 2plus -cpu 6502 -screen green
+    -rom "<internal>/Apple2_Plus.rom"
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps
+    -s6 diskii,disk1=disks/some.dsk' \
+STEPS='
+    kbd
+    shot:started
+    type:CATALOG\n
+    run:3
+    shot:catalog' \
+go test -count=1 -run TestExplore -v ./activities
 go run ./tools/sheet -o /tmp/sheet.png /tmp/explore/*.png
 ```
+
+What a script can't do, a test of its own does, in a file of `activities/`
+that is not committed, as `scratch_test.go`: a loop that waits by counting
+dots of a colour, a player that follows a ball.
 
 Look at the sheet, and at the pictures that matter at full size. Do the same
 with every picture and every GIF a generator makes, before committing:
