@@ -84,13 +84,25 @@ func (a *Album) Screenshot(o *operator.Operator, name string) error {
 	return a.Write(a.Screen(o), name)
 }
 
+// ScreenshotOf writes the screen of a machine as it is now, in its frame with
+// a label under it, which says which machine it is when a page shows two
+func (a *Album) ScreenshotOf(o *operator.Operator, name string, label string) error {
+	return a.WriteLabelled(a.Screen(o), name, label)
+}
+
 // Write writes a screen taken before, or put together, in its frame
 func (a *Album) Write(screen image.Image, name string) error {
+	return a.WriteLabelled(screen, name, "")
+}
+
+// WriteLabelled writes a screen taken before in its frame, with a label under
+// it
+func (a *Album) WriteLabelled(screen image.Image, name string, label string) error {
 	f, err := a.create(name + ".png")
 	if err != nil {
 		return err
 	}
-	if err := png.Encode(f, Frame(screen)); err != nil {
+	if err := png.Encode(f, FrameLabelled(screen, label)); err != nil {
 		f.Close()
 		return err
 	}
