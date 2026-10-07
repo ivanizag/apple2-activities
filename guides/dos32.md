@@ -32,6 +32,9 @@ the old diskette anyway with BOOT13.
 `./fetch-disks.sh` in this repository downloads them into `disks/` and checks
 them.
 
+[The DOS Manual](https://archive.org/details/The_DOS_Manual_HQ) of DOS 3.3 is
+on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with 48 KB and Applesoft in its ROM, and a Disk II controller
