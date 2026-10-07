@@ -58,9 +58,10 @@ func disk(t testing.TB, name string) string {
 
 /*
 start builds the machine of a command line of izapple2, the one its guide
-gives, and sits an operator at it. The disks the command names as disks/<name>
-are copies of the ones fetch-disks.sh downloads; files gives the paths of the
-others, as the diskette the reader makes of blank.dsk.
+gives, and sits an operator at it. The disks the command names as disks/<name>,
+in the parameters of a card or alone as the recording of -tape, are copies of
+the ones fetch-disks.sh downloads; files gives the paths of the others, as the
+diskette the reader makes of blank.dsk.
 */
 func start(t testing.TB, command string, files map[string]string) *operator.Operator {
 	t.Helper()
@@ -84,6 +85,8 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 		for i, param := range params {
 			name, file, ok := strings.Cut(param, "=")
 			if !ok {
+				// A file given alone, as the recording of -tape
+				params[i] = path(param)
 				continue
 			}
 			if unquoted, ok := strings.CutPrefix(file, `"`); ok {
