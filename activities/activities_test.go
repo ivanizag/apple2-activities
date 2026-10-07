@@ -63,6 +63,7 @@ var activities = []struct {
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
 	{"ulysses", []string{ulyssesMachine}, ulyssesScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
+	{"wizard", []string{wizardMachine}, wizardScreenshots},
 }
 
 func TestActivities(t *testing.T) {

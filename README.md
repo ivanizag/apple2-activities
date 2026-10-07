@@ -313,6 +313,13 @@ The first Hi-Res Adventure of Ken and Roberta Williams, of 1980: a house, a
 killer and hidden jewels, in pictures drawn in lines. Played to its end, a
 picture of the screen after each command.
 
+### [The Wizard and the Princess, from the start to the end](guides/wizard.md)
+
+[<img src="guides/images/wizard/0001.png" width="320" alt="The village of Serenia">](guides/wizard.md)
+
+The second Hi-Res Adventure, of 1980, painted in colour: a princess brought
+back to Serenia across a desert, a sea and a castle. Played to its
+end, a picture of the screen after each command.
 ### [Time Zone, from the start to the end](guides/timezone.md)
 
 [<img src="guides/images/timezone/title.png" width="320" alt="The title of Time Zone">](guides/timezone.md)
