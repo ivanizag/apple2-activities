@@ -170,6 +170,14 @@ The demonstration disk of the Video-7 RGB card for the //e: each of the
 fourteen video modes it lists, the six of the //e and the eight the card
 adds, text in sixteen colours, 160 and 560 dots across.
 
+### [A megabyte on a card: the Memory Expansion Card](guides/memory-expansion.md)
+
+[<img src="guides/images/memory-expansion/copied.png" width="320" alt="A file copied to the RAM disk of the card">](guides/memory-expansion.md)
+
+Apple's memory card for the Apple \]\[, \]\[+ and //e, a megabyte on an
+Apple \]\[+: the RAM disk ProDOS finds on it, a file loaded from it in a
+sixth of the time, the test in its ROM, and the card from DOS 3.3.
+
 ### [What is in the slots: Card Cat](guides/card-cat.md)
 
 [<img src="guides/images/card-cat/slots.png" width="320" alt="Card Cat">](guides/card-cat.md)
