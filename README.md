@@ -47,6 +47,14 @@ Two Disk II drives and the System Master: the catalog of a diskette, the
 program that greets you, and a blank diskette made into one that starts the
 machine with a program of your own.
 
+### [From 13 sectors to 16: DOS 3.2 and DOS 3.3](guides/dos32.md)
+
+[<img src="guides/images/dos32/muffin.png" width="320" alt="MUFFIN, the converter of DOS 3.2 to 3.3">](guides/dos32.md)
+
+DOS 3.2 on the controller of 13 sectors, and then the upgrade: DOS 3.3 can't
+read the old diskette, MUFFIN moves a program from it, and BOOT13 starts it
+anyway.
+
 ### [ProDOS](guides/prodos.md)
 
 [<img src="guides/images/prodos/disk-map.png" width="320" alt="The map of a diskette in Copy II Plus">](guides/prodos.md)

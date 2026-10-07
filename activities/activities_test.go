@@ -31,6 +31,7 @@ var activities = []struct {
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
+	{"dos32", []string{dos32Machine, dos32Upgraded}, dos32Screenshots},
 	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
