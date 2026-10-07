@@ -55,6 +55,7 @@ var activities = []struct {
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
 	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
 	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
+	{"timezone", []string{timeZoneMachine}, timeZoneScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
