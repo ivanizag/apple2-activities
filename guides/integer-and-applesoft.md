@@ -18,9 +18,10 @@ Apple Pascal came with the **Language Card**, 16 KB of memory for slot 0,
 which made an Apple \]\[ a computer of 64 KB. DOS 3.3, of 1980, loads into
 it the BASIC the ROM does not have: the two BASICs on one machine.
 
-This page loads Applesoft from its tape into the first Apple \]\[, and then
-puts the other BASIC in the Language Card of an Apple \]\[+ and of a first
-Apple \]\[. The prompt tells which BASIC is listening: `>` Integer BASIC,
+This page loads Applesoft from its tape into the first Apple \]\[, starts
+an Apple \]\[+ with Applesoft in its ROM and no Language Card, and then
+gives a Language Card to an Apple \]\[+ and to a first Apple \]\[, for the
+other BASIC. The prompt tells which BASIC is listening: `>` Integer BASIC,
 `]` Applesoft.
 
 ## What you need
@@ -36,10 +37,18 @@ Apple \]\[. The prompt tells which BASIC is listening: `>` Integer BASIC,
 `./fetch-disks.sh` in this repository downloads them into `disks/` and checks
 them.
 
-## The machine
+The [Applesoft II Reference Manual](https://archive.org/details/asb-bluebook)
+of 1978, and the
+[manual of the Language Card](https://archive.org/details/APPLE_Language_Card_Installation_Operation_Manual),
+are on the Internet Archive.
 
-The first Apple \]\[, with 48 KB, the ROM of Integer BASIC and the Monitor,
-and the tape of Applesoft in its cassette recorder:
+## The machines
+
+Four machines, the Language Card only in the last two.
+
+**The first Apple \]\[**, with 48 KB, the ROM of Integer BASIC and the
+Monitor, and the tape of Applesoft in its cassette recorder; no Language
+Card:
 
 ```bash
 izapple2 -model none -board 2plus -cpu 6502 -screen green \
@@ -48,8 +57,17 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -tape disks/k7_apple_600200600_applesoftiia.wav
 ```
 
-An Apple \]\[+, with Applesoft in its ROM, a Language Card in slot 0, and a
-Disk II controller in slot 6 with the System Master in drive 1:
+**An Apple \]\[+**, with 48 KB and Applesoft in its ROM, and a Disk II
+controller in slot 6 with the System Master in drive 1; no Language Card:
+
+```bash
+izapple2 -model none -board 2plus -cpu 6502 -screen green \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s6 'diskii,disk1=disks/DOS 3.3 System Master - 680-0210-A (1982).dsk'
+```
+
+**The same Apple \]\[+ with a Language Card** in slot 0, 16 KB more:
 
 ```bash
 izapple2 -model none -board 2plus -cpu 6502 -screen green \
@@ -59,7 +77,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -s6 'diskii,disk1=disks/DOS 3.3 System Master - 680-0210-A (1982).dsk'
 ```
 
-And the first Apple \]\[ with the same cards:
+**The first Apple \]\[ with a Language Card**, and the same Disk II:
 
 ```bash
 izapple2 -model none -board 2plus -cpu 6502 -screen green \
@@ -95,25 +113,48 @@ izapple2 -model none -board 2plus -cpu 6502 -screen green \
    copyright and Microsoft's of 1976. It lives in the memory of the machine
    now: switched off, it is gone, and loading it again was a minute more.
 
+## Applesoft in the ROM
+
+3. **Quit izapple2 and start it with the second command**, the Apple \]\[+
+   with no Language Card. It starts the disk by itself, and DOS 3.3 with
+   Applesoft, from the ROM. **Type `PRINT 1/3`**, and **`INT`**, which asks
+   DOS for Integer BASIC:
+
+   ![No Integer BASIC on the Apple \]\[+](images/integer-and-applesoft/plus-no-card.png)
+
+   Applesoft answers at once, with no tape. But Integer BASIC is not in the
+   ROM of the \]\[+ any more, and there is no room to load it.
+
 ## The Language Card
 
-3. **Quit izapple2 and start it with the second command**, the Apple \]\[+.
-   It starts the disk by itself, and the System Master of DOS 3.3 loads
-   Integer BASIC into the Language Card as it starts. **Type `PRINT 1/3`**,
-   in the Applesoft of the ROM, then **`INT`**, which goes to Integer BASIC,
-   **`PRINT 1/3`** again, **`FP`**, back to Applesoft, and **`PRINT 1/3`**.
+The Language Card is 16 KB of memory, in slot 0, at the addresses of the
+ROM. DOS 3.3 loads into it the BASIC the ROM does not have, and switches
+between the two with `INT` and `FP`.
+
+4. **Quit izapple2 and start it with the third command**, the same Apple
+   \]\[+ with the card. As DOS 3.3 starts, the System Master loads Integer
+   BASIC into the card, and says so for a few seconds:
+
+   ![Integer BASIC loaded into the card](images/integer-and-applesoft/loading-integer.png)
+
+   **Type `PRINT 1/3`**, in Applesoft, then **`INT`**, which goes to
+   Integer BASIC, **`PRINT 1/3`** again, **`FP`**, back to Applesoft, and
+   **`PRINT 1/3`**.
 
    ![The two BASICs on an Apple \]\[+](images/integer-and-applesoft/card-plus.png)
 
    The prompt changes with the BASIC: `>` after `INT`, `]` after `FP`.
    Programs written for Integer BASIC kept running on the new machine.
 
-4. **Quit izapple2 and start it with the third command**, the first Apple
-   \]\[ with the same cards. It starts in the Monitor; **type `6`, then
+5. **Quit izapple2 and start it with the last command**, the first Apple
+   \]\[ with the card. It starts in the Monitor; **type `6`, then
    Control-P, and Return** to start the disk in slot 6. Here the System
-   Master loads Applesoft into the card. **Type `PRINT 1/3`**, in the
-   Integer BASIC of the ROM, then **`FP`**, **`PRINT 1/3`**, **`INT`** and
-   **`PRINT 1/3`**.
+   Master loads Applesoft into the card:
+
+   ![Applesoft loaded into the card](images/integer-and-applesoft/loading-applesoft.png)
+
+   **Type `PRINT 1/3`**, in the Integer BASIC of the ROM, then **`FP`**,
+   **`PRINT 1/3`**, **`INT`** and **`PRINT 1/3`**.
 
    ![The two BASICs on the first Apple \]\[](images/integer-and-applesoft/card-integer.png)
 

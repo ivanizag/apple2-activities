@@ -15,6 +15,12 @@ const basicsTape = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -tape disks/k7_apple_600200600_applesoftiia.wav`
 
+// basicsPlusNoCard is an Apple ][+ with DOS 3.3, and no Language Card
+const basicsPlusNoCard = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s6 'diskii,disk1=disks/DOS 3.3 System Master - 680-0210-A (1982).dsk'`
+
 // basicsPlus is an Apple ][+ with a Language Card and DOS 3.3
 const basicsPlus = `izapple2 -model none -board 2plus -cpu 6502 -screen green \
     -rom "<internal>/Apple2_Plus.rom" \
@@ -61,10 +67,24 @@ func basicsScreenshots(t *testing.T) {
 	must(t, o.WaitForKeyboard(10))
 	must(t, pictures.Screenshot(o, "applesoft-tape"))
 
-	// An Apple ][+: Applesoft in its ROM, and Integer BASIC loaded by DOS
-	// 3.3 into the Language Card, switched with INT and FP
-	o = start(t, basicsPlus, nil)
+	// An Apple ][+ with Applesoft in its ROM, and no Language Card: Integer
+	// BASIC is not available
+	o = start(t, basicsPlusNoCard, nil)
 	must(t, o.WaitForText("SYSTEM MASTER", 30))
+	must(t, o.WaitForKeyboard(30))
+	must(t, o.TypeLines("PRINT 1/3", "INT"))
+	must(t, o.WaitForText("LANGUAGE NOT AVAILABLE", 10))
+	must(t, o.WaitForKeyboard(10))
+	o.Run(30)
+	must(t, pictures.Screenshot(o, "plus-no-card"))
+
+	// With the Language Card: Integer BASIC loaded by DOS 3.3 into it as it
+	// starts, and switched with INT and FP
+	o = start(t, basicsPlus, nil)
+	must(t, o.WaitForText("LOADING INTEGER BASIC", 30))
+	o.Run(30)
+	must(t, pictures.Screenshot(o, "loading-integer"))
+	must(t, o.WaitForText("COPYRIGHT APPLE", 30))
 	must(t, o.WaitForKeyboard(30))
 	must(t, o.TypeLines("PRINT 1/3", "INT", "PRINT 1/3", "FP", "PRINT 1/3"))
 	waitForLines(t, o, ".333333333", 2)
@@ -79,7 +99,10 @@ func basicsScreenshots(t *testing.T) {
 	must(t, o.Type("6"))
 	must(t, o.Key("Ctrl+P"))
 	must(t, o.Key("Return"))
-	must(t, o.WaitForText("SYSTEM MASTER", 30))
+	must(t, o.WaitForText("LOADING", 30))
+	o.Run(30)
+	must(t, pictures.Screenshot(o, "loading-applesoft"))
+	must(t, o.WaitForText("COPYRIGHT APPLE", 30))
 	must(t, o.WaitForKeyboard(30))
 	must(t, o.TypeLines("PRINT 1/3", "FP", "PRINT 1/3", "INT", "PRINT 1/3"))
 	waitForLines(t, o, "0", 2)

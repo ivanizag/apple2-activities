@@ -33,7 +33,7 @@ var activities = []struct {
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
 	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
-	{"integer-and-applesoft", []string{basicsTape, basicsPlus, basicsInteger}, basicsScreenshots},
+	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
 	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
 	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
 	{"logo", []string{logoMachine}, logoScreenshots},
