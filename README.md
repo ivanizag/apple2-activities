@@ -281,6 +281,14 @@ Broderbund's game of 1983, from a copy of its original disk: the title, the
 demonstration that plays itself, and a game played from the keyboard, until
 a guard catches the runner.
 
+### [Time Zone, from the start to the end](guides/timezone.md)
+
+[<img src="guides/images/timezone/title.png" width="320" alt="The title of Time Zone">](guides/timezone.md)
+
+The biggest adventure of 1982, on twelve sides of diskettes, by Ken and
+Roberta Williams: played to its end, all 1,058 commands, with a picture of
+the screen after each one, and the disks changed when the game asks.
+
 ### [Total Replay](guides/total-replay.md)
 
 [<img src="guides/images/total-replay/box-art.png" width="320" alt="Box art in Super Hi-Res">](guides/total-replay.md)
