@@ -23,6 +23,10 @@ saves a program with ProDOS, to see the date in the catalog.
 this repository downloads it into `disks/` and checks it. The program of the
 page is also in this repository, [listings/clock.bas](listings/clock.bas).
 
+The
+[manual of the ThunderClock Plus](https://archive.org/details/ThunderClock_Plus),
+with the programs of this page, is on the Internet Archive.
+
 ## The machine
 
 An Apple \]\[+ with a clock:
