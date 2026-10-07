@@ -32,6 +32,14 @@ No disk, no operating system: switched on, the Apple \]\[+ is in Applesoft BASIC
 and waiting. A few commands, a program typed, listed and run, and a loop that
 never ends stopped with Control-C.
 
+### [From Integer BASIC to Applesoft](guides/integer-and-applesoft.md)
+
+[<img src="guides/images/integer-and-applesoft/card-plus.png" width="320" alt="Integer BASIC and Applesoft on one Apple II+">](guides/integer-and-applesoft.md)
+
+Applesoft loaded from its tape into the first Apple \]\[, and then the two
+BASICs on one machine with the Language Card, on an Apple \]\[+ and on the
+first Apple \]\[.
+
 ### [Switch on an Apple //e](guides/apple-iie.md)
 
 [<img src="guides/images/apple-iie/eighty-columns.png" width="320" alt="80 columns and MouseText">](guides/apple-iie.md)
