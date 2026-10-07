@@ -265,6 +265,14 @@ chosen from BASIC, and Apple's DOS 3.3 in 80 columns.
 
 ## Play
 
+### [Cranston Manor, from the start to the end](guides/cranston.md)
+
+[<img src="guides/images/cranston/0001.png" width="320" alt="Main Street">](guides/cranston.md)
+
+Hi-Res Adventure #3, of 1981: the treasures of a manor, its tower, its
+cistern and the caves under it, gathered and carried out of its gate. Played
+to its end, a picture of the screen after each command.
+
 ### [Karateka](guides/karateka.md)
 
 [<img src="guides/images/karateka/castle.png" width="320" alt="The fortress of Akuma">](guides/karateka.md)
