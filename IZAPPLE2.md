@@ -195,6 +195,34 @@ be read and the screen to be still instead.
 
 **Here, once fixed:** wait for the text of each step in basis108_test.go.
 
+### The cassette input hears the noise of the silence on a tape
+
+The cassette input turns the recording into the times its signal crosses
+zero (`MakeTape` in `storage/cassette.go`), with no threshold, so the faint
+noise of a silence on the tape crosses zero too: in the silence of the
+recording of *High-Resolution Graphics* 002-0002-01 of the
+[Brutal Deluxe project](https://www.brutaldeluxe.fr/projects/cassettes/apple/index.html),
+peaks of 7 out of 128, it crosses 672 times a second. After `LOAD` reads the
+BASIC part, the Monitor's `C00.FFFR` for the machine code that comes 16
+seconds later finds a false start in that noise, and answers `ERR`, though
+the recording is good: its checksum is right, decoded apart. A comparator
+with some hysteresis, as the one of the Apple, would only see the tones.
+
+**Here, once fixed:** nothing to change; the tape of
+[apple-ii-cassettes.md](guides/apple-ii-cassettes.md), 600-2016-00, has the
+machine code first, where the tape starts, and the 002-0002-01 could be used
+too.
+
+### Only one tape, from the start
+
+The cassette is a file given with `-tape`, when the machine is built, and
+there is no call to put another in the recorder while it runs, as there is
+`LoadDisk` for a diskette. A page with several tapes starts the machine once
+for each.
+
+**Here, once done:** [apple-ii-cassettes.md](guides/apple-ii-cassettes.md)
+could load its tapes one after the other into the same machine.
+
 ### CP/M cannot format a blank diskette
 
 `FORMAT` of the CP/M 2.20B diskette of the SoftCard, asked for drive B with a

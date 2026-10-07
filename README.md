@@ -24,6 +24,15 @@ Wozniak's machine and its ROM: the Monitor, machine code written a line at a
 time in the Mini-Assembler, and Integer BASIC, with its whole numbers and its
 sixteen colours.
 
+### [The Apple \]\[ and its cassettes](guides/apple-ii-cassettes.md)
+
+[<img src="guides/images/apple-ii-cassettes/revision-1.png" width="320" alt="The six colours of the high resolution graphics">](guides/apple-ii-cassettes.md)
+
+Apple's first programs, loaded from the recordings of their tapes into a
+first Apple \]\[: Breakout played with the paddle, the colour graphics and
+the high resolution graphics demonstrated, and the two colours Wozniak told
+the readers of Byte how to add.
+
 ### [Switch on an Apple \]\[+](guides/switch-on.md)
 
 [<img src="guides/images/switch-on/program.png" width="320" alt="A program in Applesoft BASIC">](guides/switch-on.md)

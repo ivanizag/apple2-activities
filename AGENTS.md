@@ -127,8 +127,6 @@ Not done yet, and not proposed: each needs a look on the machine first.
   needs it downloaded.
 - **CP/M 3** on the //e, model `cpm3`; its two disks are inside izapple2, a
   page needs them downloaded.
-- **The cassette**: a program loaded from a WAV recording, through the input
-  of the Apple II.
 - **Printing**: a listing sent to the parallel card, `PR#1`, and the file it
   writes shown.
 - **Games from the woz-a-day collection** of the Internet Archive: Karateka,
