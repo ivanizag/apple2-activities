@@ -125,7 +125,11 @@ step, with what the machine showed on the way. Its parts are:
 
 - **Choose the monitor of the time** for the album: green for text and work,
   `album.Green`, and colour, `album.Color`, for graphics and games. A page can
-  show both when the difference is the point.
+  show both when the difference is the point. `album.ColorWhiteText` is the
+  colour television with the four lines of text under a picture white and
+  sharp, for the games that tell their story there, as the adventures do: it
+  is not what the television showed, which blurred them into colours, and the
+  page says so.
 - **The frame is part of the picture**, the black of the tube around the
   screen, from `album.Frame`.
 - **Take the picture once the screen is finished**, by what is on it rather

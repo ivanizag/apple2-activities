@@ -6,13 +6,15 @@ all in the same frame, the glass and the case of the monitor around them.
 The Apple II was watched on two kinds of screen, and an album says which: a
 monochrome monitor, green, sharp, and with the 80 columns readable, or a
 colour television, that shows the colours the machine makes out of the NTSC
-signal.
+signal. A third, the colour television with the text under its pictures
+in white, is not of the time: it is for pages whose text has to be read.
 */
 package album
 
 import (
 	"fmt"
 	"image"
+	"image/color"
 	"image/png"
 	"os"
 	"path/filepath"
@@ -30,11 +32,16 @@ const (
 	Green Monitor = iota
 	// Color is a colour television
 	Color
+	// ColorWhiteText is a colour television whose four lines of text under a
+	// picture, in the mixed mode, are white and sharp, as on a monochrome
+	// monitor. The television blurred them into colours, hard to read; an
+	// adventure that tells its story there is read on this one
+	ColorWhiteText
 )
 
 // screenMode is the izapple2 rendering of the monitor
 func (m Monitor) screenMode() int {
-	if m == Color {
+	if m == Color || m == ColorWhiteText {
 		return screen.ScreenModeColor
 	}
 	return screen.ScreenModeGreen
@@ -76,7 +83,41 @@ func (a *Album) create(file string) (*os.File, error) {
 // Screen is what the machine shows now, on the monitor of the album, with
 // the lines doubled so that it is in the proportions of the screen
 func (a *Album) Screen(o *operator.Operator) *image.RGBA {
-	return doubleLines(screen.Snapshot(o.Apple2().GetVideoSource(), a.monitor.screenMode()))
+	vs := o.Apple2().GetVideoSource()
+	snap := screen.Snapshot(vs, a.monitor.screenMode())
+	if a.monitor == ColorWhiteText && vs.GetCurrentVideoMode()&screen.VideoMixTextMask == screen.VideoMixText40 {
+		whiteText(snap, screen.Snapshot(vs, screen.ScreenModeGreen))
+	}
+	return doubleLines(snap)
+}
+
+// mixedTextTop is the first line of the four lines of text of the mixed
+// mode, of the 192 of the screen
+const mixedTextTop = 160
+
+/*
+whiteText puts the text of the mixed mode, as the monochrome monitor shows
+it, on the picture of the colour television, in white. The television's
+picture is a little wider, for the colours spread to the sides, and the text
+goes in the middle of it.
+*/
+func whiteText(colour *image.RGBA, mono *image.RGBA) {
+	cb, mb := colour.Bounds(), mono.Bounds()
+	dx := (cb.Dx() - mb.Dx()) / 2
+	for y := mixedTextTop; y < cb.Dy() && y < mb.Dy(); y++ {
+		for x := 0; x < cb.Dx(); x++ {
+			lit := false
+			if mx := x - dx; mx >= 0 && mx < mb.Dx() {
+				_, g, _, _ := mono.At(mx, y).RGBA()
+				lit = g > 0x8000
+			}
+			if lit {
+				colour.Set(x, y, color.White)
+			} else {
+				colour.Set(x, y, color.Black)
+			}
+		}
+	}
 }
 
 // Screenshot writes the screen of a machine as it is now, in its frame
