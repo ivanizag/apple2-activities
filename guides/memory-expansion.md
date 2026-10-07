@@ -27,6 +27,10 @@ the ROM of the card, tries to start up from it, and uses it from DOS 3.3.
 `./fetch-disks.sh` in this repository downloads them into `disks/` and checks
 them. The ROM of the card comes inside izapple2.
 
+The
+[manual of the Apple II Memory Expansion Card](http://www.apple-iigs.info/doc/fichiers/a2me.pdf),
+of 1985, is on apple-iigs.info.
+
 ## The machine
 
 An Apple \]\[+ with a megabyte more:
