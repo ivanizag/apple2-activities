@@ -57,9 +57,26 @@ func robotOdysseySewerScreenshots(t *testing.T) {
 
 	// The game starts with a dream, and the fall into Robotropolis
 	must(t, o.Type("\n"))
+	// Recorded from when the dream is drawn, the question gone: the screen
+	// has more than its few letters lit then
+	lit := func() int {
+		n := 0
+		pix := pictures.Screen(o).Pix
+		for i := 0; i < len(pix); i += 4 {
+			if pix[i]|pix[i+1]|pix[i+2] > 0x40 {
+				n++
+			}
+		}
+		return n
+	}
+	asked := lit()
+	waited := 0
+	for ; waited < 30*operator.FramesPerSecond && lit() < 4*asked; waited += 6 {
+		o.Run(6)
+	}
 	dream := pictures.Record(o)
 	dream.Capture(10)
-	dream.Run(90*operator.FramesPerSecond, 6)
+	dream.Run(90*operator.FramesPerSecond-waited, 6)
 	must(t, pictures.SaveRecording(dream, "dream", 300))
 	shot("start")
 	rooms := map[int]image.Image{0x28: pictures.Screen(o)}
