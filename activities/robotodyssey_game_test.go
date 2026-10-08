@@ -20,6 +20,10 @@ type roGame struct {
 	// ignore are the robots the player is next to as a path starts, and how
 	// far from each it is then
 	ignore map[int]int
+	// rec records the keys pressed, when not nil, recSpeed times faster
+	// than the machine
+	rec      *album.Recording
+	recSpeed int
 }
 
 func (g *roGame) peek(addr int) int { return int(g.o.Apple2().Peek(uint16(0x6000 + addr))) }
@@ -61,6 +65,12 @@ func (g *roGame) wall(room, col, row int) bool {
 
 // press presses a key, and runs until the player stops moving
 func (g *roGame) press(key string) {
+	frames := 2
+	defer func() {
+		if g.rec != nil {
+			g.rec.Capture(max(frames*100/operator.FramesPerSecond/g.recSpeed, 2))
+		}
+	}()
 	if len(key) > 1 {
 		must(g.t, g.o.Key(key))
 	} else {
@@ -79,7 +89,37 @@ func (g *roGame) press(key string) {
 			last, still = now, 0
 		}
 		g.o.Run(1)
+		frames++
 	}
+}
+
+// run runs the machine some frames, recorded when recording
+func (g *roGame) run(frames int) {
+	if g.rec == nil {
+		g.o.Run(frames)
+		return
+	}
+	for done := 0; done < frames; done += 6 {
+		n := min(6, frames-done)
+		g.o.Run(n)
+		g.rec.Capture(max(n*100/operator.FramesPerSecond/g.recSpeed, 2))
+	}
+}
+
+// record starts recording the keys pressed, a picture after each, played
+// some times faster than the machine
+func (g *roGame) record(pictures *album.Album, faster int) {
+	g.rec = pictures.Record(g.o)
+	g.recSpeed = faster
+	g.rec.Capture(50)
+}
+
+// saveRecording writes what was recorded since record, and stops
+func (g *roGame) saveRecording(pictures *album.Album, name string) {
+	g.o.Run(30)
+	g.rec.Capture(10)
+	must(g.t, pictures.SaveRecording(g.rec, name, 200))
+	g.rec = nil
 }
 
 // align moves the player a unit at a time onto the grid of the tiles
@@ -298,7 +338,7 @@ func (g *roGame) goTo(to roTile) {
 		}
 		if !ok {
 			// A robot in the way: it moves
-			g.o.Run(10)
+			g.run(10)
 			continue
 		}
 		if len(keys) == 0 {
@@ -410,7 +450,7 @@ func (g *roGame) chase(obj int) {
 			g.press("Ctrl+M")
 		case near && dx >= 5 && dx <= 7:
 			// Beside it: wait for it to be level
-			g.o.Run(1)
+			g.run(1)
 		default:
 			g.towards(obj)
 		}
@@ -751,7 +791,7 @@ func (g *roGame) goToRoom(room int) {
 		g.align()
 		keys, ok := g.search(func(t roTile) bool { return t.room == room })
 		if !ok {
-			g.o.Run(10)
+			g.run(10)
 			continue
 		}
 		if len(keys) > 0 {
@@ -777,7 +817,7 @@ func (g *roGame) meet(obj int, done func() bool) {
 			return t.room == there.room && abs(t.col-there.col) <= 1 && t.row == there.row
 		})
 		if !ok || len(keys) == 0 {
-			g.o.Run(4)
+			g.run(4)
 			continue
 		}
 		g.step(keys[0])
@@ -898,7 +938,7 @@ func (g *roGame) unlock(x, y, room, col, row int) {
 	}
 	// The key may have gone in on the way: the door slides a while
 	g.moveCarried(x-4, y)
-	g.o.RunSeconds(5)
+	g.run(5 * operator.FramesPerSecond)
 	if !g.wall(room, col, row) {
 		return
 	}
@@ -911,7 +951,7 @@ func (g *roGame) unlock(x, y, room, col, row int) {
 			}
 		}
 		g.moveCarried(x-4, y)
-		g.o.RunSeconds(5)
+		g.run(5 * operator.FramesPerSecond)
 		if os.Getenv("RO_DEBUG") != "" {
 			fmt.Printf("    unlock: the key at %d,%d, the wall %v\n", g.x(key), g.y(key), g.wall(room, col, row))
 		}
@@ -943,7 +983,7 @@ func (g *roGame) towards(obj int) {
 		}
 	}
 	if !moved {
-		g.o.Run(2)
+		g.run(2)
 	}
 }
 
