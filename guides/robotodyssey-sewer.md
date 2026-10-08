@@ -94,6 +94,7 @@ The pictures show where they were this time.
 - [7. The sensor of directions](#7-the-sensor-of-directions)
 - [8. Through the sewer grate](#8-through-the-sewer-grate)
 - [9. The last door and the transporter](#9-the-last-door-and-the-transporter)
+- [The map of the Sewer](#the-map-of-the-sewer)
 
 ### 1. Into Robotropolis
 
@@ -167,15 +168,6 @@ Two times faster:
 now on.
 
 ![Inside the white robot](images/robotodyssey-sewer/white.png)
-
-The Sewer, each room as the game shows it, put together where the rooms are.
-The way in is at the top left; the maze, its walls drawn as letters, below
-it; the blue sewers in the middle, with the two guarded rooms at their
-bottom; and the sewer grate and the transporter at the top right. The maze
-does not keep to the map: some of its exits lead to rooms other than the
-ones next to them.
-
-![The map of the Sewer](images/robotodyssey-sewer/map.png)
 
 ### 4. A chip and a sensor, in the maze
 
@@ -298,6 +290,17 @@ time with Control, until it takes you. The game asks for its disk.
 all that is in it.
 
 ![The Subway](images/robotodyssey-sewer/subway.png)
+
+## The map of the Sewer
+
+Each room as the game shows it, put together where the rooms are.
+The way in is at the top left; the maze, its walls drawn as letters, below
+it; the blue sewers in the middle, with the two guarded rooms at their
+bottom; and the sewer grate and the transporter at the top right. The maze
+does not keep to the map: some of its exits lead to rooms other than the
+ones next to them.
+
+![The map of the Sewer](images/robotodyssey-sewer/map.png)
 
 ## What next
 
