@@ -321,6 +321,15 @@ The first Hi-Res Adventure of Ken and Roberta Williams, of 1980: a house, a
 killer and hidden jewels, in pictures drawn in lines. Played to its end, a
 picture of the screen after each command.
 
+### [Robot Odyssey, level 1: the Sewer](guides/robotodyssey-sewer.md)
+
+[<img src="guides/images/robotodyssey-sewer/ride.gif" width="320" alt="The white robot through the sewer grate">](guides/robotodyssey-sewer.md)
+
+The Learning Company's game of digital logic, of 1984: robots to walk into
+and wire. Its first level played to the transporter, with the three robots
+of the Sewer fetching a magnet and a crystal past the guards, and the white
+one riding through the sewer grate.
+
 ### [The Wizard and the Princess, from the start to the end](guides/wizard.md)
 
 [<img src="guides/images/wizard/0001.png" width="320" alt="The village of Serenia">](guides/wizard.md)

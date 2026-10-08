@@ -56,6 +56,7 @@ var activities = []struct {
 	{"printing", []string{printingMachine}, printingScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
+	{"robotodyssey-sewer", []string{robotOdysseyMachine}, robotOdysseySewerScreenshots},
 	{"romx", []string{romxMachine}, romxScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
 	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
