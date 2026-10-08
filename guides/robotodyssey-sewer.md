@@ -97,8 +97,14 @@ The pictures show where they were this time.
 
 ### 1. Into Robotropolis
 
-**Start izapple2** with the command above. The menu comes after the drive:
-the game, *Robotropolis*, the *Innovation Lab*, and three tutorials.
+**Start izapple2** with the command above. After the drive, The Learning
+Company presents, and the title comes out of a growing circle, and the menu
+after it in the same way.
+
+![The title](images/robotodyssey-sewer/intro.gif)
+
+The menu: the game, *Robotropolis*, the *Innovation Lab*, and three
+tutorials.
 
 ![The menu](images/robotodyssey-sewer/menu.png)
 
@@ -107,8 +113,12 @@ for a new game rather than one saved.
 
 ![A new game or one saved](images/robotodyssey-sewer/ready.png)
 
-The first room, after the drive loads the level, with the way out to the
-right.
+The game starts with a dream: you, asleep, dream of a robot, wake up, and
+fall through the floor of your bedroom into Robotropolis.
+
+![The dream and the fall](images/robotodyssey-sewer/dream.gif)
+
+The first room, with the way out to the right.
 
 ![Welcome, Traveler](images/robotodyssey-sewer/start.png)
 
@@ -121,40 +131,60 @@ orange one, the blue one and the white one.
 
 **Walk into each of them, from its left, and press Space on its switch**,
 at the lower right of its inside, to turn it off, so that it stays where it
-is. The inside of the orange one: the thrusters are the triangles at the
-sides, the bumpers the half circles next to them, and the wires light up
-where they are on.
+is. The orange one first, caught as it moves about the room. The recording is two times faster than the machine.
 
-![Inside the orange robot](images/robotodyssey-sewer/inside.png)
+![Into the orange robot, to switch it off](images/robotodyssey-sewer/switch.gif)
+
+Their insides, the orange, the blue and the white one. The thrusters are
+the triangles at the four sides, the bumpers the half circles next to them,
+and the wires light up where they are on. Each robot is wired in its own way,
+and does its own thing.
+
+<img src="images/robotodyssey-sewer/inside-orange.png" width="32%" alt="Inside the orange robot"> <img src="images/robotodyssey-sewer/inside-blue.png" width="32%" alt="Inside the blue robot"> <img src="images/robotodyssey-sewer/inside-white.png" width="32%" alt="Inside the white robot">
 
 ### 3. The blue key and the door of the City Sewer
 
 The blue key is in one of the robots, a different one each game. **Walk
 into it, pick the key up with Space, and walk out**: what you carry comes
-with you.
+with you. The recording is two times faster than the machine.
 
-![The blue key](images/robotodyssey-sewer/key.png)
+![The blue key](images/robotodyssey-sewer/key.gif)
 
 **Put the orange and the blue robots inside the white one**: pick each up,
-walk into the white robot with it, and put it down in there. Then **take
-the key to the right**, into the City Sewer, and **put it into the lock**,
-at the bottom left, a step at a time with Control. The door at the right of
-the lock slides open, and stays open when the key comes out.
+walk into the white robot with it, and put it down in there. Three times
+faster than the machine:
 
-![The door of the City Sewer](images/robotodyssey-sewer/door.png)
+![The robots into the white one](images/robotodyssey-sewer/pack.gif)
+
+Then **take the key to the right**, into the City Sewer, and **put it into
+the lock**, at the bottom left, a step at a time with Control. The door at
+the right of the lock slides open, and stays open when the key comes out.
+Two times faster:
+
+![The door of the City Sewer](images/robotodyssey-sewer/door.gif)
 
 **Put the key into the white robot too.** Everything travels inside it from
 now on.
 
 ![Inside the white robot](images/robotodyssey-sewer/white.png)
 
+The Sewer, each room as the game shows it, put together where the rooms are.
+The way in is at the top left; the maze, its walls drawn as letters, below
+it; the blue sewers in the middle, with the two guarded rooms at their
+bottom; and the sewer grate and the transporter at the top right. The maze
+does not keep to the map: some of its exits lead to rooms other than the
+ones next to them.
+
+![The map of the Sewer](images/robotodyssey-sewer/map.png)
+
 ### 4. A chip and a sensor, in the maze
 
 **Carry the white robot** down through the open door and into the maze of
 the Sewer, and put it down. The chip is somewhere in the maze. **Pick it
-up and take it into the white robot.**
+up and take it into the white robot.** Four times faster than the
+machine:
 
-![The chip](images/robotodyssey-sewer/chip.png)
+![The chip](images/robotodyssey-sewer/chip.gif)
 
 One of the two sensors of the subway token is in the room at the bottom
 of the maze, among other parts. **Take it into the white robot too.**
@@ -188,7 +218,9 @@ times faster than the machine.
 again. A stopped robot can be carried but not gone into: **carry it to the
 middle of the room before the guards, put it down, R and Space again**, and
 **walk into it at once and turn it off**. Then **carry it into the white
-robot.**
+robot.** Three times faster than the machine:
+
+![The orange robot caught, and home](images/robotodyssey-sewer/home.gif)
 
 ### 6. The blue robot and the second guard
 
@@ -247,8 +279,9 @@ a minute and a half.
 **Take the key out of the white robot**, by its right side, and **put it
 into the lock** in the wall in the middle of the room. The wall slides to the
 right and opens the way to the top, and stays so when the key comes out.
+Two times faster than the machine:
 
-![The last door](images/robotodyssey-sewer/open.png)
+![The last door](images/robotodyssey-sewer/lock.gif)
 
 **Put the key back into the white robot, and carry the robot to the
 right.** The transporter is the orange square: *You CAN take it with you
@@ -259,7 +292,7 @@ right.** The transporter is the orange square: *You CAN take it with you
 **Step onto the transporter with the robot**, the last of it a step at a
 time with Control, until it takes you. The game asks for its disk.
 
-![Be sure the disk is in the drive](images/robotodyssey-sewer/disk.png)
+![Onto the transporter](images/robotodyssey-sewer/transport.gif)
 
 **Press Escape.** The Subway, the second level, with the white robot and
 all that is in it.
