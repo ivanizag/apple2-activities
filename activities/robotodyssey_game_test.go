@@ -2,6 +2,7 @@ package activities
 
 import (
 	"fmt"
+	"image"
 	"os"
 	"testing"
 
@@ -24,6 +25,12 @@ type roGame struct {
 	// than the machine
 	rec      *album.Recording
 	recSpeed int
+	// rooms are the pictures of the rooms, each as the player was in it
+	// first, when mapAlbum is not nil; mapPending is a room just come into,
+	// taken at the next key pressed there, once drawn
+	rooms      map[int]image.Image
+	mapAlbum   *album.Album
+	mapPending int
 }
 
 func (g *roGame) peek(addr int) int { return int(g.o.Apple2().Peek(uint16(0x6000 + addr))) }
@@ -66,6 +73,7 @@ func (g *roGame) wall(room, col, row int) bool {
 // press presses a key, and runs until the player stops moving
 func (g *roGame) press(key string) {
 	frames := 2
+	defer g.mapRoom()
 	defer func() {
 		if g.rec != nil {
 			g.rec.Capture(max(frames*100/operator.FramesPerSecond/g.recSpeed, 2))
@@ -574,9 +582,10 @@ func (g *roGame) tryLeave(side string) bool {
 	return false
 }
 
-// carried is the object the player carries, from $091F, or -1
+// carried is the object the player carries, from $9C26, or -1: the same
+// place in all the levels, where the copy the code keeps moves
 func (g *roGame) carried() int {
-	c := int(g.o.Apple2().Peek(0x091F))
+	c := int(g.o.Apple2().Peek(0x9C26))
 	if c == 0xFF {
 		return -1
 	}
@@ -700,6 +709,8 @@ func (g *roGame) pickRobotFrom(obj int, leftFirst bool) {
 	if !leftFirst {
 		sides = append(right, left...)
 	}
+	// From below or above, in a corridor no wider than it
+	sides = append(sides, side{0, 2, "Ctrl+I"}, side{1, 2, "Ctrl+I"}, side{0, -2, "Ctrl+M"}, side{1, -2, "Ctrl+M"})
 	for _, side := range sides {
 		target := roTile{robot.room, robot.col + side.dc, robot.row + side.dr}
 		if target.row < 0 || target.row > 11 {
@@ -742,9 +753,9 @@ func (g *roGame) pickRobotFrom(obj int, leftFirst bool) {
 				// Something else came up: down again
 				g.press(" ")
 			}
-			px := g.x(0)
+			px, py := g.x(0), g.y(0)
 			g.press(side.move)
-			if g.x(0) == px && g.place() == robot.room {
+			if g.x(0) == px && g.y(0) == py && g.place() == robot.room {
 				// A wall in the way
 				break
 			}
@@ -887,7 +898,7 @@ func (g *roGame) putRobot(robot, x, y int) {
 // first, or up or down when a wall is in the way
 func (g *roGame) moveCarried(x, y int) {
 	obj := g.carried()
-	for range 60 {
+	for range 400 {
 		var moves []string
 		ox, oy := g.x(obj), g.y(obj)
 		if ox < x {
@@ -990,24 +1001,49 @@ func (g *roGame) towards(obj int) {
 // switchRobot turns the switch of the robot the player is in, in its lower
 // right corner
 func (g *roGame) switchRobot() {
-	g.goTo(roTile{g.room(0), 17, 9})
-	g.press(" ")
+	room := g.room(0)
+	for range 3 {
+		g.goTo(roTile{room, 17, 9})
+		g.press(" ")
+		if g.carried() < 0 {
+			return
+		}
+		// Something lay on the switch and came up instead: put it down
+		// out of the way, and again
+		g.goTo(roTile{room, 13, 7})
+		g.press(" ")
+	}
+	g.t.Fatalf("could not turn the switch of room %02X", room)
 }
 
 // remote turns the remote control on or off, R and Space, which stops all
 // the robots or lets them go on, and turns the player back with C
 func (g *roGame) remote() {
 	must(g.t, g.o.Type("R"))
-	g.o.Run(10)
-	g.press(" ")
-	must(g.t, g.o.Type("C"))
-	g.o.Run(10)
+	for i := 0; g.peek(0x100) != 0x36; i++ {
+		if i > 120 {
+			g.t.Fatalf("the player is not the remote control, sprite %02X", g.peek(0x100))
+		}
+		g.o.Run(1)
+	}
+	g.o.Run(30)
+	must(g.t, g.o.Type(" "))
+	g.o.Run(60)
+	for range 5 {
+		must(g.t, g.o.Type("C"))
+		g.o.Run(10)
+		if g.peek(0x100) == 0x00 {
+			return
+		}
+	}
+	g.t.Fatalf("the player is not back from the remote control, sprite %02X", g.peek(0x100))
 }
 
 // waitFor runs the machine until done says so, or fails after some seconds;
 // with a recording, it is recorded
 func (g *roGame) waitFor(what string, seconds int, rec *album.Recording, done func() bool) {
 	for i := 0; !done(); i++ {
+		g.mapRoom()
 		if i > 2*seconds {
 			g.t.Fatalf("%v did not happen in %v seconds", what, seconds)
 		}
@@ -1065,19 +1101,36 @@ func (g *roGame) dropAt(x, y int) {
 // changes on the way
 func (g *roGame) stand(x, y int) {
 	room := g.room(0)
-	for range 40 {
+	for range 400 {
+		var keys []string
 		switch {
 		case g.room(0) != room:
 			return
 		case g.x(0) < x:
-			g.press("Ctrl+K")
+			keys = append(keys, "Ctrl+K")
 		case g.x(0) > x:
-			g.press("Ctrl+J")
+			keys = append(keys, "Ctrl+J")
+		}
+		switch {
 		case g.y(0) < y:
-			g.press("Ctrl+I")
+			keys = append(keys, "Ctrl+I")
 		case g.y(0) > y:
-			g.press("Ctrl+M")
-		default:
+			keys = append(keys, "Ctrl+M")
+		}
+		if len(keys) == 0 {
+			return
+		}
+		// Across first, or else up or down; stopped by a wall both ways
+		moved := false
+		for _, k := range keys {
+			px, py := g.x(0), g.y(0)
+			g.press(k)
+			if g.x(0) != px || g.y(0) != py {
+				moved = true
+				break
+			}
+		}
+		if !moved {
 			return
 		}
 	}
@@ -1108,7 +1161,7 @@ func (g *roGame) collect() {
 			g.chase(roWhite)
 		}
 		g.chase(roBlue)
-		g.dropAt(60, 100)
+		g.dropAt(58, 48)
 		g.leave()
 		g.leave()
 	}
@@ -1127,3 +1180,272 @@ const (
 	roTokenSensor = 0x13
 	roDirection   = 0x0F
 )
+
+// roRobotTable is the table of the robots, $8DCD, 26 bytes each, orange,
+// white and blue: their parts, the state of their thrusters, bumpers and
+// grabber, the level of their battery and their switch
+const roRobotTable = 0x8DCD
+
+// robotByte is a byte of the entry of a robot in roRobotTable
+func (g *roGame) robotByte(robot, offset int) int {
+	i := map[int]int{roOrange: 0, roWhite: 1, roBlue: 2}[robot]
+	return int(g.o.Apple2().Peek(uint16(roRobotTable + 26*i + offset)))
+}
+
+// battery is the level of the battery of a robot, 0 to 15
+func (g *roGame) battery(robot int) int { return g.robotByte(robot, 24) }
+
+// switchedOn says whether the switch of a robot is on
+func (g *roGame) switchedOn(robot int) bool { return g.robotByte(robot, 25) != 0 }
+
+// setSwitch turns the switch of the robot the player is in on or off, if it
+// is not so already
+func (g *roGame) setSwitch(on bool) {
+	robot := roRobotOf[g.room(0)]
+	for range 3 {
+		if g.switchedOn(robot) == on {
+			return
+		}
+		g.switchRobot()
+		g.o.Run(30)
+	}
+	if g.switchedOn(robot) != on {
+		g.t.Fatalf("the switch of robot %02X is not %v", robot, map[bool]string{true: "on", false: "off"}[on])
+	}
+}
+
+/*
+recharge passes the energy crystal the player carries over the battery of
+the robot the player is in, at its lower left, until it is full. A battery
+takes it only when dead: until then it runs down, as it does with time.
+*/
+func (g *roGame) recharge() {
+	robot := roRobotOf[g.room(0)]
+	for range 10 {
+		for y := 28; y <= 52; y += 2 {
+			for x := 12; x <= 36; x += 2 {
+				g.moveCarried(x, y)
+				if g.battery(robot) == 15 {
+					return
+				}
+			}
+		}
+	}
+	g.t.Fatalf("the battery of robot %02X is at %d, not charged", robot, g.battery(robot))
+}
+
+// pen turns the cursor into the Solderpen, S
+func (g *roGame) pen() {
+	must(g.t, g.o.Type("S"))
+	g.o.Run(10)
+}
+
+// cursor turns the Solderpen back into the cursor, C
+func (g *roGame) cursor() {
+	for range 5 {
+		must(g.t, g.o.Type("C"))
+		g.o.Run(10)
+		if g.peek(0x100) == 0x00 {
+			return
+		}
+	}
+	g.t.Fatalf("the Solderpen is not back to the cursor, sprite %02X", g.peek(0x100))
+}
+
+// solder takes the Solderpen to a pin, at x,y, and presses Space there once
+// its tip glows, there or a little round it: a wire starts or ends there, or
+// goes if the pin has one
+func (g *roGame) solder(x, y int) {
+	for r := 0; r <= 6; r += 2 {
+		for dy := -r; dy <= r; dy += 2 {
+			for dx := -r; dx <= r; dx += 2 {
+				if max(abs(dx), abs(dy)) != r {
+					continue
+				}
+				g.stand(x+dx, y+dy)
+				if g.peek(0x200+0xFE) == 0x05 {
+					g.press(" ")
+					return
+				}
+			}
+		}
+	}
+	g.t.Fatalf("the Solderpen does not glow round %d,%d", x, y)
+}
+
+// wire solders a wire from an output to an input, at their pins
+func (g *roGame) wire(from, to [2]int) {
+	g.solder(from[0], from[1])
+	g.solder(to[0], to[1])
+}
+
+// pickRobotBelow picks up a robot from under it, coming up a unit at a time
+// with Space after each, as in a corridor no wider than it
+func (g *roGame) pickRobotBelow(obj int) { g.pickRobotVertical(obj, 2, "Ctrl+I") }
+
+// pickRobotAbove picks up a robot from over it, coming down
+func (g *roGame) pickRobotAbove(obj int) { g.pickRobotVertical(obj, -2, "Ctrl+M") }
+
+// pickRobotVertical picks up a robot from two rows under or over it, a unit
+// at a time with Space after each
+func (g *roGame) pickRobotVertical(obj, rows int, move string) {
+	robot := g.objectTile(obj)
+	g.goTo(roTile{robot.room, robot.col, robot.row + rows})
+	for range 40 {
+		g.press(" ")
+		if g.carried() == obj {
+			return
+		}
+		if g.carried() >= 0 {
+			g.press(" ")
+		}
+		g.press(move)
+		if g.place() != robot.room {
+			g.t.Fatalf("the player went into the robot %02X instead of picking it up", obj)
+		}
+	}
+	g.t.Fatalf("could not pick up robot %02X from %d rows off", obj, rows)
+}
+
+/*
+turnstile puts the token the player carries into the slot of the turnstile
+of the Subway, room 38, and takes the player through the turnstile as it
+turns for a few seconds after: a cross that is a + and an X by turns. The
+token held a unit to the left and two up, it goes in with the player on the
+grid, five steps left and two up from its corner at the bottom right; a step
+left as it is an X, another, and the player is out at the bottom left. The
+keys are typed as fast as the game reads them, for it does not turn long. A
+robot put down just above the fifth step, its bottom at 30, is picked up on
+the way, when not -1.
+*/
+func (g *roGame) turnstile(robot int) {
+	const room = 0x38
+	key := func(k string) { must(g.t, g.o.Type(k)) }
+	g.moveCarried(76, 18)
+	if g.x(0) != 77 || g.y(0) != 16 {
+		g.t.Fatalf("the player is at %d,%d with the token in the slot, not 77,16", g.x(0), g.y(0))
+	}
+	key(" ")
+	for _, k := range "JJJJJ" {
+		key(string(k))
+	}
+	if robot >= 0 {
+		// A robot waiting just above, picked up on the way
+		key(" ")
+		g.o.Run(2)
+		if g.carried() != robot {
+			g.t.Fatalf("the robot %02X was not picked up at the turnstile, the player at %d,%d", robot, g.x(0), g.y(0))
+		}
+	}
+	// Up and through, a step whenever the next tile is free then
+	steps := []struct {
+		key      string
+		col, row int
+	}{{"I", 6, 9}, {"I", 6, 8}, {"J", 5, 8}, {"J", 4, 8}, {"J", 3, 8}, {"J", 2, 8}}
+	for range 8 * operator.FramesPerSecond {
+		at := roTile{g.room(0), g.x(0) / 7, 11 - g.y(0)/16}
+		if at.room != room {
+			g.t.Fatalf("the player left the turnstile for room %02X", at.room)
+		}
+		if at.col <= 2 {
+			return
+		}
+		next := -1
+		for i, st := range steps {
+			if st.col == at.col && st.row == at.row && i+1 < len(steps) {
+				next = i + 1
+			}
+		}
+		if at.col == 6 && at.row == 10 {
+			next = 0
+		}
+		if next >= 0 && g.x(0)%7 == 0 && g.y(0)%16 == 0 && !g.wall(room, steps[next].col, steps[next].row) {
+			key(steps[next].key)
+			continue
+		}
+		g.o.Run(1)
+	}
+	g.t.Fatalf("the player did not get through the turnstile, at %d,%d", g.x(0), g.y(0))
+}
+
+// mapRoom takes the picture of the room of the player for the map, the
+// first time it is there, at the second key pressed in it
+func (g *roGame) mapRoom() {
+	if g.mapAlbum == nil {
+		return
+	}
+	r := g.room(0)
+	if r >= 0x40 || roRobotOf[r] != 0 {
+		return
+	}
+	if _, ok := g.rooms[r]; ok {
+		return
+	}
+	if g.mapPending != r {
+		g.mapPending = r
+		return
+	}
+	if g.rooms == nil {
+		g.rooms = map[int]image.Image{}
+	}
+	g.rooms[r] = g.mapAlbum.Screen(g.o)
+}
+
+// regripAt puts down what the player carries and takes it again, dx,dy
+// from the player
+func (g *roGame) regripAt(dx, dy int) {
+	obj := g.carried()
+	g.press(" ")
+	g.stand(g.x(obj)-dx, g.y(obj)-dy)
+	g.press(" ")
+	if g.carried() != obj {
+		g.t.Fatalf("could not take %02X again, the player at %d,%d", obj, g.x(0), g.y(0))
+	}
+}
+
+// climb takes the player up a staircase whose steps come and go: a step
+// right or up whenever the tile there is free, on the grid, until it is as
+// high as top, or for some seconds
+func (g *roGame) climb(seconds, top int) {
+	room := g.room(0)
+	for range seconds * operator.FramesPerSecond {
+		if g.y(0) >= top {
+			g.run(operator.FramesPerSecond / 2)
+			return
+		}
+		col, row := g.x(0)/7, 11-g.y(0)/16
+		if g.x(0)%7 == 0 && g.y(0)%16 == 0 {
+			if col < 19 && !g.wall(room, col+1, row) {
+				g.press("K")
+				continue
+			}
+			if row > 0 && !g.wall(room, col, row-1) {
+				g.press("I")
+				continue
+			}
+		}
+		g.run(1)
+	}
+}
+
+// transport takes the player over each unit of a box, row by row, until
+// the world changes, as a transporter takes it to the next level
+func (g *roGame) transport(x0, y0, x1, y1 int) {
+	rooms := func() string {
+		var r []byte
+		for i := 1; i < 0x100; i++ {
+			r = append(r, byte(g.peek(0x300+i)))
+		}
+		return string(r)
+	}
+	start := rooms()
+	for y := y0; y <= y1; y++ {
+		for x := x0; x <= x1; x++ {
+			g.stand(x, y)
+			if rooms() != start {
+				return
+			}
+		}
+	}
+	g.t.Fatalf("no transporter between %d,%d and %d,%d", x0, y0, x1, y1)
+}

@@ -330,6 +330,15 @@ and wire. Its first level played to the transporter, with the three robots
 of the Sewer fetching a magnet and a crystal past the guards, and the white
 one riding through the sewer grate.
 
+### [Robot Odyssey, level 2: the Subway](guides/robotodyssey-subway.md)
+
+[<img src="guides/images/robotodyssey-subway/train.gif" width="320" alt="The blue robot calls the train">](guides/robotodyssey-subway.md)
+
+The second level, played on from the first: the blue robot rewired with the
+Solderpen to fetch the token of the subway, the exit ticket and the token
+again, the turnstile, the train round its eight stations, and the escalator
+to the Streets.
+
 ### [The Wizard and the Princess, from the start to the end](guides/wizard.md)
 
 [<img src="guides/images/wizard/0001.png" width="320" alt="The village of Serenia">](guides/wizard.md)
