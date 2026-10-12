@@ -35,8 +35,13 @@ two rooms has the magnet and which the crystal, so each is looked for where
 it is.
 */
 func robotOdysseySewerScreenshots(t *testing.T) {
-	pictures := newAlbum("robotodyssey-sewer", album.Color)
 	o := start(t, robotOdysseyMachine, nil)
+	roSewer(t, o, newAlbum("robotodyssey-sewer", album.Color))
+}
+
+// roSewer plays the Sewer to the Subway, its pictures into an album, and
+// gives the game to go on with
+func roSewer(t *testing.T, o *operator.Operator, pictures *album.Album) *roGame {
 	g := &roGame{t: t, o: o, target: -1}
 	// A picture once the screen is drawn: a room takes a moment
 	shot := func(name string) {
@@ -264,7 +269,7 @@ func robotOdysseySewerScreenshots(t *testing.T) {
 	g.goToRoom(0x2A)
 	shot("transporter")
 	rooms[0x2A] = pictures.Screen(o)
-	must(t, roMap(pictures, rooms))
+	must(t, roMap(pictures, rooms, roMapPlaces, 10, 6))
 	g.record(pictures, 1)
 	g.goTo(roTile{0x2A, 4, 9})
 	g.stand(38, 24)
@@ -278,6 +283,7 @@ func robotOdysseySewerScreenshots(t *testing.T) {
 			t.Errorf("%02X is in room %02X, not in a robot, in the Subway", obj, g.room(obj))
 		}
 	}
+	return g
 }
 
 /*
@@ -315,12 +321,13 @@ var roMapPlaces = map[int][2]int{
 }
 
 // roMap puts the pictures of the rooms together, each a third of its size,
-// in their places on the map of the Sewer, and writes it as map.png
-func roMap(pictures *album.Album, rooms map[int]image.Image) error {
+// in their places on the map of a level, columns and rows, and writes it as
+// map.png
+func roMap(pictures *album.Album, rooms map[int]image.Image, places map[int][2]int, cols, rows int) error {
 	const w, h, gap = 560 / 3, 384 / 3, 4
-	m := image.NewRGBA(image.Rect(0, 0, 10*(w+gap)+gap, 6*(h+gap)+gap))
+	m := image.NewRGBA(image.Rect(0, 0, cols*(w+gap)+gap, rows*(h+gap)+gap))
 	xdraw.Draw(m, m.Bounds(), image.NewUniform(color.RGBA{0x40, 0x40, 0x40, 0xFF}), image.Point{}, xdraw.Src)
-	for room, place := range roMapPlaces {
+	for room, place := range places {
 		screen, ok := rooms[room]
 		if !ok {
 			continue
