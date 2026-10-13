@@ -243,5 +243,5 @@ grey were not passed this time.
 
 ## What next
 
-[The Sewer](robotodyssey-sewer.md), the first level, if you came here
-first.
+[The Streets](robotodyssey-streets.md), the third level, or
+[the Sewer](robotodyssey-sewer.md), the first, if you came here first.

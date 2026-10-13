@@ -339,6 +339,15 @@ Solderpen to fetch the token of the subway, the exit ticket and the token
 again, the turnstile, the train round its eight stations, and the escalator
 to the Streets.
 
+### [Robot Odyssey, level 3: the Streets](guides/robotodyssey-streets.md)
+
+[<img src="guides/images/robotodyssey-streets/form.gif" width="320" alt="Two robots take the Form-12 out of the vending machine">](guides/robotodyssey-streets.md)
+
+The third level, played on from the second: a coin caught in a maze of
+magnetic storms, the elevator, a vending machine worked by two robots, the
+sentry's two buttons, a robot that finds the button of a room the player
+cannot enter, and the Official Gatekeeper.
+
 ### [The Wizard and the Princess, from the start to the end](guides/wizard.md)
 
 [<img src="guides/images/wizard/0001.png" width="320" alt="The village of Serenia">](guides/wizard.md)
