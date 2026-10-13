@@ -66,8 +66,13 @@ them.
 */
 func robotOdysseySubwayScreenshots(t *testing.T) {
 	o := start(t, robotOdysseyMachine, nil)
+	roSubway(t, o, newAlbum("robotodyssey-subway", album.Color))
+}
+
+// roSubway plays the Sewer, without pictures, and the Subway, its pictures
+// into an album, up to the Streets
+func roSubway(t *testing.T, o *operator.Operator, pictures *album.Album) *roGame {
 	g := roSewer(t, o, album.New(t.TempDir(), album.Color))
-	pictures := newAlbum("robotodyssey-subway", album.Color)
 	g.mapAlbum = pictures
 	shot := func(name string) {
 		o.Run(30)
@@ -399,4 +404,5 @@ func robotOdysseySubwayScreenshots(t *testing.T) {
 			t.Errorf("%02X is in room %02X, not in a robot, in the Streets", obj, g.room(obj))
 		}
 	}
+	return g
 }
