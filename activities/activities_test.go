@@ -28,6 +28,7 @@ var activities = []struct {
 	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires}, cassettesScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
 	{"apple-iie-models", []string{iieOriginal, iieEnhanced}, iieModelsScreenshots},
+	{"applecorn", []string{applecornMachine}, applecornScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
 	{"appleworks", []string{appleWorksMachine}, appleWorksScreenshots},
 	{"base64a", []string{base64aMachine, base64aDOS}, base64aScreenshots},
@@ -166,6 +167,13 @@ func TestOrder(t *testing.T) {
 var listings = []struct {
 	guide, listing string
 }{
+	{"applecorn", roseListing},
+	{"applecorn", stepsListing},
+	{"applecorn", hanoiListing},
+	{"applecorn", fibonacciListing},
+	{"applecorn", familyListing},
+	{"applecorn", sieveListing},
+	{"applecorn", triangleListing},
 	{"applesoft-snake", snakeListing},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
