@@ -245,7 +245,7 @@ it takes from the card.
 
 ### [Forth in ROM](guides/forth.md)
 
-[<img src="guides/images/forth/bars.gif" width="320" alt="The sixteen colours drawn by Forth">](guides/forth.md)
+[<img src="guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](guides/forth.md)
 
 An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
 words used and new ones defined, loops and decisions, and the machine
