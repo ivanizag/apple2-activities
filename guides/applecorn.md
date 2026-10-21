@@ -3,9 +3,9 @@
 [Back to the activities](../README.md)
 
 The BBC Micro, made by Acorn for the computer literacy project of the BBC in
-1981, was the computer of British schools in the eighties. Like the Apple II
-it had a 6502, at 2 MHz, but its languages did not talk to the hardware:
-they came in ROMs of 16 KB, and asked the *MOS*, the operating system in
+1981, was the computer of British schools in the eighties. It had a 6502, as
+the Apple II, but at 2 MHz, twice as fast, and its languages did not talk to
+the hardware: they came in ROMs of 16 KB, and asked the *MOS*, the operating system in
 another ROM, for everything, a character written, a key read, a line drawn,
 a file opened, through a few calls Acorn documented. Acornsoft, Acorn's
 publisher, sold languages that way: BBC BASIC was in every machine, and
@@ -14,8 +14,12 @@ processor View, were among the ROMs to plug in.
 
 Applecorn, written by Bobbi Webber-Manners and others from 2021, is that MOS
 for the Apple II: a ProDOS program for the enhanced //e, which loads a ROM
-of the BBC into the auxiliary memory, unchanged, and answers its calls with
-the screen, the keyboard and the disks of the Apple. This page starts it, and
+of the BBC into the auxiliary memory, unchanged, and takes the calls the ROM
+makes to the MOS. Applecorn translates each into what does the same on the
+Apple: a character written goes to the text screen of the //e, a line drawn
+to its high resolution graphics, a key read to its keyboard, and a file
+opened, read or saved to the calls of ProDOS, so that the files of the
+languages are files of ProDOS on its disks. This page starts it, and
 writes a small program in each of its languages: four roses drawn by BBC
 BASIC in the colours of the Apple, and in the others a sequence of numbers,
 a puzzle, a family tree, the primes, and Pascal's triangle, compiled where
@@ -151,7 +155,7 @@ izapple2 -model 2enh -screen green disks/applecorn-0.54-beta.po
    ![Bitsy Bye](images/applecorn/bitsy-bye.png)
 
    **Press the down arrow once**, to `APLCORN.SYSTEM`, and **Return**: the
-   menu comes back. The pages that follow choose a language from it, and
+   menu comes back. The steps that follow choose a language from it, and
    leave it the same way, each language with its own way of giving a command
    to the MOS.
 
@@ -404,11 +408,20 @@ izapple2 -model 2enh -screen green disks/applecorn-0.54-beta.po
     for Shift for the next, which on Applecorn is Open Apple, the left Alt
     or Option key: **hold Open Apple**, twice, to get back to `=>`.
 
-    **Type `*QUIT`**, and in Bitsy Bye **the down arrow** and **Return**.
+16. **Type `SAVE ESSAY`**, and then **`*QUIT`**. View asks the MOS to save
+    the text in the file `ESSAY`, and Applecorn makes it a file of ProDOS, in
+    the top folder of the disk of Applecorn, the current one. In Bitsy
+    Bye, **press `E`**, which goes to the first name that starts with it.
+
+    ![The text saved, in Bitsy Bye](images/applecorn/view-saved.png)
+
+    `ESSAY` is there with the other files of the disk, a `B`, binary, for
+    ProDOS, as are the ROMs. **Press `A`**, which goes to `APLCORN.SYSTEM`,
+    and **Return**.
 
 ## All seven at once
 
-16. **Press `8`**, which loads the seven languages, eight ROMs, as the
+17. **Press `8`**, which loads the seven languages, eight ROMs, as the
     sideways ROMs of a BBC Micro, BASIC first. **Type `*HELP`**, which asks
     each ROM to say what it is, then **`*COMAL`** and **`*BASIC`**.
 
