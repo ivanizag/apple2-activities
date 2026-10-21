@@ -304,6 +304,15 @@ The adventure of Sierra On-Line after the film of Jim Henson, of 1982, on
 four sides of two diskettes: Jen, a Gelfling, heals the Dark Crystal.
 Played to its end, a picture of the screen after each command.
 
+### [Flight Simulator II over Chicago](guides/flight-simulator.md)
+
+[<img src="guides/images/flight-simulator/runway.png" width="320" alt="On the runway at Meigs Field">](guides/flight-simulator.md)
+
+subLOGIC's simulator of 1984, from its original disk: the demonstration that
+flies itself, the views and the radar on the runway of Meigs Field, the
+editor, a take-off past the towers of Chicago, a dive into Lake Michigan,
+and the runway at night.
+
 ### [Karateka](guides/karateka.md)
 
 [<img src="guides/images/karateka/castle.png" width="320" alt="The fortress of Akuma">](guides/karateka.md)
