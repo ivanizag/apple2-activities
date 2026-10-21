@@ -15,8 +15,7 @@ the note went on with the steps, from taking the board out of its case. The
 later boards have it: with the eighth bit set, violet and green are blue and
 orange.
 
-This page paints the high resolution graphics in bands, with the eighth bit
-and without it, on a first Apple \]\[ and on one of a later board, and looks
+This page paints the high resolution graphics in a band of each colour, on a first Apple \]\[ and on one of a later board, and looks
 at the dots of the later one on a green monitor, where the colours are gone
 and the shift is left.
 
@@ -59,25 +58,29 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
    Monitor, with its prompt, `*`. **Press Control-B and Return** for Integer
    BASIC, with its prompt, `>`.
 
-2. **Type this program**, which paints the high resolution graphics in four
-   bands, the last two with the eighth bit set:
+2. **Type this program**, which paints the high resolution graphics in six
+   bands: white, black, and four of colour, the last two with the eighth bit
+   set:
 
    ```basic
    10 POKE -16304,0: POKE -16297,0: POKE -16302,0
    20 FOR C=0 TO 119
-   30 B=C MOD 40/10:V=85: IF B MOD 2#C MOD 2 THEN V=42
-   40 IF B>1 THEN V=V+128
-   50 FOR A=8192+C TO 16383 STEP 128: POKE A,V: NEXT A
-   60 NEXT C
-   70 END
+   30 B=(C MOD 40)*6/40:V=85: IF B MOD 2#C MOD 2 THEN V=42
+   40 IF B>3 THEN V=V+128
+   50 IF B=0 THEN V=127
+   60 IF B=1 THEN V=0
+   70 FOR A=8192+C TO 16383 STEP 128: POKE A,V: NEXT A
+   80 NEXT C
+   90 END
    ```
 
    The `POKE`s of line 10 switch the screen to the high resolution graphics,
    all of it, with no lines of text. The screen is 8 KB of memory from 8192,
    in blocks of 128 bytes, each with three lines of 40 bytes. `C` goes
-   through the 120 bytes of a block and `B` is its band, of 10 bytes. `85`
-   and `42` alternate the dots so that the band is of a colour, and `128`
-   is the eighth bit. Line 50 puts the byte in its place in each of the 64
+   through the 120 bytes of a block and `B` is its band, of 6 or 7 bytes.
+   `85` and `42` alternate the dots so that the band is of a colour, and
+   `128` is the eighth bit; `127` lights all seven dots of a byte, white,
+   and `0` none, black. Line 70 puts the byte in its place in each of the 64
    blocks. It is also in this repository,
    [listings/colours.bas](listings/colours.bas).
 
@@ -85,7 +88,8 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 
    ![The colours of the Revision 0](images/six-colours/revision-0.png)
 
-   Violet, green, violet and green: the eighth bit changes nothing.
+   White and black, then violet, green, violet and green: the eighth bit
+   changes nothing.
 
 ## Six colours
 
@@ -94,23 +98,23 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 
    ![The colours of a later board](images/six-colours/revision-1.png)
 
-   Violet, green, blue and orange, and black and white: the six colours of
-   the high resolution graphics of every Apple \]\[ since.
+   White, black, violet, green, blue and orange: the six colours of the high
+   resolution graphics of every Apple \]\[ since.
 
 5. **Press F6** for the green monitor, which shows the dots and not their
    colours:
 
-   ![The dots of the four bands](images/six-colours/revision-1-green.png)
+   ![The dots of the six bands](images/six-colours/revision-1-green.png)
 
-   The four bands are alike, every other dot lit; from violet to green they
-   move by one dot. What the eighth bit does is to show the seven dots of
+   White is every dot lit and black none. The four bands of colour are
+   alike, every other dot lit; from violet to green they move by one dot. What the eighth bit does is to show the seven dots of
    its byte half a dot later.
    The television sees a colour in where the dots fall against its colour
    signal, which turns once in every two dots: half a dot later is a quarter
    of a turn, the "90 degree phase shift" of Wozniak's note, and two other
-   colours. Where the third band starts, the last dot of the second, lit,
-   runs on into the half dot until the first of the third, in a line wider
-   than the rest.
+   colours. Where blue starts, the last dot of green, unlit, runs on into
+   the half dot until the first of blue, unlit too, in a line of black
+   wider than the rest.
 
 ## What next
 
