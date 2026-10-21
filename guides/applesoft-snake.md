@@ -151,5 +151,7 @@ izapple2 -model 2plus -screen color -s6 empty
 
 ## What next
 
+**Next:** [Assembly language with Merlin](merlin.md).
+
 [A game in Applesoft](paddle-game.md) is the other game typed in on these
 pages, played with the paddle.

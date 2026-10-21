@@ -104,5 +104,8 @@ izapple2 -model 2plus -screen color disks/Karateka.woz
 
 ## What next
 
-[Lode Runner](lode-runner.md) is the other game of Brøderbund on these
+**Next:** [Lode Runner](lode-runner.md), the other game of Brøderbund on these
 pages, from the year before.
+
+[Robot Odyssey](robotodyssey-sewer.md) is another game of 1984 on these
+pages, all thought where this one is all action.

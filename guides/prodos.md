@@ -159,5 +159,7 @@ izapple2 -model prodos -screen green
 
 ## What next
 
-[Life with DOS 3.3](dos33.md) is the system ProDOS replaced, and
-[Apple II DeskTop](desktop.md) runs on ProDOS, from a hard disk.
+**Next:** [Apple II DeskTop](desktop.md), which runs on ProDOS, from a hard
+disk.
+
+[Life with DOS 3.3](dos33.md) is the system ProDOS replaced.

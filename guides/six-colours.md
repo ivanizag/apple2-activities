@@ -118,6 +118,8 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
 
 ## What next
 
+**Next:** [Switch on an Apple \]\[+](switch-on.md).
+
 [The Apple \]\[ and its cassettes](apple-ii-cassettes.md) loads the
 demonstrations of the high resolution graphics from their tape into a first
 Apple \]\[, and [The Apple \]\[ of 1977](apple-ii.md) goes through the

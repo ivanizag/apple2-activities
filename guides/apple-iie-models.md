@@ -128,6 +128,8 @@ of the Platinum //e.
 
 ## What next
 
+**Next:** [Life with DOS 3.3](dos33.md).
+
 [Switch on an Apple //e](apple-iie.md) goes on with the enhanced //e, its
 80 columns and its self test, and [Apple II DeskTop](desktop.md) builds its
 windows of MouseText.

@@ -171,6 +171,8 @@ izapple2 -model base64a -screen green
 
 ## What next
 
-[The Basis 108](basis108.md) is another copy, from Germany, with 80
-columns built in, [Switch on an Apple \]\[+](switch-on.md) the machine it
-copied, and [Printing](printing.md) prints from Applesoft on the same card.
+**Next:** [The Basis 108, an Apple \]\[+ from Germany](basis108.md), another
+copy, with 80 columns built in.
+
+[Switch on an Apple \]\[+](switch-on.md) is the machine it copied, and
+[Printing](printing.md) prints from Applesoft on the same card.

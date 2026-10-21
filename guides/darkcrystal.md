@@ -675,5 +675,7 @@ izapple2 -model 2plus 'disks/The Dark Crystal (4am and san inc crack) disk 1A.ds
 
 ## What next
 
+**Next:** [Karateka](karateka.md).
+
 [Time Zone](timezone.md) is the biggest of the adventures of Sierra On-Line
 on the Apple \]\[, and [Mystery House](mysteryhouse.md) the first.

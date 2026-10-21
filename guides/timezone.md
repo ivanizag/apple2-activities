@@ -4915,6 +4915,8 @@ izapple2 -model 2plus 'disks/Time Zone (4am and san inc crack) disk A.dsk'
 
 ## What next
 
+**Next:** [Ulysses and the Golden Fleece, from the start to the end](ulysses.md).
+
 [Karateka](karateka.md) is another game of the Apple \]\[ played on this
 machine, and [Life with DOS 3.3](dos33.md) shows the system the disks of
 Time Zone are written in.

@@ -181,6 +181,8 @@ has both.
 
 ## What next
 
+**Next:** [The Mockingboard](mockingboard.md).
+
 [AppleWorks](appleworks.md) is the other way to write a letter on the //e,
 with menus and files, and [The Apple //e](apple-iie.md) the machine the
 card takes over.

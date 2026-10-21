@@ -90,5 +90,7 @@ izapple2 -screen green -s1 parallel -s5 thunderclock -s7 mouse cardcat
 
 ## What next
 
+**Next:** [Sixteen fonts on the //e: the ROMXce](romx.md).
+
 [Apple II DeskTop](desktop.md) uses the mouse card of slot 4, and
 [The Mockingboard](mockingboard.md) the sound card of slot 4.

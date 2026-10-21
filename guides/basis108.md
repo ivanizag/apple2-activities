@@ -122,6 +122,8 @@ they are; what changes is how they look.
 
 ## What next
 
+**Next:** [Cranston Manor, from the start to the end](cranston.md).
+
 [The Base 64A](base64a.md) is another copy, from Taiwan, with a word
 processor in its ROM, and [Switch on an Apple \]\[+](switch-on.md) the
 machine both copied.

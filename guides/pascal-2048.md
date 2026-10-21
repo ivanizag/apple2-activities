@@ -381,5 +381,7 @@ izapple2 -model pascal -screen green
 
 ## What next
 
+**Next:** [A game in Applesoft: the snake](applesoft-snake.md).
+
 [CP/M on the Z80 SoftCard](cpm.md) has Microsoft's BASIC, the other way
 of writing programs for business on the Apple II.

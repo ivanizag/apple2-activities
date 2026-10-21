@@ -163,5 +163,7 @@ izapple2 -model ultraterm -screen green
 
 ## What next
 
+**Next:** [The RGB card and its fourteen video modes](rgb-card.md).
+
 [CP/M on the Z80 SoftCard](cpm.md) runs on an Apple \]\[+ too, and its
 programs were written for terminals of 80 columns.

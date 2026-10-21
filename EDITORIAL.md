@@ -119,7 +119,10 @@ step, with what the machine showed on the way. Its parts are:
   the machine everything that can be checked: sizes, names, what is on the
   screen.
 - **Say when a recording is faster than the machine**, and how much.
-- **End with "What next"**, linking to another page.
+- **End with "What next"**: first `**Next:**` and a link to the page after
+  this one in [README.md](README.md), so that the pages can be read in its
+  order, the last saying it is the last; then the pages related to this one.
+  `TestWhatNext` checks the first link.
 
 ## Pictures
 

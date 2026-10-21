@@ -138,5 +138,7 @@ izapple2 -model 2 -screen green
 
 ## What next
 
+**Next:** [The Apple \]\[ and its cassettes](apple-ii-cassettes.md).
+
 [Switch on an Apple \]\[+](switch-on.md) is the machine two years later,
 with Applesoft in place of Integer BASIC.

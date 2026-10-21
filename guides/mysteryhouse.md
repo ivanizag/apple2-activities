@@ -657,5 +657,7 @@ izapple2 -model 2plus 'disks/Mystery House (4am crack).dsk'
 
 ## What next
 
+**Next:** [Robot Odyssey, level 1: the Sewer](robotodyssey-sewer.md).
+
 [Time Zone](timezone.md) is the fifth of the Hi-Res Adventures, the biggest,
 on twelve sides of diskettes.

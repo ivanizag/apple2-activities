@@ -149,6 +149,8 @@ izapple2 -screen color -rgb "disks/Video-7 Apple II RGB Demo (Video-7, Inc.)(198
 
 ## What next
 
+**Next:** [A megabyte on a card: the Memory Expansion Card](memory-expansion.md).
+
 [Apple II DeskTop](desktop.md) uses the mode 11 for its whole screen, and
 [Forth in ROM](forth.md) draws the sixteen colours of the low resolution
 graphics a byte at a time.

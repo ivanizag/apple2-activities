@@ -104,6 +104,33 @@ func TestMachines(t *testing.T) {
 	}
 }
 
+/*
+TestWhatNext checks that the "What next" of each page in the README starts
+with the page after it there, so that the pages can be read in that order,
+and the last with the README
+*/
+func TestWhatNext(t *testing.T) {
+	readme, err := os.ReadFile("../README.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+	pages := regexp.MustCompile(`(?m)^### (\[.*\])\(guides/(.*)\)$`).FindAllStringSubmatch(string(readme), -1)
+	for i, p := range pages {
+		next := "**Next:** this is the last of [the activities](../README.md)."
+		if i+1 < len(pages) {
+			next = "**Next:** " + pages[i+1][1] + "(" + pages[i+1][2] + ")"
+		}
+		page, err := os.ReadFile(filepath.Join("../guides", p[2]))
+		if err != nil {
+			t.Fatal(err)
+		}
+		_, whatNext, _ := strings.Cut(string(page), "\n## What next\n\n")
+		if !strings.HasPrefix(whatNext, next) {
+			t.Errorf("the What next of %v does not start with %v", p[2], next)
+		}
+	}
+}
+
 // TestOrder checks that the activities, their listings and the disks are in
 // the order of their names, so that two pull requests adding to them add in
 // different places and don't conflict

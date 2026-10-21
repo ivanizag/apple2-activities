@@ -153,5 +153,7 @@ izapple2 -model 2plus -screen green "disks/Apple LOGO.dsk"
 
 ## What next
 
+**Next:** [Printing](printing.md).
+
 [Apple Pascal](pascal.md) has a turtle too, in its unit `TURTLEGRAPHICS`,
 for programs that are compiled.

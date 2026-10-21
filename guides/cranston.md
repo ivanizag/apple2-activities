@@ -1004,5 +1004,7 @@ izapple2 -model 2plus 'disks/Cranston Manor (4am and san inc crack).dsk'
 
 ## What next
 
+**Next:** [The Dark Crystal, from the start to the end](darkcrystal.md).
+
 [Mystery House](mysteryhouse.md) is another house to search, the first of
 the Hi-Res Adventures.
