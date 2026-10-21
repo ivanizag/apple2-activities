@@ -32,8 +32,8 @@ applecornScreenshots is an enhanced Apple //e running Applecorn, the
 operating system of the BBC Micro on ProDOS: its menu of the language ROMs of
 the BBC, and a program in each, the roses of BBC BASIC drawn in colour, COMAL,
 Lisp, Forth, micro-PROLOG, BCPL compiled, ISO-Pascal edited and compiled, and
-a text in the View word processor; between them, *QUIT to the program
-selector of ProDOS and back to the menu. Then the seven languages loaded at
+a text in the View word processor, saved and seen in Bitsy Bye; between
+them, *QUIT to the program selector of ProDOS and back to the menu. Then the seven languages loaded at
 once, as sideways ROMs.
 */
 func applecornScreenshots(t *testing.T) {
@@ -175,7 +175,23 @@ func applecornScreenshots(t *testing.T) {
 		o.RunSeconds(1)
 	}
 	must(t, o.WaitForKeyboard(10))
-	quitTo(t, o, "*QUIT")
+
+	// The text saved in a file of ProDOS, which Bitsy Bye lists: E goes to
+	// the first name that starts with it, the only one, and A to
+	// APLCORN.SYSTEM
+	must(t, o.TypeLines("SAVE ESSAY"))
+	must(t, o.WaitForPrompt(30))
+	must(t, o.TypeLines("*QUIT"))
+	must(t, o.WaitForText("BITSY  BYE", 30))
+	must(t, o.WaitForKeyboard(10))
+	must(t, o.Type("E"))
+	must(t, o.WaitForText("ESSAY", 10))
+	must(t, o.WaitForKeyboard(10))
+	must(t, pictures.Screenshot(o, "view-saved"))
+	must(t, o.Type("A"))
+	must(t, o.WaitForKeyboard(10))
+	must(t, o.Key("Return"))
+	waitForApplecornMenu(t, o)
 
 	// The seven languages at once, as sideways ROMs, and from one to another
 	chooseROM(t, o, "8")
