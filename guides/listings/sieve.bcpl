@@ -1,0 +1,15 @@
+GET "LIBHDR"
+LET START() BE
+$( LET SIEVE = VEC 100
+   FOR I = 2 TO 100 DO SIEVE!I := TRUE
+   FOR I = 2 TO 100 DO
+      IF SIEVE!I DO
+      $( LET J = I * I
+         WRITEF("%N ", I)
+         WHILE J <= 100 DO
+         $( SIEVE!J := FALSE
+            J := J + I
+         $)
+      $)
+   NEWLINE()
+$)

@@ -136,7 +136,7 @@ izapple2 -model cpm -screen green
 
 ## What next
 
-**Next:** [The Base 64A, an Apple \]\[+ from Taiwan](base64a.md).
+**Next:** [The languages of the BBC Micro on a //e: Applecorn](applecorn.md).
 
 [Apple Pascal](pascal.md) is another system that brought its own world to
 the Apple II, the p-System of the University of California.

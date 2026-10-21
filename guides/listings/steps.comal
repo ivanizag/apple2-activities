@@ -1,0 +1,14 @@
+10 // How a number comes down to 1
+20 FOR n:=6 TO 9 DO steps(n)
+30 END
+40 PROC steps(n) CLOSED
+50   WHILE n<>1 DO
+60     PRINT STR$(n);" ";
+70     IF n MOD 2=0 THEN
+80       n:=n DIV 2
+90     ELSE
+100       n:=3*n+1
+110     END IF
+120   END WHILE
+130   PRINT "1"
+140 END PROC steps

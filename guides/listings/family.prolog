@@ -1,0 +1,7 @@
+((Parent Anne Bob))
+((Parent Anne Carol))
+((Parent Bob Dave))
+((Parent Bob Emma))
+((Parent Carol Fred))
+((Grandparent x z) (Parent x y) (Parent y z))
+?((Grandparent Anne x) (PP x) FAIL)
