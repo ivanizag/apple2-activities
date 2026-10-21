@@ -25,7 +25,7 @@ var activities = []struct {
 	pictures func(t *testing.T)
 }{
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
-	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires, cassettesRevision1}, cassettesScreenshots},
+	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires}, cassettesScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
 	{"apple-iie-models", []string{iieOriginal, iieEnhanced}, iieModelsScreenshots},
 	{"applesoft-snake", []string{snakeMachine}, snakeScreenshots},
@@ -59,6 +59,7 @@ var activities = []struct {
 	{"robotodyssey-sewer", []string{robotOdysseyMachine}, robotOdysseySewerScreenshots},
 	{"robotodyssey-subway", []string{robotOdysseyMachine}, robotOdysseySubwayScreenshots},
 	{"romx", []string{romxMachine}, romxScreenshots},
+	{"six-colours", []string{sixColoursRevision0, sixColoursRevision1}, sixColoursScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
 	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
 	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
@@ -138,12 +139,12 @@ func TestOrder(t *testing.T) {
 var listings = []struct {
 	guide, listing string
 }{
-	{"apple-ii-cassettes", coloursListing},
 	{"applesoft-snake", snakeListing},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},
 	{"romx", romxListing},
+	{"six-colours", coloursListing},
 	{"thunderclock", clockListing},
 	{"ultraterm", ultratermModes},
 }

@@ -12,15 +12,11 @@ television; the programs Apple sold were on cassettes, and the first ones
 showed what the machine could do: a game, and its colours.
 
 Getting a program in took a minute and some patience: the volume and the
-tone of the recorder had to be right, or the Apple answered `ERR`. And the
-colours were not all there yet. The first boards, *Revision 0*, the first
-6,000 machines, showed four colours in the high resolution graphics: black,
-white, violet and green. In June 1979 Byte printed how to give them two more,
-in Wozniak's own words.
+tone of the recorder had to be right, or the Apple answered `ERR`.
 
 This page loads three of Apple's tapes into a first Apple \]\[, plays
-Breakout, runs the demonstrations of the colour graphics and of the high
-resolution graphics, and shows the colours of the two boards side by side.
+Breakout, and runs the demonstrations of the colour graphics and of the high
+resolution graphics.
 
 ## What you need
 
@@ -38,10 +34,7 @@ as sound files:
 Each comes in a `.zip` of the same name. `./fetch-disks.sh` in this repository
 downloads them into `disks/`, takes the recordings out and checks them.
 
-Wozniak's note is in the
-[Byte of June 1979](https://archive.org/details/byte-magazine-1979-06), on the
-Internet Archive, after Allen Watson's article, from page 60; and Apple's
-manual of its tapes for the Apple \]\[,
+Apple's manual of its tapes for the Apple \]\[,
 [The Apple Tapes](https://www.brutaldeluxe.fr/projects/cassettes/apple/apple_theappletapes_appleii_manual.pdf),
 of 1979, is on Brutal Deluxe.
 
@@ -84,14 +77,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -mods four-colors \
     -tape disks/k7_apple_600201600_highresolutiongraphics.wav
-```
-
-And an Apple \]\[ of a later board, with six colours, and no tape:
-
-```bash
-izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/341-000x_integer.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps
 ```
 
 izapple2 plays the tape when the Apple starts listening to the cassette
@@ -161,59 +146,13 @@ that took half a minute to load comes in a moment.
 
    Each dot of the high resolution graphics is a bit of memory, 280 across
    and 192 down. All of them are violet and green, as everything on a board
-   of Revision 0.
-
-## Six colours
-
-In June 1979 Byte published *More Colors for Your Apple*, by Allen Watson
-III, on how the controls of the television, its tint, gave other colours to
-the high resolution graphics. Wozniak added a note to it. Only seven bits of each byte
-of the high resolution graphics made dots; the eighth did nothing. "A simple
-modification allows the high order bit of each to specify one of two color
-sets by generating a 90 degree phase shift of displayed information", and
-the note went on with the steps, from taking the board out of its case. The
-later boards have it: with the eighth bit set, violet and green are blue and
-orange.
-
-8. **Press Reset**, Control-F2 in izapple2, **Control-B and Return**, and
-   **type this program**, which paints the high resolution graphics in four
-   bands, the last two with the eighth bit set:
-
-   ```basic
-   10 POKE -16304,0: POKE -16297,0: POKE -16302,0
-   20 FOR C=0 TO 119
-   30 B=C MOD 40/10:V=85: IF B MOD 2#C MOD 2 THEN V=42
-   40 IF B>1 THEN V=V+128
-   50 FOR A=8192+C TO 16383 STEP 128: POKE A,V: NEXT A
-   60 NEXT C
-   70 END
-   ```
-
-   The `POKE`s of line 10 switch the screen to the high resolution graphics,
-   all of it, with no lines of text. The screen is 8 KB of memory from 8192,
-   in blocks of 128 bytes, each with three lines of 40 bytes. `C` goes
-   through the 120 bytes of a block and `B` is its band, of 10 bytes. `85`
-   and `42` alternate the dots so that the band is of a colour, and `128`
-   is the eighth bit. Line 50 puts the byte in its place in each of the 64
-   blocks. It is also in this repository,
-   [listings/colours.bas](listings/colours.bas).
-
-   **Type `RUN`.** In about half a minute the bands are painted:
-
-   ![The colours of the Revision 0](images/apple-ii-cassettes/revision-0.png)
-
-   Violet, green, violet and green: the eighth bit changes nothing.
-
-9. **Quit izapple2 and start it with the last command**, an Apple \]\[ of a
-   later board. Control-B, Return, the same program, and `RUN`:
-
-   ![The colours of a later board](images/apple-ii-cassettes/revision-1.png)
-
-   Violet, green, blue and orange, and black and white: the six colours of
-   the high resolution graphics of every Apple \]\[ since.
+   of Revision 0: [From four colours to six](six-colours.md) is how the later
+   boards got two more.
 
 ## What next
 
+[From four colours to six](six-colours.md) shows the colours of the high
+resolution graphics on the first board and on the later ones,
 [The Apple \]\[ of 1977](apple-ii.md) goes through the Monitor, the
 Mini-Assembler and Integer BASIC of the same machine, and
 [A game in Applesoft](paddle-game.md) is a game of bat and ball typed in.
