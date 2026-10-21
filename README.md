@@ -26,12 +26,19 @@ sixteen colours.
 
 ### [The Apple \]\[ and its cassettes](guides/apple-ii-cassettes.md)
 
-[<img src="guides/images/apple-ii-cassettes/revision-1.png" width="320" alt="The six colours of the high resolution graphics">](guides/apple-ii-cassettes.md)
+[<img src="guides/images/apple-ii-cassettes/breakout.gif" width="320" alt="Breakout played">](guides/apple-ii-cassettes.md)
 
 Apple's first programs, loaded from the recordings of their tapes into a
-first Apple \]\[: Breakout played with the paddle, the colour graphics and
-the high resolution graphics demonstrated, and the two colours Wozniak told
-the readers of Byte how to add.
+first Apple \]\[: Breakout played with the paddle, and the colour graphics
+and the high resolution graphics demonstrated.
+
+### [From four colours to six](guides/six-colours.md)
+
+[<img src="guides/images/six-colours/revision-1.png" width="320" alt="The six colours of the high resolution graphics">](guides/six-colours.md)
+
+The high resolution graphics of the first Apple \]\[ in violet and green,
+and of the later boards in blue and orange too: the two colours Wozniak told
+the readers of Byte how to add, and the half dot that makes them.
 
 ### [Switch on an Apple \]\[+](guides/switch-on.md)
 
