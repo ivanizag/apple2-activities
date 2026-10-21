@@ -137,5 +137,7 @@ izapple2 -model dos32 -screen green
 
 ## What next
 
+**Next:** [ProDOS](prodos.md).
+
 [Life with DOS 3.3](dos33.md) goes on with DOS 3.3, a diskette of your own
 initialized and written to.

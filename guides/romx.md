@@ -144,6 +144,8 @@ Cyrillic, Greek, Esperanto; izapple2 has no switch for it.
 
 ## What next
 
+**Next:** [The time from a ThunderClock](thunderclock.md).
+
 [The Apple //e, original and enhanced](apple-iie-models.md) shows fonts 1
 and 0 on their own machines, with and without MouseText, and
 [Switch on an Apple //e](apple-iie.md) goes on with the //e.

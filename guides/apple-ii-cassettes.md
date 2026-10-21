@@ -151,8 +151,9 @@ that took half a minute to load comes in a moment.
 
 ## What next
 
-[From four colours to six](six-colours.md) shows the colours of the high
-resolution graphics on the first board and on the later ones,
+**Next:** [From four colours to six](six-colours.md), the colours of the high
+resolution graphics on the first board and on the later ones.
+
 [The Apple \]\[ of 1977](apple-ii.md) goes through the Monitor, the
 Mini-Assembler and Integer BASIC of the same machine, and
 [A game in Applesoft](paddle-game.md) is a game of bat and ball typed in.

@@ -304,5 +304,7 @@ ones next to them.
 
 ## What next
 
+**Next:** [Robot Odyssey, level 2: the Subway](robotodyssey-subway.md).
+
 [Karateka](karateka.md) is another game of 1984 on these pages, all
 action where this one is all thought.

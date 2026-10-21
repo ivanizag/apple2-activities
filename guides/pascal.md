@@ -141,5 +141,7 @@ izapple2 -model pascal -screen green
 
 ## What next
 
+**Next:** [A game in Apple Pascal: 2048](pascal-2048.md).
+
 [The Apple \]\[ of 1977](apple-ii.md) has the Mini-Assembler, machine code
 written a line at a time; the p-System has a full assembler, `A(ssem`.

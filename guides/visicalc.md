@@ -135,5 +135,7 @@ free there, where this machine has 25.
 
 ## What next
 
+**Next:** [AppleWorks](appleworks.md).
+
 [CP/M on the Z80 SoftCard](cpm.md) is the other way a business used an
 Apple II then, with the programs written for CP/M.

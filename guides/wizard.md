@@ -836,5 +836,7 @@ izapple2 -model 2plus 'disks/The Wizard and the Princess (1980-On-Line Systems).
 
 ## What next
 
-[Mystery House](mysteryhouse.md) is the first of the Hi-Res Adventures, and
-[Time Zone](timezone.md) the fifth, the biggest.
+**Next:** [Time Zone, from the start to the end](timezone.md), the fifth of
+the Hi-Res Adventures, the biggest.
+
+[Mystery House](mysteryhouse.md) is the first of them.

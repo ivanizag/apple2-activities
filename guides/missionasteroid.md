@@ -450,5 +450,7 @@ izapple2 -model 2plus 'disks/Mission Asteroid (4am and san inc crack).dsk'
 
 ## What next
 
-[Mystery House](mysteryhouse.md) is the first of the Hi-Res Adventures, and
-[Time Zone](timezone.md) the fifth, the biggest.
+**Next:** [Mystery House, from the start to the end](mysteryhouse.md), the
+first of the Hi-Res Adventures.
+
+[Time Zone](timezone.md) is the fifth, the biggest.

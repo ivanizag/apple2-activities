@@ -101,6 +101,8 @@ of ProDOS as it was downloaded. Make the folder before starting izapple2:
 
 ## What next
 
+**Next:** [Forth in ROM](forth.md).
+
 [ProDOS](prodos.md) goes on with ProDOS on the //e, and
 [What is in the slots: Card Cat](card-cat.md) finds a ThunderClock in a slot
 among other cards.

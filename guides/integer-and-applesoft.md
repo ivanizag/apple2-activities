@@ -164,5 +164,7 @@ between the two with `INT` and `FP`.
 
 ## What next
 
+**Next:** [Switch on an Apple //e](apple-iie.md).
+
 [Life with DOS 3.3](dos33.md) goes on with the System Master, and
 [The Apple \]\[ of 1977](apple-ii.md) with the Monitor and Integer BASIC.

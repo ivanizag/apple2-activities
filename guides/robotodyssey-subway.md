@@ -243,5 +243,7 @@ grey were not passed this time.
 
 ## What next
 
+**Next:** [The Wizard and the Princess, from the start to the end](wizard.md).
+
 [The Sewer](robotodyssey-sewer.md), the first level, if you came here
 first.

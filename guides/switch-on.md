@@ -117,5 +117,7 @@ izapple2 -model 2plus -screen green -s6 empty
 
 ## What next
 
+**Next:** [From Integer BASIC to Applesoft](integer-and-applesoft.md).
+
 [Life with DOS 3.3](dos33.md) adds two disk drives to the same machine, and
 keeps a program on a diskette.

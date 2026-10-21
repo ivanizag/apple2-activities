@@ -151,5 +151,7 @@ izapple2 -model 2plus -screen green my-disk.dsk
 
 ## What next
 
+**Next:** [From 13 sectors to 16: DOS 3.2 and DOS 3.3](dos32.md).
+
 [Switch on an Apple \]\[+](switch-on.md) has more on Applesoft, the BASIC
 these programs are written in.

@@ -1083,5 +1083,7 @@ izapple2 -model 2plus 'disks/Ulysses and the Golden Fleece v1.1 (4am crack) side
 
 ## What next
 
+**Next:** [Total Replay](total-replay.md).
+
 [Time Zone](timezone.md) is the next of the Hi-Res Adventures, the fifth,
 and the biggest.

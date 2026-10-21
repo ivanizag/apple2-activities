@@ -136,6 +136,8 @@ are the sizes in between.
 
 ## What next
 
+**Next:** [What is in the slots: Card Cat](card-cat.md).
+
 [ProDOS](prodos.md) has another RAM disk, `/RAM`, in the extended 80 column
 card of the //e, and [AppleWorks](appleworks.md) is the program people
 copied to the card.

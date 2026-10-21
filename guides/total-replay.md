@@ -84,5 +84,7 @@ izapple2 -screen color "disks/Total Replay v6.1.hdv"
 
 ## What next
 
+**Next:** this is the last of [the activities](../README.md).
+
 [Lode Runner](lode-runner.md) is one of the games of Total Replay, started
 there from a copy of its own disk, protection and all.

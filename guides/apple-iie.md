@@ -111,6 +111,8 @@ izapple2 -model 2enh -screen green -s6 empty
 
 ## What next
 
+**Next:** [The Apple //e, original and enhanced](apple-iie-models.md).
+
 [Switch on an Apple \]\[+](switch-on.md) is the machine before the //e, all
 capitals and 40 columns. [Apple II DeskTop](desktop.md) puts MouseText to
 use.
