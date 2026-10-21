@@ -19,19 +19,31 @@ const romxMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
 // other
 const romxListing = "../guides/listings/romx-fonts.bas"
 
-// romxShown are the fonts kept as pictures, with their names in the guide of
-// the RomXce
-var romxShown = map[int]string{
-	0:  "Font 0, Apple US Enhanced",
-	2:  "Font 2, Clinton Turner",
-	10: "Font 10, Gothic",
-	14: "Font 14, Slant",
+// romxFonts are the names of the sixteen fonts of the first bank, in the
+// guide of the RomXce, the labels of their pictures
+var romxFonts = []string{
+	"Apple US Enhanced",
+	"Apple US Un-Enhanced",
+	"Clinton Turner V1",
+	"ReActiveMicro",
+	"Dan Paymar",
+	"Blippo Black",
+	"Byte",
+	"Colossal",
+	"Count",
+	"Flow",
+	"Gothic",
+	"Outline",
+	"Pigfont",
+	"Pinocchio",
+	"Slant",
+	"Stop",
 }
 
 /*
 romxScreenshots is the RomXce on an enhanced Apple //e changing the font of
 the screen: a program that calls it, through the addresses it listens to, for
-each of the sixteen fonts of its first bank, recorded, and a few of them kept.
+each of the sixteen fonts of its first bank, recorded, and a picture of each.
 */
 func romxScreenshots(t *testing.T) {
 	pictures := newAlbum("romx", album.Green)
@@ -49,9 +61,8 @@ func romxScreenshots(t *testing.T) {
 		must(t, o.WaitForKeyboard(10))
 		o.Run(10)
 		fonts.Capture(150)
-		if label, ok := romxShown[font]; ok {
-			must(t, pictures.ScreenshotOf(o, fmt.Sprintf("font-%d", font), label))
-		}
+		label := fmt.Sprintf("Font %d, %v", font, romxFonts[font])
+		must(t, pictures.ScreenshotOf(o, fmt.Sprintf("font-%d", font), label))
 		must(t, o.Type(" "))
 	}
 	must(t, pictures.SaveRecording(fonts, "fonts", 150))

@@ -107,14 +107,32 @@ them.
    The text on the screen stays the same, the same bytes in memory; only
    the way the video draws them changes, the whole screen at once.
 
-Some of them:
+Each of them:
 
 <table><tr>
-<td><img src="images/romx/font-0.png" alt="Font 0, the Apple US Enhanced"></td>
-<td><img src="images/romx/font-2.png" alt="Font 2, Clinton Turner"></td>
+<td><img src="images/romx/font-0.png" alt="Font 0, Apple US Enhanced"></td>
+<td><img src="images/romx/font-1.png" alt="Font 1, Apple US Un-Enhanced"></td>
+</tr><tr>
+<td><img src="images/romx/font-2.png" alt="Font 2, Clinton Turner V1"></td>
+<td><img src="images/romx/font-3.png" alt="Font 3, ReActiveMicro"></td>
+</tr><tr>
+<td><img src="images/romx/font-4.png" alt="Font 4, Dan Paymar"></td>
+<td><img src="images/romx/font-5.png" alt="Font 5, Blippo Black"></td>
+</tr><tr>
+<td><img src="images/romx/font-6.png" alt="Font 6, Byte"></td>
+<td><img src="images/romx/font-7.png" alt="Font 7, Colossal"></td>
+</tr><tr>
+<td><img src="images/romx/font-8.png" alt="Font 8, Count"></td>
+<td><img src="images/romx/font-9.png" alt="Font 9, Flow"></td>
 </tr><tr>
 <td><img src="images/romx/font-10.png" alt="Font 10, Gothic"></td>
+<td><img src="images/romx/font-11.png" alt="Font 11, Outline"></td>
+</tr><tr>
+<td><img src="images/romx/font-12.png" alt="Font 12, Pigfont"></td>
+<td><img src="images/romx/font-13.png" alt="Font 13, Pinocchio"></td>
+</tr><tr>
 <td><img src="images/romx/font-14.png" alt="Font 14, Slant"></td>
+<td><img src="images/romx/font-15.png" alt="Font 15, Stop"></td>
 </tr></table>
 
 The *Video ROM Programming Guide* names them:
