@@ -208,7 +208,7 @@ izapple2 -model 2plus -screen green -s1 parallel
 
 ## What next
 
-**Next:** [Apple Pascal](pascal.md).
+**Next:** [The Print Shop: cards, signs and banners](print-shop.md).
 
 [A game in Applesoft](paddle-game.md) is another program typed into the
 same machine, for the screen this time.
