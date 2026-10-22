@@ -106,6 +106,25 @@ with `//go:debug randseednop=0` at the top of the file.
 own, seeded the same on every run, take the seed and the `//go:debug` line
 out of `start`.
 
+### Formatting a ProDOS diskette in a Disk II fails
+
+*Format Disk* of Fantavision, with `blank.dsk` in the drive, writes the 16
+sectors of track 0, about 6,480 bytes, reads them back, all 16 of them
+found, and stops with *Drive Error*; nothing reaches the file. The Format Disk
+of Copy II Plus 8.4, on the ProDOS 2.4.3 disk, stops with `ERROR TRACK $01`,
+as the `FORMAT` of CP/M does (see *CP/M cannot format a blank diskette*). The
+`INIT` of DOS 3.3 works. A track of izapple2 is 6,656 bytes
+(`nibBytesPerTrack` in `storage/fileNib.go`), where a real drive turning at
+300 rpm passes some 6,250 under the head: a formatter that writes a little
+more than a turn, to close the track on itself, leaves in izapple2 a stretch
+of the old track between its last sector and its first, which it may then
+refuse when it checks the track.
+
+**Here, once fixed:** [fantavision.md](guides/fantavision.md) saves its
+movies on a copy of the ProDOS 2.4.3 disk, which has 13 KB free; it could
+format a blank diskette with Format Disk, as the manual says, and save on
+it.
+
 ### Mockingboard presents Holiday Music plays nothing
 
 The disk of the [Internet Archive](https://archive.org/details/sweet-micro-systems-mockingboard-presents-holiday-music)
