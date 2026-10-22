@@ -10,7 +10,7 @@ pose to the next. Mechner went on to write Prince of Persia.
 
 This page starts Karateka from its original disk, watches its titles and
 prologue, and plays the start of the game, up the cliff and through the
-first guard.
+first guard. Then it turns the disk over.
 
 ## What you need
 
@@ -20,6 +20,13 @@ Internet Archive: download *Karateka (woz-a-day collection).zip* and take it
 out of it. It is the original disk, copy protection and all.
 `./fetch-disks.sh` in this repository downloads it into `disks/` and checks
 it.
+
+**`Karateka side B (Brutal Deluxe crack).dsk`**, the other side of the
+disk, which the woz-a-day collection does not have: *KARATEKA_S2 (Brutal
+Deluxe crack).dsk* in
+[KARATEKA S1 (Brutal Deluxe crack)](https://archive.org/details/KARATEKA_S1_Brutal_Deluxe_crack)
+of the Internet Archive, a copy without its protection. `./fetch-disks.sh`
+downloads it too, with this name.
 
 [Broderbund's manual of Karateka](https://archive.org/details/karatekabroderbund)
 is on the Internet Archive.
@@ -101,6 +108,32 @@ izapple2 -model 2plus -screen color disks/Karateka.woz
    The manual gives keys for all of it as well, `Q`, `A` and `Z` to punch
    high, middle and low and `W`, `S` and `X` to kick, but in izapple2 they
    did not make the karateka fight; the joystick does.
+
+## The other side of the disk
+
+Karateka came on a disk with something on its back as well: the whole game
+again, upside down, for whoever put the disk in the drive the wrong way
+round.
+
+7. **Turn the disk over**: start izapple2 again, with side B in the drive.
+
+   ```bash
+   izapple2 -model none -board 2plus -cpu 6502 -screen color \
+       -rom "<internal>/Apple2_Plus.rom" \
+       -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+       -s6 'diskii,disk1=disks/Karateka side B (Brutal Deluxe crack).dsk'
+   ```
+
+   The titles and the prologue come, as before, on their heads.
+
+   ![The prologue, upside down](images/karateka/upside-down-prologue.png)
+
+8. **Press Space** in the demonstration, as on the other side. The game is
+   the same, the cliff, the run and the guard, hanging from the top of the
+   screen; the joystick works as before, up and to the right to run, and
+   button 0 to kick.
+
+   ![The game, upside down](images/karateka/upside-down.gif)
 
 ## What next
 

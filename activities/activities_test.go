@@ -45,7 +45,7 @@ var activities = []struct {
 	{"flight-simulator", []string{flightSimMachine}, flightSimScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
-	{"karateka", []string{karatekaMachine}, karatekaScreenshots},
+	{"karateka", []string{karatekaMachine, karatekaSideBMachine}, karatekaScreenshots},
 	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
 	{"logo", []string{logoMachine}, logoScreenshots},
 	{"memory-expansion", []string{memexpMachine, memexpDOS}, memexpScreenshots},
