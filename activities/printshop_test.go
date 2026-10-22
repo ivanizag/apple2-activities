@@ -427,8 +427,8 @@ func colourful(s *image.RGBA) bool {
 printout draws on paper what was printed since the printout before, with
 imagewriter2, which reads the codes of the ImageWriter and places each dot
 where the print head puts it, at 144 dots an inch, and keeps it as a picture
-of the guide, with a grey line at the edges of the paper. A banner, longer
-than it is wide, is turned to be read as it hangs.
+of the guide, with a grey line at the edges of the paper and its strips of
+holes. A banner, longer than it is wide, is turned to be read as it hangs.
 */
 func (ps *printShop) printout(name string) {
 	ps.t.Helper()
@@ -465,13 +465,23 @@ func (ps *printShop) printout(name string) {
 }
 
 // edged is a picture of the paper with a grey line around it, a margin of
-// paper around what was printed
+// paper around what was printed, and the strips of the continuous paper at
+// its sides, half an inch with a hole every half inch, torn off along a
+// perforation; a line or two, too short for them, has none
 func edged(drawn image.Image) *image.RGBA {
-	const margin = 24
+	const (
+		margin = 24
+		strip  = 72 // half an inch at 144 dots an inch
+		hole   = 22 // 5/32 of an inch
+	)
 	b := drawn.Bounds()
-	page := image.NewRGBA(image.Rect(0, 0, b.Dx(), b.Dy()+2*margin))
+	side := strip
+	if b.Dy()+2*margin < 4*strip {
+		side = 0
+	}
+	page := image.NewRGBA(image.Rect(0, 0, b.Dx()+2*side, b.Dy()+2*margin))
 	draw.Draw(page, page.Bounds(), image.White, image.Point{}, draw.Src)
-	draw.Draw(page, b.Add(image.Pt(0, margin)), drawn, b.Min, draw.Src)
+	draw.Draw(page, b.Add(image.Pt(side, margin)), drawn, b.Min, draw.Src)
 	edge := color.RGBA{0xb0, 0xb0, 0xb0, 0xff}
 	size := page.Bounds().Size()
 	for x := 0; x < size.X; x++ {
@@ -481,6 +491,33 @@ func edged(drawn image.Image) *image.RGBA {
 	for y := 0; y < size.Y; y++ {
 		page.Set(0, y, edge)
 		page.Set(size.X-1, y, edge)
+	}
+	if side == 0 {
+		return page
+	}
+	shadow := color.RGBA{0xe8, 0xe8, 0xe8, 0xff}
+	for _, x := range []int{side, size.X - 1 - side} {
+		for y := 0; y < size.Y; y += 6 {
+			for d := 0; d < 3 && y+d < size.Y; d++ {
+				page.Set(x, y+d, edge)
+			}
+		}
+	}
+	const r = hole / 2
+	for _, cx := range []int{side / 2, size.X - side/2} {
+		for cy := strip / 2; cy+r < size.Y; cy += strip {
+			for dy := -r; dy <= r; dy++ {
+				for dx := -r; dx <= r; dx++ {
+					d := dx*dx + dy*dy
+					switch {
+					case d <= (r-1)*(r-1):
+						page.Set(cx+dx, cy+dy, shadow)
+					case d <= r*r:
+						page.Set(cx+dx, cy+dy, edge)
+					}
+				}
+			}
+		}
 	}
 	return page
 }
