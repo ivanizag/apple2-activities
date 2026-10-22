@@ -38,7 +38,10 @@ not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Apple
 Pascal writes the work file to its disk, so it cannot run from the original
 disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
 Lode Runner writes the high scores to its disk when a game ends with a score
-and the initials are typed.
+and the initials are typed. The Print Shop saves its setup, the printer and
+its card, on its disk, and prints with the one saved: its woz-a-day disk can
+be set up but not saved, and [print-shop.md](guides/print-shop.md) uses 4am's
+crack.
 
 **Here, once fixed:**
 
@@ -223,7 +226,10 @@ On a 6502, an opcode that is not defined does something, or hangs the
 processor; in izapple2 it panics, and the whole emulator stops: `panic:
 Unknown opcode 0x0b`, from `iz6502` `ExecuteInstruction`. It came up when
 `RUN` followed a `LOAD` that had failed, so running garbage, which on a real
-machine would hang or crash it, not the computer it is emulated on.
+machine would hang or crash it, not the computer it is emulated on. The
+Print Shop stops so, `Unknown opcode 0x6f`, when its setup is for a card
+that is not in the slot, as the Apple III Serial Port or the ALS
+Printermate in slot 1, which has the parallel card.
 
 **Here, once fixed:** nothing to change.
 
