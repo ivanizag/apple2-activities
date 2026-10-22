@@ -99,7 +99,6 @@ func lodeRunnerScreenshots(t *testing.T) {
 	o.Run(30)
 	drawing.Capture(25)
 	must(t, pictures.SaveRecording(drawing, "drawing", 300))
-	must(t, pictures.Screenshot(o, "level"))
 
 	// Saved with Control-S, and back to the editor with Control-Q
 	must(t, o.Key("Ctrl+S"))

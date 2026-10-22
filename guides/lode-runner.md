@@ -181,8 +181,6 @@ file yet.
 
    ![The level drawn, a row at a time](images/lode-runner/drawing.gif)
 
-   ![The level](images/lode-runner/level.png)
-
    The runner starts at the bottom left. Five pieces of gold: one at the
    bottom, two on the middle floor, one on the left of the top floor, and one
    on a small floor in the middle, over a trap door. The guard is shut in a
