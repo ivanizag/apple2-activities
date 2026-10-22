@@ -1,8 +1,12 @@
+// The machines run the same on every run: see start
+//go:debug randseednop=0
+
 package activities
 
 import (
 	"fmt"
 	"io"
+	"math/rand"
 	"os"
 	"path/filepath"
 	"slices"
@@ -100,6 +104,12 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 	for i, name := range positional {
 		positional[i] = path(name)
 	}
+
+	// izapple2 reads a WOZ disk where it has no flux as random bits, from
+	// the random numbers of Go, which start from a different seed on every
+	// run unless told otherwise; with the same seed for every machine, a
+	// program that reads them, as copy protections do, runs the same
+	rand.Seed(1)
 
 	o, err := operator.Start(model, overrides, positional...)
 	if err != nil {
