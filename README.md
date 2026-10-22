@@ -122,6 +122,15 @@ Apple Logo on an Apple \]\[+: words and lists, the turtle moved by hand,
 and procedures that teach it new words, a flower of squares and a spiral
 that calls itself, saved on the diskette.
 
+### [Fantavision: drawings that move](guides/fantavision.md)
+
+[<img src="guides/images/fantavision/shapes.gif" width="320" alt="A star that turns into a circle and a square">](guides/fantavision.md)
+
+Broderbund's animation program of 1985 on an enhanced Apple //e with a
+mouse: the Movie Matinee of its disk, then a star that turns into a circle
+and a square, a title that spins and a spiral in trace mode, the frames in
+between drawn by the program, saved on a diskette.
+
 ### [Printing](guides/printing.md)
 
 [<img src="guides/images/printing/printing.png" width="320" alt="A calendar printed">](guides/printing.md)

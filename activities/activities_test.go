@@ -41,6 +41,7 @@ var activities = []struct {
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
 	{"dos32", []string{dos32Machine, dos32Upgraded}, dos32Screenshots},
 	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},
+	{"fantavision", []string{fantavisionMatinee, fantavisionMachine}, fantavisionScreenshots},
 	{"flight-simulator", []string{flightSimMachine}, flightSimScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
