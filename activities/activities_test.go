@@ -176,6 +176,7 @@ var listings = []struct {
 	{"applecorn", sieveListing},
 	{"applecorn", triangleListing},
 	{"applesoft-snake", snakeListing},
+	{"lode-runner", lodeRunnerLevel},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
 	{"printing", calendarListing},

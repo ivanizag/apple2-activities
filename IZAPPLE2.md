@@ -37,9 +37,16 @@ When a program writes to a disk in WOZ format, izapple2 panics with `Write
 not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Apple
 Pascal writes the work file to its disk, so it cannot run from the original
 disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
+Lode Runner writes the high scores to its disk when a game ends with a score
+and the initials are typed.
 
-**Here, once fixed:** [pascal.md](guides/pascal.md) uses the disks inside
-izapple2; it could use the woz-a-day ones, downloaded, but see the next one.
+**Here, once fixed:**
+
+- [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
+  the woz-a-day ones, downloaded, but see the next one.
+- [lode-runner.md](guides/lode-runner.md) starts izapple2 again for the board
+  editor; it could end the game with Control-R, type the initials for the
+  high scores, and go on to the editor, and the note on it would go.
 
 ### Apple Pascal 1.3 from its original disks stops at the start with four drives
 
