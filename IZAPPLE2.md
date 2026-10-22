@@ -89,6 +89,23 @@ machine from it, by cycles.
 - Take the note on determinism out of [EDITORIAL.md](EDITORIAL.md), and add a
   check that making the pictures again changes nothing.
 
+### Pictures change from run to run: the random bits of WOZ disks
+
+Where a WOZ disk has no flux, `disketteWoz.Read` in `storage/` gives random
+bits, as the MC3470 of a real drive does, from `math/rand` with its global
+source, which Go seeds differently on every run. A copy protection that
+reads them takes a different time on each run, and so does all that comes
+after: the demonstration and the game of Lode Runner, the order in which the
+Movie Matinee of Fantavision starts.
+
+**Here:** `start` in [setup_test.go](activities/setup_test.go) seeds the
+global source with `rand.Seed(1)` before each machine, which Go allows only
+with `//go:debug randseednop=0` at the top of the file.
+
+**Here, once fixed:** if izapple2 takes the random bits from a source of its
+own, seeded the same on every run, take the seed and the `//go:debug` line
+out of `start`.
+
 ### Mockingboard presents Holiday Music plays nothing
 
 The disk of the [Internet Archive](https://archive.org/details/sweet-micro-systems-mockingboard-presents-holiday-music)
