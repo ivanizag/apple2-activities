@@ -14,402 +14,77 @@ izapple2, and after it a shorter one with a model of izapple2 that has that
 machine, and often more. The whole command needs the option `-board`, which
 izapple2 does not have yet; the shorter one works with izapple2 as it is.
 
-## First steps
-
-### [The Apple \]\[ of 1977](guides/apple-ii.md)
-
-[<img src="guides/images/apple-ii/colours.png" width="320" alt="The sixteen colours of Integer BASIC">](guides/apple-ii.md)
-
-Wozniak's machine and its ROM: the Monitor, machine code written a line at a
-time in the Mini-Assembler, and Integer BASIC, with its whole numbers and its
-sixteen colours.
-
-### [The Apple \]\[ and its cassettes](guides/apple-ii-cassettes.md)
-
-[<img src="guides/images/apple-ii-cassettes/breakout.gif" width="320" alt="Breakout played">](guides/apple-ii-cassettes.md)
-
-Apple's first programs, loaded from the recordings of their tapes into a
-first Apple \]\[: Breakout played with the paddle, and the colour graphics
-and the high resolution graphics demonstrated.
-
-### [From four colours to six](guides/six-colours.md)
-
-[<img src="guides/images/six-colours/revision-1.png" width="320" alt="The six colours of the high resolution graphics">](guides/six-colours.md)
-
-The high resolution graphics of the first Apple \]\[ in violet and green,
-and of the later boards in blue and orange too: the two colours Wozniak told
-the readers of Byte how to add, and the half dot that makes them.
-
-### [Switch on an Apple \]\[+](guides/switch-on.md)
-
-[<img src="guides/images/switch-on/program.png" width="320" alt="A program in Applesoft BASIC">](guides/switch-on.md)
-
-No disk, no operating system: switched on, the Apple \]\[+ is in Applesoft BASIC
-and waiting. A few commands, a program typed, listed and run, and a loop that
-never ends stopped with Control-C.
-
-### [From Integer BASIC to Applesoft](guides/integer-and-applesoft.md)
-
-[<img src="guides/images/integer-and-applesoft/card-plus.png" width="320" alt="Integer BASIC and Applesoft on one Apple II+">](guides/integer-and-applesoft.md)
-
-Applesoft loaded from its tape into the first Apple \]\[, and then the two
-BASICs on one machine with the Language Card, on an Apple \]\[+ and on the
-first Apple \]\[.
-
-### [Switch on an Apple //e](guides/apple-iie.md)
-
-[<img src="guides/images/apple-iie/eighty-columns.png" width="320" alt="80 columns and MouseText">](guides/apple-iie.md)
-
-The Apple II of the rest of the decade: lower case, 80 columns, the MouseText
-of the enhanced //e, and the self test in its ROM, run with both Apple keys.
-
-### [The Apple //e, original and enhanced](guides/apple-iie-models.md)
-
-[<img src="guides/images/apple-iie-models/enhanced-mousetext.png" width="320" alt="MouseText on the enhanced Apple //e">](guides/apple-iie-models.md)
-
-The //e of 1983 and the enhanced one of 1985, side by side: Applesoft in
-small letters, MouseText where there were inverse capitals, and the
-Mini-Assembler back in the Monitor.
-
-### [Life with DOS 3.3](guides/dos33.md)
-
-[<img src="guides/images/dos33/catalog.png" width="320" alt="The catalog of the System Master">](guides/dos33.md)
-
-Two Disk II drives and the System Master: the catalog of a diskette, the
-program that greets you, and a blank diskette made into one that starts the
-machine with a program of your own.
-
-### [From 13 sectors to 16: DOS 3.2 and DOS 3.3](guides/dos32.md)
-
-[<img src="guides/images/dos32/muffin.png" width="320" alt="MUFFIN, the converter of DOS 3.2 to 3.3">](guides/dos32.md)
-
-DOS 3.2 on the controller of 13 sectors, and then the upgrade: DOS 3.3 can't
-read the old diskette, MUFFIN moves a program from it, and BOOT13 starts it
-anyway.
-
-### [ProDOS](guides/prodos.md)
-
-[<img src="guides/images/prodos/disk-map.png" width="320" alt="The map of a diskette in Copy II Plus">](guides/prodos.md)
-
-The operating system of the Apple II from 1984 on, in its version of 2023:
-the program selector it starts with, BASIC and a catalog in 80 columns, a
-folder and a text file on the RAM disk of the //e, and the diskette mapped
-file by file in Copy II Plus.
-
-### [Apple II DeskTop](guides/desktop.md)
-
-[<img src="guides/images/desktop/about.png" width="320" alt="About This Apple II">](guides/desktop.md)
-
-The Apple II with a mouse, windows and icons: a disk opened with a double
-click, a file read, the machine asked what it has in its slots, a picture in
-double high resolution, the flying toasters, and the Calculator.
-
-## Making things
-
-### [A game in Applesoft](guides/paddle-game.md)
-
-[<img src="guides/images/paddle-game/game-over.png" width="320" alt="A bat and a ball in low resolution graphics">](guides/paddle-game.md)
-
-A bat on a paddle and a ball, in the low resolution colour graphics of the
-Apple \]\[+: typed in as the listings of the magazines were, and played with the
-mouse as the paddle.
-
-### [Logo and its turtle](guides/logo.md)
-
-[<img src="guides/images/logo/flower.gif" width="320" alt="A flower of squares drawn by the turtle">](guides/logo.md)
-
-Apple Logo on an Apple \]\[+: words and lists, the turtle moved by hand,
-and procedures that teach it new words, a flower of squares and a spiral
-that calls itself, saved on the diskette.
-
-### [Fantavision: drawings that move](guides/fantavision.md)
-
-[<img src="guides/images/fantavision/shapes.gif" width="320" alt="A star that turns into a circle and a square">](guides/fantavision.md)
-
-Broderbund's animation program of 1985 on an enhanced Apple //e with a
-mouse: the Movie Matinee of its disk, then a star that turns into a circle
-and a square, a title that spins and a spiral in trace mode, the frames in
-between drawn by the program, saved on a diskette.
-
-### [Printing](guides/printing.md)
-
-[<img src="guides/images/printing/printing.png" width="320" alt="A calendar printed">](guides/printing.md)
-
-A program typed into an Apple \]\[+ with a parallel printer card: its
-listing printed with `PR#1`, and a calendar of 1977 three months across,
-wider than the screen, as it comes out on paper.
-
-### [The Print Shop: cards, signs and banners](guides/print-shop.md)
-
-[<img src="guides/images/print-shop/borders.gif" width="320" alt="The borders of The Print Shop">](guides/print-shop.md)
-
-Broderbund's program of 1984 on an Apple \]\[+ with a printer: set up for an
-ImageWriter, a birthday card of its own design, a sign and a banner from its
-borders, pictures and fonts, and a kaleidoscope of Screen Magic, each drawn
-on paper dot by dot from what the printer got.
-
-### [Apple Pascal](guides/pascal.md)
-
-[<img src="guides/images/pascal/editor.png" width="320" alt="A program in the editor of Apple Pascal">](guides/pascal.md)
-
-The UCSD p-System on an Apple //e with two drives: the Filer, the editor, the
-compiler, and a program that draws with the turtle.
-
-### [A game in Apple Pascal: 2048](guides/pascal-2048.md)
-
-[<img src="guides/images/pascal-2048/end.png" width="320" alt="2048 in Apple Pascal">](guides/pascal-2048.md)
-
-A whole game written in Apple Pascal, its listing in this repository: typed
-into the editor, compiled, and played to the end, 200 moves.
-
-### [A game in Applesoft: the snake](guides/applesoft-snake.md)
-
-[<img src="guides/images/applesoft-snake/long.png" width="320" alt="The snake in low resolution">](guides/applesoft-snake.md)
-
-A whole game of 35 lines of Applesoft, its listing in this repository: the
-snake in the low resolution graphics, typed in, explained, and played.
-
-### [Assembly language with Merlin](guides/merlin.md)
-
-[<img src="guides/images/merlin/assembled.png" width="320" alt="A program assembled by Merlin">](guides/merlin.md)
-
-A program in the language of the 6502, its source in this repository: typed
-into the Merlin assembler of 1983, assembled into 120 bytes, and run, bars
-of colour moving many times a second.
-
-## Work
-
-### [VisiCalc](guides/visicalc.md)
-
-[<img src="guides/images/visicalc/share.png" width="320" alt="A budget in VisiCalc">](guides/visicalc.md)
-
-The first spreadsheet, from its original disk of 13 sectors: a household
-budget typed in, totalled, a formula replicated down a column, and the rent
-changed to see the whole sheet worked out again.
-
-### [AppleWorks](guides/appleworks.md)
-
-[<img src="guides/images/appleworks/desktop.png" width="320" alt="The Desktop of AppleWorks">](guides/appleworks.md)
-
-The word processor, spreadsheet and data base of the //e in one: the costs
-of a trip worked out, a letter with that table in it, a list of friends,
-and the three saved.
-
-### [The SwyftCard](guides/swyftcard.md)
-
-[<img src="guides/images/swyftcard/moved.png" width="320" alt="A letter edited on the SwyftCard">](guides/swyftcard.md)
-
-Jef Raskin's editor on a card for the //e, before the Canon Cat: its
-tutorial, the cursor leaping to what you type with the Apple keys, and a
-letter written from nothing with a sentence moved by leaping.
-
-## Cards
-
-### [The Mockingboard](guides/mockingboard.md)
-
-[<img src="guides/images/mockingboard/title.png" width="320" alt="The Mockingboard demonstration">](guides/mockingboard.md)
-
-The sound card of the Apple II, from its demonstration disk of 1982: its menus,
-and its sound effects, recorded to listen to.
-
-### [160 columns: the Videx Ultraterm](guides/ultraterm.md)
-
-[<img src="guides/images/ultraterm/mode-3.png" width="320" alt="160 columns by 24 lines">](guides/ultraterm.md)
-
-The card that gave the Apple \]\[+ up to 160 columns of text: the
-demonstration of its own disk of utilities, and a program that shows each
-of its modes, up to 160 by 24 and 80 by 48.
-
-### [The RGB card and its fourteen video modes](guides/rgb-card.md)
-
-[<img src="guides/images/rgb-card/mode-9.png" width="320" alt="Double low resolution on the RGB card">](guides/rgb-card.md)
-
-The demonstration disk of the Video-7 RGB card for the //e: each of the
-fourteen video modes it lists, the six of the //e and the eight the card
-adds, text in sixteen colours, 160 and 560 dots across.
-
-### [A megabyte on a card: the Memory Expansion Card](guides/memory-expansion.md)
-
-[<img src="guides/images/memory-expansion/copied.png" width="320" alt="A file copied to the RAM disk of the card">](guides/memory-expansion.md)
-
-Apple's memory card for the Apple \]\[, \]\[+ and //e, a megabyte on an
-Apple \]\[+: the RAM disk ProDOS finds on it, a file loaded from it in a
-sixth of the time, the test in its ROM, and the card from DOS 3.3.
-
-### [What is in the slots: Card Cat](guides/card-cat.md)
-
-[<img src="guides/images/card-cat/slots.png" width="320" alt="Card Cat">](guides/card-cat.md)
-
-A modern program that finds the card in each slot, run on a //e with all seven
-full, and the ROM of a card read by it.
-
-### [Sixteen fonts on the //e: the ROMXce](guides/romx.md)
-
-[<img src="guides/images/romx/font-10.png" width="320" alt="The Gothic font of the ROMXce">](guides/romx.md)
-
-A modern board that changes the ROM of the characters of the //e as a
-program runs: a routine of five instructions that asks it for a font, and
-the sixteen fonts of its first bank, one after the other.
-
-### [The time from a ThunderClock](guides/thunderclock.md)
-
-[<img src="guides/images/thunderclock/time.png" width="320" alt="The time read from a ThunderClock">](guides/thunderclock.md)
-
-A clock card for the Apple \]\[+: the time read from BASIC through its
-firmware, as its manual shows, and a program saved by ProDOS with the date
-it takes from the card.
-
-## Other systems
-
-### [Forth in ROM](guides/forth.md)
-
-[<img src="guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](guides/forth.md)
-
-An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
-words used and new ones defined, loops and decisions, and the machine
-underneath, its memory, its speaker and its graphics, driven from Forth.
-
-
-### [CP/M on the Z80 SoftCard](guides/cpm.md)
-
-[<img src="guides/images/cpm/dir.png" width="320" alt="The disk of CP/M">](guides/cpm.md)
-
-A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
-assembler source, a program in Microsoft BASIC-80 saved among its files, and
-the high resolution graphics drawn from GBASIC.
-
-### [The languages of the BBC Micro on a //e: Applecorn](guides/applecorn.md)
-
-[<img src="guides/images/applecorn/roses.png" width="320" alt="Four mystic roses drawn by BBC BASIC">](guides/applecorn.md)
-
-The operating system of the BBC Micro, rewritten for ProDOS, runs its
-language ROMs on an enhanced //e: roses drawn by BBC BASIC, and a program in
-COMAL, Lisp, Forth, micro-PROLOG, BCPL, ISO-Pascal and a text in View.
-
-## Clones
-
-### [The Base 64A, an Apple \]\[+ from Taiwan](guides/base64a.md)
-
-[<img src="guides/images/base64a/writer.png" width="320" alt="The menu of Mini-Writer on the Base 64A">](guides/base64a.md)
-
-A copy of the Apple \]\[+ with small letters on the screen and a word
-processor in its ROM, started with `WRITER`: a letter written, a name
-replaced in it and the letter printed, and Apple's DOS 3.3 started on it.
-
-### [The Basis 108, an Apple \]\[+ from Germany](guides/basis108.md)
-
-[<img src="guides/images/basis108/german.png" width="320" alt="The German characters of the Basis 108">](guides/basis108.md)
-
-A copy of the Apple \]\[+ for work, in 80 columns from the start: small
-letters, its four sets of characters, ASCII, German, APL and the Apple's,
-chosen from BASIC, and Apple's DOS 3.3 in 80 columns.
-
-## Play
-
-### [Cranston Manor, from the start to the end](guides/cranston.md)
-
-[<img src="guides/images/cranston/0001.png" width="320" alt="Main Street">](guides/cranston.md)
-
-Hi-Res Adventure #3, of 1981: the treasures of a manor, its tower, its
-cistern and the caves under it, gathered and carried out of its gate. Played
-to its end, a picture of the screen after each command.
-
-### [The Dark Crystal, from the start to the end](guides/darkcrystal.md)
-
-[<img src="guides/images/darkcrystal/0002.png" width="320" alt="Jen in the Valley of the Stones">](guides/darkcrystal.md)
-
-The adventure of Sierra On-Line after the film of Jim Henson, of 1982, on
-four sides of two diskettes: Jen, a Gelfling, heals the Dark Crystal.
-Played to its end, a picture of the screen after each command.
-
-### [Flight Simulator II over Chicago](guides/flight-simulator.md)
-
-[<img src="guides/images/flight-simulator/runway.png" width="320" alt="On the runway at Meigs Field">](guides/flight-simulator.md)
-
-subLOGIC's simulator of 1984, from its original disk: the demonstration that
-flies itself, the views and the radar on the runway of Meigs Field, the
-editor, a take-off past the towers of Chicago, a dive into Lake Michigan,
-and the runway at night.
-
-### [Karateka](guides/karateka.md)
-
-[<img src="guides/images/karateka/castle.png" width="320" alt="The fortress of Akuma">](guides/karateka.md)
-
-Jordan Mechner's game of 1984, from its original disk: its titles and
-prologue told like a film, Akuma and the princess, and the karateka up the
-cliff and past the first guard, played with the joystick.
-
-### [Lode Runner](guides/lode-runner.md)
-
-[<img src="guides/images/lode-runner/title.png" width="320" alt="Lode Runner">](guides/lode-runner.md)
-
-Broderbund's game of 1983, from a copy of its original disk: the title, the
-demonstration that plays itself, and a game played from the keyboard, until
-a guard catches the runner.
-
-### [Mission: Asteroid, from the start to the end](guides/missionasteroid.md)
-
-[<img src="guides/images/missionasteroid/0001.png" width="320" alt="In front of the space center">](guides/missionasteroid.md)
-
-Hi-Res Adventure #0 of Ken and Roberta Williams, of 1980: an asteroid to blow
-up before it hits the Earth, in a rocket flown by its buttons. Played to its
-end, a picture of the screen after each command.
-
-### [Mystery House, from the start to the end](guides/mysteryhouse.md)
-
-[<img src="guides/images/mysteryhouse/title.png" width="320" alt="The title of Mystery House">](guides/mysteryhouse.md)
-
-The first Hi-Res Adventure of Ken and Roberta Williams, of 1980: a house, a
-killer and hidden jewels, in pictures drawn in lines. Played to its end, a
-picture of the screen after each command.
-
-### [Robot Odyssey, level 1: the Sewer](guides/robotodyssey-sewer.md)
-
-[<img src="guides/images/robotodyssey-sewer/ride.gif" width="320" alt="The white robot through the sewer grate">](guides/robotodyssey-sewer.md)
-
-The Learning Company's game of digital logic, of 1984: robots to walk into
-and wire. Its first level played to the transporter, with the three robots
-of the Sewer fetching a magnet and a crystal past the guards, and the white
-one riding through the sewer grate.
-
-### [Robot Odyssey, level 2: the Subway](guides/robotodyssey-subway.md)
-
-[<img src="guides/images/robotodyssey-subway/train.gif" width="320" alt="The blue robot calls the train">](guides/robotodyssey-subway.md)
-
-The second level, played on from the first: the blue robot rewired with the
-Solderpen to fetch the token of the subway, the exit ticket and the token
-again, the turnstile, the train round its eight stations, and the escalator
-to the Streets.
-
-### [The Wizard and the Princess, from the start to the end](guides/wizard.md)
-
-[<img src="guides/images/wizard/0001.png" width="320" alt="The village of Serenia">](guides/wizard.md)
-
-The second Hi-Res Adventure, of 1980, painted in colour: a princess brought
-back to Serenia across a desert, a sea and a castle. Played to its
-end, a picture of the screen after each command.
-### [Time Zone, from the start to the end](guides/timezone.md)
-
-[<img src="guides/images/timezone/title.png" width="320" alt="The title of Time Zone">](guides/timezone.md)
-
-The biggest adventure of 1982, on twelve sides of diskettes, by Ken and
-Roberta Williams: played to its end, all 1,058 commands, with a picture of
-the screen after each one, and the disks changed when the game asks.
-
-### [Ulysses and the Golden Fleece, from the start to the end](guides/ulysses.md)
-
-[<img src="guides/images/ulysses/0002.png" width="320" alt="A small town of ancient Greece">](guides/ulysses.md)
-
-Hi-Res Adventure #4, on two sides of a diskette: a ship and a crew from
-ancient Greece to the Golden Fleece, past the sirens and the Cyclops. Played
-to its end, a picture of the screen after each command.
-
-### [Total Replay](guides/total-replay.md)
-
-[<img src="guides/images/total-replay/box-art.png" width="320" alt="Box art in Super Hi-Res">](guides/total-replay.md)
-
-Hundreds of games on one hard disk, with the box art in Super Hi-Res: the
-launcher, its attract mode, and a game found by typing its name.
+Each section below has a page of its own with a picture of each activity
+and a few lines on it.
+
+## [First steps](sections/first-steps.md)
+
+- [The Apple \]\[ of 1977](guides/apple-ii.md): Wozniak's machine, with the Monitor, the Mini-Assembler and Integer BASIC
+- [The Apple \]\[ and its cassettes](guides/apple-ii-cassettes.md): Breakout and Apple's first programs, loaded from tape
+- [From four colours to six](guides/six-colours.md): the high resolution graphics in violet and green, then blue and orange too
+- [Switch on an Apple \]\[+](guides/switch-on.md): Applesoft BASIC at power on, a program typed, listed and run
+- [From Integer BASIC to Applesoft](guides/integer-and-applesoft.md): Applesoft from tape, and both BASICs on one machine with the Language Card
+- [Switch on an Apple //e](guides/apple-iie.md): lower case, 80 columns, MouseText and the self test
+- [The Apple //e, original and enhanced](guides/apple-iie-models.md): the //e of 1983 and the enhanced one of 1985, side by side
+- [Life with DOS 3.3](guides/dos33.md): the System Master, a catalog, and a diskette that starts your own program
+- [From 13 sectors to 16: DOS 3.2 and DOS 3.3](guides/dos32.md): 13 sectors, MUFFIN and BOOT13
+- [ProDOS](guides/prodos.md): the program selector, a RAM disk, and a diskette mapped in Copy II Plus
+- [Apple II DeskTop](guides/desktop.md): a mouse, windows and icons, and the flying toasters
+
+## [Languages and programming](sections/languages-and-programming.md)
+
+- [A game in Applesoft](guides/paddle-game.md): a bat and a ball in low resolution, typed in and played with a paddle
+- [A game in Applesoft: the snake](guides/applesoft-snake.md): 35 lines of Applesoft, typed in, explained and played
+- [Logo and its turtle](guides/logo.md): the turtle, procedures, a flower of squares and a spiral
+- [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle
+- [A game in Apple Pascal: 2048](guides/pascal-2048.md): a whole game typed in, compiled and played to the end
+- [Assembly language with Merlin](guides/merlin.md): a program in 6502 assembly language, typed in, assembled and run
+
+## [Making things and work](sections/making-things-and-work.md)
+
+- [VisiCalc](guides/visicalc.md): the first spreadsheet, a household budget worked out again as it changes
+- [AppleWorks](guides/appleworks.md): a spreadsheet, a letter and a list of friends in one program
+- [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
+- [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
+- [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
+
+## [Cards](sections/cards.md)
+
+- [The Mockingboard](guides/mockingboard.md): the sound card, from its demonstration disk, recorded to listen to
+- [160 columns: the Videx Ultraterm](guides/ultraterm.md): a card for up to 160 columns of text, and each of its modes
+- [The RGB card and its fourteen video modes](guides/rgb-card.md): the fourteen video modes of the Video-7 card for the //e
+- [A megabyte on a card: the Memory Expansion Card](guides/memory-expansion.md): a megabyte as a RAM disk for ProDOS, and the card from DOS 3.3
+- [What is in the slots: Card Cat](guides/card-cat.md): a modern program that finds the card in each slot
+- [Sixteen fonts on the //e: the ROMXce](guides/romx.md): a modern board that changes the font of the //e as a program runs
+- [The time from a ThunderClock](guides/thunderclock.md): the time from BASIC, and ProDOS dating its files
+- [The SwyftCard](guides/swyftcard.md): Jef Raskin's editor on a card, before the Canon Cat
+- [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
+
+## [Other systems](sections/other-systems.md)
+
+- [CP/M on the Z80 SoftCard](guides/cpm.md): a Z80 on a card: CP/M, an assembler, BASIC-80 and GBASIC
+- [The languages of the BBC Micro on a //e: Applecorn](guides/applecorn.md): BBC BASIC, COMAL, Lisp, Forth and more on an enhanced //e
+
+## [Clones](sections/clones.md)
+
+- [The Base 64A, an Apple \]\[+ from Taiwan](guides/base64a.md): an Apple \]\[+ from Taiwan, with a word processor in its ROM
+- [The Basis 108, an Apple \]\[+ from Germany](guides/basis108.md): an Apple \]\[+ from Germany, in 80 columns, with four character sets
+
+## [Play](sections/play.md)
+
+- [Cranston Manor, from the start to the end](guides/cranston.md): Hi-Res Adventure #3, played to its end
+- [The Dark Crystal, from the start to the end](guides/darkcrystal.md): Sierra's adventure after Jim Henson's film, played to its end
+- [Flight Simulator II over Chicago](guides/flight-simulator.md): subLOGIC's simulator: a take-off past the towers of Chicago
+- [Karateka](guides/karateka.md): Jordan Mechner's game told like a film, and its disk turned over
+- [Lode Runner](guides/lode-runner.md): Broderbund's game of 1983: the demonstration, and a game played
+- [Mission: Asteroid, from the start to the end](guides/missionasteroid.md): Hi-Res Adventure #0, played to its end
+- [Mystery House, from the start to the end](guides/mysteryhouse.md): the first Hi-Res Adventure, played to its end
+- [Robot Odyssey, level 1: the Sewer](guides/robotodyssey-sewer.md): robots to walk into and wire, the first level played
+- [Robot Odyssey, level 2: the Subway](guides/robotodyssey-subway.md): the second level, played on from the first
+- [The Wizard and the Princess, from the start to the end](guides/wizard.md): the second Hi-Res Adventure, in colour, played to its end
+- [Time Zone, from the start to the end](guides/timezone.md): twelve sides of diskettes, all 1,058 commands, played to its end
+- [Ulysses and the Golden Fleece, from the start to the end](guides/ulysses.md): Hi-Res Adventure #4, played to its end
+- [Total Replay](guides/total-replay.md): hundreds of games on one hard disk, with box art in Super Hi-Res
 
 ## The disks
 

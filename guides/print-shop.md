@@ -262,7 +262,7 @@ needs to know which, and on what card, before it prints.
 
 ## What next
 
-**Next:** [Apple Pascal](pascal.md).
+**Next:** [The Mockingboard](mockingboard.md).
 
 [Printing](printing.md) prints from BASIC, on the same card; [Fantavision:
 drawings that move](fantavision.md) is another program of Broderbund's for

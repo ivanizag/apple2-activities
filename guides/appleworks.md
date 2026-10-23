@@ -171,7 +171,7 @@ izapple2 -screen green disks/a2_AppleWorks_3.0_8-bit.2mg
 
 ## What next
 
-**Next:** [The SwyftCard](swyftcard.md).
+**Next:** [Fantavision: drawings that move](fantavision.md).
 
 [ProDOS](prodos.md) is the system AppleWorks runs on, and
 [Apple II DeskTop](desktop.md) the other way of the //e with files, with a

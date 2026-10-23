@@ -118,7 +118,7 @@ func TestWhatNext(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	pages := regexp.MustCompile(`(?m)^### (\[.*\])\(guides/(.*)\)$`).FindAllStringSubmatch(string(readme), -1)
+	pages := regexp.MustCompile(`(?m)^- (\[.*\])\(guides/([^)]*)\): `).FindAllStringSubmatch(string(readme), -1)
 	for i, p := range pages {
 		next := "**Next:** this is the last of [the activities](../README.md)."
 		if i+1 < len(pages) {
@@ -131,6 +131,41 @@ func TestWhatNext(t *testing.T) {
 		_, whatNext, _ := strings.Cut(string(page), "\n## What next\n\n")
 		if !strings.HasPrefix(whatNext, next) {
 			t.Errorf("the What next of %v does not start with %v", p[2], next)
+		}
+	}
+}
+
+/*
+TestSections checks that the page of each section of the README, with the
+pictures, has the same pages as its list there, with the same titles and in
+the same order
+*/
+func TestSections(t *testing.T) {
+	readme, err := os.ReadFile("../README.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+	listed := regexp.MustCompile(`(?m)^- (\[.*\]\(guides/[^)]*\)): `)
+	pictured := regexp.MustCompile(`(?m)^### (\[.*\])\(\.\./(guides/[^)]*)\)$`)
+	parts := regexp.MustCompile(`(?m)^## \[.*\]\(sections/(.*)\)$`).Split(string(readme), -1)
+	sections := regexp.MustCompile(`(?m)^## \[.*\]\(sections/(.*)\)$`).FindAllStringSubmatch(string(readme), -1)
+	if len(sections) == 0 {
+		t.Fatal("the README has no sections")
+	}
+	for i, s := range sections {
+		var want, got []string
+		for _, m := range listed.FindAllStringSubmatch(parts[i+1], -1) {
+			want = append(want, m[1])
+		}
+		page, err := os.ReadFile(filepath.Join("../sections", s[1]))
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, m := range pictured.FindAllStringSubmatch(string(page), -1) {
+			got = append(got, m[1]+"("+m[2]+")")
+		}
+		if !slices.Equal(want, got) {
+			t.Errorf("sections/%v does not have the pages of its list in the README\n%v\n%v", s[1], want, got)
 		}
 	}
 }

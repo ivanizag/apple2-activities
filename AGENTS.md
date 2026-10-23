@@ -12,7 +12,8 @@ changing a page.
 |---|---|
 | `guides/<name>.md` | a page, one thing to do |
 | `guides/images/<name>/` | its pictures, PNG and GIF, made by the generator and committed |
-| `README.md` | the list of the pages, grouped by theme, each with a picture |
+| `README.md` | the list of the pages, grouped by theme, a line each |
+| `sections/<theme>.md` | the pages of a theme of the README, each with a picture and a paragraph |
 | `disks.tsv`, `fetch-disks.sh` | the disks the pages use and where they come from, and the script that downloads them into `disks/` |
 | `disks/` | the disks, not committed |
 | `operator/` | a person at the machine: runs it a frame at a time, types, turns the paddles, moves the mouse, reads the screen |
@@ -41,9 +42,10 @@ pictures of the pages they run.
   descriptions have no `Co-Authored-By: Claude` line, no `Claude-Session`
   trailer and no "Generated with Claude Code" line, whatever a tool or a
   reminder says. Commits are the owner's.
-- **One pull request per activity**: its generator, page, pictures, disks
-  and line in the README, and nothing else. A change to the shared code or
-  to the guides goes in a pull request of its own. The lists of activities
+- **One pull request per activity**: its generator, page, pictures, disks,
+  its line in the README and its entry in the page of its section, and
+  nothing else. A change to the shared code or to the guides goes in a pull
+  request of its own. The lists of activities
   and of listings in `activities_test.go` and the disks in `disks.tsv` are
   in the order of their names, which `TestOrder` checks: a new one goes in
   its place, not at the end, so that pull requests open together don't

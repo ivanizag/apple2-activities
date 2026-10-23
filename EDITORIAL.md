@@ -12,8 +12,11 @@ An activity is one thing an Apple II owner really did, walked through step by
 step, with what the machine showed on the way. Its parts are:
 
 - a page, `guides/<name>.md`;
-- an entry in [README.md](README.md), with a title, a picture that links to
-  the page, and a paragraph;
+- a line in the list of its section in [README.md](README.md), its title
+  and a few words on what it does;
+- an entry in the page of that section, `sections/<theme>.md`, with the same
+  title, a picture that links to the page, and a paragraph, in the same place
+  as in the list, which `TestSections` checks;
 - its pictures, in `guides/images/<name>/`, made by running the machine, never
   drawn or edited by hand;
 - its generator, `activities/<name>_test.go`, run from `TestActivities`;
