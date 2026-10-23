@@ -1,6 +1,6 @@
 # The Apple //e, original and enhanced
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Apple //e lived for ten years, in three models that look alike:
 

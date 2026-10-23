@@ -171,6 +171,33 @@ func TestSections(t *testing.T) {
 	}
 }
 
+/*
+TestBreadcrumbs checks that each page of the README starts, under its title,
+with the way back to the list and to its section there
+*/
+func TestBreadcrumbs(t *testing.T) {
+	readme, err := os.ReadFile("../README.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+	headings := regexp.MustCompile(`(?m)^## \[(.*)\]\(sections/(.*)\)$`)
+	parts := headings.Split(string(readme), -1)
+	listed := regexp.MustCompile(`(?m)^- \[.*\]\(guides/([^)]*)\): `)
+	for i, s := range headings.FindAllStringSubmatch(string(readme), -1) {
+		crumb := "[Activities](../README.md) › [" + s[1] + "](../sections/" + s[2] + ")"
+		for _, m := range listed.FindAllStringSubmatch(parts[i+1], -1) {
+			page, err := os.ReadFile(filepath.Join("../guides", m[1]))
+			if err != nil {
+				t.Fatal(err)
+			}
+			_, rest, _ := strings.Cut(string(page), "\n\n")
+			if !strings.HasPrefix(rest, crumb+"\n") {
+				t.Errorf("%v does not start with %v", m[1], crumb)
+			}
+		}
+	}
+}
+
 // TestOrder checks that the activities, their listings and the disks are in
 // the order of their names, so that two pull requests adding to them add in
 // different places and don't conflict

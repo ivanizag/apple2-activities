@@ -1,6 +1,6 @@
 # Life with DOS 3.3
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Disk II drive of 1978 is what turned the Apple II from a home computer
 that loaded its programs from cassettes into one people could work with: a

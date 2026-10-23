@@ -1,6 +1,6 @@
 # Making things and work
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Making things and work
 
 ### [VisiCalc](../guides/visicalc.md)
 

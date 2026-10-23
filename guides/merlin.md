@@ -1,6 +1,6 @@
 # Assembly language with Merlin
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 BASIC on the Apple II worked out each line again every time it ran it, and
 games and anything that had to be fast were written in the language of the

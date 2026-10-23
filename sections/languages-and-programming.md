@@ -1,6 +1,6 @@
 # Languages and programming
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Languages and programming
 
 ### [A game in Integer BASIC](../guides/paddle-game.md)
 

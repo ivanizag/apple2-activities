@@ -1,6 +1,6 @@
 # Karateka
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Karateka** came out in 1984, written by Jordan Mechner while he was a
 student, and published by Brøderbund. It told its story like a film: titles,

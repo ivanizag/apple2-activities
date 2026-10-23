@@ -1,6 +1,6 @@
 # What is in the slots: Card Cat
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 The seven slots of an Apple II took cards for everything: disk drives,
 printers, clocks, sound, a mouse, more memory, another processor. A card

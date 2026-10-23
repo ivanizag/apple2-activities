@@ -1,6 +1,6 @@
 # The Apple \]\[ and its cassettes
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The first Apple \]\[s went on sale on June 10, 1977: a board of Steve
 Wozniak's in a plastic case, with its keyboard, two paddles, 4 KB of memory,

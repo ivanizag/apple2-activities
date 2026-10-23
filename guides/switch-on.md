@@ -1,6 +1,6 @@
 # Switch on an Apple \]\[+
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Apple \]\[+ came out in 1979, two years after the Apple \]\[, with Applesoft
 BASIC in its ROM in place of the Integer BASIC Steve Wozniak had written for the

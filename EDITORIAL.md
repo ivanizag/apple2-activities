@@ -75,7 +75,10 @@ step, with what the machine showed on the way. Its parts are:
 
 ## The page
 
-- **Start with a link back**, `[Back to the activities](../README.md)`.
+- **Start with the way back**, under the title: the list of the activities
+  and the section of the page in it,
+  `[Activities](../README.md) › [Play](../sections/play.md)`, which
+  `TestBreadcrumbs` checks.
 - **Then the history.** One or two paragraphs on what this was in its day and
   why people did it, then one on what the page does.
 - **"What you need"** says what to download and from where: the archive's

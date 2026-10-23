@@ -1,6 +1,6 @@
 # Clones
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Clones
 
 ### [The Base 64A, an Apple \]\[+ from Taiwan](../guides/base64a.md)
 

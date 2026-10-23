@@ -1,6 +1,6 @@
 # A game in Applesoft: the snake
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 The magazines of the eighties printed games for their readers to type in,
 pages of BASIC, and typing them was how many learnt to program. The snake,

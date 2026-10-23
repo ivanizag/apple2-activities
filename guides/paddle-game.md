@@ -1,6 +1,6 @@
 # A game in Integer BASIC
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 The Apple II was made to play games, and to write them. It had colour graphics
 and a speaker, and a game port on the main board for paddles, a knob and a

@@ -1,6 +1,6 @@
 # Apple II DeskTop
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 In 1984 the Macintosh showed what a mouse, windows and icons were for, and the
 Apple II got them too: Apple sold a mouse for the //e and the //c, and

@@ -1,6 +1,6 @@
 # Time Zone, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Time Zone**, *Hi-Res Adventure #5* of On-Line Systems, came out in 1982 for
 the Apple \]\[, written by Ken and Roberta Williams, produced by Bob Davis

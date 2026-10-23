@@ -1,6 +1,6 @@
 # From 13 sectors to 16: DOS 3.2 and DOS 3.3
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Disk II wrote 35 tracks on a diskette, and DOS 3.2, of February 1979,
 cut each track into 13 sectors of 256 bytes. In August 1980 Apple brought

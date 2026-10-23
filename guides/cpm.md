@@ -1,6 +1,6 @@
 # CP/M on the Z80 SoftCard
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Other systems](../sections/other-systems.md)
 
 At the end of the seventies the business software of small computers ran on
 CP/M, the operating system of Digital Research, and CP/M ran on the Z80 and

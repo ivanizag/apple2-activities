@@ -1,6 +1,6 @@
 # AppleWorks
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Making things and work](../sections/making-things-and-work.md)
 
 **AppleWorks**, by Rupert Lissner, came out from Apple in 1984 and was the
 program of the //e: a word processor, a spreadsheet and a data base in one,

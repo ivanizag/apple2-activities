@@ -1,6 +1,6 @@
 # Apple Pascal
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 Pascal was the language for teaching programming at the end of the
 seventies, and the University of California, San Diego had a version of it

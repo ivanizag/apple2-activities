@@ -1,6 +1,6 @@
 # Printing
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Making things and work](../sections/making-things-and-work.md)
 
 A printer was what turned a home computer into an office one: letters,
 listings of programs to read away from the screen, reports. The Apple II

@@ -1,6 +1,6 @@
 # The languages of the BBC Micro on a //e: Applecorn
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Other systems](../sections/other-systems.md)
 
 The BBC Micro, made by Acorn for the computer literacy project of the BBC in
 1981, was the computer of British schools in the eighties. It had a 6502, as

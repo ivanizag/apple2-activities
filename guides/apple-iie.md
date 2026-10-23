@@ -1,6 +1,6 @@
 # Switch on an Apple //e
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Apple //e of 1983 was the Apple II for the rest of the decade, and the
 one that sold the most. It kept the slots and the software of the Apple \]\[+
