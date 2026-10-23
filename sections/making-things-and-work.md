@@ -44,4 +44,12 @@ ImageWriter, a birthday card of its own design, a sign and a banner from its
 borders, pictures and fonts, and a kaleidoscope of Screen Magic, each drawn
 on paper dot by dot from what the printer got.
 
+### [Pinball Construction Set](../guides/pinball-construction-set.md)
+
+[<img src="../guides/images/pinball-construction-set/built.png" width="320" alt="A pinball table built from the parts box">](../guides/pinball-construction-set.md)
+
+Bill Budge's program of 1983 for making pinball games: flippers, bumpers
+and a ball dragged with the hand of the joystick onto an empty table, and
+played, and DEMO1, one of its tables, played as a game.
+
 **Next section:** [Cards](cards.md)
