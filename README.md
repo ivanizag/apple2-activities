@@ -38,6 +38,7 @@ and a few lines on it.
 - [Logo and its turtle](guides/logo.md): the turtle, procedures, a flower of squares and a spiral
 - [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle
 - [A game in Apple Pascal: 2048](guides/pascal-2048.md): a whole game typed in, compiled and played to the end
+- [Turbo Pascal on CP/M](guides/turbo-pascal.md): Borland's Pascal on the SoftCard, its error messages, and a maze dug and solved by recursion
 - [Assembly language with Merlin](guides/merlin.md): a program in 6502 assembly language, typed in, assembled and run
 
 ## [Making things and work](sections/making-things-and-work.md)
