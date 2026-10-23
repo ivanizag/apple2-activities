@@ -2,6 +2,14 @@
 
 [Activities](../README.md) › Play
 
+### [Akalabeth: Lord British's first world](../guides/akalabeth.md)
+
+[<img src="../guides/images/akalabeth/killed.png" width="320" alt="A dungeon in lines, a giant rat killed">](../guides/akalabeth.md)
+
+Richard Garriott's game of 1979, in Applesoft, before Ultima: a character,
+the shop, the world from above, the quest of Lord British, and a giant rat
+hunted down two levels of a dungeon drawn in lines.
+
 ### [Cranston Manor, from the start to the end](../guides/cranston.md)
 
 [<img src="../guides/images/cranston/0001.png" width="320" alt="Main Street">](../guides/cranston.md)
