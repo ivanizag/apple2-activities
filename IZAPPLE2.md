@@ -302,3 +302,20 @@ so the option is taken for one, and the machine fails to build.
 
 **Here:** nothing; `-showConfig` before any file name works, as
 [EDITORIAL.md](EDITORIAL.md) says.
+
+### Castle Wolfenstein on a diskette doesn't leave its first room
+
+Castle Wolfenstein writes to its diskette as it plays, and reads each room
+from it. On a DSK, 4am's crack of the version of 06/19/84 or the copy of the
+3d0g Knight collection on Asimov, a doorway or the stairs out of a room bring
+back the same room, the player where he left it: the screen fills with grey
+lines, then with random dots, as the game loads, and the room drawn is the
+one left. The woz-a-day disk can't be tried, as the game writes to it (see
+the one above). From the hard disk of Total Replay, the stairs work; a
+doorway out of the first room there brings it back too. Not known whether a
+real Apple II does the same with these diskettes; the game uses its own
+routines for the disk, which 4am's crack keeps.
+
+**Here, once fixed:** [castle-wolfenstein.md](guides/castle-wolfenstein.md)
+plays it from Total Replay, on a //e; it could play it from the diskette, on
+an Apple \]\[+ as in 1981, and walk through doorways.
