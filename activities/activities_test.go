@@ -60,6 +60,7 @@ var activities = []struct {
 	{"pascal", []string{pascalMachine}, pascalScreenshots},
 	{"pascal-2048", []string{pascalMachine}, pascal2048Screenshots},
 	{"pinball-construction-set", []string{pinballMachine}, pinballScreenshots},
+	{"prince-of-persia", []string{princeOfPersiaMachine}, princeOfPersiaScreenshots},
 	{"print-shop", []string{printShopMachine}, printShopScreenshots},
 	{"printing", []string{printingMachine}, printingScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},

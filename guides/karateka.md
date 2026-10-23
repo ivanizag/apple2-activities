@@ -137,8 +137,9 @@ round.
 
 ## What next
 
-**Next:** [Lode Runner](lode-runner.md), the other game of Brøderbund on these
-pages, from the year before.
+**Next:** [Prince of Persia](prince-of-persia.md), Jordan Mechner's next game,
+of 1989.
 
-[Robot Odyssey](robotodyssey-sewer.md) is another game of 1984 on these
+[Lode Runner](lode-runner.md) is another game of Brøderbund, from the year
+before, and [Robot Odyssey](robotodyssey-sewer.md) is another game of 1984 on these
 pages, all thought where this one is all action.

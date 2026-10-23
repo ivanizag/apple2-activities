@@ -81,6 +81,7 @@ and a few lines on it.
 - [The Dark Crystal, from the start to the end](guides/darkcrystal.md): Sierra's adventure after Jim Henson's film, played to its end
 - [Flight Simulator II over Chicago](guides/flight-simulator.md): subLOGIC's simulator: a take-off past the towers of Chicago
 - [Karateka](guides/karateka.md): Jordan Mechner's game told like a film, and its disk turned over
+- [Prince of Persia](guides/prince-of-persia.md): Jordan Mechner's game of 1989: the story, the game playing itself, and a run into a guard without a sword
 - [Lode Runner](guides/lode-runner.md): Broderbund's game of 1983: the demonstration, and a game played
 - [Mission: Asteroid, from the start to the end](guides/missionasteroid.md): Hi-Res Adventure #0, played to its end
 - [Mystery House, from the start to the end](guides/mysteryhouse.md): the first Hi-Res Adventure, played to its end
