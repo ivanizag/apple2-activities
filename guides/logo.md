@@ -153,7 +153,7 @@ izapple2 -model 2plus -screen green "disks/Apple LOGO.dsk"
 
 ## What next
 
-**Next:** [Fantavision: drawings that move](fantavision.md).
+**Next:** [Apple Pascal](pascal.md).
 
-[Apple Pascal](pascal.md) has a turtle too, in its unit `TURTLEGRAPHICS`,
+Apple Pascal, the next page, has a turtle too, in its unit `TURTLEGRAPHICS`,
 for programs that are compiled.

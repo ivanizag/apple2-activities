@@ -192,8 +192,8 @@ izapple2 -model 2plus -screen green "disks/Merlin Macroassembler Side 1 (SDS, 19
 
 ## What next
 
-**Next:** [VisiCalc](visicalc.md).
+**Next:** [Forth in ROM](forth.md).
 
 [The Apple \]\[ of 1977](apple-ii.md) has the Mini-Assembler, which
-assembles a line at a time with no labels, and [Forth in ROM](forth.md)
-draws the same bars, slowly.
+assembles a line at a time with no labels, and Forth in ROM, the
+next page, draws the same bars, slowly.

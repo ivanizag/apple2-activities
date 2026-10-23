@@ -31,17 +31,21 @@ and a few lines on it.
 - [ProDOS](guides/prodos.md): the program selector, a RAM disk, and a diskette mapped in Copy II Plus
 - [Apple II DeskTop](guides/desktop.md): a mouse, windows and icons, and the flying toasters
 
-## [Making things](sections/making-things.md)
+## [Languages and programming](sections/languages-and-programming.md)
 
 - [A game in Applesoft](guides/paddle-game.md): a bat and a ball in low resolution, typed in and played with a paddle
+- [A game in Applesoft: the snake](guides/applesoft-snake.md): 35 lines of Applesoft, typed in, explained and played
 - [Logo and its turtle](guides/logo.md): the turtle, procedures, a flower of squares and a spiral
+- [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle
+- [A game in Apple Pascal: 2048](guides/pascal-2048.md): a whole game typed in, compiled and played to the end
+- [Assembly language with Merlin](guides/merlin.md): a program in 6502 assembly language, typed in, assembled and run
+- [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
+
+## [Making things](sections/making-things.md)
+
 - [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
 - [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
 - [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
-- [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle
-- [A game in Apple Pascal: 2048](guides/pascal-2048.md): a whole game typed in, compiled and played to the end
-- [A game in Applesoft: the snake](guides/applesoft-snake.md): 35 lines of Applesoft, typed in, explained and played
-- [Assembly language with Merlin](guides/merlin.md): a program in 6502 assembly language, typed in, assembled and run
 
 ## [Work](sections/work.md)
 
@@ -61,7 +65,6 @@ and a few lines on it.
 
 ## [Other systems](sections/other-systems.md)
 
-- [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
 - [CP/M on the Z80 SoftCard](guides/cpm.md): a Z80 on a card: CP/M, an assembler, BASIC-80 and GBASIC
 - [The languages of the BBC Micro on a //e: Applecorn](guides/applecorn.md): BBC BASIC, COMAL, Lisp, Forth and more on an enhanced //e
 

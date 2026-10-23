@@ -168,7 +168,7 @@ izapple2 -model forth -screen green
 
 ## What next
 
-**Next:** [CP/M on the Z80 SoftCard](cpm.md).
+**Next:** [Fantavision: drawings that move](fantavision.md).
 
 [The Apple \]\[ of 1977](apple-ii.md) has the other way of programming the
 machine close to the metal, its Mini-Assembler.

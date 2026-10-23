@@ -90,4 +90,4 @@ The Apple II with a mouse, windows and icons: a disk opened with a double
 click, a file read, the machine asked what it has in its slots, a picture in
 double high resolution, the flying toasters, and the Calculator.
 
-**Next section:** [Making things](making-things.md)
+**Next section:** [Languages and programming](languages-and-programming.md)

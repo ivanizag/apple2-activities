@@ -2,14 +2,6 @@
 
 [Back to the activities](../README.md)
 
-### [Forth in ROM](../guides/forth.md)
-
-[<img src="../guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](../guides/forth.md)
-
-An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
-words used and new ones defined, loops and decisions, and the machine
-underneath, its memory, its speaker and its graphics, driven from Forth.
-
 ### [CP/M on the Z80 SoftCard](../guides/cpm.md)
 
 [<img src="../guides/images/cpm/dir.png" width="320" alt="The disk of CP/M">](../guides/cpm.md)

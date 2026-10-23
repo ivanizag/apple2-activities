@@ -114,7 +114,7 @@ izapple2 -model 2plus -screen color -s6 empty
 
 ## What next
 
-**Next:** [Logo and its turtle](logo.md).
+**Next:** [A game in Applesoft: the snake](applesoft-snake.md).
 
 [Life with DOS 3.3](dos33.md) shows how to keep the game on a diskette: with
 DOS started, `SAVE GAME` saves it and `RUN GAME` runs it again.
