@@ -1,6 +1,6 @@
 # Play
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Play
 
 ### [Cranston Manor, from the start to the end](../guides/cranston.md)
 

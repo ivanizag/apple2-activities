@@ -1,6 +1,6 @@
 # ProDOS
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 DOS 3.3 was made for diskettes of 140 KB. When hard disks came, Apple made a
 new operating system for the Apple II, **ProDOS**, out at the start of 1984:

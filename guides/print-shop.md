@@ -1,6 +1,6 @@
 # The Print Shop: cards, signs and banners
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Making things and work](../sections/making-things-and-work.md)
 
 The Print Shop was David Balsam and Martin Kahn's program for making things to
 print, published by Broderbund in 1984 for the Apple II and soon for most

@@ -1,6 +1,6 @@
 # Forth in ROM
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 Forth is a language made of *words*: each does something to a stack of
 numbers, and a program is new words defined from the ones there are, until

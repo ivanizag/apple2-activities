@@ -1,6 +1,6 @@
 # The Mockingboard
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 The Apple II has a speaker and nothing else: a program makes sound by
 clicking it, one click at a time, and has no time left for anything else

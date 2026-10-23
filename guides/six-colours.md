@@ -1,6 +1,6 @@
 # From four colours to six
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The colours of the first Apple \]\[s were not all there yet. The first
 boards, *Revision 0*, the first 6,000 machines, showed four colours in the

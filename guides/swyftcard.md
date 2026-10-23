@@ -1,6 +1,6 @@
 # The SwyftCard
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 Jef Raskin started the Macintosh project at Apple in 1979, and left Apple in
 1982 to found Information Appliance, to make a computer simpler still: no

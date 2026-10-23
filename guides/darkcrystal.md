@@ -1,6 +1,6 @@
 # The Dark Crystal, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **The Dark Crystal**, of Sierra On-Line, came out in 1982 for the Apple \]\[,
 by Roberta Williams, programmed by Ken Williams and Chris Iden, after the

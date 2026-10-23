@@ -1,6 +1,6 @@
 # VisiCalc
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Making things and work](../sections/making-things-and-work.md)
 
 In 1979 Dan Bricklin and Bob Frankston wrote a program for the Apple II that
 did on the screen what accountants did on paper with a pencil and an eraser:

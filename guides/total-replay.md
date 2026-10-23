@@ -1,6 +1,6 @@
 # Total Replay
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 Total Replay is a modern collection, put together by 4am and released for
 free: hundreds of Apple II games on one hard disk image, each started from a

@@ -1,6 +1,6 @@
 # Sixteen fonts on the //e: the ROMXce
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 The letters on the screen of an Apple //e are drawn by a chip of their own,
 the ROM of the characters: a picture of each, dot by dot, which the video

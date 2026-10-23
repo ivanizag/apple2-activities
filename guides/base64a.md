@@ -1,6 +1,6 @@
 # The Base 64A, an Apple \]\[+ from Taiwan
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Clones](../sections/clones.md)
 
 The Apple \]\[ was easy to copy: its schematics and the listing of its
 Monitor came in its manuals, and its parts could be bought anywhere. In the

@@ -1,6 +1,6 @@
 # From Integer BASIC to Applesoft
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The first Apple \]\[ had Wozniak's **Integer BASIC** in its ROM: fast, and
 made for the colour graphics, but counting only in whole numbers, from

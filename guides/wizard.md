@@ -1,6 +1,6 @@
 # The Wizard and the Princess, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **The Wizard and the Princess**, *Hi-Res Adventure #2* of On-Line Systems,
 came out in 1980 for the Apple \]\[, written by Ken and Roberta Williams.

@@ -1,6 +1,6 @@
 # Robot Odyssey, level 1: the Sewer
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Robot Odyssey** came out in 1984 from The Learning Company, written by
 Mike Wallace and Leslie Grimm, after Rocky's Boots, which Leslie Grimm had

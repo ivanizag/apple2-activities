@@ -1,6 +1,6 @@
 # The Basis 108, an Apple \]\[+ from Germany
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Clones](../sections/clones.md)
 
 In the early eighties Basis, a small company in West Germany, made its own
 Apple \]\[+: the **Basis 108**. It was built for work, in a heavy case of

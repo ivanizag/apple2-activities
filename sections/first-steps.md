@@ -1,6 +1,6 @@
 # First steps
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › First steps
 
 ### [The Apple \]\[ of 1977](../guides/apple-ii.md)
 

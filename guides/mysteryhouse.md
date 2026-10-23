@@ -1,6 +1,6 @@
 # Mystery House, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Mystery House**, *Hi-Res Adventure #1* of On-Line Systems, came out in 1980
 for the Apple \]\[, written by Ken and Roberta Williams. It was one of the

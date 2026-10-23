@@ -1,6 +1,6 @@
 # Other systems
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Other systems
 
 ### [CP/M on the Z80 SoftCard](../guides/cpm.md)
 

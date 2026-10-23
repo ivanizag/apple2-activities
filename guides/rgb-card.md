@@ -1,6 +1,6 @@
 # The RGB card and its fourteen video modes
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 The Apple II makes its colour the way a television expects it, a signal
 where the colour is a wobble on top of the brightness, and that is why its

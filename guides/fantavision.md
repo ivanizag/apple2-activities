@@ -1,6 +1,6 @@
 # Fantavision: drawings that move
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Making things and work](../sections/making-things-and-work.md)
 
 Fantavision was Scott Anderson's animation program, published by Broderbund
 in 1985 for the Apple II, and later for the Apple IIgs and the IBM PC. You

@@ -1,6 +1,6 @@
 # The time from a ThunderClock
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 An Apple \]\[ did not know what time it was. It counted nothing while it was
 off, and when it was on it had no clock to read, so programs asked for the

@@ -1,6 +1,6 @@
 # Lode Runner
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 Lode Runner was Doug Smith's game, published by Broderbund in 1983 for the
 Apple II before any other computer. A runner collects the gold of a level of

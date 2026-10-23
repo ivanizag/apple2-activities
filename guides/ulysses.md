@@ -1,6 +1,6 @@
 # Ulysses and the Golden Fleece, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Ulysses and the Golden Fleece**, *Hi-Res Adventure #4* of On-Line Systems,
 by Bob Davis and Ken Williams, here in its version 1.1 of 1982. The king of

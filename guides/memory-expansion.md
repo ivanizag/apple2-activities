@@ -1,6 +1,6 @@
 # A megabyte on a card: the Apple II Memory Expansion Card
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 The 6502 sees 64 KB, and an Apple \]\[+ with a Language Card has all of them.
 More memory had to be reached another way. Apple's **Memory Expansion

@@ -1,6 +1,6 @@
 # The Apple \]\[ of 1977
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The first Apple \]\[ came out in 1977, Steve Wozniak's design from the
 board to the ROM. What the ROM had was his too: the **Monitor**, a few

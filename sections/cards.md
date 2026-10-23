@@ -1,6 +1,6 @@
 # Cards
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › Cards
 
 ### [The Mockingboard](../guides/mockingboard.md)
 

@@ -1,6 +1,6 @@
 # CP/M-65: CP/M on the 6502
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Other systems](../sections/other-systems.md)
 
 CP/M, the operating system of Digital Research, was written for the 8080 and
 the Z80, and the Apple II only ran it with a Z80 on a card, the

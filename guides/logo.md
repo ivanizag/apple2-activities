@@ -1,6 +1,6 @@
 # Logo and its turtle
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 Logo was made at the end of the sixties, at Bolt Beranek and Newman and at
 MIT, by Wally Feurzeig, Seymour Papert and Cynthia Solomon, as a language

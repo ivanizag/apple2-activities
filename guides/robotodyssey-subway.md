@@ -1,6 +1,6 @@
 # Robot Odyssey, level 2: the Subway
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 The second level of [Robot Odyssey](robotodyssey-sewer.md) is the Subway of
 Robotropolis: a grid of tunnels round a line of eight stations, a train that

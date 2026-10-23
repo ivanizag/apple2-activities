@@ -1,6 +1,6 @@
 # Flight Simulator II over Chicago
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 Bruce Artwick wrote his first flight simulator for the Apple II in 1979,
 lines on a black screen, and his company, subLOGIC, of Champaign in

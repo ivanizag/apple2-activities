@@ -1,6 +1,6 @@
 # 160 columns: the Videx Ultraterm
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Cards](../sections/cards.md)
 
 An Apple \]\[+ writes 40 columns of capitals, and work with words or numbers
 wanted more. Videx of Oregon sold the cards for that: the **Videoterm**, 80

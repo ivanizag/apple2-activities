@@ -1,6 +1,6 @@
 # Cranston Manor, from the start to the end
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Play](../sections/play.md)
 
 **Cranston Manor**, *Hi-Res Adventure #3* of On-Line Systems, came out in
 1981 for the Apple \]\[. It starts on Main Street of a small town, and goes

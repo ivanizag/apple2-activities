@@ -1,6 +1,6 @@
 # A game in Apple Pascal: 2048
 
-[Back to the activities](../README.md)
+[Activities](../README.md) › [Languages and programming](../sections/languages-and-programming.md)
 
 [Apple Pascal](pascal.md) wrote a few lines; this page writes a whole
 game in it. **2048**, by Gabriele Cirulli in 2014, slides numbered tiles on
