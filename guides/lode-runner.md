@@ -217,5 +217,5 @@ change it.
 
 **Next:** [Mission: Asteroid, from the start to the end](missionasteroid.md).
 
-[A game in Applesoft](paddle-game.md) is a game you write yourself, in
-BASIC, for the same machine.
+[A game in Integer BASIC](paddle-game.md) is a game you write yourself,
+in the BASIC of the first Apple \]\[.

@@ -2,13 +2,13 @@
 
 [Back to the activities](../README.md)
 
-### [A game in Applesoft](../guides/paddle-game.md)
+### [A game in Integer BASIC](../guides/paddle-game.md)
 
 [<img src="../guides/images/paddle-game/game-over.png" width="320" alt="A bat and a ball in low resolution graphics">](../guides/paddle-game.md)
 
 A bat on a paddle and a ball, in the low resolution colour graphics of the
-Apple \]\[+: typed in as the listings of the magazines were, and played with the
-mouse as the paddle.
+first Apple \]\[, in its Integer BASIC: typed in as the listings of the
+magazines were, and played with the mouse as the paddle.
 
 ### [A game in Applesoft: the snake](../guides/applesoft-snake.md)
 

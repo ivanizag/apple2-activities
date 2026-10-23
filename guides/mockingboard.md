@@ -83,5 +83,5 @@ izapple2 -model 2plus -screen color -s4 mockingboard disks/Mockingboard_Sound_an
 
 **Next:** [160 columns: the Videx Ultraterm](ultraterm.md).
 
-[A game in Applesoft](paddle-game.md) has a game with no sound at all: the
+[A game in Integer BASIC](paddle-game.md) has a game with no sound at all: the
 speaker is all an Apple II without a card has.
