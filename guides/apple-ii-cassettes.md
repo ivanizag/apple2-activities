@@ -156,4 +156,5 @@ resolution graphics on the first board and on the later ones.
 
 [The Apple \]\[ of 1977](apple-ii.md) goes through the Monitor, the
 Mini-Assembler and Integer BASIC of the same machine, and
-[A game in Applesoft](paddle-game.md) is a game of bat and ball typed in.
+[A game in Integer BASIC](paddle-game.md) is a game of bat and ball typed
+into the same Apple \]\[.

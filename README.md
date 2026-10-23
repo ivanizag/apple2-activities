@@ -33,7 +33,7 @@ and a few lines on it.
 
 ## [Languages and programming](sections/languages-and-programming.md)
 
-- [A game in Applesoft](guides/paddle-game.md): a bat and a ball in low resolution, typed in and played with a paddle
+- [A game in Integer BASIC](guides/paddle-game.md): a bat and a ball in low resolution, typed into the first Apple \]\[ and played with a paddle
 - [A game in Applesoft: the snake](guides/applesoft-snake.md): 35 lines of Applesoft, typed in, explained and played
 - [Logo and its turtle](guides/logo.md): the turtle, procedures, a flower of squares and a spiral
 - [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle

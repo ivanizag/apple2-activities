@@ -153,5 +153,5 @@ izapple2 -model 2plus -screen color -s6 empty
 
 **Next:** [Logo and its turtle](logo.md).
 
-[A game in Applesoft](paddle-game.md) is the other game typed in on these
-pages, played with the paddle.
+[A game in Integer BASIC](paddle-game.md) is another game typed in, in the
+Integer BASIC of the first Apple \]\[, played with the paddle.

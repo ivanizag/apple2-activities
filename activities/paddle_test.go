@@ -9,19 +9,23 @@ import (
 
 // paddleGame is the program of the paddle game, as typed
 var paddleGame = []string{
-	"10 GR : HOME",
-	"20 X = 20:Y = 5:DX = 1:DY = 1:S = 0:Q = -1",
-	"30 COLOR= 15: HLIN 0,39 AT 0: VLIN 0,39 AT 0: VLIN 0,39 AT 39",
-	"40 P = INT ( PDL (0) * 32 / 255) + 1",
-	"50 IF P <> Q THEN COLOR= 0: HLIN 1,38 AT 38: COLOR= 13: HLIN P,P + 5 AT 38:Q = P",
-	"60 COLOR= 0: PLOT X,Y",
-	"70 IF X + DX < 1 OR X + DX > 38 THEN DX = - DX",
-	"80 IF Y + DY < 1 THEN DY = - DY",
-	`90 IF Y + DY = 38 AND X + DX >= P AND X + DX <= P + 5 THEN DY = - DY:S = S + 1: VTAB 22: PRINT "SCORE ";S`,
-	"100 X = X + DX:Y = Y + DY",
-	`110 IF Y > 38 THEN VTAB 22: PRINT "GAME OVER, SCORE ";S: END`,
-	"120 COLOR= 9: PLOT X,Y",
+	"10 GR:CALL -936",
+	"20 X=20:Y=5:DX=1:DY=1:S=0:Q=-1",
+	"30 COLOR=15:HLIN 0,39 AT 0:VLIN 0,39 AT 0:VLIN 0,39 AT 39",
+	"40 P=PDL(0)*32/255+1",
+	"50 IF P=Q THEN 60",
+	"55 COLOR=0:HLIN 1,38 AT 38:COLOR=13:HLIN P,P+5 AT 38:Q=P",
+	"60 COLOR=0:PLOT X,Y",
+	"70 IF X+DX<1 OR X+DX>38 THEN DX=-DX",
+	"80 IF Y+DY<1 THEN DY=-DY",
+	"90 IF Y+DY#38 OR X+DX<P OR X+DX>P+5 THEN 100",
+	`95 DY=-DY:S=S+1:VTAB 22:PRINT "SCORE ";S`,
+	"100 X=X+DX:Y=Y+DY",
+	"110 IF Y>38 THEN 140",
+	"120 COLOR=9:PLOT X,Y",
 	"130 GOTO 40",
+	`140 VTAB 22:PRINT "GAME OVER, SCORE ";S`,
+	"150 END",
 }
 
 /*
@@ -50,29 +54,36 @@ func loResFind(o *operator.Operator, color uint8) (x int, y int, found bool) {
 // batPaddle is where to turn the paddle for the bat of the game to be under
 // a place across the screen, from 1 to 38
 func batPaddle(x int) uint8 {
-	// The bat starts at INT(PDL(0) * 32 / 255) + 1 and is six blocks wide
+	// The bat starts at PDL(0)*32/255+1, in whole numbers, and is six
+	// blocks wide
 	p := min(max(x-2, 1), 33)
 	return uint8(min((p-1)*255/32+4, 255))
 }
 
 // paddleMachine is the machine of the guide, as its command line of izapple2
 const paddleMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/Apple2_Plus.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps`
+    -rom "<internal>/341-000x_integer.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -mods four-colors`
 
 /*
-paddleScreenshots is a game written in Applesoft on an Apple ][+ with no disk:
-low resolution graphics, a bat on a paddle and a ball, typed, run and played,
-on a colour television.
+paddleScreenshots is a game written in Integer BASIC on the first Apple ][,
+with no disk: low resolution graphics, a bat on a paddle and a ball, typed,
+run and played, on a colour television.
 */
 func paddleScreenshots(t *testing.T) {
 	pictures := newAlbum("paddle-game", album.Color)
 	o := start(t, paddleMachine, nil)
 	must(t, o.WaitForKeyboard(5))
 
+	// From the Monitor to Integer BASIC
+	must(t, o.Key("Ctrl+B"))
+	must(t, o.TypeLines(""))
+	must(t, o.WaitForKeyboard(5))
+
 	// The program, typed, and its end listed
 	must(t, o.TypeLines(paddleGame...))
-	must(t, o.TypeLines("HOME", "LIST 60,130"))
+	must(t, o.TypeLines("CALL -936", "LIST 60,150"))
 	o.Run(30)
 	must(t, pictures.Screenshot(o, "listing"))
 

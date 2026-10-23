@@ -152,7 +152,7 @@ izapple2 -model desktop -screen color
 
 ## What next
 
-**Next:** [A game in Applesoft](paddle-game.md).
+**Next:** [A game in Integer BASIC](paddle-game.md).
 
 The other desk accessories of the Apple menu, the other screen savers, and
 the *Toys* folder, are worth a look. [Switch on an Apple \]\[+](switch-on.md)
