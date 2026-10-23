@@ -70,6 +70,7 @@ var activities = []struct {
 	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
 	{"timezone", []string{timeZoneMachine}, timeZoneScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},
+	{"turbo-pascal", []string{turboPascalMachine}, turboPascalScreenshots},
 	{"ultraterm", []string{ultratermMachine}, ultratermScreenshots},
 	{"ulysses", []string{ulyssesMachine}, ulyssesScreenshots},
 	{"visicalc", []string{visiCalcMachine}, visiCalcScreenshots},
@@ -250,6 +251,7 @@ var listings = []struct {
 	{"romx", romxListing},
 	{"six-colours", coloursListing},
 	{"thunderclock", clockListing},
+	{"turbo-pascal", mazeListing},
 	{"ultraterm", ultratermModes},
 }
 

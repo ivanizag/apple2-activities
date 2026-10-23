@@ -39,6 +39,15 @@ compiler, and a program that draws with the turtle.
 A whole game written in Apple Pascal, its listing in this repository: typed
 into the editor, compiled, and played to the end, 200 moves.
 
+### [Turbo Pascal on CP/M](../guides/turbo-pascal.md)
+
+[<img src="../guides/images/turbo-pascal/solved.png" width="320" alt="A maze and its way out, in 80 columns">](../guides/turbo-pascal.md)
+
+Turbo Pascal 2.00A, Anders Hejlsberg's compiler sold by Borland, on the Z80
+of the SoftCard: started without its error messages and with them, a
+mistake found, and a maze dug and solved by recursion, made into a command
+of CP/M.
+
 ### [Assembly language with Merlin](../guides/merlin.md)
 
 [<img src="../guides/images/merlin/assembled.png" width="320" alt="A program assembled by Merlin">](../guides/merlin.md)
