@@ -14,12 +14,19 @@ const karatekaMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen col
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s6 diskii,disk1=disks/Karateka.woz`
 
+// karatekaSideBMachine is the same machine with the other side of the disk
+const karatekaSideBMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
+    -rom "<internal>/Apple2_Plus.rom" \
+    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
+    -s6 'diskii,disk1=disks/Karateka side B (Brutal Deluxe crack).dsk'`
+
 /*
 karatekaScreenshots is Karateka, Jordan Mechner's game of 1984, from its
 original disk on an Apple ][+: the titles, the prologue, Akuma and the
 princess until she faints in her room, and a game started, the karateka
 climbing up from the cliff and beating the first guard, played with the
-joystick.
+joystick. Then the other side of the disk, the same game upside down: its
+prologue, and the start of a game.
 
 The parts of the game are waited for by their colours, counted on the
 screen: the orange of the title, the white of the prologue, the blue of the
@@ -92,6 +99,30 @@ func karatekaScreenshots(t *testing.T) {
 	fight.Run(60, 6)
 	must(t, pictures.SaveRecording(fight, "fight", 300))
 	must(t, pictures.Screenshot(o, "won"))
+
+	// Side B, upside down: the prologue, and a game started in the
+	// demonstration, up the cliff and the first guard
+	o = start(t, karatekaSideBMachine, nil)
+	o.Joystick(127, 127)
+	waitForColours(t, o, colours, 60, func(c dotColours) bool { return c.white > 14000 })
+	must(t, pictures.Screenshot(o, "upside-down-prologue"))
+	waitForColours(t, o, colours, 60, func(c dotColours) bool { return c.blue > 17000 })
+	waitForColours(t, o, colours, 3*60, func(c dotColours) bool { return c.blue > 100000 })
+	must(t, o.Key("Space"))
+	waitForColours(t, o, colours, 30, func(c dotColours) bool { return c.white > 30000 })
+	waitForColours(t, o, colours, 30, func(c dotColours) bool { return c.blue > 100000 })
+	upsideDown := pictures.Record(o)
+	upsideDown.Capture(10)
+	upsideDown.Run(12*60, 6)
+	o.Joystick(255, 0)
+	upsideDown.Run(3*60, 6)
+	o.Joystick(127, 127)
+	upsideDown.Run(2*60, 6)
+	for range 20 {
+		o.PressButton(0)
+		upsideDown.Run(36, 6)
+	}
+	must(t, pictures.SaveRecording(upsideDown, "upside-down", 100))
 }
 
 // dotColours are how many dots of a screen are of the colours Karateka is
