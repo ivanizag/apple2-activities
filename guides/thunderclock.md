@@ -101,7 +101,7 @@ of ProDOS as it was downloaded. Make the folder before starting izapple2:
 
 ## What next
 
-**Next:** [CP/M on the Z80 SoftCard](cpm.md).
+**Next:** [The SwyftCard](swyftcard.md).
 
 [ProDOS](prodos.md) goes on with ProDOS on the //e, and
 [What is in the slots: Card Cat](card-cat.md) finds a ThunderClock in a slot

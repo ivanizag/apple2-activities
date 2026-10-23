@@ -39,19 +39,14 @@ and a few lines on it.
 - [Apple Pascal](guides/pascal.md): the UCSD p-System, its Filer, editor and compiler, and the turtle
 - [A game in Apple Pascal: 2048](guides/pascal-2048.md): a whole game typed in, compiled and played to the end
 - [Assembly language with Merlin](guides/merlin.md): a program in 6502 assembly language, typed in, assembled and run
-- [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
 
-## [Making things](sections/making-things.md)
-
-- [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
-- [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
-- [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
-
-## [Work](sections/work.md)
+## [Making things and work](sections/making-things-and-work.md)
 
 - [VisiCalc](guides/visicalc.md): the first spreadsheet, a household budget worked out again as it changes
 - [AppleWorks](guides/appleworks.md): a spreadsheet, a letter and a list of friends in one program
-- [The SwyftCard](guides/swyftcard.md): Jef Raskin's editor on a card, before the Canon Cat
+- [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
+- [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
+- [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
 
 ## [Cards](sections/cards.md)
 
@@ -62,6 +57,8 @@ and a few lines on it.
 - [What is in the slots: Card Cat](guides/card-cat.md): a modern program that finds the card in each slot
 - [Sixteen fonts on the //e: the ROMXce](guides/romx.md): a modern board that changes the font of the //e as a program runs
 - [The time from a ThunderClock](guides/thunderclock.md): the time from BASIC, and ProDOS dating its files
+- [The SwyftCard](guides/swyftcard.md): Jef Raskin's editor on a card, before the Canon Cat
+- [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
 
 ## [Other systems](sections/other-systems.md)
 

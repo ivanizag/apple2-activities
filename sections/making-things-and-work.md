@@ -1,6 +1,22 @@
-# Making things
+# Making things and work
 
 [Back to the activities](../README.md)
+
+### [VisiCalc](../guides/visicalc.md)
+
+[<img src="../guides/images/visicalc/share.png" width="320" alt="A budget in VisiCalc">](../guides/visicalc.md)
+
+The first spreadsheet, from its original disk of 13 sectors: a household
+budget typed in, totalled, a formula replicated down a column, and the rent
+changed to see the whole sheet worked out again.
+
+### [AppleWorks](../guides/appleworks.md)
+
+[<img src="../guides/images/appleworks/desktop.png" width="320" alt="The Desktop of AppleWorks">](../guides/appleworks.md)
+
+The word processor, spreadsheet and data base of the //e in one: the costs
+of a trip worked out, a letter with that table in it, a list of friends,
+and the three saved.
 
 ### [Fantavision: drawings that move](../guides/fantavision.md)
 
@@ -28,4 +44,4 @@ ImageWriter, a birthday card of its own design, a sign and a banner from its
 borders, pictures and fonts, and a kaleidoscope of Screen Magic, each drawn
 on paper dot by dot from what the printer got.
 
-**Next section:** [Work](work.md)
+**Next section:** [Cards](cards.md)

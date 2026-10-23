@@ -56,4 +56,20 @@ A clock card for the Apple \]\[+: the time read from BASIC through its
 firmware, as its manual shows, and a program saved by ProDOS with the date
 it takes from the card.
 
+### [The SwyftCard](../guides/swyftcard.md)
+
+[<img src="../guides/images/swyftcard/moved.png" width="320" alt="A letter edited on the SwyftCard">](../guides/swyftcard.md)
+
+Jef Raskin's editor on a card for the //e, before the Canon Cat: its
+tutorial, the cursor leaping to what you type with the Apple keys, and a
+letter written from nothing with a sentence moved by leaping.
+
+### [Forth in ROM](../guides/forth.md)
+
+[<img src="../guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](../guides/forth.md)
+
+An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
+words used and new ones defined, loops and decisions, and the machine
+underneath, its memory, its speaker and its graphics, driven from Forth.
+
 **Next section:** [Other systems](other-systems.md)

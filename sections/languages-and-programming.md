@@ -47,12 +47,4 @@ A program in the language of the 6502, its source in this repository: typed
 into the Merlin assembler of 1983, assembled into 120 bytes, and run, bars
 of colour moving many times a second.
 
-### [Forth in ROM](../guides/forth.md)
-
-[<img src="../guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](../guides/forth.md)
-
-An Apple \]\[+ that starts in FORTH-79, from a card of Offete Industries:
-words used and new ones defined, loops and decisions, and the machine
-underneath, its memory, its speaker and its graphics, driven from Forth.
-
-**Next section:** [Making things](making-things.md)
+**Next section:** [Making things and work](making-things-and-work.md)
