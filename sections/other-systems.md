@@ -10,6 +10,14 @@ A Z80 on a card turns an Apple \]\[+ into a CP/M computer: its disk, an
 assembler source, a program in Microsoft BASIC-80 saved among its files, and
 the high resolution graphics drawn from GBASIC.
 
+### [CP/M-65: CP/M on the 6502](../guides/cpm65.md)
+
+[<img src="../guides/images/cpm65/alphabet.png" width="320" alt="A program assembled and run on CP/M-65">](../guides/cpm65.md)
+
+CP/M written again for the 6502 itself, in 2022, on an enhanced //e: its
+disk, a program of the page written in the editor QE, assembled on the
+machine and run, and a program in its Atari BASIC, saved among the files.
+
 ### [The languages of the BBC Micro on a //e: Applecorn](../guides/applecorn.md)
 
 [<img src="../guides/images/applecorn/roses.png" width="320" alt="Four mystic roses drawn by BBC BASIC">](../guides/applecorn.md)

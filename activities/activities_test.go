@@ -35,6 +35,7 @@ var activities = []struct {
 	{"basis108", []string{basis108Machine, basis108DOS}, basis108Screenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
+	{"cpm65", []string{cpm65Machine}, cpm65Screenshots},
 	{"cranston", []string{cranstonManorMachine}, cranstonManorScreenshots},
 
 	{"darkcrystal", []string{darkCrystalMachine}, darkCrystalScreenshots},
@@ -213,6 +214,8 @@ var listings = []struct {
 	{"applecorn", sieveListing},
 	{"applecorn", triangleListing},
 	{"applesoft-snake", snakeListing},
+	{"cpm65", alphabetListing},
+	{"cpm65", powersListing},
 	{"lode-runner", lodeRunnerLevel},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},

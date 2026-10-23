@@ -63,6 +63,7 @@ and a few lines on it.
 ## [Other systems](sections/other-systems.md)
 
 - [CP/M on the Z80 SoftCard](guides/cpm.md): a Z80 on a card: CP/M, an assembler, BASIC-80 and GBASIC
+- [CP/M-65: CP/M on the 6502](guides/cpm65.md): CP/M written again for the 6502, a program assembled on it and Atari BASIC
 - [The languages of the BBC Micro on a //e: Applecorn](guides/applecorn.md): BBC BASIC, COMAL, Lisp, Forth and more on an enhanced //e
 
 ## [Clones](sections/clones.md)
