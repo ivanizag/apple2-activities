@@ -18,6 +18,14 @@ Hi-Res Adventure #3, of 1981: the treasures of a manor, its tower, its
 cistern and the caves under it, gathered and carried out of its gate. Played
 to its end, a picture of the screen after each command.
 
+### [Castle Wolfenstein](../guides/castle-wolfenstein.md)
+
+[<img src="../guides/images/castle-wolfenstein/supplies.png" width="320" alt="A room of the castle, two guards down">](../guides/castle-wolfenstein.md)
+
+Silas Warner's game of 1981, from Total Replay: a prisoner with a gun and
+ten bullets, the guards who shout in German through the speaker, shot and
+searched, and the stairs to the next room.
+
 ### [The Dark Crystal, from the start to the end](../guides/darkcrystal.md)
 
 [<img src="../guides/images/darkcrystal/0002.png" width="320" alt="Jen in the Valley of the Stones">](../guides/darkcrystal.md)

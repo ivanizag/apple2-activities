@@ -35,6 +35,7 @@ var activities = []struct {
 	{"base64a", []string{base64aMachine, base64aDOS}, base64aScreenshots},
 	{"basis108", []string{basis108Machine, basis108DOS}, basis108Screenshots},
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
+	{"castle-wolfenstein", []string{castleWolfensteinMachine}, castleWolfensteinScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
 	{"cpm65", []string{cpm65Machine}, cpm65Screenshots},
 	{"cranston", []string{cranstonManorMachine}, cranstonManorScreenshots},

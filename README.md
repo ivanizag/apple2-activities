@@ -76,6 +76,7 @@ and a few lines on it.
 
 - [Akalabeth: Lord British's first world](guides/akalabeth.md): Richard Garriott's game in Applesoft before Ultima, a quest of Lord British taken and done
 - [Cranston Manor, from the start to the end](guides/cranston.md): Hi-Res Adventure #3, played to its end
+- [Castle Wolfenstein](guides/castle-wolfenstein.md): Silas Warner's escape from a castle of 1981, the game behind Wolfenstein 3D, guards shot and searched
 - [The Dark Crystal, from the start to the end](guides/darkcrystal.md): Sierra's adventure after Jim Henson's film, played to its end
 - [Flight Simulator II over Chicago](guides/flight-simulator.md): subLOGIC's simulator: a take-off past the towers of Chicago
 - [Karateka](guides/karateka.md): Jordan Mechner's game told like a film, and its disk turned over
