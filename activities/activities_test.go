@@ -24,6 +24,7 @@ var activities = []struct {
 	machines []string
 	pictures func(t *testing.T)
 }{
+	{"akalabeth", []string{akalabethMachine}, akalabethScreenshots},
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
 	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires}, cassettesScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
