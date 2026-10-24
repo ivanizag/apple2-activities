@@ -51,6 +51,14 @@ Jordan Mechner's game of 1984, from its original disk: its titles and
 prologue told like a film, Akuma and the princess, and the karateka up the
 cliff and past the first guard, played with the joystick.
 
+### [Prince of Persia](../guides/prince-of-persia.md)
+
+[<img src="../guides/images/prince-of-persia/title.png" width="320" alt="The title of Prince of Persia">](../guides/prince-of-persia.md)
+
+Jordan Mechner's game of 1989 on an Apple //e: the titles, the princess and
+Jaffar with his hourglass, the game playing itself, a run and a sword
+fight, and a game, the prince running into a guard before he has a sword.
+
 ### [Lode Runner](../guides/lode-runner.md)
 
 [<img src="../guides/images/lode-runner/title.png" width="320" alt="Lode Runner">](../guides/lode-runner.md)
