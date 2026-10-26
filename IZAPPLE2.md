@@ -381,6 +381,8 @@ SoftCard II, on the //e with the card in its auxiliary slot instead of the
 
 - a step for 2.25 and one for 2.26, or 2.26b if it is a different system,
   each with its command, and a `DIR` of one of them;
+- the top of the memory of the programs read with DDT on each, as on the
+  others, and its BDOS and TPA in the table;
 - GBASIC started on each, its *Bytes free* checked by the generator and
   pictured on one, beside those of 2.20, 2.23 and 2.28B: the same BASIC-80
   of 1983 as the SoftCard II's, so the numbers compare the two cards;

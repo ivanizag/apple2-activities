@@ -14,8 +14,8 @@ keyboard and the disks, and the two pass bytes to each other through a port.
 Each card came with its own CP/M, and the SoftCard went through several
 versions, from Microsoft and from others. This page starts every version
 found for the three cards izapple2 has, one after the other, and compares
-them: what each says when it starts, what came on its disk, and how much
-memory the same Microsoft BASIC finds free on each.
+them: what each says when it starts, what came on its disk, how much memory
+it leaves to the programs, and how much the same Microsoft BASIC finds free.
 
 ## What you need
 
@@ -47,8 +47,8 @@ of PCPI.
 
 ## The machines
 
-Four machines, each with one disk drive, a Disk II controller card in slot 6
-and a Z80 card in slot 4:
+Four machines, each with two disk drives on a Disk II controller card in
+slot 6 and a Z80 card in slot 4:
 
 - an Apple \]\[+, its 6502 at 1 MHz, 48 KB of memory, Applesoft BASIC in its
   ROM and the keyboard that types only capitals, with a 16 KB Language Card
@@ -59,7 +59,8 @@ and a Z80 card in slot 4:
 - the same //e with the **Microsoft SoftCard II**;
 - the same //e with the **PCPI Applicard**.
 
-Each version starts with its disk in drive 1; the command of each is in its
+Each version starts with its disk in drive 1, and has the disk of CP/M 2.23,
+`CPM60K.DSK`, in drive 2, for the DDT on it; the command of each is in its
 step. The SoftCard II and the Applicard need an izapple2 built from its
 master, the releases don't have them yet.
 
@@ -73,7 +74,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/Softcard 16-sector disk (Microsoft 1980).dsk'
+       -s6 'diskii,disk1=disks/Softcard 16-sector disk (Microsoft 1980).dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.20 of 44K](images/cpm-cards/softcard-2.20.png)
@@ -92,7 +93,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPM1.PO'
+       -s6 'diskii,disk1=disks/CPM1.PO,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.20B of 56K](images/cpm-cards/softcard-2.20b.png)
@@ -110,7 +111,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPM2.23(60k).dsk'
+       -s6 'diskii,disk1=disks/CPM2.23(60k).dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.23B of Datasoft](images/cpm-cards/datasoft-2.23b.png)
@@ -126,7 +127,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPM60K.DSK'
+       -s6 'diskii,disk1=disks/CPM60K.DSK,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.23 of 60K](images/cpm-cards/softcard-2.23.png)
@@ -150,7 +151,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPM3.1_Disk_1.dsk'
+       -s6 'diskii,disk1=disks/CPM3.1_Disk_1.dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 3.0](images/cpm-cards/softcard-3.0.png)
@@ -170,7 +171,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPAM40B.dsk'
+       -s6 'diskii,disk1=disks/CPAM40B.dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/AM 4.0B](images/cpm-cards/cpam-4.0b.png)
@@ -188,7 +189,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/A.E. CPM Plus card.dsk'
+       -s6 'diskii,disk1=disks/A.E. CPM Plus card.dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/AM 5.1](images/cpm-cards/cpam-5.1.png)
@@ -199,7 +200,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard \
-       -s6 'diskii,disk1=disks/CPAM51A.dsk'
+       -s6 'diskii,disk1=disks/CPAM51A.dsk,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/AM 5.1.1](images/cpm-cards/cpam-5.1.1.png)
@@ -221,7 +222,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 z80softcard2 \
-       -s6 'diskii,disk1=disks/Microsoft Softcard II CPM 2.28B.DSK'
+       -s6 'diskii,disk1=disks/Microsoft Softcard II CPM 2.28B.DSK,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.28B of the SoftCard II](images/cpm-cards/softcard-ii-2.28b.png)
@@ -246,7 +247,7 @@ master, the releases don't have them yet.
        -charrom "<internal>/Apple IIe Video Unenhanced.bin" \
        -s0 language \
        -s4 applicard \
-       -s6 'diskii,disk1=disks/pcpiboot.do'
+       -s6 'diskii,disk1=disks/pcpiboot.do,disk2=disks/CPM60K.DSK'
    ```
 
    ![CP/M 2.2 of the Applicard](images/cpm-cards/applicard-2.0.png)
@@ -271,7 +272,7 @@ master, the releases don't have them yet.
         -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
         -s0 language \
         -s4 applicard \
-        -s6 'diskii,disk1=disks/pcpiboot.do'
+        -s6 'diskii,disk1=disks/pcpiboot.do,disk2=disks/CPM60K.DSK'
     ```
 
     ![CP/M 2.2 of the Applicard on the \]\[+](images/cpm-cards/applicard-2.0-plus.png)
@@ -298,19 +299,67 @@ starts, the memory free for a program, compares the versions.
     the GBASIC of November 1980. The Applicard, CP/AM and CP/M 3 have no
     GBASIC. Type `SYSTEM` to go back to CP/M.
 
-| Card | CP/M | Of | Machine of the page | Its memory | GBASIC leaves |
-|---|---|---|---|---|---|
-| SoftCard | 2.20 | Microsoft, 1980 | \]\[+ | 44K | 5,105 bytes |
-| SoftCard | 2.20B | Microsoft, 1980 | \]\[+ | 56K | 17,393 bytes |
-| SoftCard | 2.23B | Datasoft, 1982 | \]\[+ | 63K | 17,393 bytes |
-| SoftCard | 2.23 | Microsoft, 1982 | //e | 60K | 21,489 bytes |
-| SoftCard | 3.0 | Werner Muenchheimer, 1989 | //e | 46K TPA | |
-| SoftCard, Z-80 Plus | CP/AM 4.0B | Applied Engineering, 1985 | //e | 44K | |
-| SoftCard, Z-80 Plus | CP/AM 5.1 and 5.1.1 | Applied Engineering, 1986 | //e | 60K | |
-| SoftCard II | 2.28B | Microsoft, 1984 | //e | 64K | 32,807 bytes |
-| Applicard | 2.2, PCPI 2.0 | Digital Research and PCPI | //e and \]\[+ | its own 64 KB | |
+## The memory for the programs
 
-The years and the sizes are those the systems say when they start.
+The programs of CP/M run from address 0100, hexadecimal, up to where the BDOS
+starts, the part of CP/M they call for the disk and the screen: that memory
+is the TPA, the Transient Program Area. A program finds the BDOS by the
+jump at address 5, and the address of that jump, at 6 and 7, is the top of
+its memory. DDT, the debugger of CP/M, could show it, but under DDT the
+jump goes to DDT, which moves itself just under the BDOS. So a program of
+three instructions, assembled in DDT, copies the address away, and runs
+without DDT.
+
+12. **Start DDT** from drive 2, type its `A` command and the program, an
+    empty line to end it, and `G0` to leave DDT:
+
+    ```
+    B:DDT
+    A100
+    LHLD 6
+    SHLD 3000
+    JMP 0
+
+    G0
+    ```
+
+    `LHLD 6` loads the address at 6 and 7, `SHLD 3000` stores it at 3000,
+    and `JMP 0` goes back to CP/M. **Type `SAVE 1 TPA.COM`**, which saves
+    one page, 256 bytes from 0100, as the program `TPA`, **type `TPA`** to
+    run it, then **type `B:DDT`** again and **`D3000,3001`** to show what
+    it stored. Here on the SoftCard II:
+
+    ![The top of the memory, read by DDT](images/cpm-cards/tpa.png)
+
+    *06 EB*, low byte first: the jump goes to EB06, the BDOS starts at
+    EB00, and the TPA is from 0100 to EAFF, 59,904 bytes. **Type `G0`** to
+    go back to CP/M.
+
+    The `SAVE` of CP/M 3 works the other way round: **type `SAVE`** before
+    `B:DDT`, and when DDT ends, it asks for the name of the file, `TPA.COM`,
+    and the addresses to save, from `100` to `108`.
+
+The same program on each version:
+
+| Card | CP/M | Of | Machine of the page | It says | BDOS at | TPA | GBASIC leaves |
+|---|---|---|---|---|---|---|---|
+| SoftCard | 2.20 | Microsoft, 1980 | \]\[+ | 44K | 9C00 | 39,680 bytes | 5,105 bytes |
+| SoftCard | 2.20B | Microsoft, 1980 | \]\[+ | 56K | CC00 | 51,968 bytes | 17,393 bytes |
+| SoftCard | 2.23B | Datasoft, 1982 | \]\[+ | 63K | CC00 | 51,968 bytes | 17,393 bytes |
+| SoftCard | 2.23 | Microsoft, 1982 | //e | 60K | DC00 | 56,064 bytes | 21,489 bytes |
+| SoftCard | 3.0 | Werner Muenchheimer, 1989 | //e | 46K TPA | BA00 | 47,360 bytes | |
+| SoftCard, Z-80 Plus | CP/AM 4.0B | Applied Engineering, 1985 | //e | 44K | 9C00 | 39,680 bytes | |
+| SoftCard, Z-80 Plus | CP/AM 5.1 and 5.1.1 | Applied Engineering, 1986 | //e | 60K | CD00 | 52,224 bytes | |
+| SoftCard II | 2.28B | Microsoft, 1984 | //e | 64K | EB00 | 59,904 bytes | 32,807 bytes |
+| Applicard | 2.2, PCPI 2.0 | Digital Research and PCPI | //e and \]\[+ | | E500 | 58,368 bytes | |
+
+The years and the sizes the systems say are those they show when they start.
+The size a CP/M says is not what it leaves to the programs: the "63K" of
+Datasoft leaves exactly what the 56K of Microsoft does, and CP/AM's 60K
+leaves 3.75 KB less than Microsoft's 60K. The
+SoftCard II leaves the most, its Z80 having its 64 KB to itself; the
+Applicard 1.5 KB less, with the same 64 KB. CP/M 3 says its TPA itself, 46K,
+and it is: 46.25 KB.
 
 On the SoftCard II, GBASIC's `HPLOT` doesn't end in izapple2 yet, so the
 page doesn't draw with it; see [CP/M on the Z80 SoftCard](cpm.md) for a
