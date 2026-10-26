@@ -40,6 +40,24 @@ release of izapple2 the page needs, instead of master.
 
 ## Not fixed
 
+### The Z80 cards don't run at the speed of their Z80
+
+izapple2 runs a Z80 instruction for each cycle of the 6502 on the SoftCard,
+three for each instruction of the 6502 on the SoftCard II, and two on the
+Applicard, whatever the instructions. The Z80 of koron-go/z80 doesn't count
+the cycles of the clock its instructions take. A loop of 25,165,824 cycles of
+the Z80 in [cpm-cards.md](guides/cpm-cards.md) takes 4.1 seconds on the
+SoftCard, 5.1 on the SoftCard II and 6.8 on the Applicard; by the clocks of
+their manuals, 2.041 MHz, three times that, and 4 or 6 MHz, it would take
+12.3, about 4.1, and 6.3 or 4.2 seconds. The SoftCard runs three times too
+fast, and the others too slow; the 6502 of the SoftCard II and the Applicard,
+for its part, runs at its speed, as it should.
+
+**Here, once fixed:** the generator of [cpm-cards.md](guides/cpm-cards.md)
+fails on the times; put the new ones in the table of *The speed of the Z80*
+and in the generator, and rewrite the paragraph under the table, which says
+izapple2 doesn't time its Z80s by their clocks.
+
 ### GBASIC draws nothing on the SoftCard II
 
 On CP/M 2.28B of the SoftCard II, GBASIC starts, and `HGR` and `HCOLOR = 3`
@@ -383,6 +401,8 @@ SoftCard II, on the //e with the card in its auxiliary slot instead of the
   each with its command, and a `DIR` of one of them;
 - the top of the memory of the programs read with DDT on each, as on the
   others, and its BDOS and TPA in the table;
+- the loop of the Z80 timed on it, and its clock, from its manuals, in the
+  table of the speeds;
 - GBASIC started on each, its *Bytes free* checked by the generator and
   pictured on one, beside those of 2.20, 2.23 and 2.28B: the same BASIC-80
   of 1983 as the SoftCard II's, so the numbers compare the two cards;

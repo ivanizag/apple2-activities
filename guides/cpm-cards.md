@@ -15,7 +15,8 @@ Each card came with its own CP/M, and the SoftCard went through several
 versions, from Microsoft and from others. This page starts every version
 found for the three cards izapple2 has, one after the other, and compares
 them: what each says when it starts, what came on its disk, how much memory
-it leaves to the programs, and how much the same Microsoft BASIC finds free.
+it leaves to the programs, how much the same Microsoft BASIC finds free, and
+how fast its Z80 runs.
 
 ## What you need
 
@@ -360,6 +361,69 @@ leaves 3.75 KB less than Microsoft's 60K. The
 SoftCard II leaves the most, its Z80 having its 64 KB to itself; the
 Applicard 1.5 KB less, with the same 64 KB. CP/M 3 says its TPA itself, 46K,
 and it is: 46.25 KB.
+
+## The speed of the Z80
+
+The Z80 of each card runs at its own clock, which their manuals give. The
+hardware details of the SoftCard say *the effective Z-80 clock rate is 2.041
+MHz*: its Z80 shares the clock and the memory of the Apple. The manual of the
+SoftCard II says its Z80B *operates three times as fast as those for previous
+SoftCard circuit boards*. The Applicard was sold with a Z80 of 4 MHz or one of
+6 MHz, by PCPI's mini manual. A loop of the Z80, the same on each, shows how
+izapple2 runs them.
+
+13. **Assemble the loop** in DDT from drive 2, as the program of the step
+    before, and save it as `LOOP` (on CP/M 3 with its `SAVE`, from `100` to
+    `11D`):
+
+    ```
+    B:DDT
+    A100
+    MVI E,2A
+    MVI C,2
+    CALL 5
+    MVI D,10
+    LXI B,0
+    DCX B
+    MOV A,B
+    ORA C
+    JNZ 10C
+    DCR D
+    JNZ 109
+    MVI E,2A
+    MVI C,2
+    CALL 5
+    RET
+
+    G0
+    SAVE 1 LOOP.COM
+    ```
+
+    It prints a star, 2A, with the call 2 of CP/M; counts BC down from 0,
+    which is 65,536 times, sixteen times over, as D goes from 10 hexadecimal
+    to 0; prints another star, and returns to CP/M. **Type `LOOP`** and time
+    from one star to the other. Here on the Applicard:
+
+    ![The loop, assembled and run](images/cpm-cards/loop.png)
+
+    The inner loop, `DCX B`, `MOV A,B`, `ORA C` and `JNZ`, takes 24 cycles
+    of the clock of a Z80, so the loop takes 25,165,824, and the time it
+    should take is those cycles over the clock of the card:
+
+| Card | Its Z80, by its manual | The loop, by that clock | In izapple2 |
+|---|---|---|---|
+| SoftCard | 2.041 MHz | 12.3 seconds | 4.1 seconds |
+| SoftCard II | three times as fast as the SoftCard's | about 4.1 seconds | 5.1 seconds |
+| Applicard | 4 MHz or 6 MHz | 6.3 or 4.2 seconds | 6.8 seconds |
+
+Each version of a card takes the same time in izapple2: the time is the
+card's, not its CP/M's. But izapple2 doesn't time its Z80s by their clocks
+yet: it runs a Z80 instruction for each cycle of the 6502 on the SoftCard,
+and three or two for each instruction of the 6502 on the SoftCard II and the
+Applicard. So the SoftCard runs three times as fast as it did, and the other
+two slower than they did, in the opposite order from the real cards, where
+the SoftCard was the slowest, by two or three times. The generator checks the times
+of izapple2, so that the page changes with it.
 
 On the SoftCard II, GBASIC's `HPLOT` doesn't end in izapple2 yet, so the
 page doesn't draw with it; see [CP/M on the Z80 SoftCard](cpm.md) for a
