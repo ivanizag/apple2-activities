@@ -342,3 +342,49 @@ routines for the disk, which 4am's crack keeps.
 **Here, once fixed:** [castle-wolfenstein.md](guides/castle-wolfenstein.md)
 plays it from Total Replay, on a //e; it could play it from the diskette, on
 an Apple \]\[+ as in 1981, and walk through doorways.
+
+### No Premium SoftCard IIe
+
+Microsoft's third Z80 card for the Apple II, the Premium SoftCard IIe of
+1983, goes in the auxiliary slot of the //e, with its 80 columns and 64 KB
+of memory on it. izapple2 has no such card, so its CP/M doesn't start: on the
+//e with any of the other Z80 cards, its disks stop after the drive.
+
+The disks found for it:
+
+- `Microsoft Premium Softcard IIe CPM - (Version 2.25)(2-189 - 101993)(Cat 2347)(Part 23H47).DSK`,
+  in the [CP/M folder of Asimov](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/cpm/os/):
+  CP/M 2.25, a master, by its name.
+- `CPM226.dsk`, in `softcardIIe.zip` in the same folder: CP/M 2.26. The
+  text beside it says it starts with *Softcard //e CP/M, 64K Version 2.26,
+  (c) 1983 Microsoft Corporation*, and that its GBASIC is *BASIC-80 Rev.
+  5.27 (Softcard //e CP/M Version)*, created 12-Apr-83, the same date as the
+  one of the SoftCard II.
+- `Microsoft Premium Softcard IIe - CPM 2.26b (CPM files).dsk` and
+  `(ProDOS files).dsk`, in the [Z80 cards folder of the Apple II
+  Documentation Project](http://mirrors.apple2.org.za/Apple%20II%20Documentation%20Project/Interface%20Cards/Z80%20Cards/Microsoft%20Premium%20Softcard%20IIe/Disk%20Images/):
+  CP/M 2.26b, and a ProDOS disk to go with it.
+- *053 Softcard IIe Backup* of the [RIAG
+  collection](https://archive.org/details/riag_008_053_-_Softcard_IIe_-_Backup)
+  on the Internet Archive, not looked into.
+
+Both catalogs of 2.25 and 2.26 have GBASIC, `APDOS`, `CONFIGIO.BAS` and the
+tools of Digital Research, as the SoftCard II's. Its manuals are on the
+Internet Archive: [Microsoft Premium SoftCard IIe](https://archive.org/details/Microsoft_Premium_SoftCard_IIe.PDF),
+its [Programmer's Manual](https://archive.org/details/microsoft-premium-softcard-iie-programmers-manual)
+and the [BASIC Interpreter](https://archive.org/details/Microsoft_BASIC_Interpreter_for_Premium_SoftCard_IIe.PDF).
+
+**Here, once it is built:** in [cpm-cards.md](guides/cpm-cards.md), make the
+title four cards and add a section *The Premium SoftCard IIe*, after the
+SoftCard II, on the //e with the card in its auxiliary slot instead of the
+80 column card:
+
+- a step for 2.25 and one for 2.26, or 2.26b if it is a different system,
+  each with its command, and a `DIR` of one of them;
+- GBASIC started on each, its *Bytes free* checked by the generator and
+  pictured on one, beside those of 2.20, 2.23 and 2.28B: the same BASIC-80
+  of 1983 as the SoftCard II's, so the numbers compare the two cards;
+- their lines in the table, and in the lines of the README and of the
+  section of the page, the count of versions;
+- the disks in `disks.tsv`, and the line of the Premium SoftCard IIe taken
+  out of *Other disks found*.
