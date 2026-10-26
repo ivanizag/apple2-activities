@@ -29,7 +29,30 @@ izapple2 don't yet.
 izapple2 the commands of the pages need, at least. Until then, the
 preconfigured model each page gives after its command runs the activity.
 
+### The SoftCard II and the Applicard only on master
+
+[CP/M on three Z80 cards](guides/cpm-cards.md) starts CP/M on the cards
+`z80softcard2` and `applicard`, which master has and the releases of
+izapple2 don't yet.
+
+**Here, once released:** say in [cpm-cards.md](guides/cpm-cards.md) which
+release of izapple2 the page needs, instead of master.
+
 ## Not fixed
+
+### GBASIC draws nothing on the SoftCard II
+
+On CP/M 2.28B of the SoftCard II, GBASIC starts, and `HGR` and `HCOLOR = 3`
+answer `Ok`, but `HPLOT 0,0 TO 279,159` never ends: the screen stays black
+and the keyboard is not read again. On the SoftCard, the same lines draw. The Z80
+of the SoftCard II can't reach the Apple's memory, so the 6502 must draw for
+it, asked through the port of the card: one of the two is likely waiting for
+something the emulation of the card doesn't give.
+
+**Here, once fixed:** draw the lines of [cpm.md](guides/cpm.md) with GBASIC
+on the SoftCard II too in [cpm-cards.md](guides/cpm-cards.md), and take out
+its sentence on `HPLOT`.
+
 
 ### Writing to a WOZ disk stops the emulator
 
