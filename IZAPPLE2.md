@@ -53,6 +53,33 @@ something the emulation of the card doesn't give.
 on the SoftCard II too in [cpm-cards.md](guides/cpm-cards.md), and take out
 its sentence on `HPLOT`.
 
+### The 6502 of the ][+ stops on the instructions Apple didn't document
+
+The NMOS 6502 of `iz6502` panics with `Unknown opcode` on the opcodes the
+6502 has but MOS didn't document, where the chip of a \]\[+ runs them. CP/M
+3.0 on the SoftCard, on a \]\[+ with a Language Card and no 80 column card,
+reaches `0x6F` and stops izapple2: whether it would start on a real \]\[+
+there, or fail in some other way, can't be seen.
+
+**Here, once fixed:** start it again in [cpm-cards.md](guides/cpm-cards.md),
+and change its cells of the \]\[+ without a Videx card in `cpmCardsCompared`
+and in the table of the page, and the sentence that says CP/M 3 stops
+izapple2.
+
+### CP/M 2.20, 2.20B and 2.23B stop with a Videx card
+
+On a \]\[+ with a Videx Videoterm in slot 3, the CP/Ms of 40 columns of the
+SoftCard, Microsoft's 2.20 and 2.20B and Datasoft's 2.23B, stay at the
+*APPLE \]\[* of the start; without the card, they start. The other versions
+start with it and use it. The model `cpm` of izapple2 empties slot 3 for this
+reason, *Fails with 80 columns*. Whether it fails on a real \]\[+ isn't
+known.
+
+**Here, once fixed:** change the cells of the \]\[+ with a Videx card in
+`cpmCardsCompared` and in the table of
+[cpm-cards.md](guides/cpm-cards.md), and the sentence that says they stay
+at the *APPLE \]\[*.
+
 
 ### Writing to a WOZ disk stops the emulator
 

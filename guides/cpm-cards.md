@@ -142,7 +142,8 @@ master, the releases don't have them yet.
 
    Like 2.20 and 2.20B, it stops on the //e after the drive. Its 63K is
    only in what it says: below, its CP/M sits in memory where the 56K of
-   2.20B does, and its GBASIC is the one of 2.20B.
+   2.20B does, and its GBASIC is the one of 2.20B. Its disk has no program
+   to make a bigger system, as `CPM60` is on the disk of 2.23.
 
 5. **Start CP/M 3.0**, a port of Digital Research's CP/M Plus to the
    SoftCard, by Werner Muenchheimer in Germany in 1989:
@@ -236,8 +237,9 @@ master, the releases don't have them yet.
 
    The programs of the SoftCard's 2.23, but for `MBASIC`, `CPM60` and
    `DOWNLOAD`: of the two BASICs, Microsoft kept GBASIC, the one with the
-   graphics. On the \]\[+ this CP/M prints its
-   words in lower case, which the \]\[+ shows as other signs.
+   graphics. On the \]\[+ this CP/M prints its words in lower case, which
+   the \]\[+ shows as other signs; with a Videx card it shows them in 80
+   columns, below.
 
 ## The Applicard
 
@@ -408,7 +410,7 @@ of the //e, in the 80 of the Videx, or doesn't start:
 - **The Language Card**: on the SoftCard, the Z80 has the Apple's memory, so
   the versions of 56K and more need the 16 KB of the Language Card, and
   those of 44K start without it. The SoftCard II needs it as well, though
-  its Z80 has its own memory. The Applicard starts without it, and its
+  its Z80 has its own memory: without it the screen stays empty. The Applicard starts without it, and its
   buffer for the printer, in the Apple's memory, grows with it: *19.5K* on
   the \]\[+ of 48 KB, *35.5K* with the Language Card.
 - **80 columns**: on the //e, every version that starts uses the 80 columns
@@ -417,9 +419,11 @@ of the //e, in the 80 of the Videx, or doesn't start:
   and CP/M 3, CP/AM 5.1 and 5.1.1 and the SoftCard II need it: without it,
   CP/M 3 runs the 6502 into an instruction it doesn't have, which stops
   izapple2, CP/AM 5.1 stays at the *APPLE \]\[* of the start, 5.1.1 at an
-  empty screen, and the SoftCard II prints its lower case. 2.20, 2.20B and Datasoft's 2.23B are of
-  40 columns, and in izapple2 they stay at the *APPLE \]\[* of the start
-  when there is a Videx card in slot 3. The enhanced //e changes nothing.
+  empty screen, and the SoftCard II prints its lower case. 2.20, 2.20B and
+  Datasoft's 2.23B are of 40 columns only, and in izapple2 they stay at the
+  *APPLE \]\[* of the start when there is a Videx card in slot 3. Every
+  other version has 80 columns, on a //e or with a Videx card. The enhanced
+  //e changes nothing.
 - **The memory of the //e beyond 64 KB**: the Applicard uses it for its
   buffer for the printer, which grows to *83.5K*, and CP/AM makes a disk of
   it, below. A RamWorks of 1 MB in its place doesn't make the Applicard's
@@ -463,9 +467,11 @@ of the //e, in the 80 of the Videx, or doesn't start:
 
     ![The disk in memory of CP/AM](images/cpm-cards/cpam-5.1.1-megdrive.png)
 
-    A disk of 1010K, gone when the machine is turned off. On the //e without the RamWorks, MEGDRIVE makes
-    it of 54K. CP/AM 4.0B and 5.1 have `RAMDRIVE` instead, which does the
-    same.
+    A disk of 1010K, gone when the machine is turned off. On the //e
+    without the RamWorks, MEGDRIVE makes it of 54K. CP/AM 4.0B and 5.1 have
+    `RAMDRIVE` instead, which does the same: *RAMDRIVE is emulating C: with
+    64K available* on the //e, and *with 1024K available* with the
+    RamWorks.
 
 ## Other disks found
 
