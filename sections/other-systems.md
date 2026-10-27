@@ -16,9 +16,10 @@ the high resolution graphics drawn from GBASIC.
 
 Ten versions of CP/M for the Microsoft SoftCard, the SoftCard II and the
 PCPI Applicard, from Microsoft's 2.20 of 1980 to a CP/M 3 of 1989, started
-one after the other on a \]\[+ and a //e: what each says, what came on its
-disk, the memory it leaves to the programs, read with DDT, and what the same
-BASIC finds free.
+one after the other: what each says, what came on its disk, where it sits in
+memory and what it leaves to the programs, read with DDT, what the same
+BASIC finds free, and which start on the \]\[+ and the //e, with a Language
+Card, a Videx card or a RamWorks.
 
 ### [CP/M-65: CP/M on the 6502](../guides/cpm65.md)
 
