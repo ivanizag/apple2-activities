@@ -37,6 +37,7 @@ var activities = []struct {
 	{"card-cat", []string{cardCatMachine}, cardCatScreenshots},
 	{"castle-wolfenstein", []string{castleWolfensteinMachine}, castleWolfensteinScreenshots},
 	{"cpm", []string{cpmMachine}, cpmScreenshots},
+	{"cpm-cards", cpmCardsMachines, cpmCardsScreenshots},
 	{"cpm65", []string{cpm65Machine}, cpm65Screenshots},
 	{"cranston", []string{cranstonManorMachine}, cranstonManorScreenshots},
 

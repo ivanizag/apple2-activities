@@ -136,7 +136,8 @@ izapple2 -model cpm -screen green
 
 ## What next
 
-**Next:** [CP/M-65: CP/M on the 6502](cpm65.md).
+**Next:** [CP/M on three Z80 cards](cpm-cards.md), every version of CP/M
+found for the SoftCard and two other cards, compared.
 
 [Apple Pascal](pascal.md) is another system that brought its own world to
 the Apple II, the p-System of the University of California.
