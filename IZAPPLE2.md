@@ -53,19 +53,6 @@ something the emulation of the card doesn't give.
 on the SoftCard II too in [cpm-cards.md](guides/cpm-cards.md), and take out
 its sentence on `HPLOT`.
 
-### The 6502 of the ][+ stops on the instructions Apple didn't document
-
-The NMOS 6502 of `iz6502` panics with `Unknown opcode` on the opcodes the
-6502 has but MOS didn't document, where the chip of a \]\[+ runs them. CP/M
-3.0 on the SoftCard, on a \]\[+ with a Language Card and no 80 column card,
-reaches `0x6F` and stops izapple2: whether it would start on a real \]\[+
-there, or fail in some other way, can't be seen.
-
-**Here, once fixed:** start it again in [cpm-cards.md](guides/cpm-cards.md),
-and change its cells of the \]\[+ without a Videx card in `cpmCardsCompared`
-and in the table of the page, and the sentence that says CP/M 3 stops
-izapple2.
-
 ### CP/M 2.20, 2.20B and 2.23B stop with a Videx card
 
 On a \]\[+ with a Videx Videoterm in slot 3, the CP/Ms of 40 columns of the
@@ -279,9 +266,16 @@ Unknown opcode 0x0b`, from `iz6502` `ExecuteInstruction`. It came up when
 machine would hang or crash it, not the computer it is emulated on. The
 Print Shop stops so, `Unknown opcode 0x6f`, when its setup is for a card
 that is not in the slot, as the Apple III Serial Port or the ALS
-Printermate in slot 1, which has the parallel card.
+Printermate in slot 1, which has the parallel card. CP/M 3.0 on the
+SoftCard, on a \]\[+ with a Language Card and no 80 column card, stops so
+too, `Unknown opcode 0x6f`: an opcode that MOS didn't document, which the
+NMOS 6502 of a \]\[+ runs. Whether CP/M 3 would start on a real \]\[+ there,
+or fail in some other way, can't be seen.
 
-**Here, once fixed:** nothing to change.
+**Here, once fixed:** in [cpm-cards.md](guides/cpm-cards.md), start CP/M 3
+again on the \]\[+ without a Videx card, change its cells in
+`cpmCardsCompared` and in the table of the page, and the sentence that says
+CP/M 3 stops izapple2.
 
 ### The text of the Basis 108 in 80 columns is read a column out of two
 
