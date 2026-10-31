@@ -47,15 +47,6 @@ or the head moves, unless the image has its write protect tab on; the
 releases of izapple2 don't yet. The generators run on copies of the disks of
 `disks/`, which stay as downloaded.
 
-Apple Pascal writes the work file to its disk, so it could not run from the
-original disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
-
-**Here, now, a pull request each, each tried on the machine first:**
-
-- [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
-  the woz-a-day ones, downloaded, but see *Apple Pascal 1.3 from its
-  original disks stops at the start with four drives*.
-
 **Here, once released:** say in the pages that write to a WOZ disk which
 release of izapple2 they need, at least, and take this out.
 

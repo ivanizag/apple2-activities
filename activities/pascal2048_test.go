@@ -12,6 +12,14 @@ import (
 // game2048Listing is the program of the page, the game 2048 in Pascal
 const game2048Listing = "../guides/listings/2048.pas"
 
+// pascal2048Machine is the machine of the guide, as its command line of
+// izapple2, with the disks of Apple Pascal inside izapple2
+const pascal2048Machine = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
+    -rom "<internal>/Apple2e_Enhanced.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s6 'diskii,disk1=<internal>/Apple II Pascal 1.3 APPLE1_ 680-0283-A.dsk,disk2=<internal>/Apple II Pascal 1.3 APPLE2_ 680-0284-A.dsk'`
+
 /*
 pascal2048Screenshots is a whole game written in Apple Pascal 1.3 on an
 enhanced Apple //e, 2048: the editor set not to indent by itself, the
@@ -20,7 +28,7 @@ as a player who keeps the big tiles in a corner.
 */
 func pascal2048Screenshots(t *testing.T) {
 	pictures := newAlbum("pascal-2048", album.Green)
-	o := start(t, pascalMachine, nil)
+	o := start(t, pascal2048Machine, nil)
 	must(t, o.WaitForText("[1.3]", 120))
 	must(t, o.WaitForKeyboard(10))
 
