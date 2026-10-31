@@ -49,16 +49,12 @@ releases of izapple2 don't yet. The generators run on copies of the disks of
 
 Apple Pascal writes the work file to its disk, so it could not run from the
 original disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
-The Print Shop saves its setup, the printer and its card, on its disk, and
-prints with the one saved.
 
 **Here, now, a pull request each, each tried on the machine first:**
 
 - [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
   the woz-a-day ones, downloaded, but see *Apple Pascal 1.3 from its
   original disks stops at the start with four drives*.
-- [print-shop.md](guides/print-shop.md) uses 4am's crack, as its woz-a-day
-  disk could be set up but not saved; it could use the original.
 
 **Here, once released:** say in the pages that write to a WOZ disk which
 release of izapple2 they need, at least, and take this out.
