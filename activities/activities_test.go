@@ -71,7 +71,7 @@ var activities = []struct {
 	{"romx", []string{romxMachine}, romxScreenshots},
 	{"six-colours", []string{sixColoursRevision0, sixColoursRevision1}, sixColoursScreenshots},
 	{"switch-on", []string{switchOnMachine}, switchOnScreenshots},
-	{"swyftcard", []string{swyftCardMachine, swyftCardEmpty}, swyftCardScreenshots},
+	{"swyftcard", []string{swyftCardMachine, swyftCardOwn}, swyftCardScreenshots},
 	{"thunderclock", []string{thunderclockMachine}, thunderclockScreenshots},
 	{"timezone", []string{timeZoneMachine}, timeZoneScreenshots},
 	{"total-replay", []string{totalReplayMachine}, totalReplayScreenshots},

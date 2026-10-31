@@ -17,7 +17,8 @@ into pages, and leaping is how you get anywhere in it.
 
 This page follows the SwyftCard's own tutorial through its first leaps and a
 chunk of text deleted and brought back, and then writes a letter from
-nothing and moves a sentence of it by leaping.
+nothing, moves a sentence of it by leaping, and saves it on a diskette of its
+own.
 
 ## What you need
 
@@ -27,6 +28,17 @@ with the card, in the
 Internet Archive. `./fetch-disks.sh` in this repository downloads it into
 `disks/` and checks it. The program itself is in the ROM of the card, which
 izapple2 carries.
+
+**`my-letter.woz`**, a blank diskette, never formatted, for your letter:
+the card saves only on such a diskette, in a format of its own.
+`./fetch-disks.sh` makes `disks/blank.woz`, a WOZ image of a diskette with
+nothing on its tracks; copy it, and keep `blank.woz` blank:
+
+```bash
+cp disks/blank.woz my-letter.woz
+```
+
+izapple2 writes what the card saves straight into `my-letter.woz`.
 
 The [SwyftCard Manual](https://archive.org/details/SwyftCardManual) and its
 [Quick Reference Guide](https://archive.org/details/SwyftCard_Quick_Reference_Guide)
@@ -43,7 +55,7 @@ An enhanced Apple //e with the SwyftCard and one disk drive:
 - the SwyftCard in slot 3, its program in a ROM of 16 KB that the card puts
   in place of the ROM of the //e;
 - a Disk II controller card in slot 6, with the tutorial in drive 1, and
-  then with no diskette.
+  then with your blank diskette.
 
 ```bash
 izapple2 -model none -board 2e -cpu 65c02 -screen green \
@@ -54,7 +66,7 @@ izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -s6 diskii,disk1=disks/SwyftWare_-_SwyftCard_Tutorial.woz
 ```
 
-For a Text of your own, the same machine with the drive empty:
+For a Text of your own, the same machine with your diskette in the drive:
 
 ```bash
 izapple2 -model none -board 2e -cpu 65c02 -screen green \
@@ -62,7 +74,7 @@ izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
     -s3 swyftcard \
-    -s6 diskii
+    -s6 diskii,disk1=my-letter.woz
 ```
 
 The model `swyft` of izapple2 has the first machine, with 8 MB more of
@@ -138,8 +150,8 @@ The keys of the SwyftCard are keys of the //e with other names:
 
 ## A letter of your own
 
-6. **Quit izapple2 and start it with the second command**, with no
-   diskette. After the copyright, the Text is empty: the start of page 0
+6. **Quit izapple2 and start it with the second command**, with your blank
+   diskette in the drive. After the copyright, the Text is empty: the start of page 0
    and of page 1, and the cursor at the start of page 1.
 
    ![An empty Text](images/swyftcard/empty.png)
@@ -170,14 +182,19 @@ The keys of the SwyftCard are keys of the //e with other names:
    No mouse and no menu: the hands stay on the keyboard, and the thumbs on
    the Leap keys.
 
-Two commands of the card do not work in izapple2 yet. *Disk*, Use Front
-`L`, saves the whole Text on a blank diskette, and brings it back when the
-//e is switched on with that diskette in the drive; izapple2 has no blank
-diskette the card can write on, so the letter goes when izapple2 is closed.
-*Calc*, Use Front `G`, gives a line like `? 5.6 + 3` to Applesoft and puts
+9. **Save it: hold Use Front, Control, and tap `L`**, *Disk*. The drive
+   runs, and the whole Text is on the diskette.
+
+10. **Quit izapple2 and start it again with the second command**, the same
+    diskette in the drive. After the copyright, the letter is back, as it
+    was, with the cursor where it was left.
+
+    ![The letter back](images/swyftcard/back.png)
+
+One command of the card does not work in izapple2 yet. *Calc*, Use Front
+`G`, gives a line like `? 5.6 + 3` to Applesoft and puts
 the answer in the Text; in izapple2 Applesoft prints `8.6` and stays at its
-prompt. [IZAPPLE2.md](https://github.com/ivanizag/apple2-activities/blob/main/IZAPPLE2.md)
-has both.
+prompt; see [IZAPPLE2.md](https://github.com/ivanizag/apple2-activities/blob/main/IZAPPLE2.md).
 
 ## What next
 
