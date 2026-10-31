@@ -51,8 +51,7 @@ Apple Pascal writes the work file to its disk, so it could not run from the
 original disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
 Lode Runner writes the high scores to its disk when a game ends with a score
 and the initials are typed. The Print Shop saves its setup, the printer and
-its card, on its disk, and prints with the one saved. Castle Wolfenstein
-writes to its diskette as it plays.
+its card, on its disk, and prints with the one saved.
 
 **Here, now, a pull request each, each tried on the machine first:**
 
@@ -64,9 +63,6 @@ writes to its diskette as it plays.
   original disks stops at the start with four drives*.
 - [print-shop.md](guides/print-shop.md) uses 4am's crack, as its woz-a-day
   disk could be set up but not saved; it could use the original.
-- [castle-wolfenstein.md](guides/castle-wolfenstein.md): its woz-a-day disk
-  can be tried, see *Castle Wolfenstein on a diskette doesn't leave its
-  first room*.
 - [swyftcard.md](guides/swyftcard.md): a blank WOZ can be tried, see *The
   SwyftCard can't save its Text*.
 
@@ -370,9 +366,10 @@ from it. On a DSK, 4am's crack of the version of 06/19/84 or the copy of the
 3d0g Knight collection on Asimov, a doorway or the stairs out of a room bring
 back the same room, the player where he left it: the screen fills with grey
 lines, then with random dots, as the game loads, and the room drawn is the
-one left. The woz-a-day disk couldn't be tried, as the game writes to it;
-master writes WOZ disks now (see *Writing to a WOZ disk stopped the
-emulator*), and it can be. From the hard disk of Total Replay, the stairs work; a
+one left. The woz-a-day disk, which izapple2 writes now (see *Writing to a
+WOZ disk stopped the emulator*), does the same: it has a game saved on it,
+in a room with stairs and no guards, and walking out of it at the top, the
+grey lines come and the same room comes back. From the hard disk of Total Replay, the stairs work; a
 doorway out of the first room there brings it back too. Not known whether a
 real Apple II does the same with these diskettes; the game uses its own
 routines for the disk, which 4am's crack keeps.
