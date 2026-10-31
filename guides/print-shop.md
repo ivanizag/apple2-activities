@@ -20,14 +20,15 @@ dot by dot, as the ImageWriter would.
 
 ## What you need
 
-**`The Print Shop (4am crack) side A.dsk`**, the program, in
-[The Print Shop (4am crack)](https://archive.org/details/ThePrintShop4amCrack)
-of the Internet Archive: download *The Print Shop (4am crack).zip* and take
-it out of it. It is a copy without its protection, which The Print Shop needs
-here, as it saves its setup on its own disk and izapple2 does not write the
-WOZ images of the original disks yet (see [IZAPPLE2.md](../IZAPPLE2.md)).
-`./fetch-disks.sh` in this repository downloads it into `disks/` and checks
-it. izapple2 writes the setup into this file.
+**`The Print Shop side A.woz`**, the program, from the [woz-a-day
+collection](https://archive.org/details/wozaday_The_Print_Shop) of the
+Internet Archive: download *The Print Shop (woz-a-day collection).zip* and
+take it out of it. A WOZ file records a diskette bit by bit, its copy
+protection included, so it is the disk Broderbund sold. `./fetch-disks.sh`
+in this repository downloads it into `disks/` and checks it. The Print Shop
+saves its setup on its own disk, and izapple2 writes it into this file, as a
+drive would on the diskette; `./fetch-disks.sh` sees the file changed, and
+downloads it again, without it.
 
 **imagewriter2**, to see what was printed, a program in Go that reads the
 codes of the ImageWriter and draws the paper as a GIF picture. With
@@ -60,7 +61,7 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s1 parallel,file=printer.out \
-    -s6 'diskii,disk1=disks/The Print Shop (4am crack) side A.dsk'
+    -s6 'diskii,disk1=disks/The Print Shop side A.woz'
 ```
 
 The Print Shop is used with the keyboard: the arrow keys ← and → move the
@@ -87,14 +88,17 @@ The Print Shop drives each printer of its time with codes of its own, and
 needs to know which, and on what card, before it prints.
 
 3. **Choose Setup**, the last of the main menu, with Return. The printer: the
-   bar is on *Apple DMP, ImageWriter, Scribe*, Apple's printers, already;
-   **press Return**.
+   bar starts on the *Epson MX* the disk was set up for; **press → three
+   times**, to *Apple DMP, ImageWriter, Scribe*, Apple's printers, and
+   **Return**.
 
    ![Which printer](images/print-shop/printer.png)
 
-4. **The card: press → to *Apple II Parallel Interface*** and Return, the
-   card of slot 1; the bar starts on the card the disk was set up for, the
-   *Apple Super Serial*, and once the setup is saved, on this one.
+4. **The card**, the *Apple II Parallel Interface* of slot 1. The cards are
+   on two pages, and the bar starts on the second, on the *Micromax* the
+   disk was set up for: **press ← three times**, to *See more choices*, and
+   Return, for the first page, then **→ five times**, to *Apple II Parallel
+   Interface*, and Return. Once the setup is saved, the bar starts on it.
 
    ![Which printer interface](images/print-shop/interface.png)
 

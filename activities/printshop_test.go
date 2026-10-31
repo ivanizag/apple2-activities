@@ -22,7 +22,7 @@ const printShopMachine = `izapple2 -model none -board 2plus -cpu 6502 -screen co
     -rom "<internal>/Apple2_Plus.rom" \
     -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
     -s1 parallel,file=printer.out \
-    -s6 'diskii,disk1=disks/The Print Shop (4am crack) side A.dsk'`
+    -s6 'diskii,disk1=disks/The Print Shop side A.woz'`
 
 /*
 printShopScreenshots is The Print Shop of 1984 on an Apple ][+ with a
@@ -52,13 +52,23 @@ func printShopScreenshots(t *testing.T) {
 	}
 	must(t, pictures.SaveRecording(menu, "menu", 100))
 
-	// Setup: the ImageWriter, which it has chosen already, the Apple II
-	// Parallel Interface in slot 1, one drive, and the test of the printer,
-	// saved on the disk
+	// Setup: the ImageWriter, three down from the Epson the disk has; the
+	// Apple II Parallel Interface, on the first page of the cards, from the
+	// last line of the second, where the disk has a Micromax, three up; slot
+	// 1, one drive, and the test of the printer, saved on the disk
 	ps.key(nil, "Return")
+	for range 3 {
+		ps.key(nil, "Right")
+	}
 	must(t, pictures.Screenshot(o, "printer"))
 	ps.key(nil, "Return")
-	ps.key(nil, "Right")
+	for range 3 {
+		ps.key(nil, "Left")
+	}
+	ps.key(nil, "Return")
+	for range 5 {
+		ps.key(nil, "Right")
+	}
 	must(t, pictures.Screenshot(o, "interface"))
 	ps.key(nil, "Return")
 	ps.key(nil, "Return")
