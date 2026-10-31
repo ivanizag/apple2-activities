@@ -62,7 +62,8 @@ it takes from the card.
 
 Jef Raskin's editor on a card for the //e, before the Canon Cat: its
 tutorial, the cursor leaping to what you type with the Apple keys, and a
-letter written from nothing with a sentence moved by leaping.
+letter written from nothing with a sentence moved by leaping, saved on a
+blank diskette and back when the //e is switched on again.
 
 ### [Forth in ROM](../guides/forth.md)
 

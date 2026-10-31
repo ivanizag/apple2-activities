@@ -59,8 +59,6 @@ prints with the one saved.
   original disks stops at the start with four drives*.
 - [print-shop.md](guides/print-shop.md) uses 4am's crack, as its woz-a-day
   disk could be set up but not saved; it could use the original.
-- [swyftcard.md](guides/swyftcard.md): a blank WOZ can be tried, see *The
-  SwyftCard can't save its Text*.
 
 **Here, once released:** say in the pages that write to a WOZ disk which
 release of izapple2 they need, at least, and take this out.
@@ -216,24 +214,6 @@ so nothing takes the answer back to the card.
 
 **Here, once fixed:** add Calc to [swyftcard.md](guides/swyftcard.md), the
 sum of the tutorial worked out in the Text.
-
-### The SwyftCard can't save its Text
-
-The command *Disk* of the SwyftCard, Use Front `L`, saves the Text only on
-a diskette that is blank, never formatted, and in a format of its own.
-izapple2 has no such diskette that can be written: a `.dsk`, even of zeros,
-is a formatted DOS diskette to the card, which refuses it as not blank, and
-writes to it would be decoded as the 16 sectors of DOS and ProDOS
-(`saveTrack` in `storage/fileNib.go`); a `.nib` is never written
-(`newFileNib` does not allow it); and a `.woz` couldn't be written either
-(see *Writing to a WOZ disk stopped the emulator*): master writes it now, and
-a blank one is still to be tried. An all-zero `.nib` makes the
-card wait forever at `$D745`, as a real drive gives noise there and not
-nothing.
-
-**Here, once fixed:** in [swyftcard.md](guides/swyftcard.md), save the
-letter on a blank diskette with Disk, and switch on again with it in the
-drive to see it come back.
 
 ### Card Cat finds no printer on the parallel card
 
