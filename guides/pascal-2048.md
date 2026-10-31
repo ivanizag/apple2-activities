@@ -14,9 +14,9 @@ game, compiles it, and plays it to the end.
 
 ## What you need
 
-Only izapple2: the disks of Apple Pascal 1.3 come inside it, as on
-[Apple Pascal](pascal.md). The program is in this repository,
-[listings/2048.pas](listings/2048.pas).
+Only izapple2: the disks of Apple Pascal 1.3 come inside it.
+[Apple Pascal](pascal.md) starts from Apple's own masters instead. The
+program is in this repository, [listings/2048.pas](listings/2048.pas).
 
 The
 [Apple Pascal Operating System Reference Manual](https://archive.org/details/Apple_Pascal_Operating_System_Reference_Manual)
