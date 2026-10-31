@@ -49,15 +49,11 @@ releases of izapple2 don't yet. The generators run on copies of the disks of
 
 Apple Pascal writes the work file to its disk, so it could not run from the
 original disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
-Lode Runner writes the high scores to its disk when a game ends with a score
-and the initials are typed. The Print Shop saves its setup, the printer and
-its card, on its disk, and prints with the one saved.
+The Print Shop saves its setup, the printer and its card, on its disk, and
+prints with the one saved.
 
 **Here, now, a pull request each, each tried on the machine first:**
 
-- [lode-runner.md](guides/lode-runner.md) starts izapple2 again for the
-  board editor; it could end the game with Control-R, type the initials for
-  the high scores, and go on to the editor, and the note on it would go.
 - [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
   the woz-a-day ones, downloaded, but see *Apple Pascal 1.3 from its
   original disks stops at the start with four drives*.
