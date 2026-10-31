@@ -16,14 +16,18 @@ const swyftCardMachine = `izapple2 -model none -board 2e -cpu 65c02 -screen gree
     -s3 swyftcard \
     -s6 diskii,disk1=disks/SwyftWare_-_SwyftCard_Tutorial.woz`
 
-// swyftCardEmpty is the same machine with no diskette in the drive, for a
-// Text of one's own
-const swyftCardEmpty = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
+/*
+swyftCardOwn is the same machine with a blank diskette of one's own in the
+drive, never formatted, for a Text of one's own:
+
+	cp disks/blank.woz my-letter.woz
+*/
+const swyftCardOwn = `izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
     -s3 swyftcard \
-    -s6 diskii`
+    -s6 diskii,disk1=my-letter.woz`
 
 // The Leap keys of the SwyftCard are the Apple keys of the //e, the buttons
 // of the game port
@@ -36,7 +40,8 @@ const (
 swyftCardScreenshots is the SwyftCard, Jef Raskin's editor in a card for the
 Apple //e: its tutorial, leaping to the next page and to words, a chunk of
 text highlighted, deleted and brought back; and then a letter written from
-nothing, with a sentence moved by leaping.
+nothing, with a sentence moved by leaping, saved on a blank diskette, and
+back when the //e is switched on again with it.
 */
 func swyftCardScreenshots(t *testing.T) {
 	pictures := newAlbum("swyftcard", album.Green)
@@ -91,8 +96,9 @@ func swyftCardScreenshots(t *testing.T) {
 	chunk.Run(30, 6)
 	must(t, pictures.SaveRecording(chunk, "chunk", 300))
 
-	// Started again with no diskette: a Text of one's own, empty
-	o = start(t, swyftCardEmpty, nil)
+	// Started again with a blank diskette: a Text of one's own, empty
+	own := map[string]string{"my-letter.woz": disk(t, "blank.woz")}
+	o = start(t, swyftCardOwn, own)
 	must(t, o.WaitForText("= 1 =", 30))
 	o.RunSeconds(1)
 	swyftHand{o, nil}.waitFor(t, "\n_=")
@@ -129,6 +135,16 @@ func swyftCardScreenshots(t *testing.T) {
 	moved.Capture(10)
 	must(t, pictures.SaveRecording(moved, "moved", 300))
 	must(t, pictures.Screenshot(o, "moved"))
+
+	// Disk, Use Front L: the Text saved on the diskette, the drive running
+	must(t, o.Key("Ctrl+L"))
+	o.RunSeconds(10)
+
+	// Switched on again with the diskette: the letter comes back
+	o = start(t, swyftCardOwn, own)
+	must(t, o.WaitForText("twice.  See you", 30))
+	o.RunSeconds(1)
+	must(t, pictures.Screenshot(o, "back"))
 }
 
 // letter is the letter of the page, a line at a time
