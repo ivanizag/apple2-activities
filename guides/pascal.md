@@ -17,11 +17,26 @@ the editor, and compiles and runs it.
 
 ## What you need
 
-Only izapple2: the disks of Apple Pascal 1.3 come inside it. The originals,
-the four disks `APPLE0` to `APPLE3` as Apple sold them, are in the [woz-a-day
+**`Apple Pascal v1.3 - APPLE1 (boot).woz`** and **`Apple Pascal v1.3 -
+APPLE2.woz`**, two of the four disks of Apple Pascal 1.3 as Apple sold them,
+`APPLE0` to `APPLE3`, from the [woz-a-day
 collection](https://archive.org/details/wozaday_Apple_Pascal_v13) of the
-Internet Archive, but izapple2 cannot write to their WOZ images yet, and the
-system writes your program to its disk.
+Internet Archive: download *Apple Pascal v1.3 (woz-a-day collection).zip*
+and take them out of it. `./fetch-disks.sh` in this repository downloads
+them into `disks/`. A WOZ file records a diskette bit by bit, as it was.
+
+The masters have their write protect tab on, as Apple sold them, and the
+system writes your program to its disk. So izapple2 keeps what is written in
+a folder of its own, `saves`, the `savedir` of the drives in the command
+below, and puts it back on top of the disk every time it starts with it: the
+files in `disks/` stay as they came. Make the folder before starting, in the
+folder izapple2 runs in:
+
+```bash
+mkdir saves
+```
+
+izapple2 also has Apple Pascal 1.3 inside, on disks that have been used.
 
 The
 [Apple Pascal Operating System Reference Manual](https://archive.org/details/Apple_Pascal_Operating_System_Reference_Manual)
@@ -43,11 +58,11 @@ izapple2 -model none -board 2e -cpu 65c02 -screen green \
     -rom "<internal>/Apple2e_Enhanced.rom" \
     -charrom "<internal>/Apple IIe Video Enhanced.bin" \
     -s0 language \
-    -s6 'diskii,disk1=<internal>/Apple II Pascal 1.3 APPLE1_ 680-0283-A.dsk,disk2=<internal>/Apple II Pascal 1.3 APPLE2_ 680-0284-A.dsk'
+    -s6 'diskii,disk1=disks/Apple Pascal v1.3 - APPLE1 (boot).woz,disk2=disks/Apple Pascal v1.3 - APPLE2.woz,savedir=saves'
 ```
 
-The model `pascal` of izapple2 has this machine, with 8 MB more of memory on
-a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
+The model `pascal` of izapple2 has this machine, with those disks of its
+own, and 8 MB more of memory on a RAMWorks card, a No-Slot Clock, a VidHD card, a FASTChip accelerator and a
 Mockingboard more, and a second Disk II controller in slot 5 with `APPLE3`
 and `APPLE0`:
 
@@ -65,7 +80,7 @@ izapple2 -model pascal -screen green
    ![Apple Pascal started](images/pascal/started.png)
 
    The date is the one kept on the disk, not the one of the clock of the
-   machine.
+   machine: 7-Nov-84 on Apple's masters.
 
 ## The Filer
 
