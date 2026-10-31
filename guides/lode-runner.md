@@ -11,8 +11,9 @@ went on to most computers and consoles of the eighties.
 
 This page starts Lode Runner from a copy of its original disk, watches the
 demonstration that plays itself, and plays the start of a game from the
-keyboard. Then it makes a level of its own with the board editor, saves it
-on a diskette, and plays it to the end.
+keyboard, until the game ends and writes its high score on the disk. Then
+it makes a level of its own with the board editor, saves it on a diskette,
+and plays it to the end.
 
 ## What you need
 
@@ -24,7 +25,9 @@ take it out of it. `./fetch-disks.sh` in this repository downloads it into
 
 A WOZ file records a diskette bit by bit, its copy protection included, so
 it is the disk Broderbund sold, as it was, and not a copy with the protection
-taken out.
+taken out. The game writes its high scores on it, and izapple2 writes them
+into the file, as a drive would on the diskette; `./fetch-disks.sh` sees the
+file changed, and downloads it again, without them.
 
 **`my-disk.dsk`**, a blank diskette, for the levels you make: the game
 doesn't let you save them on its own disk. `./fetch-disks.sh` makes
@@ -105,24 +108,32 @@ izapple2 -model 2plus -screen color "disks/Lode Runner.woz"
    long: the way past them is to dig a hole in the bricks they walk on, and
    go on while they climb out.
 
+5. **Press Control-R** when the level is back, to end the game. The game
+   ends with a score, so it shows the high scores, with this one in its
+   place, and waits for the initials of the player.
+
+   ![The high scores](images/lode-runner/high-score.png)
+
+   **Type your initials**, three letters, here `ADA`, and **press Return**.
+
+   ![The initials typed](images/lode-runner/initials.png)
+
+   The game writes the high scores on its own disk, and they are there the
+   next time it starts. Then the title comes up again.
+
 ## Make a level of your own
 
 The board editor makes new levels, a shape at a time, and saves them on a
-diskette of your own, the data disk. Go to it with the game just started,
-not at the end of a game: when a game ends with a score, the game asks for
-your initials and writes the high scores on its own disk, and izapple2 stops
-with an error, `Write not implemented on woz disk`, as it can't write a WOZ
-file yet.
+diskette of your own, the data disk.
 
-5. **Start izapple2 again**, and when the title comes up, **press
-   Control-E**. The board editor waits for a command, a letter: `E` to edit
-   a level, `P` to play one, `I` to initialize a data disk, `C` to clear a
-   level, `M` to move one to another number, and `S` to clear the high
-   scores.
+6. **Press Control-E** when the title is up. The board editor waits for a
+   command, a letter: `E` to edit a level, `P` to play one, `I` to
+   initialize a data disk, `C` to clear a level, `M` to move one to another
+   number, and `S` to clear the high scores.
 
    ![The board editor](images/lode-runner/editor.png)
 
-6. **Press I** to initialize a data disk. The editor asks if you are sure,
+7. **Press I** to initialize a data disk. The editor asks if you are sure,
    since it erases the diskette.
 
    ![Are you sure?](images/lode-runner/initialize.png)
@@ -131,13 +142,13 @@ file yet.
    window of izapple2. Then **press Y**. The drive formats it, a few seconds,
    and the editor waits for the next command.
 
-7. **Press E**, then type the number of the level, **001**, all three
+8. **Press E**, then type the number of the level, **001**, all three
    digits, and **press Return**. Level 1 of the new disk comes up empty, with
    the cursor, a white square, at the top left.
 
    ![An empty level](images/lode-runner/empty.png)
 
-8. **Draw the level.** A level is 28 squares across and 16 down. **I**,
+9. **Draw the level.** A level is 28 squares across and 16 down. **I**,
    **J**, **K** and **M** move the cursor up, left, right and down, and a
    digit puts a shape where it is:
 
@@ -187,10 +198,10 @@ file yet.
    room of stone, at the bottom right, so that this level is easy to win.
    The ladder at the top right is hidden until all the gold is taken.
 
-9. **Press Control-S** to save the level on the data disk, and
-   **Control-Q** to go back to the editor. A level not saved is lost.
+10. **Press Control-S** to save the level on the data disk, and
+    **Control-Q** to go back to the editor. A level not saved is lost.
 
-10. **Press P**, type **001** and **press Return** to play it, and
+11. **Press P**, type **001** and **press Return** to play it, and
     **Control-K** for the keyboard, as before:
 
     - **L** to the gold at the right, **J** back to the ladder, and **I** up
