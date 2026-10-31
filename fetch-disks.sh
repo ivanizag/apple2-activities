@@ -57,6 +57,9 @@ while IFS=$'\t' read -r name sum source member; do
     blank:*)
         head -c "${source#blank:}" /dev/zero >"$work/disk"
         ;;
+    blank-woz)
+        go run ./tools/blankwoz >"$work/disk"
+        ;;
     *)
         if ! curl -fsSL --retry 3 -o "$work/download" "$source"; then
             echo "  could not download $source" >&2

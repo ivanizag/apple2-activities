@@ -20,6 +20,7 @@ changing a page.
 | `album/` | the pictures: screenshots and GIF recordings in the frame of a monitor, green or colour |
 | `activities/` | the generators, a `<name>_test.go` for each page |
 | `tools/sheet/` | a contact sheet of pictures, or of the frames of a GIF, to check them |
+| `tools/blankwoz/` | a blank diskette as a WOZ image, never formatted, which `fetch-disks.sh` makes |
 | `EDITORIAL.md` | how the pages and their pictures are made, and what driving the machine has taught |
 | `IZAPPLE2.md` | what the activities found in izapple2 that is not fixed, and what to do here when it is |
 
