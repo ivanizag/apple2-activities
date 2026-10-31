@@ -64,8 +64,8 @@ fight, and a game, the prince running into a guard before he has a sword.
 [<img src="../guides/images/lode-runner/title.png" width="320" alt="Lode Runner">](../guides/lode-runner.md)
 
 Broderbund's game of 1983, from a copy of its original disk: the title, the
-demonstration that plays itself, and a game played from the keyboard, until
-a guard catches the runner.
+demonstration that plays itself, a game played from the keyboard, until a
+guard catches the runner, and its high score written on the disk.
 
 ### [Mission: Asteroid, from the start to the end](../guides/missionasteroid.md)
 

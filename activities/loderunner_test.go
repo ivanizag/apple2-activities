@@ -23,7 +23,8 @@ const lodeRunnerLevel = "../guides/listings/lode-runner.txt"
 lodeRunnerScreenshots is Lode Runner of 1983 on an Apple ][+, from its
 original disk: the title, the demonstration that plays itself, and a game
 started and played from the keyboard, two pieces of gold taken before a
-guard catches the runner. Then the board editor: a data disk initialized, a
+guard catches the runner, and the game ended, its score written with the
+initials on the disk of the game. Then the board editor: a data disk initialized, a
 level of our own drawn on it shape by shape, saved, and played to the end.
 
 	cp disks/blank.dsk my-disk.dsk
@@ -64,10 +65,22 @@ func lodeRunnerScreenshots(t *testing.T) {
 	play.Run(10*60, 6)
 	must(t, pictures.SaveRecording(play, "play", 200))
 
-	// Started again, not to write the high scores on the disk of the game,
-	// and the board editor, Control-E, at the title
-	o = start(t, lodeRunnerMachine, nil)
-	o.Run(16 * 60)
+	// The game ended with Control-R, once the level is back: the high scores, the score of the game
+	// in its place, and the initials typed, a letter at a time, and written
+	// with Return on the disk of the game, before the title again
+	o.Run(5 * 60)
+	must(t, o.Key("Ctrl+R"))
+	o.Run(5 * 60)
+	must(t, pictures.Screenshot(o, "high-score"))
+	for _, letter := range "ADA" {
+		must(t, o.Type(string(letter)))
+		o.Run(60)
+	}
+	must(t, pictures.Screenshot(o, "initials"))
+	must(t, o.Key("Return"))
+	o.Run(5 * 60)
+
+	// The board editor, Control-E, at the title
 	must(t, o.Key("Ctrl+E"))
 	must(t, o.WaitForKeyboard(10))
 	must(t, pictures.Screenshot(o, "editor"))
