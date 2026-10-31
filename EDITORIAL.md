@@ -53,10 +53,11 @@ step, with what the machine showed on the way. Its parts are:
   [Internet Archive](https://archive.org/), for the WOZ images of the
   [wozaday](https://archive.org/details/wozaday) collection and much else.
   WOZ is not better in itself: a clean crack, as 4am's, in DSK or PO, is
-  often the better choice, and the only one when the program writes to its
-  disk, as izapple2 cannot write a WOZ image yet (see
-  [IZAPPLE2.md](IZAPPLE2.md)). Use a WOZ when no good copy in another
-  format runs.
+  often the better choice. Use a WOZ when no good copy in another format
+  runs. izapple2 writes WOZ images, from its master on (see
+  [IZAPPLE2.md](IZAPPLE2.md)), but not one with its write protect tab on:
+  for a program that writes to its disk, check the tab of the image, the
+  third byte of the data of its `INFO` chunk.
 - **Not the disks inside izapple2.** It carries DOS 3.3, ProDOS, Apple
   Pascal, CP/M, Apple II DeskTop and others, for its models, but a page
   downloads its disks like any other, so the reader knows where they come
