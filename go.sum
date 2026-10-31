@@ -4,8 +4,8 @@ github.com/ivanizag/imagewriter2 v0.0.0-20261022145401-c4416f02d96e h1:P+pi3qySS
 github.com/ivanizag/imagewriter2 v0.0.0-20261022145401-c4416f02d96e/go.mod h1:9iqVNlehYJfSHsjpO/Sq2wd09TlGf3VazXdln42NT9c=
 github.com/ivanizag/iz6502 v1.5.0 h1:hWNfjuZHbSjBZr1lzlFNgF6O1gCI/1NIHaQwa+W2+cQ=
 github.com/ivanizag/iz6502 v1.5.0/go.mod h1:h4gbw3IK6WCYawi00kBhQ4ACeQkGWgqbUeAgDaQpy6s=
-github.com/ivanizag/izapple2 v0.0.0-20261026223151-4e773baf9f1f h1:4GfboCj/IZBN5uHQAMMzwgWqcyQ902ycTN969AvcMDA=
-github.com/ivanizag/izapple2 v0.0.0-20261026223151-4e773baf9f1f/go.mod h1:oewweqILR0TD4iGbmJoiXGJ3FXCpw5+pE19W1/yPt/Y=
+github.com/ivanizag/izapple2 v0.0.0-20261030191600-c7df259ab91c h1:UZetKhsdnIuT7dkJuDh8Cz9RkMen7CP6FLICz+O/nmk=
+github.com/ivanizag/izapple2 v0.0.0-20261030191600-c7df259ab91c/go.mod h1:oewweqILR0TD4iGbmJoiXGJ3FXCpw5+pE19W1/yPt/Y=
 github.com/koron-go/z80 v0.10.3-0.20260914063009-9bb8326ec1f5 h1:uTWWAFrwcnh0fg759P3zidnhb4JLQKWu+6sa6nVMKPY=
 github.com/koron-go/z80 v0.10.3-0.20260914063009-9bb8326ec1f5/go.mod h1:kD1eb/awF8uNfDBxwVJfw1W/d9SJrw7QCAdya5Ig2Hc=
 golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b h1:M2rDM6z3Fhozi9O7NWsxAkg/yqS/lQJ6PmkyIV3YP+o=
