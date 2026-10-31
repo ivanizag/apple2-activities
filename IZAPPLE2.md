@@ -38,6 +38,37 @@ izapple2 don't yet.
 **Here, once released:** say in [cpm-cards.md](guides/cpm-cards.md) which
 release of izapple2 the page needs, instead of master.
 
+### Writing to a WOZ disk stopped the emulator
+
+When a program wrote to a disk in WOZ format, izapple2 panicked with `Write
+not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Master
+writes WOZ disks now, and saves the tracks to the image when the motor stops
+or the head moves, unless the image has its write protect tab on; the
+releases of izapple2 don't yet. The generators run on copies of the disks of
+`disks/`, which stay as downloaded.
+
+Apple Pascal writes the work file to its disk, so it could not run from the
+original disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
+Lode Runner writes the high scores to its disk when a game ends with a score
+and the initials are typed. The Print Shop saves its setup, the printer and
+its card, on its disk, and prints with the one saved.
+
+**Here, now, a pull request each, each tried on the machine first:**
+
+- [lode-runner.md](guides/lode-runner.md) starts izapple2 again for the
+  board editor; it could end the game with Control-R, type the initials for
+  the high scores, and go on to the editor, and the note on it would go.
+- [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
+  the woz-a-day ones, downloaded, but see *Apple Pascal 1.3 from its
+  original disks stops at the start with four drives*.
+- [print-shop.md](guides/print-shop.md) uses 4am's crack, as its woz-a-day
+  disk could be set up but not saved; it could use the original.
+- [swyftcard.md](guides/swyftcard.md): a blank WOZ can be tried, see *The
+  SwyftCard can't save its Text*.
+
+**Here, once released:** say in the pages that write to a WOZ disk which
+release of izapple2 they need, at least, and take this out.
+
 ## Not fixed
 
 ### GBASIC draws nothing on the SoftCard II
@@ -53,19 +84,6 @@ something the emulation of the card doesn't give.
 on the SoftCard II too in [cpm-cards.md](guides/cpm-cards.md), and take out
 its sentence on `HPLOT`.
 
-### The 6502 of the ][+ stops on the instructions Apple didn't document
-
-The NMOS 6502 of `iz6502` panics with `Unknown opcode` on the opcodes the
-6502 has but MOS didn't document, where the chip of a \]\[+ runs them. CP/M
-3.0 on the SoftCard, on a \]\[+ with a Language Card and no 80 column card,
-reaches `0x6F` and stops izapple2: whether it would start on a real \]\[+
-there, or fail in some other way, can't be seen.
-
-**Here, once fixed:** start it again in [cpm-cards.md](guides/cpm-cards.md),
-and change its cells of the \]\[+ without a Videx card in `cpmCardsCompared`
-and in the table of the page, and the sentence that says CP/M 3 stops
-izapple2.
-
 ### CP/M 2.20, 2.20B and 2.23B stop with a Videx card
 
 On a \]\[+ with a Videx Videoterm in slot 3, the CP/Ms of 40 columns of the
@@ -80,26 +98,6 @@ known.
 [cpm-cards.md](guides/cpm-cards.md), and the sentence that says they stay
 at the *APPLE \]\[*.
 
-
-### Writing to a WOZ disk stops the emulator
-
-When a program writes to a disk in WOZ format, izapple2 panics with `Write
-not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Apple
-Pascal writes the work file to its disk, so it cannot run from the original
-disks of the [woz-a-day collection](https://archive.org/details/wozaday_Apple_Pascal_v13).
-Lode Runner writes the high scores to its disk when a game ends with a score
-and the initials are typed. The Print Shop saves its setup, the printer and
-its card, on its disk, and prints with the one saved: its woz-a-day disk can
-be set up but not saved, and [print-shop.md](guides/print-shop.md) uses 4am's
-crack.
-
-**Here, once fixed:**
-
-- [pascal.md](guides/pascal.md) uses the disks inside izapple2; it could use
-  the woz-a-day ones, downloaded, but see the next one.
-- [lode-runner.md](guides/lode-runner.md) starts izapple2 again for the board
-  editor; it could end the game with Control-R, type the initials for the
-  high scores, and go on to the editor, and the note on it would go.
 
 ### Apple Pascal 1.3 from its original disks stops at the start with four drives
 
@@ -231,8 +229,9 @@ izapple2 has no such diskette that can be written: a `.dsk`, even of zeros,
 is a formatted DOS diskette to the card, which refuses it as not blank, and
 writes to it would be decoded as the 16 sectors of DOS and ProDOS
 (`saveTrack` in `storage/fileNib.go`); a `.nib` is never written
-(`newFileNib` does not allow it); and a `.woz` can't be written either (see
-*Writing to a WOZ disk stops the emulator*). An all-zero `.nib` makes the
+(`newFileNib` does not allow it); and a `.woz` couldn't be written either
+(see *Writing to a WOZ disk stopped the emulator*): master writes it now, and
+a blank one is still to be tried. An all-zero `.nib` makes the
 card wait forever at `$D745`, as a real drive gives noise there and not
 nothing.
 
@@ -279,9 +278,16 @@ Unknown opcode 0x0b`, from `iz6502` `ExecuteInstruction`. It came up when
 machine would hang or crash it, not the computer it is emulated on. The
 Print Shop stops so, `Unknown opcode 0x6f`, when its setup is for a card
 that is not in the slot, as the Apple III Serial Port or the ALS
-Printermate in slot 1, which has the parallel card.
+Printermate in slot 1, which has the parallel card. CP/M 3.0 on the
+SoftCard, on a \]\[+ with a Language Card and no 80 column card, stops so
+too, `Unknown opcode 0x6f`: an opcode that MOS didn't document, which the
+NMOS 6502 of a \]\[+ runs. Whether CP/M 3 would start on a real \]\[+ there,
+or fail in some other way, can't be seen.
 
-**Here, once fixed:** nothing to change.
+**Here, once fixed:** in [cpm-cards.md](guides/cpm-cards.md), start CP/M 3
+again on the \]\[+ without a Videx card, change its cells in
+`cpmCardsCompared` and in the table of the page, and the sentence that says
+CP/M 3 stops izapple2.
 
 ### The text of the Basis 108 in 80 columns is read a column out of two
 
@@ -360,8 +366,10 @@ from it. On a DSK, 4am's crack of the version of 06/19/84 or the copy of the
 3d0g Knight collection on Asimov, a doorway or the stairs out of a room bring
 back the same room, the player where he left it: the screen fills with grey
 lines, then with random dots, as the game loads, and the room drawn is the
-one left. The woz-a-day disk can't be tried, as the game writes to it (see
-the one above). From the hard disk of Total Replay, the stairs work; a
+one left. The woz-a-day disk, which izapple2 writes now (see *Writing to a
+WOZ disk stopped the emulator*), does the same: it has a game saved on it,
+in a room with stairs and no guards, and walking out of it at the top, the
+grey lines come and the same room comes back. From the hard disk of Total Replay, the stairs work; a
 doorway out of the first room there brings it back too. Not known whether a
 real Apple II does the same with these diskettes; the game uses its own
 routines for the disk, which 4am's crack keeps.
