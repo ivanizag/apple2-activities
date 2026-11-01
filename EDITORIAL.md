@@ -154,8 +154,11 @@ step, with what the machine showed on the way. Its parts are:
 - **Real speed by default.** Speed up only waits that would be tedious, with
   `Faster`, and say so in the text, with the real time. Stills are capped at
   `LongestStill`.
-- **Determinism is not complete yet**: the flashing cursor follows the time
-  of the host, so pictures can differ from one run to the next in the cursor.
+- **The same pictures on every run.** `start` gives every machine the same
+  start time, so its clocks, the blink of its cursor and the random bits of
+  its WOZ disks don't follow the host: a generator run again changes no
+  picture, and one that does is waiting on the host somewhere. The clocks
+  show that date, 15 March 1985, and the page says so.
 - **Look at every picture before committing**, every frame of the GIFs too,
   with `tools/sheet`. A picture taken too early, of a menu half printed or a
   title half drawn, is the most common fault.
