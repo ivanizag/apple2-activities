@@ -145,19 +145,6 @@ The keys of [Karateka](guides/karateka.md) may be another case: `Q`, `A`,
 fighting stance, made no difference to the fight, which the joystick plays.
 Once keys can be held, try them, and say so on the page.
 
-### Calc of the SwyftCard stays in Applesoft
-
-The command *Calc* of the SwyftCard, Use Front `G`, Control-G, gives the
-highlighted line to Applesoft and should put the answer in the Text. On page
-61 of the tutorial, with `? 5.6 + 3` typed, Applesoft prints `8.6` over the
-80 column page and stays at its `]` prompt: the hooks of output and input,
-`$36` to `$39`, are the ones of the ROM, `$FDF0` and `$FD1B`, and the
-processor waits for a key in the firmware of the 80 column card, at `$C83D`,
-so nothing takes the answer back to the card.
-
-**Here, once fixed:** add Calc to [swyftcard.md](guides/swyftcard.md), the
-sum of the tutorial worked out in the Text.
-
 ### Card Cat finds no printer on the parallel card
 
 *Print* in [Card Cat](guides/card-cat.md) says `PRINT: Printer is not

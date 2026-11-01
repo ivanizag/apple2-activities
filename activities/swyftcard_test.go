@@ -39,7 +39,7 @@ const (
 /*
 swyftCardScreenshots is the SwyftCard, Jef Raskin's editor in a card for the
 Apple //e: its tutorial, leaping to the next page and to words, a chunk of
-text highlighted, deleted and brought back; and then a letter written from
+text highlighted, deleted and brought back, and a sum worked out by Calc; and then a letter written from
 nothing, with a sentence moved by leaping, saved on a blank diskette, and
 back when the //e is switched on again with it.
 */
@@ -95,6 +95,31 @@ func swyftCardScreenshots(t *testing.T) {
 	hand.waitFor(t, "peered out the window")
 	chunk.Run(30, 6)
 	must(t, pictures.SaveRecording(chunk, "chunk", 300))
+
+	// Calc on page 61: a leap to it, Solid Apple tapped six times to creep
+	// past its equal signs, the sum typed, Use Front G for the answer, and
+	// Delete to leave only the answer. The card takes no leap for a few
+	// seconds after the last key typed.
+	o.RunSeconds(5)
+	quick.leap(t, leapForward, "61 =")
+	quick.waitFor(t, "CALC (USE FRONT G)")
+	calc := pictures.Record(o)
+	calc.Capture(100)
+	hand = swyftHand{o, calc}
+	for range 6 {
+		hand.creep(leapForward)
+	}
+	hand.waitFor(t, "61 ===_")
+	must(t, calc.Type("? 5.6 + 3"))
+	hand.waitFor(t, "61 ===? 5.6 + 3_")
+	calc.Run(60, 6)
+	must(t, o.Key("Ctrl+G"))
+	hand.waitFor(t, "61 ===? 5.6 + 38.6")
+	calc.Run(90, 6)
+	must(t, o.Key("Delete"))
+	hand.waitFor(t, "61 ===8.6")
+	calc.Capture(10)
+	must(t, pictures.SaveRecording(calc, "calc", 300))
 
 	// Started again with a blank diskette: a Text of one's own, empty
 	own := map[string]string{"my-letter.woz": disk(t, "blank.woz")}
@@ -186,6 +211,15 @@ func (h swyftHand) leap(t *testing.T, key int, pattern string) {
 	h.run(30)
 	h.o.ReleaseButton(key)
 	h.run(60)
+}
+
+// creep taps a Leap key alone: the cursor moves a character, forward or
+// backward
+func (h swyftHand) creep(key int) {
+	h.o.HoldButton(key)
+	h.run(10)
+	h.o.ReleaseButton(key)
+	h.run(30)
 }
 
 // highlight presses the two Leap keys at once: the text the cursor went over
