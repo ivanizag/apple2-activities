@@ -61,8 +61,8 @@ it takes from the card.
 [<img src="../guides/images/swyftcard/moved.png" width="320" alt="A letter edited on the SwyftCard">](../guides/swyftcard.md)
 
 Jef Raskin's editor on a card for the //e, before the Canon Cat: its
-tutorial, the cursor leaping to what you type with the Apple keys, and a
-letter written from nothing with a sentence moved by leaping, saved on a
+tutorial, the cursor leaping to what you type with the Apple keys, a sum
+worked out by Calc in the text, and a letter written from nothing with a sentence moved by leaping, saved on a
 blank diskette and back when the //e is switched on again.
 
 ### [Forth in ROM](../guides/forth.md)

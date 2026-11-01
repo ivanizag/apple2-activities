@@ -15,8 +15,9 @@ and the cursor jumps to the next place they are, forward or backward, in a
 blink. Everything you have, the whole *Text*, is one long document divided
 into pages, and leaping is how you get anywhere in it.
 
-This page follows the SwyftCard's own tutorial through its first leaps and a
-chunk of text deleted and brought back, and then writes a letter from
+This page follows the SwyftCard's own tutorial through its first leaps, a
+chunk of text deleted and brought back, and a sum worked out in the Text,
+and then writes a letter from
 nothing, moves a sentence of it by leaping, and saves it on a diskette of its
 own.
 
@@ -148,15 +149,28 @@ The keys of the SwyftCard are keys of the //e with other names:
    highlighted again. Moving text is the same: delete it, leap to where it
    goes, and insert it.
 
+6. **Leap forward to `61 =`**, page 61, *Calc*. Do what it says: **tap
+   Solid Apple six times**, alone, to creep past the equal signs; **type
+   `? 5.6 + 3`**; and **hold Use Front, Control, and tap `G`**, *Calc*.
+   Then **press Delete**.
+
+   ![A sum worked out by Calc](images/swyftcard/calc.gif)
+
+   Calc takes what you typed since the last leap or creep, gives it to the
+   Applesoft BASIC of the //e, and puts the answer, `8.6`, in the Text
+   after it, with the problem highlighted. Delete takes the problem away and
+   leaves the answer. `?` is `PRINT` in Applesoft; page 61 says Calc can
+   run programs in BASIC too.
+
 ## A letter of your own
 
-6. **Quit izapple2 and start it with the second command**, with your blank
+7. **Quit izapple2 and start it with the second command**, with your blank
    diskette in the drive. After the copyright, the Text is empty: the start of page 0
    and of page 1, and the cursor at the start of page 1.
 
    ![An empty Text](images/swyftcard/empty.png)
 
-7. **Type a letter**, Return only at the end of a paragraph and for a blank
+8. **Type a letter**, Return only at the end of a paragraph and for a blank
    line between them:
 
    ```text
@@ -171,7 +185,7 @@ The keys of the SwyftCard are keys of the //e with other names:
 
    The words that do not fit on a line go on to the next as you type.
 
-8. **Move the thanks before the date.** **Open Apple and `Tha`**, back to
+9. **Move the thanks before the date.** **Open Apple and `Tha`**, back to
    the `T` of *Thank*; **Solid Apple and `.`**, forward to its full stop;
    **both Leap keys**, and **Delete**. Then **Open Apple and `See`**, back
    to the start of the paragraph, **Control-A**, Insert, and **two spaces**
@@ -182,19 +196,14 @@ The keys of the SwyftCard are keys of the //e with other names:
    No mouse and no menu: the hands stay on the keyboard, and the thumbs on
    the Leap keys.
 
-9. **Save it: hold Use Front, Control, and tap `L`**, *Disk*. The drive
-   runs, and the whole Text is on the diskette.
+10. **Save it: hold Use Front, Control, and tap `L`**, *Disk*. The drive
+    runs, and the whole Text is on the diskette.
 
-10. **Quit izapple2 and start it again with the second command**, the same
+11. **Quit izapple2 and start it again with the second command**, the same
     diskette in the drive. After the copyright, the letter is back, as it
     was, with the cursor where it was left.
 
     ![The letter back](images/swyftcard/back.png)
-
-One command of the card does not work in izapple2 yet. *Calc*, Use Front
-`G`, gives a line like `? 5.6 + 3` to Applesoft and puts
-the answer in the Text; in izapple2 Applesoft prints `8.6` and stays at its
-prompt; see [IZAPPLE2.md](https://github.com/ivanizag/apple2-activities/blob/main/IZAPPLE2.md).
 
 ## What next
 
