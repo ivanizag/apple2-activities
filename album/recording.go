@@ -26,6 +26,7 @@ every two frames of the machine.
 type Recording struct {
 	album  *Album
 	speed  int
+	label  string
 	op     *operator.Operator
 	frames []*image.Paletted
 	delays []int
@@ -50,10 +51,17 @@ func (r *Recording) Faster(times int) *Recording {
 	return r
 }
 
+// Labelled puts a label under the screen in the frame of each picture, as
+// ScreenshotOf does: whose machine it is, when a page shows two
+func (r *Recording) Labelled(label string) *Recording {
+	r.label = label
+	return r
+}
+
 // Capture takes a picture of the screen, shown for a time in hundredths of a
 // second
 func (r *Recording) Capture(delay int) {
-	whole := Frame(r.album.Screen(r.op))
+	whole := FrameLabelled(r.album.Screen(r.op), r.label)
 	if r.last != nil && whole.Bounds() != r.last.Bounds() {
 		// The screen changed its size, as Super Hi-Res does: the picture is
 		// put on one of the size of the first
