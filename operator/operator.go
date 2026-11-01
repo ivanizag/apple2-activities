@@ -5,13 +5,15 @@ machine itself, a frame at a time, so that what the machine does depends only
 on what it is given and when, and not on how fast the host is.
 
 The timings are frames of the machine, sixtieths of a second of its time,
-which runs as fast as the host can go.
+which runs as fast as the host can go, or at the speed of a real machine
+when it talks to the world outside: see RealTime.
 */
 package operator
 
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/ivanizag/izapple2"
 	"github.com/ivanizag/izapple2/screen"
@@ -33,6 +35,11 @@ type Operator struct {
 	paddles  *paddles
 	mouse    *mouse
 	frames   uint64
+
+	// realTime keeps the frames to the clock of the host, with the time the
+	// next frame is due
+	realTime bool
+	nextDue  time.Time
 }
 
 /*
@@ -77,9 +84,41 @@ func (o *Operator) Frames() uint64 {
 // Run lets the machine run for a number of frames
 func (o *Operator) Run(frames int) {
 	for range frames {
+		if o.realTime {
+			o.waitForFrame()
+		}
 		o.a.RunCycles(CyclesPerFrame)
 		o.frames++
 	}
+}
+
+/*
+RealTime makes the machine run at the speed of a real one, a frame each
+sixtieth of a second of the host, or as fast as it can again. It is for a
+machine that talks to the world outside, as to a BBS through its modem,
+which goes at its own pace. While a device asks for it, as the Disk II does
+when its drive turns, the machine runs as fast as it can, as izapple2 runs
+it.
+*/
+func (o *Operator) RealTime(on bool) {
+	o.realTime = on
+	o.nextDue = time.Now()
+}
+
+// frameDuration is a frame of a real machine
+const frameDuration = time.Second / FramesPerSecond
+
+// waitForFrame waits until the next frame is due on the clock of the host
+func (o *Operator) waitForFrame() {
+	now := time.Now()
+	if o.a.IsFastModeRequested() || now.Sub(o.nextDue) > time.Second {
+		// At full speed, or too far behind to catch up
+		o.nextDue = now
+	}
+	if wait := o.nextDue.Sub(now); wait > 0 {
+		time.Sleep(wait)
+	}
+	o.nextDue = o.nextDue.Add(frameDuration)
 }
 
 // RunSeconds lets the machine run for a number of seconds of its time

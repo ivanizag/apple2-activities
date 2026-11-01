@@ -3,7 +3,7 @@ module github.com/ivanizag/apple2-activities
 go 1.26.3
 
 require (
-	github.com/ivanizag/izapple2 v0.0.0-20261101172808-5fe9cb80fdeb
+	github.com/ivanizag/izapple2 v0.0.0-20261101183317-0eaf04f6ae2e
 	golang.org/x/image v0.41.0
 )
 

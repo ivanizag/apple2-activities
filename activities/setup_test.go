@@ -68,6 +68,23 @@ diskette the reader makes of blank.dsk.
 */
 func start(t testing.TB, command string, files map[string]string) *operator.Operator {
 	t.Helper()
+	return startAt(t, command, files, startTime)
+}
+
+/*
+startOnHostTime is start for a machine that talks to the world outside, as
+to a BBS: the world goes on its own time, which the pictures show, and the
+machine takes the time of the host, as on the reader's computer
+*/
+func startOnHostTime(t testing.TB, command string, files map[string]string) *operator.Operator {
+	t.Helper()
+	return startAt(t, command, files, "none")
+}
+
+// startAt is start with the date and time the machine starts at, "none" for
+// the time of the host
+func startAt(t testing.TB, command string, files map[string]string, at string) *operator.Operator {
+	t.Helper()
 	model, overrides, positional, err := parseCommand(command)
 	if err != nil {
 		t.Fatal(err)
@@ -107,7 +124,7 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 	// The machine runs on a time of its own, from the same date for every
 	// machine: its clocks, the blink of its cursor and the random bits of its
 	// WOZ disks are the same on every run, and so are the pictures
-	overrides["startTime"] = startTime
+	overrides["startTime"] = at
 
 	o, err := operator.Start(model, overrides, positional...)
 	if err != nil {
