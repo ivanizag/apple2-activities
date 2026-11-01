@@ -33,7 +33,10 @@ A2_ACTIVITIES=1 go test -count=1 -run 'TestActivities/dos33' ./activities
 ```
 
 Without `A2_ACTIVITIES` the generators skip themselves. They write over the
-pictures of the pages they run.
+pictures of the pages they run. The one of
+[proterm-bbs.md](guides/proterm-bbs.md) calls a BBS on the internet, which
+may have changed or be gone: it runs only with `A2_BBS=1` too, when the
+owner asks for it.
 
 ## Workflow
 

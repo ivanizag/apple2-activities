@@ -52,6 +52,22 @@ release of izapple2 they need, at least, and take this out.
 
 ## Not fixed
 
+### The modem answers CONNECT without the speed
+
+The modem of `device=netmodem` answers a call with `CONNECT` alone. A Hayes
+modem says `CONNECT` alone at 300 baud, and `CONNECT 2400` or `CONNECT 9600`
+faster, and the terminal programs set the port to it: ProTERM 3.1 with its
+*Generic 9600 Baud Driver* drops to 300 baud after the call, and what the
+BBS sends comes at 30 characters a second.
+
+**Here:** [proterm-bbs.md](guides/proterm-bbs.md) gives ProTERM the *Null
+Modem Driver*, and types the commands to the modem itself; ProTERM, which
+then doesn't hear the `CONNECT`, keeps its 9600 baud.
+
+**Here, once fixed:** nothing: with a modem driver, ProTERM waits three
+seconds and a half after the connection before it answers anything, and
+Dura-Europos has given up on finding ProTERM by then.
+
 ### GBASIC draws nothing on the SoftCard II
 
 On CP/M 2.28B of the SoftCard II, GBASIC starts, and `HGR` and `HCOLOR = 3`

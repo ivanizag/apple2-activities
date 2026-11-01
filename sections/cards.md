@@ -65,6 +65,15 @@ tutorial, the cursor leaping to what you type with the Apple keys, a sum
 worked out by Calc in the text, and a letter written from nothing with a sentence moved by leaping, saved on a
 blank diskette and back when the //e is switched on again.
 
+### [Calling a BBS with ProTERM](../guides/proterm-bbs.md)
+
+[<img src="../guides/images/proterm-bbs/title.png" width="320" alt="The title of Dura-Europos, in MouseText">](../guides/proterm-bbs.md)
+
+ProTERM 3.1 on a //e with a Super Serial Card and a modem to the internet:
+it calls Dura-Europos, a BBS of 1986 on an Apple //e, which draws its
+menus and games for ProTERM in MouseText, and plays a game of
+Concentration+ as a guest.
+
 ### [Forth in ROM](../guides/forth.md)
 
 [<img src="../guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](../guides/forth.md)
