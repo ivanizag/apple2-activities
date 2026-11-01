@@ -159,6 +159,13 @@ step, with what the machine showed on the way. Its parts are:
   its WOZ disks don't follow the host: a generator run again changes no
   picture, and one that does is waiting on the host somewhere. The clocks
   show that date, 15 March 1985, and the page says so.
+- **But not a machine that talks to the world outside**, as to a BBS
+  through its modem: what comes back changes from one call to the next, and
+  goes at its own pace. Its generator starts it with `startOnHostTime`, on
+  the time of the host, and runs it with `RealTime` of the operator, at the
+  speed of a real machine. The world may be gone the next time, so it runs
+  only when asked for with a variable of its own, and its pictures stay as
+  they were taken until then; the page says when that was.
 - **Look at every picture before committing**, every frame of the GIFs too,
   with `tools/sheet`. A picture taken too early, of a menu half printed or a
   title half drawn, is the most common fault.
