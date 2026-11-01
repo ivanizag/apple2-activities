@@ -60,6 +60,7 @@ and a few lines on it.
 - [Sixteen fonts on the //e: the ROMXce](guides/romx.md): a modern board that changes the font of the //e as a program runs
 - [The time from a ThunderClock](guides/thunderclock.md): the time from BASIC, and ProDOS dating its files
 - [The SwyftCard](guides/swyftcard.md): Jef Raskin's editor on a card, before the Canon Cat
+- [Calling a BBS with ProTERM](guides/proterm-bbs.md): a modem on the Super Serial Card, a BBS of 1986 on an Apple //e, and a game in MouseText
 - [Forth in ROM](guides/forth.md): an Apple \]\[+ that starts in FORTH-79, from a card
 
 ## [Other systems](sections/other-systems.md)

@@ -207,7 +207,7 @@ The keys of the SwyftCard are keys of the //e with other names:
 
 ## What next
 
-**Next:** [Forth in ROM](forth.md).
+**Next:** [Calling a BBS with ProTERM](proterm-bbs.md).
 
 [AppleWorks](appleworks.md) is the other way to write a letter on the //e,
 with menus and files, and [The Apple //e](apple-iie.md) the machine the

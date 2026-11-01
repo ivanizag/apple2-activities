@@ -65,6 +65,7 @@ var activities = []struct {
 	{"print-shop", []string{printShopMachine}, printShopScreenshots},
 	{"printing", []string{printingMachine}, printingScreenshots},
 	{"prodos", []string{prodosMachine}, prodosScreenshots},
+	{"proterm-bbs", []string{proTermMachine}, proTermScreenshots},
 	{"rgb-card", []string{rgbCardMachine}, rgbCardScreenshots},
 	{"robotodyssey-sewer", []string{robotOdysseyMachine}, robotOdysseySewerScreenshots},
 	{"robotodyssey-subway", []string{robotOdysseyMachine}, robotOdysseySubwayScreenshots},
