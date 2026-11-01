@@ -93,8 +93,12 @@ type snakePlayer struct {
 	frames       int
 }
 
-// The keys of the game, by direction
-var snakeKeys = map[[2]int]string{{0, -1}: "I", {0, 1}: "K", {-1, 0}: "J", {1, 0}: "L"}
+// The keys of the game and their directions, always tried in this order, so
+// that the snake takes the same way on every run
+var snakeKeys = []struct {
+	way [2]int
+	key string
+}{{[2]int{0, -1}, "I"}, {[2]int{0, 1}, "K"}, {[2]int{-1, 0}, "J"}, {[2]int{1, 0}, "L"}}
 
 /*
 step runs the machine a frame, recorded every few when there is a recording,
@@ -152,8 +156,9 @@ func (p *snakePlayer) step(t *testing.T, o *operator.Operator, r *album.Recordin
 	}
 
 	// The best way: open, room enough after it, and nearest to the food
-	best, bestDistance := [2]int{}, 1000
-	for way := range snakeKeys {
+	best, bestKey, bestDistance := [2]int{}, "", 1000
+	for _, k := range snakeKeys {
+		way := k.way
 		if way[0] == -p.dx && way[1] == -p.dy {
 			continue
 		}
@@ -166,11 +171,11 @@ func (p *snakePlayer) step(t *testing.T, o *operator.Operator, r *album.Recordin
 			distance += 500
 		}
 		if distance < bestDistance {
-			best, bestDistance = way, distance
+			best, bestKey, bestDistance = way, k.key, distance
 		}
 	}
 	if bestDistance < 1000 && (best[0] != p.dx || best[1] != p.dy) {
-		must(t, o.Type(snakeKeys[best]))
+		must(t, o.Type(bestKey))
 	}
 }
 
@@ -192,8 +197,8 @@ func room(grid [40][40]uint8, x int, y int) int {
 			continue
 		}
 		seen[at] = true
-		for way := range snakeKeys {
-			pending = append(pending, [2]int{at[0] + way[0], at[1] + way[1]})
+		for _, k := range snakeKeys {
+			pending = append(pending, [2]int{at[0] + k.way[0], at[1] + k.way[1]})
 		}
 	}
 	return len(seen)

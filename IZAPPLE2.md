@@ -94,50 +94,6 @@ whether a real //e does the same.
 **Here, once understood:** [pascal.md](guides/pascal.md) uses two drives; it
 would only need four for the programs on `APPLE3` and `APPLE0`.
 
-### Pictures change from run to run: host time
-
-The machine reads the clock of the host in a few places, so the same steps do
-not always make the same pictures:
-
-- the flashing characters and the cursor, `renderText` in `screen/text.go`;
-- the cursor of the Videx cards, `cardVidexVideotern.go` and
-  `cardVidexUltraterm.go`;
-- the clocks: the No-Slot Clock (`noSlotClockDS1216.go`), on by default on
-  the //e models, the ThunderClock Plus (`component/microPD1990ac.go`) and
-  the FujiNet clock (`smartPortFujinetClock.go`).
-
-izmac has a `StartTime` in its configuration, and counts the time of the
-machine from it, by cycles.
-
-**Here, once fixed:**
-
-- Set the start time in `start` in `activities/setup_test.go`, the same for
-  every machine, as izmac's `activityStart`.
-- [ultraterm_test.go](activities/ultraterm_test.go) waits for each page of the
-  demonstration by its pixels, as the pages did not come at the same frame;
-  fixed times may do then.
-- [desktop.md](guides/desktop.md) shows the time of the host in the menu
-  bar of every picture; it will be the start time.
-- Take the note on determinism out of [EDITORIAL.md](EDITORIAL.md), and add a
-  check that making the pictures again changes nothing.
-
-### Pictures change from run to run: the random bits of WOZ disks
-
-Where a WOZ disk has no flux, `disketteWoz.Read` in `storage/` gives random
-bits, as the MC3470 of a real drive does, from `math/rand` with its global
-source, which Go seeds differently on every run. A copy protection that
-reads them takes a different time on each run, and so does all that comes
-after: the demonstration and the game of Lode Runner, the order in which the
-Movie Matinee of Fantavision starts.
-
-**Here:** `start` in [setup_test.go](activities/setup_test.go) seeds the
-global source with `rand.Seed(1)` before each machine, which Go allows only
-with `//go:debug randseednop=0` at the top of the file.
-
-**Here, once fixed:** if izapple2 takes the random bits from a source of its
-own, seeded the same on every run, take the seed and the `//go:debug` line
-out of `start`.
-
 ### Formatting a ProDOS diskette in a Disk II fails
 
 *Format Disk* of Fantavision, with `blank.dsk` in the drive, writes the 16

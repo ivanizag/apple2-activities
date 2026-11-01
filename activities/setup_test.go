@@ -1,12 +1,8 @@
-// The machines run the same on every run: see start
-//go:debug randseednop=0
-
 package activities
 
 import (
 	"fmt"
 	"io"
-	"math/rand"
 	"os"
 	"path/filepath"
 	"slices"
@@ -30,6 +26,9 @@ const (
 
 	// disks is where fetch-disks.sh leaves the disks
 	disks = "../disks"
+
+	// startTime is the date and time every machine starts at
+	startTime = "1985-03-15T10:30:00"
 )
 
 // newAlbum is the album of the pictures of a guide
@@ -105,11 +104,10 @@ func start(t testing.TB, command string, files map[string]string) *operator.Oper
 		positional[i] = path(name)
 	}
 
-	// izapple2 reads a WOZ disk where it has no flux as random bits, from
-	// the random numbers of Go, which start from a different seed on every
-	// run unless told otherwise; with the same seed for every machine, a
-	// program that reads them, as copy protections do, runs the same
-	rand.Seed(1)
+	// The machine runs on a time of its own, from the same date for every
+	// machine: its clocks, the blink of its cursor and the random bits of its
+	// WOZ disks are the same on every run, and so are the pictures
+	overrides["startTime"] = startTime
 
 	o, err := operator.Start(model, overrides, positional...)
 	if err != nil {

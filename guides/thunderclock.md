@@ -91,13 +91,16 @@ of ProDOS as it was downloaded. Make the folder before starting izapple2:
    ![The catalog, with the date of the program](images/thunderclock/catalog.png)
 
    `CLOCK`, at the end, has today's date: ProDOS read it from the card, and
-   worked out the year itself. The other files have the dates they were
-   given when ProDOS 2.4.3 was made. `CATALOG`, wider, has the time of each
-   too. Without a clock, as on the page of [ProDOS](prodos.md), the files
-   saved have no date.
+   worked out the year itself, from the day of the week. The other files have
+   the dates they were given when ProDOS 2.4.3 was made. `CATALOG`, wider,
+   has the time of each too. Without a clock, as on the page of
+   [ProDOS](prodos.md), the files saved have no date.
 
-   The pictures of this page show the day and the time they were made at;
-   yours will show yours.
+   The pictures of this page were made on a machine set to start at 10:30
+   on Friday 15 March 1985; yours will show the day and the time of your
+   computer. The card gave ProDOS Friday, 15 March, and ProDOS 2.4.3 took,
+   of the years it knows, the one where 15 March is a Friday: 2024, not
+   1985.
 
 ## What next
 
