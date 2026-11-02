@@ -41,7 +41,9 @@ var timeZone = adventure{
 		}
 		return "Side " + m[1], fmt.Sprintf("Time Zone (4am and san inc crack) disk %v.dsk", m[2]), true
 	},
-	ending: "ULTIMATE ADVENTURER",
+	ending:   "ULTIMATE ADVENTURER",
+	subpages: true,
+	title:    "Time Zone",
 }
 
 /*
