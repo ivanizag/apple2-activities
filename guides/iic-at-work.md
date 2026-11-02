@@ -10,19 +10,23 @@ AppleWorks: it imitates it, a screen at a time, and asks for the keys a
 person would press.
 
 This page goes through its introduction, a survey and a quiz, and the lesson
-of the word processor, as far as a letter changed for other friends.
+of the word processor, as far as a letter changed for other friends, and
+then the same letter on the side of the diskette for 80 columns.
 
 ## What you need
 
-**`Apple Presents The IIc - The Apple At Work Side 2 40-Col 691-0014-A (Apple-1984).dsk`**,
-from the folder of the masters of each model on
-[Asimov](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/model_specific/).
-`./fetch-disks.sh` in this repository downloads it into `disks/`.
+- **`Apple Presents The IIc - The Apple At Work Side 2 40-Col 691-0014-A (Apple-1984).dsk`**
+- **`Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A (Apple-1984).dsk`**
 
-The diskette had two sides: side 1 for 80 columns, for a monitor, and side
-2 for 40 columns, for a television. izapple2's IIc has its switch of 80 and
-40 columns always down, at 40, and side 1 shows its menu scrambled: this
-page uses side 2.
+The two sides of the diskette, from the folder of the masters of each model
+on
+[Asimov](https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/model_specific/).
+`./fetch-disks.sh` in this repository downloads them into `disks/`.
+
+Side 1 is for 80 columns, for a monitor, and side 2 for 40 columns, for a
+television. The IIc has a switch above its keyboard, 80/40, which the
+programs read when they start: this page goes through side 2, with the
+switch down, and then looks at side 1 with it up.
 
 ## The machine
 
@@ -37,6 +41,19 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
     -s1 iicserial \
     -s2 iicserial \
     -s6 "iicdisk,disk1=disks/Apple Presents The IIc - The Apple At Work Side 2 40-Col 691-0014-A (Apple-1984).dsk"
+```
+
+For side 1, the same IIc with its switch up, on 80 columns:
+
+```bash
+izapple2 -model none -board 2c -cpu 65c02 -screen color \
+    -rom "<internal>/Apple2c_ROM255.rom" \
+    -charrom "<internal>/Apple IIe Video Enhanced.bin" \
+    -s0 language \
+    -s1 iicserial \
+    -s2 iicserial \
+    -s6 "iicdisk,disk1=disks/Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A (Apple-1984).dsk" \
+    -iic80ColumnSwitch
 ```
 
 ## The introduction
@@ -110,6 +127,25 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
    The other topics are the data base, the spreadsheet and the integrated
    software. **Type `6`** and **Return** to quit: the guide
    asks for the next diskette.
+
+## Side 1, in 80 columns
+
+9. **Quit izapple2 and start it with the second command**: the same title,
+   and the menu in 80 columns.
+
+   ![The menu in 80 columns](images/iic-at-work/menu-80.png)
+
+10. **Type `2`** and **Return**, the word processor, and **Return** at each
+    page: Harry's letter, as wide as AppleWorks writes it on a monitor, the
+    whole of it on the screen.
+
+    ![The letter in 80 columns](images/iic-at-work/letter-80.png)
+
+11. **Press Return** at each page, until the guide asks for the right
+    arrow: the same lesson. **Press the right arrow five times**, and **type
+    `Frank and Leslie,`** over the old names.
+
+    ![The letter personalized](images/iic-at-work/personalized-80.png)
 
 ## What next
 

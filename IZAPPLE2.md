@@ -16,17 +16,6 @@ on an Apple \]\[+ with the Mockingboard in slot 4.
 **Here:** an activity of music on the Mockingboard, with this disk: its
 menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
 
-### The side for 80 columns of The Apple at Work
-
-`Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A
-(Apple-1984).dsk` showed its menu on the IIc as pieces of lines of 80 columns
-in 40, with the 80/40 switch of the IIc always down. 2.6.0 has the switch,
-`-iic80ColumnSwitch` to start with it up, and side 1 shows its menu in 80
-columns.
-
-**Here:** [iic-at-work.md](guides/iic-at-work.md) can use side 1, or say
-what each side shows.
-
 ## Not fixed
 
 ### GBASIC draws nothing on the SoftCard II
