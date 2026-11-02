@@ -89,6 +89,7 @@ The diskettes of the guide, a page each:
 - [Apple Presents the IIc: The Apple at Play](iic-at-play.md): Lemonade Stand, a sonata, a quiz, a hand of Apple 21 and Space Quarks
 - [Apple Presents the IIc: The Inside Story](iic-inside-story.md): the detective story of how a computer works, the inside of the IIc, and a turn of its game
 - [Apple Presents the IIc: Getting Down to BASIC](iic-basic.md): the lessons of Applesoft, with a name, a number and a sum typed
+- [Apple Presents the IIc: Exploring Apple Logo](iic-logo.md): the turtle, a square, REPEAT, and a new word taught to it with Leo Logolover
 
 ## What next
 
