@@ -51,6 +51,7 @@ var activities = []struct {
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"iic-at-play", []string{iicAtPlayMachine}, iicAtPlayScreenshots},
 	{"iic-at-work", []string{iicAtWorkMachine}, iicAtWorkScreenshots},
+	{"iic-inside-story", []string{iicInsideStoryMachine}, iicInsideStoryScreenshots},
 	{"iic-introduction", []string{iicIntroductionMachine}, iicIntroductionScreenshots},
 	{"iic-terminal", []string{iicAdaMachine, iicGraceMachine}, iicTerminalScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},

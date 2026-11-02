@@ -136,7 +136,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
 
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: The Inside Story](iic-inside-story.md).
 
 [Lode Runner](lode-runner.md) is another game of Broderbund, and
 [A game in Applesoft: the snake](applesoft-snake.md) a game typed in.
