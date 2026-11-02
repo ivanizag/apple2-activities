@@ -254,7 +254,7 @@ izapple2 -model none -board 2e -cpu 65c02 -screen color \
 
 ## What next
 
-**Next:** [Printing](printing.md).
+**Next:** [MousePaint on the Apple IIc](mousepaint.md).
 
 [Logo and its turtle](logo.md) draws with a program; Fantavision with the
 mouse. [Apple II DeskTop](desktop.md) is another program for the mouse of

@@ -27,6 +27,15 @@ mouse: the Movie Matinee of its disk, then a star that turns into a circle
 and a square, a title that spins and a spiral in trace mode, the frames in
 between drawn by the program, saved on a diskette.
 
+### [MousePaint on the Apple IIc](../guides/mousepaint.md)
+
+[<img src="../guides/images/mousepaint/home.png" width="320" alt="A house drawn in MousePaint">](../guides/mousepaint.md)
+
+The mouse came to the Apple II in 1984, with MousePaint on its diskette:
+MacPaint's menus, tools and patterns, in black and white. The picture of the
+mouse on the diskette, and a house drawn with bricks, tiles, a sun and a
+line in Venice, saved on the diskette.
+
 ### [Printing](../guides/printing.md)
 
 [<img src="../guides/images/printing/printing.png" width="320" alt="A calendar printed">](../guides/printing.md)
