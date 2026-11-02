@@ -15,7 +15,7 @@ const mousePaintMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen gre
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 diskii,disk1=disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk`
+    -s6 iicdisk,disk1=disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk`
 
 /*
 mousePaintScreenshots is MousePaint on the Apple IIc, with its mouse: the

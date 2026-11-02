@@ -4,69 +4,58 @@ What making the activities found in [izapple2](https://github.com/ivanizag/izapp
 the state of each, and what to change here when it is fixed. When one is done
 there and done here, take it out of this list.
 
-## Fixed on master, not released
+## Fixed in izapple2 2.6.0, to do here
 
-### INIT of a blank diskette hangs the emulator
+### Mockingboard presents Holiday Music plays
 
-`nibDecodeTrack` in `storage/fileNib.go` went around the track forever when
-an address prolog started on its last bytes, which a track being written can
-have. Fixed on master, with a test, but the releases of izapple2 before the
-fix still have it: a reader following [Life with DOS 3.3](guides/dos33.md)
-with one sees the machine stop at `INIT HELLO,D2`.
+The disk of the [Internet Archive](https://archive.org/details/sweet-micro-systems-mockingboard-presents-holiday-music)
+(`00playable.dsk`) showed its menu and took the number of a song, but played
+nothing. The timers of the 6522 of 2.6.0 make it play: song 1, *Song of Joy*,
+on an Apple \]\[+ with the Mockingboard in slot 4.
 
-**Here, once released:** say in [dos33.md](guides/dos33.md) which release of
-izapple2 the page needs, at least.
+**Here:** an activity of music on the Mockingboard, with this disk: its
+menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
 
-### No -board on the command line
+### The text of the Ultraterm is read
 
-The pages give the whole machine on the command line, as `izapple2 -model
-none -board 2plus -cpu 6502 -screen green -rom ...`. izapple2 had no
-`-board` option, no model `none` and no `-screen`, so a reader's izapple2
-refused the commands of the pages. Master has them now, but the releases of
-izapple2 don't yet.
+`ScreenText` gave nothing while the Ultraterm showed its demonstration, so
+[ultraterm_test.go](activities/ultraterm_test.go) counts lit dots instead.
+2.6.0 reads its text.
 
-**Here, once released:** say in [README.md](README.md) which release of
-izapple2 the commands of the pages need, at least. Until then, the
-preconfigured model each page gives after its command runs the activity.
+**Here:** wait for the text of each page.
 
-### The SoftCard II and the Applicard only on master
+### The text of the Basis 108 in 80 columns is read
 
-[CP/M on three Z80 cards](guides/cpm-cards.md) starts CP/M on the cards
-`z80softcard2` and `applicard`, which master has and the releases of
-izapple2 don't yet.
+In 80 columns the Basis 108 keeps its text in a memory of its own, columns
+in an order of its own (`VideoText80AltOrder`), and `ScreenText` gave one
+column out of two of it, so [basis108_test.go](activities/basis108_test.go)
+waits for the keyboard to be read and the screen to be still instead. 2.6.0
+reads it in its order.
 
-**Here, once released:** say in [cpm-cards.md](guides/cpm-cards.md) which
-release of izapple2 the page needs, instead of master.
+**Here:** wait for the text of each step in basis108_test.go.
 
-### Writing to a WOZ disk stopped the emulator
+### Another tape while the machine runs
 
-When a program wrote to a disk in WOZ format, izapple2 panicked with `Write
-not implemented on woz disk`, from `disketteWoz.Write` in `storage/`. Master
-writes WOZ disks now, and saves the tracks to the image when the motor stops
-or the head moves, unless the image has its write protect tab on; the
-releases of izapple2 don't yet. The generators run on copies of the disks of
-`disks/`, which stay as downloaded.
+`LoadTape` puts another tape in the recorder while the machine runs, as
+`LoadDisk` a diskette. A page with several tapes starts the machine once for
+each.
 
-**Here, once released:** say in the pages that write to a WOZ disk which
-release of izapple2 they need, at least, and take this out.
+**Here:** [apple-ii-cassettes.md](guides/apple-ii-cassettes.md) could load
+its tapes one after the other into the same machine, with an operator call
+for `LoadTape`.
+
+### The side for 80 columns of The Apple at Work
+
+`Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A
+(Apple-1984).dsk` showed its menu on the IIc as pieces of lines of 80 columns
+in 40, with the 80/40 switch of the IIc always down. 2.6.0 has the switch,
+`-iic80ColumnSwitch` to start with it up, and side 1 shows its menu in 80
+columns.
+
+**Here:** [iic-at-work.md](guides/iic-at-work.md) can use side 1, or say
+what each side shows.
 
 ## Not fixed
-
-### The modem answers CONNECT without the speed
-
-The modem of `device=netmodem` answers a call with `CONNECT` alone. A Hayes
-modem says `CONNECT` alone at 300 baud, and `CONNECT 2400` or `CONNECT 9600`
-faster, and the terminal programs set the port to it: ProTERM 3.1 with its
-*Generic 9600 Baud Driver* drops to 300 baud after the call, and what the
-BBS sends comes at 30 characters a second.
-
-**Here:** [proterm-bbs.md](guides/proterm-bbs.md) gives ProTERM the *Null
-Modem Driver*, and types the commands to the modem itself; ProTERM, which
-then doesn't hear the `CONNECT`, keeps its 9600 baud.
-
-**Here, once fixed:** nothing: with a modem driver, ProTERM waits three
-seconds and a half after the connection before it answers anything, and
-Dura-Europos has given up on finding ProTERM by then.
 
 ### GBASIC draws nothing on the SoftCard II
 
@@ -132,20 +121,6 @@ movies on a copy of the ProDOS 2.4.3 disk, which has 13 KB free; it could
 format a blank diskette with Format Disk, as the manual says, and save on
 it.
 
-### Mockingboard presents Holiday Music plays nothing
-
-The disk of the [Internet Archive](https://archive.org/details/sweet-micro-systems-mockingboard-presents-holiday-music)
-(`00playable.dsk`) shows its menu, takes the number of a song, and stops
-reading the keyboard as if playing, but no sound source changes its level:
-the same with the Mockingboard in slots 1 to 5, on an Apple \]\[+ and on the
-enhanced //e. The Sound/Speech I demonstration disk does play on the same
-card, so the difference is in what this player asks of it, perhaps the
-timers of the 6522 and their interrupts.
-
-**Here, once fixed:** an activity of music on the Mockingboard, with this
-disk: its menu, and a song recorded to a WAV file. Add the disk to
-`disks.tsv` again.
-
 ### The music keys of the Mockingboard demonstration play late
 
 In the *music demonstration* of the Sound/Speech I disk, keys A to K are
@@ -172,14 +147,6 @@ an Apple Parallel Interface Card.
 
 **Here, once fixed:** print the list of the cards from Card Cat, and show the
 file the parallel card writes, `printer.out`, in the page.
-
-### The text of the Ultraterm is not read
-
-`ScreenText` gives nothing while the Ultraterm shows its demonstration, so the
-operator can't wait for its text, and [ultraterm_test.go](activities/ultraterm_test.go)
-counts lit dots instead.
-
-**Here, once fixed:** wait for the text of each page.
 
 ### The shift mod does nothing
 
@@ -214,17 +181,6 @@ again on the \]\[+ without a Videx card, change its cells in
 `cpmCardsCompared` and in the table of the page, and the sentence that says
 CP/M 3 stops izapple2.
 
-### The text of the Basis 108 in 80 columns is read a column out of two
-
-In 80 columns the Basis 108 keeps its text in a memory of its own, columns
-in an order of its own (`VideoText80AltOrder`). `ScreenText` gives one
-column out of two of it: `PRINT "Hello"` shows on the screen as it is, and
-comes back as `RN Hlo` and `Hlo`. So the operator can't wait for a text, and
-[basis108_test.go](activities/basis108_test.go) waits for the keyboard to
-be read and the screen to be still instead.
-
-**Here, once fixed:** wait for the text of each step in basis108_test.go.
-
 ### The cassette input hears the noise of the silence on a tape
 
 The cassette input turns the recording into the times its signal crosses
@@ -242,16 +198,6 @@ with some hysteresis, as the one of the Apple, would only see the tones.
 [apple-ii-cassettes.md](guides/apple-ii-cassettes.md), 600-2016-00, has the
 machine code first, where the tape starts, and the 002-0002-01 could be used
 too.
-
-### Only one tape, from the start
-
-The cassette is a file given with `-tape`, when the machine is built, and
-there is no call to put another in the recorder while it runs, as there is
-`LoadDisk` for a diskette. A page with several tapes starts the machine once
-for each.
-
-**Here, once done:** [apple-ii-cassettes.md](guides/apple-ii-cassettes.md)
-could load its tapes one after the other into the same machine.
 
 ### CP/M cannot format a blank diskette
 
@@ -274,16 +220,6 @@ of starting at the left.
 [ultraterm_test.go](activities/ultraterm_test.go), and show it in
 [ultraterm.md](guides/ultraterm.md) with the others.
 
-### The headless frontend crashes when the machine can't be built
-
-`frontend/headless/main.go` prints the error of `CreateConfiguredApple` and
-goes on with a nil machine, which panics on `SetKeyboardProvider`. Seen with
-`-showConfig` after a file name: Go stops reading options at the first file,
-so the option is taken for one, and the machine fails to build.
-
-**Here:** nothing; `-showConfig` before any file name works, as
-[EDITORIAL.md](EDITORIAL.md) says.
-
 ### Castle Wolfenstein on a diskette doesn't leave its first room
 
 Castle Wolfenstein writes to its diskette as it plays, and reads each room
@@ -291,8 +227,7 @@ from it. On a DSK, 4am's crack of the version of 06/19/84 or the copy of the
 3d0g Knight collection on Asimov, a doorway or the stairs out of a room bring
 back the same room, the player where he left it: the screen fills with grey
 lines, then with random dots, as the game loads, and the room drawn is the
-one left. The woz-a-day disk, which izapple2 writes now (see *Writing to a
-WOZ disk stopped the emulator*), does the same: it has a game saved on it,
+one left. The woz-a-day disk, which izapple2 writes from 2.6.0, does the same: it has a game saved on it,
 in a room with stairs and no guards, and walking out of it at the top, the
 grey lines come and the same room comes back. From the hard disk of Total Replay, the stairs work; a
 doorway out of the first room there brings it back too. Not known whether a
@@ -351,12 +286,13 @@ SoftCard II, on the //e with the card in its auxiliary slot instead of the
 - the disks in `disks.tsv`, and the line of the Premium SoftCard IIe taken
   out of *Other disks found*.
 
-### A Reset in the guide of the IIc leaves grey stripes
+### A Reset in the guide of the IIc stops it
 
 With *Apple Presents the IIc - An Introduction* running, at its menu or at
 its last page, which asks for the next diskette and Open Apple-Control-Reset,
 the first Control-Reset, with Open Apple or without it, leaves the screen in
-grey stripes, and the IIc does nothing more. The processor goes around the
+grey stripes, black from 2.6.0 and its disk port of the IIc, and the IIc does
+nothing more. The processor goes around the
 interrupt handler of the ROM, at $C8xx, with no IRQ asserted, as if it ran
 into BRKs. A second Open Apple-Control-Reset starts the diskette in the
 drive. From Applesoft the first one does. Clearing the interrupts and the
@@ -386,14 +322,3 @@ stops. Not checked on a IIc, which may do the same. The pages of the IIc
 start with the diskette in the drive, on the command line, or put it in from
 Applesoft and start it with Open Apple-Control-Reset.
 
-### The side for 80 columns of The Apple at Work shows its menu scrambled
-
-`Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A
-(Apple-1984).dsk` starts, but its menu shows on the IIc as pieces of lines
-of 80 columns in 40, out of place. The side for 40 columns shows it well.
-izapple2's IIc has the switch of 80 and 40 columns always down, at 40, which
-may be what the side for 80 columns doesn't expect; not looked into.
-
-**Here, once fixed, or with the switch up:**
-[iic-at-work.md](guides/iic-at-work.md) can use side 1, or say what each
-side shows.

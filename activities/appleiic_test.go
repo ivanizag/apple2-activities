@@ -13,7 +13,7 @@ const appleIIcMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen green
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 diskii`
+    -s6 iicdisk`
 
 /*
 appleIIcScreenshots is the Apple IIc of 1984 switched on: with no disk, it

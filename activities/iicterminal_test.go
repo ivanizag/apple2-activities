@@ -16,7 +16,7 @@ const iicAdaMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial,device=tcp \
-    -s6 diskii`
+    -s6 iicdisk`
 
 // iicGraceMachine is Grace's Apple IIc: a modem on its modem port, which
 // dials the internet
@@ -26,7 +26,7 @@ const iicGraceMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen green
     -s0 language \
     -s1 iicserial \
     -s2 iicserial,device=netmodem \
-    -s6 diskii`
+    -s6 iicdisk`
 
 /*
 iicTerminalScreenshots is two Apple IIcs, Ada's and Grace's, talking through

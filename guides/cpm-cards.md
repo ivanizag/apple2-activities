@@ -62,8 +62,8 @@ and a RamWorks to the //e.
 
 Each version starts with its disk in drive 1, and has the disk of CP/M 2.23,
 `CPM60K.DSK`, in drive 2, for the DDT on it; the command of each is in its
-step. The SoftCard II and the Applicard need an izapple2 built from its
-master, the releases don't have them yet.
+step. The SoftCard II and the Applicard need izapple2 2.6.0 or later, the
+first release with them.
 
 ## The SoftCard
 

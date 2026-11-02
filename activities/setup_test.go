@@ -152,7 +152,7 @@ func splitParams(value string) []string {
 }
 
 // izapple2Switches are the options of izapple2 that take no value
-var izapple2Switches = []string{"profile", "showConfig", "forceCaps", "rgb", "romx"}
+var izapple2Switches = []string{"profile", "showConfig", "forceCaps", "rgb", "romx", "iic80ColumnSwitch"}
 
 /*
 parseCommand reads a command line of izapple2 as the shell and izapple2 would:

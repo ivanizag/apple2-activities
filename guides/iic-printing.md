@@ -40,7 +40,7 @@ The Apple IIc of 1984, with a printer that is a file:
   in, and the modem port;
 - its port for the mouse, at the back, which its ROM gives to the programs
   as a mouse card in slot 4;
-- its disk drive, the controller in slot 6, empty to start.
+- its disk drive, on the disk port in slot 6, empty to start.
 
 ```bash
 izapple2 -model none -board 2c -cpu 65c02 -screen green \
@@ -49,13 +49,14 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial,device=file,file=printer.out \
     -s2 iicserial \
-    -s6 diskii
+    -s6 iicdisk
 ```
 
-The model `2c` of izapple2 is this machine, with DOS 3.3 in its drive:
+The model `2c_rom255` of izapple2 is this machine, with DOS 3.3 in its
+drive:
 
 ```bash
-izapple2 -model 2c -screen green -s1 iicserial,device=file,file=printer.out
+izapple2 -model 2c_rom255 -screen green -s1 iicserial,device=file,file=printer.out
 ```
 
 ## From Applesoft

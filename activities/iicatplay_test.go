@@ -15,7 +15,7 @@ const iicAtPlayMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen colo
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Apple Presents The IIc - The Apple At Play 691-0016-A (Apple-1984).dsk"`
+    -s6 "iicdisk,disk1=disks/Apple Presents The IIc - The Apple At Play 691-0016-A (Apple-1984).dsk"`
 
 /*
 iicAtPlayScreenshots is The Apple at Play, a diskette of Apple Presents the

@@ -35,7 +35,7 @@ The Apple IIc of 1984, with its external drive:
   of it the memory of a language card, which izapple2 puts in slot 0 as for
   the //e, and 64 KB more where the //e has its extended 80 column card;
 - its two serial ports, in slots 1 and 2 for the programs;
-- its disk drive, the controller in slot 6, with the System Utilities in
+- its disk drive, on the disk port in slot 6, with the System Utilities in
   it, and a second drive, the external one, with `my-disk.woz`.
 
 ```bash
@@ -45,7 +45,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/System Utilities for the IIc - 680-3066-A (Apple-1984).dsk,disk2=my-disk.woz"
+    -s6 "iicdisk,disk1=disks/System Utilities for the IIc - 680-3066-A (Apple-1984).dsk,disk2=my-disk.woz"
 ```
 
 ## The utilities

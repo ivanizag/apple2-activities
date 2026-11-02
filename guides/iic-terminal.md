@@ -41,7 +41,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial,device=tcp \
-    -s6 diskii
+    -s6 iicdisk
 ```
 
 On Grace's, a modem of izapple2 is on the cable, one that dials a host and
@@ -54,7 +54,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial,device=netmodem \
-    -s6 diskii
+    -s6 iicdisk
 ```
 
 ## Ada's IIc

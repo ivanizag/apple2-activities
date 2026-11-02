@@ -11,8 +11,10 @@ izapple2; the rest use disks from public archives, which
 [`fetch-disks.sh`](https://github.com/ivanizag/apple2-activities/blob/main/fetch-disks.sh) downloads into the folder `disks`. Each
 page gives the whole machine it uses, card by card, as a command line of
 izapple2, and after it a shorter one with a model of izapple2 that has that
-machine, and often more. The whole command needs the option `-board`, which
-izapple2 does not have yet; the shorter one works with izapple2 as it is.
+machine, and often more. The pages need izapple2
+[2.6.0](https://github.com/ivanizag/izapple2/releases/tag/v2.6.0) or a later
+release: the releases before it don't have the option `-board` of the whole
+commands, nor some of the models and cards of the pages.
 
 Each section below has a page of its own with a picture of each activity
 and a few lines on it.

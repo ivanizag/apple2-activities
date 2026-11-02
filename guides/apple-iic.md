@@ -34,7 +34,8 @@ The Apple IIc of 1984, with its first ROM, version 255:
 - its two serial ports, in slots 1 and 2 for the programs, as the cards of
   a //e would be: the printer port and the modem port;
 - its 80 columns, in slot 3 for the programs;
-- its disk drive, the controller in slot 6.
+- its disk drive, on the disk port of the IIc, which izapple2 puts in
+  slot 6.
 
 ```bash
 izapple2 -model none -board 2c -cpu 65c02 -screen green \
@@ -43,14 +44,14 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 diskii
+    -s6 iicdisk
 ```
 
-The model `2c` of izapple2 is this machine, with DOS 3.3 in its drive, which
-starts at once instead of waiting:
+The model `2c_rom255` of izapple2 is this machine, with DOS 3.3 in its
+drive, which starts at once instead of waiting:
 
 ```bash
-izapple2 -model 2c -screen green
+izapple2 -model 2c_rom255 -screen green
 ```
 
 ## Switched on
