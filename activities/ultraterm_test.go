@@ -2,7 +2,6 @@ package activities
 
 import (
 	"fmt"
-	"image"
 	"testing"
 
 	"github.com/ivanizag/apple2-activities/album"
@@ -25,54 +24,27 @@ up to 160 columns, on an Apple ][+, from the disk of utilities of the card,
 and then a program of the page that shows each of its eight modes in turn,
 filled with a ruler.
 
-The card blinks its cursor by the clock of the host, and the pages of the
-demonstration do not come at the same frame on every run: the first is waited
-for by what is on the screen, and the others taken at the times they stay
-after it.
+The card blinks its cursor by the clock of the host, so the pages of the
+demonstration are waited for by their text, and then by the dots of the
+screen staying the same.
 */
 func ultratermScreenshots(t *testing.T) {
 	pictures := newAlbum("ultraterm", album.Green)
 	o := start(t, ultratermMachine, nil)
 
-	// "Videx presents", the first page, is drawn 1440 dots across
-	for {
-		screen := pictures.Screen(o)
-		if screen.Bounds().Dx() == 1440 && litDots(screen.Pix) > 50000 {
-			break
-		}
-		if o.Frames() > 180*60 {
-			t.Fatal("the demonstration did not start")
-		}
-		o.Run(30)
-	}
-	o.RunSeconds(2)
+	// "Videx presents", the first page
+	must(t, o.WaitForText("INC. TM", 180))
+	waitForStillDots(t, o, pictures)
 	must(t, pictures.Screenshot(o, "presents"))
 
-	// The pages that follow, each kept once it stops changing: the
-	// introduction, the modes, the characters and the firmware
-	var pages []*image.RGBA
-	last, stable := -1, 0
-	for len(pages) < 4 {
-		if o.Frames() > 600*60 {
-			t.Fatalf("only %v pages of the demonstration came", len(pages))
-		}
-		o.Run(60)
-		screen := pictures.Screen(o)
-		lit := litDots(screen.Pix)
-		if screen.Bounds().Dx() == 1440 || lit < 1000 {
-			continue
-		}
-		if lit != last {
-			last, stable = lit, 0
-			continue
-		}
-		stable++
-		if stable == 2 {
-			pages = append(pages, screen)
-		}
-	}
-	must(t, pictures.Write(pages[1], "modes"))
-	must(t, pictures.Write(pages[3], "firmware"))
+	// The introduction and the modes, and then the firmware, each page
+	// written under the introduction
+	must(t, o.WaitForText("160 columns by 24 lines", 180))
+	waitForStillDots(t, o, pictures)
+	must(t, pictures.Screenshot(o, "modes"))
+	must(t, o.WaitForText("unmatched by any other card", 180))
+	waitForStillDots(t, o, pictures)
+	must(t, pictures.Screenshot(o, "firmware"))
 
 	// The demonstration stopped with Reset, the card taken back with PR#3,
 	// and the program of the page typed and run
