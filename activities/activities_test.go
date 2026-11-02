@@ -59,6 +59,7 @@ var activities = []struct {
 	{"iic-logo", []string{iicLogoMachine}, iicLogoScreenshots},
 	{"iic-printing", []string{iicPrintingMachine}, iicPrintingScreenshots},
 	{"iic-terminal", []string{iicAdaMachine, iicGraceMachine}, iicTerminalScreenshots},
+	{"iic-utilities", []string{iicUtilitiesMachine}, iicUtilitiesScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
 	{"karateka", []string{karatekaMachine, karatekaSideBMachine}, karatekaScreenshots},
 	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},

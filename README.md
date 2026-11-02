@@ -30,6 +30,7 @@ and a few lines on it.
 - [Life with DOS 3.3](guides/dos33.md): the System Master, a catalog, and a diskette that starts your own program
 - [From 13 sectors to 16: DOS 3.2 and DOS 3.3](guides/dos32.md): 13 sectors, MUFFIN and BOOT13
 - [ProDOS](guides/prodos.md): the program selector, a RAM disk, and a diskette mapped in Copy II Plus
+- [The System Utilities of the Apple IIc](guides/iic-utilities.md): ProDOS on the IIc: a disk formatted in its external drive, files copied to it
 - [Apple II DeskTop](guides/desktop.md): a mouse, windows and icons, and the flying toasters
 
 ## [Languages and programming](sections/languages-and-programming.md)

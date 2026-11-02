@@ -89,6 +89,14 @@ the program selector it starts with, BASIC and a catalog in 80 columns, a
 folder and a text file on the RAM disk of the //e, and the diskette mapped
 file by file in Copy II Plus.
 
+### [The System Utilities of the Apple IIc](../guides/iic-utilities.md)
+
+[<img src="../guides/images/iic-utilities/menu.png" width="320" alt="The menu of the System Utilities">](../guides/iic-utilities.md)
+
+The disk of ProDOS that came with the IIc, for the work on files and disks:
+its own catalog, a diskette never used formatted in the external drive,
+two files copied to it, and the new disk read from BASIC.
+
 ### [Apple II DeskTop](../guides/desktop.md)
 
 [<img src="../guides/images/desktop/about.png" width="320" alt="About This Apple II">](../guides/desktop.md)

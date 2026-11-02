@@ -159,7 +159,7 @@ izapple2 -model prodos -screen green
 
 ## What next
 
-**Next:** [Apple II DeskTop](desktop.md), which runs on ProDOS, from a hard
-disk.
+**Next:** [The System Utilities of the Apple IIc](iic-utilities.md), ProDOS
+on the IIc.
 
 [Life with DOS 3.3](dos33.md) is the system ProDOS replaced.
