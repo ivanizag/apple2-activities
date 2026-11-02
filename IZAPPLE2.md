@@ -24,16 +24,6 @@ menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
 
 **Here:** wait for the text of each page.
 
-### The text of the Basis 108 in 80 columns is read
-
-In 80 columns the Basis 108 keeps its text in a memory of its own, columns
-in an order of its own (`VideoText80AltOrder`), and `ScreenText` gave one
-column out of two of it, so [basis108_test.go](activities/basis108_test.go)
-waits for the keyboard to be read and the screen to be still instead. 2.6.0
-reads it in its order.
-
-**Here:** wait for the text of each step in basis108_test.go.
-
 ### Another tape while the machine runs
 
 `LoadTape` puts another tape in the recorder while the machine runs, as
