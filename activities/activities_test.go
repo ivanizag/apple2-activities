@@ -27,6 +27,7 @@ var activities = []struct {
 	{"akalabeth", []string{akalabethMachine}, akalabethScreenshots},
 	{"apple-ii", []string{appleIIMachine}, appleIIScreenshots},
 	{"apple-ii-cassettes", []string{cassettesBreakout, cassettesColor, cassettesHires}, cassettesScreenshots},
+	{"apple-iic", []string{appleIIcMachine}, appleIIcScreenshots},
 	{"apple-iie", []string{appleIIeMachine}, appleIIeScreenshots},
 	{"apple-iie-models", []string{iieOriginal, iieEnhanced}, iieModelsScreenshots},
 	{"applecorn", []string{applecornMachine}, applecornScreenshots},

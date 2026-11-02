@@ -347,3 +347,21 @@ SoftCard II, on the //e with the card in its auxiliary slot instead of the
   section of the page, the count of versions;
 - the disks in `disks.tsv`, and the line of the Premium SoftCard IIe taken
   out of *Other disks found*.
+
+### The self test of the IIc never ends
+
+Open Apple and Closed Apple held through Control-Reset start the self test
+of the ROM 255 of the IIc: it fills the screen with its patterns, and stays
+there, after two minutes too, with no *System OK*. The //e's ends, as
+[Switch on an Apple //e](guides/apple-iie.md) shows.
+
+**Here, once fixed:** add the self test to
+[apple-iic.md](guides/apple-iic.md), as the //e's.
+
+### A diskette put in the IIc waiting for one gives Check Disk Drive
+
+The IIc switched on with its drive empty says `Apple //c` and waits. A
+diskette put in then is not started: the IIc says `Check Disk Drive.` and
+stops. Not checked on a IIc, which may do the same. The pages of the IIc
+start with the diskette in the drive, on the command line, or put it in from
+Applesoft and start it with Open Apple-Control-Reset.

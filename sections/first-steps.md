@@ -57,6 +57,13 @@ The //e of 1983 and the enhanced one of 1985, side by side: Applesoft in
 small letters, MouseText where there were inverse capitals, and the
 Mini-Assembler back in the Monitor.
 
+### [Switch on an Apple IIc](../guides/apple-iic.md)
+
+[<img src="../guides/images/apple-iic/eighty-columns.png" width="320" alt="Applesoft in 80 columns on the IIc">](../guides/apple-iic.md)
+
+The Apple II to carry, of 1984, with no slots and all a //e had in them:
+switched on with no disk, Applesoft in small letters, and its 80 columns.
+
 ### [Life with DOS 3.3](../guides/dos33.md)
 
 [<img src="../guides/images/dos33/catalog.png" width="320" alt="The catalog of the System Master">](../guides/dos33.md)
