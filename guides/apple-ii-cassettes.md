@@ -49,7 +49,8 @@ The first Apple \]\[, as it came:
 - the cassette input, with a tape in the recorder;
 - paddles in the game port, and no cards in its slots.
 
-The machine with the tape of Breakout:
+The machine with the tape of Breakout in the recorder; the other two tapes
+go in later, in its place:
 
 ```bash
 izapple2 -model none -board 2plus -cpu 6502 -screen color \
@@ -59,26 +60,6 @@ izapple2 -model none -board 2plus -cpu 6502 -screen color \
     -tape disks/k7_apple_002000101_breakout.wav
 ```
 
-With the tape of Color Graphics:
-
-```bash
-izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/341-000x_integer.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -mods four-colors \
-    -tape disks/k7_apple_002000101_colorgraphics.wav
-```
-
-With the tape of High-Resolution Graphics:
-
-```bash
-izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/341-000x_integer.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -mods four-colors \
-    -tape disks/k7_apple_600201600_highresolutiongraphics.wav
-```
-
 izapple2 plays the tape when the Apple starts listening to the cassette
 input, and stops it when the Apple stops: there is no Play button to press,
 and it runs the machine as fast as it can while the tape plays, so a program
@@ -86,7 +67,7 @@ that took half a minute to load comes in a moment.
 
 ## Breakout
 
-1. **Start izapple2** with the first command. The Apple \]\[ starts in the
+1. **Start izapple2** with the command above. The Apple \]\[ starts in the
    Monitor, with its prompt, `*`. **Press Control-B and Return** for Integer
    BASIC, with its prompt, `>`.
 
@@ -113,8 +94,11 @@ that took half a minute to load comes in a moment.
 
 ## Color Graphics
 
-4. **Quit izapple2 and start it with the second command.** Control-B,
-   Return, `LOAD` and `RUN`, as before. The menu of the demonstrations:
+4. **Press Reset**, Control-F2 in izapple2: the Monitor again, with its
+   `*`. **Drop `k7_apple_002000101_colorgraphics.wav` on the window of
+   izapple2**: the second tape goes in the recorder, at its start, in place
+   of the first. Control-B, Return, `LOAD` and `RUN`, as before. The menu of
+   the demonstrations:
 
    ![The demonstrations of the colour graphics](images/apple-ii-cassettes/color-menu.png)
 
@@ -130,9 +114,10 @@ that took half a minute to load comes in a moment.
 
 ## High-Resolution Graphics
 
-6. **Quit izapple2 and start it with the third command.** This tape has
-   two parts: routines in machine code, that draw in the high resolution
-   graphics, and a program in Integer BASIC that calls them. The machine
+6. **Press Reset**, and **drop
+   `k7_apple_600201600_highresolutiongraphics.wav` on the window**. This
+   tape has two parts: routines in machine code, that draw in the high
+   resolution graphics, and a program in Integer BASIC that calls them. The machine
    code comes first, and the Monitor reads it: **type `C00.FFFR`**, *read
    the tape into memory from `C00` to `FFF`*. Then **Control-B and Return**,
    and **`LOAD`** for the BASIC that comes next on the tape, and **`RUN`**.
