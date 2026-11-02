@@ -124,6 +124,9 @@ more than a turn, to close the track on itself, leaves in izapple2 a stretch
 of the old track between its last sector and its first, which it may then
 refuse when it checks the track.
 
+A diskette that is a WOZ formats: the System Utilities of the IIc format
+`blank.woz` for ProDOS in [iic-utilities.md](guides/iic-utilities.md).
+
 **Here, once fixed:** [fantavision.md](guides/fantavision.md) saves its
 movies on a copy of the ProDOS 2.4.3 disk, which has 13 KB free; it could
 format a blank diskette with Format Disk, as the manual says, and save on
