@@ -174,7 +174,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
 
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: Exploring Apple Logo](iic-logo.md).
 
 [Switch on an Apple IIc](apple-iic.md) has Applesoft on the IIc without the
 guide, and [A game in Applesoft: the snake](applesoft-snake.md) a whole
