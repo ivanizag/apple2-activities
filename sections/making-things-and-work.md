@@ -36,6 +36,15 @@ MacPaint's menus, tools and patterns, in black and white. The picture of the
 mouse on the diskette, and a house drawn with bricks, tiles, a sun and a
 line in Venice, saved on the diskette.
 
+### [Dazzle Draw: sixteen colours on the Apple IIc](../guides/dazzle-draw.md)
+
+[<img src="../guides/images/dazzle-draw/monarch-view.png" width="320" alt="A monarch butterfly, a picture of Dazzle Draw">](../guides/dazzle-draw.md)
+
+Broderbund's painting program of 1984 for the double high resolution of the
+//e and the IIc, with 128 KB: sixteen colours and the mouse. Two pictures
+of the other side of its disk, and a house, a sky and a sun painted with its
+tools.
+
 ### [Printing](../guides/printing.md)
 
 [<img src="../guides/images/printing/printing.png" width="320" alt="A calendar printed">](../guides/printing.md)
