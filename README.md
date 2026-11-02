@@ -47,6 +47,7 @@ and a few lines on it.
 - [VisiCalc](guides/visicalc.md): the first spreadsheet, a household budget worked out again as it changes
 - [AppleWorks](guides/appleworks.md): a spreadsheet, a letter and a list of friends in one program
 - [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
+- [MousePaint on the Apple IIc](guides/mousepaint.md): Apple's MacPaint for the Apple II, with the mouse of 1984: a house drawn with its tools and patterns
 - [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
 - [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
 - [Pinball Construction Set](guides/pinball-construction-set.md): Bill Budge's software toy: a table built from a box of parts, and a game of one of its own
