@@ -51,6 +51,7 @@ var activities = []struct {
 	{"fantavision", []string{fantavisionMatinee, fantavisionMachine}, fantavisionScreenshots},
 	{"flight-simulator", []string{flightSimMachine}, flightSimScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
+	{"holiday-music", []string{holidayMusicMachine}, holidayMusicScreenshots},
 	{"iic-at-play", []string{iicAtPlayMachine}, iicAtPlayScreenshots},
 	{"iic-at-work", []string{iicAtWorkMachine, iicAtWorkSide1}, iicAtWorkScreenshots},
 	{"iic-basic", []string{iicBasicMachine}, iicBasicScreenshots},

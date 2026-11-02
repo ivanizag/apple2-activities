@@ -9,6 +9,14 @@
 The sound card of the Apple II, from its demonstration disk of 1982: its menus,
 and its sound effects, recorded to listen to.
 
+### [Christmas songs on the Mockingboard](../guides/holiday-music.md)
+
+[<img src="../guides/images/holiday-music/song-of-joy.png" width="320" alt="Song of Joy, with its words">](../guides/holiday-music.md)
+
+The disk of Christmas songs of Sweet Micro Systems for its card, of 1983:
+seven songs in three voices, each with its words, and the first recorded to
+listen to.
+
 ### [160 columns: the Videx Ultraterm](../guides/ultraterm.md)
 
 [<img src="../guides/images/ultraterm/mode-3.png" width="320" alt="160 columns by 24 lines">](../guides/ultraterm.md)

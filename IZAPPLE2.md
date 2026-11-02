@@ -4,18 +4,6 @@ What making the activities found in [izapple2](https://github.com/ivanizag/izapp
 the state of each, and what to change here when it is fixed. When one is done
 there and done here, take it out of this list.
 
-## Fixed in izapple2 2.6.0, to do here
-
-### Mockingboard presents Holiday Music plays
-
-The disk of the [Internet Archive](https://archive.org/details/sweet-micro-systems-mockingboard-presents-holiday-music)
-(`00playable.dsk`) showed its menu and took the number of a song, but played
-nothing. The timers of the 6522 of 2.6.0 make it play: song 1, *Song of Joy*,
-on an Apple \]\[+ with the Mockingboard in slot 4.
-
-**Here:** an activity of music on the Mockingboard, with this disk: its
-menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
-
 ## Not fixed
 
 ### GBASIC draws nothing on the SoftCard II
