@@ -2,6 +2,7 @@ package activities
 
 import (
 	"bytes"
+	"strings"
 	"testing"
 
 	"github.com/ivanizag/apple2-activities/album"
@@ -29,19 +30,24 @@ basis108Screenshots is the Basis 108, an Apple ][+ made in West Germany: in
 ASCII, German, APL and the Apple's, chosen from BASIC, and DOS 3.3 started
 in 80 columns from Apple's System Master.
 
-izapple2 reads its text in 80 columns a column out of two, so the generator
-waits for the keyboard to be read, not for a text.
+Each step waits for its text, and then for the keyboard to be read and the
+screen to be still; the sets of characters, which change the screen and not
+its text, wait for that alone.
 */
 func basis108Screenshots(t *testing.T) {
 	pictures := newAlbum("basis108", album.Green)
 	o := start(t, basis108Machine, nil)
 
 	// Switched on: its name, in 80 columns, and Applesoft
+	must(t, o.WaitForText("B a s i s", 60))
 	basisReady(t, o, pictures)
 	must(t, pictures.Screenshot(o, "switched-on"))
 
 	// Small letters, and the signs of ASCII
 	must(t, o.TypeLines(`PRINT "@ABC [\]^_ abc {|}~ 0123"`))
+	if !o.WaitUntil(10, func() bool { return strings.Count(o.Text(), "@ABC [") == 2 }) {
+		t.Fatalf("the line was not printed:\n%v", o.Text())
+	}
 	basisReady(t, o, pictures)
 	must(t, pictures.Screenshot(o, "ascii"))
 
@@ -61,8 +67,10 @@ func basis108Screenshots(t *testing.T) {
 
 	// Apple's DOS 3.3, in 80 columns
 	o = start(t, basis108DOS, nil)
+	must(t, o.WaitForText("INTO MEMORY.", 60))
 	basisReady(t, o, pictures)
 	must(t, o.TypeLines("CATALOG"))
+	must(t, o.WaitForText("BOOT13", 60))
 	basisReady(t, o, pictures)
 	must(t, pictures.Screenshot(o, "dos"))
 }
