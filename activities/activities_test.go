@@ -52,7 +52,7 @@ var activities = []struct {
 	{"flight-simulator", []string{flightSimMachine}, flightSimScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
 	{"iic-at-play", []string{iicAtPlayMachine}, iicAtPlayScreenshots},
-	{"iic-at-work", []string{iicAtWorkMachine}, iicAtWorkScreenshots},
+	{"iic-at-work", []string{iicAtWorkMachine, iicAtWorkSide1}, iicAtWorkScreenshots},
 	{"iic-basic", []string{iicBasicMachine}, iicBasicScreenshots},
 	{"iic-inside-story", []string{iicInsideStoryMachine}, iicInsideStoryScreenshots},
 	{"iic-introduction", []string{iicIntroductionMachine}, iicIntroductionScreenshots},
