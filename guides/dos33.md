@@ -133,6 +133,9 @@ izapple2 -model 2plus -screen green my-disk.dsk
    diskette runs when it starts. The drive works for a while, with nothing
    on the screen, and gives back the prompt when it is done.
 
+   The releases of izapple2 before 2.6.0 can stop here for good, on a
+   track being written.
+
 5. **Type `CATALOG,D2`.** The new diskette has one file, the greeting, two
    sectors long. DOS itself does not show: it is in the first three tracks,
    out of the way of the files.

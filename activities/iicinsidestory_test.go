@@ -14,7 +14,7 @@ const iicInsideStoryMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Apple Presents The IIc - The Inside Story 691-0020-A (Apple-1984).dsk"`
+    -s6 "iicdisk,disk1=disks/Apple Presents The IIc - The Inside Story 691-0020-A (Apple-1984).dsk"`
 
 /*
 iicInsideStoryScreenshots is The Inside Story, a diskette of Apple Presents

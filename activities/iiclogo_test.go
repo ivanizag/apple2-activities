@@ -18,7 +18,7 @@ const iicLogoMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen color 
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Apple Presents The IIc - Exploring Apple Logo 691-0015-A (Apple-1984).DSK"`
+    -s6 "iicdisk,disk1=disks/Apple Presents The IIc - Exploring Apple Logo 691-0015-A (Apple-1984).DSK"`
 
 /*
 iicLogoLessons is the walk through the six topics of the diskette, from the

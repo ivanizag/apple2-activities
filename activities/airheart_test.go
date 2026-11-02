@@ -14,7 +14,7 @@ const airheartMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen color
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/airheart (san inc crack).dsk"`
+    -s6 "iicdisk,disk1=disks/airheart (san inc crack).dsk"`
 
 /*
 airheartScreenshots is Airheart, Dan Gorlin's game of 1986 in double high

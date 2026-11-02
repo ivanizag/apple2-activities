@@ -16,7 +16,7 @@ const iicUtilitiesMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen g
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/System Utilities for the IIc - 680-3066-A (Apple-1984).dsk,disk2=my-disk.woz"`
+    -s6 "iicdisk,disk1=disks/System Utilities for the IIc - 680-3066-A (Apple-1984).dsk,disk2=my-disk.woz"`
 
 // iicUtilitiesBlank is the diskette of the external drive, a copy of the
 // blank WOZ of disks/

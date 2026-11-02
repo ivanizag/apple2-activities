@@ -29,7 +29,7 @@ The Apple IIc of 1984, on a colour monitor, with a joystick:
 - its two serial ports, in slots 1 and 2 for the programs;
 - its port for a joystick or a mouse, at the back; izapple2 gives it the
   joystick of the computer it runs on;
-- its disk drive, the controller in slot 6, with Airheart in it.
+- its disk drive, on the disk port in slot 6, with Airheart in it.
 
 ```bash
 izapple2 -model none -board 2c -cpu 65c02 -screen color \
@@ -38,7 +38,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/airheart (san inc crack).dsk"
+    -s6 "iicdisk,disk1=disks/airheart (san inc crack).dsk"
 ```
 
 ## The title, and the legend

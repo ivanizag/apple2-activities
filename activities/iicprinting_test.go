@@ -20,7 +20,7 @@ const iicPrintingMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen gr
     -s0 language \
     -s1 iicserial,device=file,file=printer.out \
     -s2 iicserial \
-    -s6 diskii`
+    -s6 iicdisk`
 
 const (
 	// iicPrintingDisk is MousePaint, whose picture is printed

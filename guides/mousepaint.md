@@ -39,7 +39,7 @@ The Apple IIc of 1984, with a mouse:
 - its port for the mouse, at the back, which its ROM gives to the programs
   as a mouse card in slot 4; izapple2's IIc has the mouse in it, the one of
   the computer it runs on;
-- its disk drive, the controller in slot 6, with MousePaint in it.
+- its disk drive, on the disk port in slot 6, with MousePaint in it.
 
 ```bash
 izapple2 -model none -board 2c -cpu 65c02 -screen green \
@@ -48,14 +48,14 @@ izapple2 -model none -board 2c -cpu 65c02 -screen green \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 diskii,disk1=disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk
+    -s6 iicdisk,disk1=disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk
 ```
 
-The model `2c` of izapple2 is this machine; the diskette goes after the
-options:
+The model `2c_rom255` of izapple2 is this machine; the diskette goes
+after the options:
 
 ```bash
-izapple2 -model 2c -screen green disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk
+izapple2 -model 2c_rom255 -screen green disks/077_MousePaint_Drawing_Program_68C-3005-A_1984.dsk
 ```
 
 ## MousePaint

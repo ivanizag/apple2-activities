@@ -36,7 +36,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Apple Presents the IIc - An Introduction.dsk"
+    -s6 "iicdisk,disk1=disks/Apple Presents the IIc - An Introduction.dsk"
 ```
 
 The pictures are in colour, as on a colour television; **F6** changes to

@@ -34,7 +34,7 @@ disk drive, which plugged into its back:
 - its two serial ports, in slots 1 and 2 for the programs;
 - its port for the mouse, which its ROM gives to the programs as a mouse
   card in slot 4; izapple2's IIc has the mouse in it;
-- its disk drive, the controller in slot 6, with Dazzle Draw in drive 1 and
+- its disk drive, on the disk port in slot 6, with Dazzle Draw in drive 1 and
   its pictures in drive 2.
 
 ```bash
@@ -44,7 +44,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Dazzle Draw 1.2.dsk,disk2=disks/Dazzle Draw Slide Show.DSK"
+    -s6 "iicdisk,disk1=disks/Dazzle Draw 1.2.dsk,disk2=disks/Dazzle Draw Slide Show.DSK"
 ```
 
 ## Dazzle Draw

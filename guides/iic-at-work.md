@@ -36,7 +36,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Apple Presents The IIc - The Apple At Work Side 2 40-Col 691-0014-A (Apple-1984).dsk"
+    -s6 "iicdisk,disk1=disks/Apple Presents The IIc - The Apple At Work Side 2 40-Col 691-0014-A (Apple-1984).dsk"
 ```
 
 ## The introduction

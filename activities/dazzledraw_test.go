@@ -16,7 +16,7 @@ const dazzleDrawMachine = `izapple2 -model none -board 2c -cpu 65c02 -screen col
     -s0 language \
     -s1 iicserial \
     -s2 iicserial \
-    -s6 "diskii,disk1=disks/Dazzle Draw 1.2.dsk,disk2=disks/Dazzle Draw Slide Show.DSK"`
+    -s6 "iicdisk,disk1=disks/Dazzle Draw 1.2.dsk,disk2=disks/Dazzle Draw Slide Show.DSK"`
 
 /*
 dazzleDrawScreenshots is Dazzle Draw on the Apple IIc, painting in the
