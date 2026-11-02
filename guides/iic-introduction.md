@@ -142,7 +142,7 @@ the green monitor.
 
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: The Apple at Work](iic-at-work.md).
 
 [Switch on an Apple IIc](apple-iic.md) is the machine, with Applesoft and
 its own 80 columns.
