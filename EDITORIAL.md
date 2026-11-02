@@ -130,6 +130,14 @@ step, with what the machine showed on the way. Its parts are:
   this one in [README.md](README.md), so that the pages can be read in its
   order, the last saying it is the last; then the pages related to this one.
   `TestWhatNext` checks the first link.
+- **Subpages**, for a page with parts too many for one, as the diskettes of
+  a set: each is a page of its own, not in the README nor in its section,
+  whose way back goes on to the page above it,
+  `[Activities](../README.md) › [First steps](../sections/first-steps.md) ›
+  [Switch on an Apple IIc](apple-iic.md)`. The page above links to them all,
+  in a list as the README's, and they are read in that order: its **Next**
+  is the first, and the **Next** of the last is the page after it in the
+  README. `TestBreadcrumbs` and `TestWhatNext` check them.
 
 ## Pictures
 

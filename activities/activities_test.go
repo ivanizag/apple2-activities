@@ -118,30 +118,101 @@ func TestMachines(t *testing.T) {
 }
 
 /*
-TestWhatNext checks that the "What next" of each page in the README starts
-with the page after it there, so that the pages can be read in that order,
-and the last with the README
+TestWhatNext checks that the "What next" of each page starts with the page
+after it in the order they are read, readingOrder, so that the pages can be
+read in that order, and the last with the README
 */
 func TestWhatNext(t *testing.T) {
+	pages := readingOrder(t)
+	for i, p := range pages {
+		next := "**Next:** this is the last of [the activities](../README.md)."
+		if i+1 < len(pages) {
+			next = "**Next:** " + pages[i+1].link + "(" + pages[i+1].file + ")"
+		}
+		_, whatNext, _ := strings.Cut(guidePage(t, p.file), "\n## What next\n\n")
+		if !strings.HasPrefix(whatNext, next) {
+			t.Errorf("the What next of %v does not start with %v", p.file, next)
+		}
+	}
+}
+
+// A listedPage is a page of the guides, as a link to it: its title in
+// brackets, and its file in guides/
+type listedPage struct {
+	link, file string
+}
+
+/*
+readingOrder is the order the pages are read in: the one of the README, and
+after a page of it its subpages, if any, in the order it links them. A
+subpage is a page whose way back ends at another page, under the section of
+that one, and is not in the README.
+*/
+func readingOrder(t *testing.T) []listedPage {
+	t.Helper()
 	readme, err := os.ReadFile("../README.md")
 	if err != nil {
 		t.Fatal(err)
 	}
-	pages := regexp.MustCompile(`(?m)^- (\[.*\])\(guides/([^)]*)\): `).FindAllStringSubmatch(string(readme), -1)
-	for i, p := range pages {
-		next := "**Next:** this is the last of [the activities](../README.md)."
-		if i+1 < len(pages) {
-			next = "**Next:** " + pages[i+1][1] + "(" + pages[i+1][2] + ")"
-		}
-		page, err := os.ReadFile(filepath.Join("../guides", p[2]))
-		if err != nil {
-			t.Fatal(err)
-		}
-		_, whatNext, _ := strings.Cut(string(page), "\n## What next\n\n")
-		if !strings.HasPrefix(whatNext, next) {
-			t.Errorf("the What next of %v does not start with %v", p[2], next)
-		}
+	var pages []listedPage
+	listed := regexp.MustCompile(`(?m)^- (\[.*\])\(guides/([^)]*)\): `)
+	for _, m := range listed.FindAllStringSubmatch(string(readme), -1) {
+		pages = append(pages, listedPage{m[1], m[2]})
+		pages = append(pages, subpagesOf(t, m[2])...)
 	}
+	return pages
+}
+
+// subpagesOf are the subpages of a page, in the order the page links them
+func subpagesOf(t *testing.T, parent string) []listedPage {
+	t.Helper()
+	files, err := filepath.Glob("../guides/*.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+	page := guidePage(t, parent)
+	var subpages []listedPage
+	for _, f := range files {
+		file := filepath.Base(f)
+		crumbs := breadcrumb(t, file)
+		if !strings.HasSuffix(crumbs, "("+parent+")") {
+			continue
+		}
+		if !strings.Contains(page, "]("+file+")") {
+			t.Errorf("%v is a page of %v, which doesn't link to it", file, parent)
+			continue
+		}
+		subpages = append(subpages, listedPage{"[" + title(t, file) + "]", file})
+	}
+	slices.SortFunc(subpages, func(a, b listedPage) int {
+		return strings.Index(page, "]("+a.file+")") - strings.Index(page, "]("+b.file+")")
+	})
+	return subpages
+}
+
+// guidePage is the text of a page of the guides
+func guidePage(t *testing.T, file string) string {
+	t.Helper()
+	page, err := os.ReadFile(filepath.Join("../guides", file))
+	if err != nil {
+		t.Fatal(err)
+	}
+	return string(page)
+}
+
+// title is the title of a page, its first line
+func title(t *testing.T, file string) string {
+	t.Helper()
+	first, _, _ := strings.Cut(guidePage(t, file), "\n")
+	return strings.TrimPrefix(first, "# ")
+}
+
+// breadcrumb is the way back of a page, the paragraph under its title
+func breadcrumb(t *testing.T, file string) string {
+	t.Helper()
+	_, rest, _ := strings.Cut(guidePage(t, file), "\n\n")
+	crumbs, _, _ := strings.Cut(rest, "\n")
+	return crumbs
 }
 
 /*
@@ -181,7 +252,8 @@ func TestSections(t *testing.T) {
 
 /*
 TestBreadcrumbs checks that each page of the README starts, under its title,
-with the way back to the list and to its section there
+with the way back to the list and to its section there, and each subpage
+with the way back of its page and that page
 */
 func TestBreadcrumbs(t *testing.T) {
 	readme, err := os.ReadFile("../README.md")
@@ -194,13 +266,14 @@ func TestBreadcrumbs(t *testing.T) {
 	for i, s := range headings.FindAllStringSubmatch(string(readme), -1) {
 		crumb := "[Activities](../README.md) › [" + s[1] + "](../sections/" + s[2] + ")"
 		for _, m := range listed.FindAllStringSubmatch(parts[i+1], -1) {
-			page, err := os.ReadFile(filepath.Join("../guides", m[1]))
-			if err != nil {
-				t.Fatal(err)
-			}
-			_, rest, _ := strings.Cut(string(page), "\n\n")
-			if !strings.HasPrefix(rest, crumb+"\n") {
+			if got := breadcrumb(t, m[1]); got != crumb {
 				t.Errorf("%v does not start with %v", m[1], crumb)
+			}
+			below := crumb + " › [" + title(t, m[1]) + "](" + m[1] + ")"
+			for _, sub := range subpagesOf(t, m[1]) {
+				if got := breadcrumb(t, sub.file); got != below {
+					t.Errorf("%v does not start with %v", sub.file, below)
+				}
 			}
 		}
 	}
