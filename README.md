@@ -60,6 +60,7 @@ and a few lines on it.
 ## [Cards](sections/cards.md)
 
 - [The Mockingboard](guides/mockingboard.md): the sound card, from its demonstration disk, recorded to listen to
+- [Christmas songs on the Mockingboard](guides/holiday-music.md): Holiday Music of Sweet Micro Systems, a song with its words, recorded
 - [160 columns: the Videx Ultraterm](guides/ultraterm.md): a card for up to 160 columns of text, and each of its modes
 - [The RGB card and its fourteen video modes](guides/rgb-card.md): the fourteen video modes of the Video-7 card for the //e
 - [A megabyte on a card: the Memory Expansion Card](guides/memory-expansion.md): a megabyte as a RAM disk for ProDOS, and the card from DOS 3.3

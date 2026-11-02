@@ -140,8 +140,6 @@ Not done yet, and not proposed: each needs a look on the machine first.
   Choplifter, Oregon Trail, Wizardry, Planetfall; one page each.
 - **Programs of work**: VisiCalc, AppleWorks, Apple Writer.
 - **Logo**, its turtle drawing.
-- **The music of the Mockingboard**: see [IZAPPLE2.md](IZAPPLE2.md), it
-  waits for a fix in izapple2.
 
 ## Code style
 
