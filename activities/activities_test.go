@@ -43,6 +43,7 @@ var activities = []struct {
 	{"cranston", []string{cranstonManorMachine}, cranstonManorScreenshots},
 
 	{"darkcrystal", []string{darkCrystalMachine}, darkCrystalScreenshots},
+	{"dazzle-draw", []string{dazzleDrawMachine}, dazzleDrawScreenshots},
 	{"desktop", []string{deskTopMachine}, deskTopScreenshots},
 	{"dos32", []string{dos32Machine, dos32Upgraded}, dos32Screenshots},
 	{"dos33", []string{dos33Machine, dos33OwnDisk}, dos33Screenshots},

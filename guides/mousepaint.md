@@ -134,7 +134,7 @@ izapple2 -model 2c -screen green disks/077_MousePaint_Drawing_Program_68C-3005-A
 
 ## What next
 
-**Next:** [Printing](printing.md).
+**Next:** [Dazzle Draw: sixteen colours on the Apple IIc](dazzle-draw.md).
 
 [Apple II DeskTop](desktop.md) is the mouse on the //e, with windows and
 icons, and [Switch on an Apple IIc](apple-iic.md) the machine.

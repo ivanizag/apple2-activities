@@ -48,6 +48,7 @@ and a few lines on it.
 - [AppleWorks](guides/appleworks.md): a spreadsheet, a letter and a list of friends in one program
 - [Fantavision: drawings that move](guides/fantavision.md): Broderbund's animation program, its Movie Matinee, and shapes that turn into others
 - [MousePaint on the Apple IIc](guides/mousepaint.md): Apple's MacPaint for the Apple II, with the mouse of 1984: a house drawn with its tools and patterns
+- [Dazzle Draw: sixteen colours on the Apple IIc](guides/dazzle-draw.md): double high resolution and the mouse: two pictures of its disk, and one painted
 - [Printing](guides/printing.md): a listing and a calendar sent to a parallel printer with PR#1
 - [Printing on the Apple IIc](guides/iic-printing.md): its printer port, a listing with PR#1, and a picture of MousePaint dot by dot
 - [The Print Shop: cards, signs and banners](guides/print-shop.md): a birthday card, a sign and a banner, printed dot by dot
