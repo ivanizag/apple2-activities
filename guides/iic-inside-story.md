@@ -101,7 +101,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
 
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: Getting Down to BASIC](iic-basic.md).
 
 [Switch on an Apple IIc](apple-iic.md) is the machine of the story, and
 [The Apple //e, original and enhanced](apple-iie-models.md) shows its ROM.
