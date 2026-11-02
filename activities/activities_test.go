@@ -151,6 +151,17 @@ that one, and is not in the README.
 */
 func readingOrder(t *testing.T) []listedPage {
 	t.Helper()
+	var pages []listedPage
+	for _, p := range readmePages(t) {
+		pages = append(pages, p)
+		pages = append(pages, subpagesOf(t, p.file)...)
+	}
+	return pages
+}
+
+// readmePages are the pages of the README, in its order
+func readmePages(t *testing.T) []listedPage {
+	t.Helper()
 	readme, err := os.ReadFile("../README.md")
 	if err != nil {
 		t.Fatal(err)
@@ -159,7 +170,6 @@ func readingOrder(t *testing.T) []listedPage {
 	listed := regexp.MustCompile(`(?m)^- (\[.*\])\(guides/([^)]*)\): `)
 	for _, m := range listed.FindAllStringSubmatch(string(readme), -1) {
 		pages = append(pages, listedPage{m[1], m[2]})
-		pages = append(pages, subpagesOf(t, m[2])...)
 	}
 	return pages
 }

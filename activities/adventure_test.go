@@ -7,6 +7,7 @@ import (
 	"html"
 	"image"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 	"testing"
@@ -42,6 +43,11 @@ type adventure struct {
 	// short is the shorter command line the page also gives, a model of
 	// izapple2 with the disk of the game
 	short string
+	// subpages puts the walkthrough on subpages of the page, a section each,
+	// <name>-01.md and on, which the page lists, for a game too long for one
+	subpages bool
+	// title is the name of the game, for the titles of the subpages
+	title string
 }
 
 // commandPrompt is where the game reads a command
@@ -332,38 +338,57 @@ func (a adventure) play(t *testing.T, o *operator.Operator, pictures *album.Albu
 	must(t, err)
 	shown := adventureShown{name: "0001"}
 	a.answer(t, o, pictures, &shown)
-	var walkthrough strings.Builder
-	walkthrough.WriteString(a.index(steps))
-	number, section := 0, 0
+	var sections []*adventurePart
+	number := 0
 	for _, step := range steps {
 		if step.section != "" {
-			section++
-			fmt.Fprintf(&walkthrough, "### %v\n\n", adventureSection(section, step.section))
+			sections = append(sections, &adventurePart{title: adventureSection(len(sections)+1, step.section)})
 			continue
 		}
 		number++
-		a.write(&walkthrough, shown, step.command)
+		a.write(&sections[len(sections)-1].text, shown, step.command)
 		must(t, o.Type(step.command+"\n"))
 		shown = adventureShown{name: fmt.Sprintf("%04d", number+1), command: step.command}
 		a.answer(t, o, pictures, &shown)
 	}
-	fmt.Fprintf(&walkthrough, "### %v\n\n", adventureTheEnd)
-	a.write(&walkthrough, shown, "")
+	end := &adventurePart{title: adventureTheEnd}
+	a.write(&end.text, shown, "")
 	if !o.HasText(a.ending) {
 		t.Fatalf("the walkthrough did not end the game:\n%v", o.Text())
 	}
-	if write {
-		must(t, a.writePage(walkthrough.String()))
-		must(t, a.prune())
+	if !write {
+		return
 	}
+	if a.subpages {
+		must(t, a.writePage(a.subpageIndex(steps)))
+		must(t, a.writeSubpages(t, sections, end))
+	} else {
+		var walkthrough strings.Builder
+		walkthrough.WriteString(a.index(steps))
+		for _, part := range append(sections, end) {
+			fmt.Fprintf(&walkthrough, "### %v\n\n%v", part.title, part.text.String())
+		}
+		must(t, a.writePage(walkthrough.String()))
+	}
+	must(t, a.prune())
+}
+
+// adventurePart is a section of the walkthrough, and what it shows
+type adventurePart struct {
+	title string
+	text  strings.Builder
 }
 
 // prune removes the pictures of the folder of the game that its page does
 // not show, left by a run that stopped on the way
 func (a adventure) prune() error {
-	page, err := os.ReadFile(a.page())
-	if err != nil {
-		return err
+	var page []byte
+	for _, file := range append([]string{a.page()}, a.subpageFiles()...) {
+		text, err := os.ReadFile(file)
+		if err != nil {
+			return err
+		}
+		page = append(page, text...)
 	}
 	folder := "../guides/images/" + a.name
 	files, err := os.ReadDir(folder)
@@ -383,6 +408,86 @@ func (a adventure) prune() error {
 // page is the file of the page
 func (a adventure) page() string {
 	return "../guides/" + a.name + ".md"
+}
+
+// subpage is the file of a subpage of the walkthrough, by its number from 1
+func (a adventure) subpage(number int) string {
+	return fmt.Sprintf("%v-%02d.md", a.name, number)
+}
+
+// subpageFiles are the subpages of the walkthrough there are, in their order
+func (a adventure) subpageFiles() []string {
+	files, _ := filepath.Glob("../guides/" + a.name + "-[0-9][0-9].md")
+	sort.Strings(files)
+	return files
+}
+
+// subpageTitle is the title of a subpage, the game and the section
+func (a adventure) subpageTitle(section string) string {
+	return a.title + ": " + section
+}
+
+// subpageIndex is the list of the subpages, each a link to it
+func (a adventure) subpageIndex(steps []adventureStep) string {
+	var b strings.Builder
+	section := 0
+	for _, step := range steps {
+		if step.section != "" {
+			section++
+			title := a.subpageTitle(adventureSection(section, step.section))
+			fmt.Fprintf(&b, "- [%v](%v)\n", title, a.subpage(section))
+		}
+	}
+	b.WriteString("\n")
+	return b.String()
+}
+
+/*
+writeSubpages writes a subpage for each section of the walkthrough, under the
+page: its title, the way back through the page, what it shows and the
+commands, and the next subpage to read. The last has the end of the game,
+and goes on to the page after this one in the README. Subpages of a longer
+walkthrough before are removed.
+*/
+func (a adventure) writeSubpages(t *testing.T, sections []*adventurePart, end *adventurePart) error {
+	page, err := os.ReadFile(a.page())
+	if err != nil {
+		return err
+	}
+	parent, rest, _ := strings.Cut(string(page), "\n\n")
+	crumbs, _, _ := strings.Cut(rest, "\n")
+	parent = strings.TrimPrefix(parent, "# ")
+	crumbs += " › [" + parent + "](" + a.name + ".md)"
+
+	var after listedPage
+	pages := readmePages(t)
+	for i, p := range pages {
+		if p.file == a.name+".md" && i+1 < len(pages) {
+			after = pages[i+1]
+		}
+	}
+
+	for _, file := range a.subpageFiles() {
+		if err := os.Remove(file); err != nil {
+			return err
+		}
+	}
+	for i, part := range sections {
+		var b strings.Builder
+		fmt.Fprintf(&b, "# %v\n\n%v\n\n%v", a.subpageTitle(part.title), crumbs, part.text.String())
+		next := after.link + "(" + after.file + ")"
+		if i+1 < len(sections) {
+			next = "[" + a.subpageTitle(sections[i+1].title) + "](" + a.subpage(i+2) + ")"
+		} else {
+			fmt.Fprintf(&b, "## %v\n\n%v", end.title, end.text.String())
+		}
+		fmt.Fprintf(&b, "## What next\n\n**Next:** %v.\n\n", next)
+		fmt.Fprintf(&b, "[%v](%v.md) has the list of all the parts.\n", parent, a.name)
+		if err := os.WriteFile("../guides/"+a.subpage(i+1), []byte(b.String()), 0o644); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // adventureSection is the title of a section, with its number
@@ -470,23 +575,35 @@ func (a adventure) checkPage(t *testing.T) {
 	must(t, err)
 	page, err := os.ReadFile(a.page())
 	must(t, err)
+	walkthrough, index := page, a.index(steps)
+	sectionMark, endMark := "### ", "### "
+	if a.subpages {
+		walkthrough, index = nil, a.subpageIndex(steps)
+		sectionMark, endMark = "# "+a.title+": ", "## "
+		for _, file := range a.subpageFiles() {
+			text, err := os.ReadFile(file)
+			must(t, err)
+			walkthrough = append(walkthrough, text...)
+		}
+	}
 	var want, got []string
 	section := 0
 	for _, s := range steps {
 		if s.section != "" {
 			section++
-			want = append(want, "### "+adventureSection(section, s.section))
+			want = append(want, sectionMark+adventureSection(section, s.section))
 		} else {
 			want = append(want, fmt.Sprintf("**Type `%v`**", s.command))
 		}
 	}
-	want = append(want, "### "+adventureTheEnd)
-	for _, line := range strings.Split(string(page), "\n") {
-		if strings.HasPrefix(line, "### ") || strings.HasPrefix(line, "**Type `") {
+	want = append(want, endMark+adventureTheEnd)
+	for _, line := range strings.Split(string(walkthrough), "\n") {
+		if strings.HasPrefix(line, sectionMark) || line == endMark+adventureTheEnd ||
+			strings.HasPrefix(line, "**Type `") {
 			got = append(got, line)
 		}
 	}
-	if !strings.Contains(string(page), a.index(steps)) {
+	if !strings.Contains(string(page), index) {
 		t.Errorf("the index of %v is not the one of %v: run its generator", a.page(), a.walkthrough)
 	}
 	if strings.Join(got, "\n") != strings.Join(want, "\n") {
