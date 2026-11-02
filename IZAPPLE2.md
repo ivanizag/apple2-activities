@@ -16,14 +16,6 @@ on an Apple \]\[+ with the Mockingboard in slot 4.
 **Here:** an activity of music on the Mockingboard, with this disk: its
 menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
 
-### The text of the Ultraterm is read
-
-`ScreenText` gave nothing while the Ultraterm showed its demonstration, so
-[ultraterm_test.go](activities/ultraterm_test.go) counts lit dots instead.
-2.6.0 reads its text.
-
-**Here:** wait for the text of each page.
-
 ### Another tape while the machine runs
 
 `LoadTape` puts another tape in the recorder while the machine runs, as
