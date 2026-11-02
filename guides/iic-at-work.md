@@ -113,7 +113,7 @@ izapple2 -model none -board 2c -cpu 65c02 -screen color \
 
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: The Apple at Play](iic-at-play.md).
 
 [AppleWorks](appleworks.md) is the program itself, on a //e, with a
 spreadsheet, a letter and a list of friends.

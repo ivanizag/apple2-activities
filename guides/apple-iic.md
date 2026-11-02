@@ -86,6 +86,7 @@ The diskettes of the guide, a page each:
 
 - [Apple Presents the IIc: An Introduction](iic-introduction.md): the keyboard, a name typed, a diner, the colours and the 80 columns
 - [Apple Presents the IIc: The Apple at Work](iic-at-work.md): a survey, a quiz, and a letter changed in the word processor of AppleWorks, imitated
+- [Apple Presents the IIc: The Apple at Play](iic-at-play.md): Lemonade Stand, a sonata, a quiz, a hand of Apple 21 and Space Quarks
 
 ## What next
 
