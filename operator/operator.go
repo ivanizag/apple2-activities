@@ -169,6 +169,12 @@ func (o *Operator) InsertDisk(drive int, path string) error {
 	return o.a.LoadDisk(drive, path)
 }
 
+// InsertTape puts a tape in the cassette recorder, a WAV recording, in place
+// of the one there was, at its start
+func (o *Operator) InsertTape(path string) error {
+	return o.a.LoadTape(path)
+}
+
 // resetFrames is how long the reset key is held, and then let go
 const resetFrames = 10
 
