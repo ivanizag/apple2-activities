@@ -208,7 +208,7 @@ izapple2 -model 2plus -screen green -s1 parallel
 
 ## What next
 
-**Next:** [The Print Shop: cards, signs and banners](print-shop.md).
+**Next:** [Printing on the Apple IIc](iic-printing.md).
 
 [A game in Integer BASIC](paddle-game.md) is another program typed in,
 on the first Apple \]\[, for the screen this time.

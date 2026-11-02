@@ -44,6 +44,15 @@ A program typed into an Apple \]\[+ with a parallel printer card: its
 listing printed with `PR#1`, and a calendar of 1977 three months across,
 wider than the screen, as it comes out on paper.
 
+### [Printing on the Apple IIc](../guides/iic-printing.md)
+
+[<img src="../guides/images/iic-printing/paper.png" width="320" alt="The picture of the mouse printed">](../guides/iic-printing.md)
+
+The IIc had its printer port built in, a serial port for the ImageWriter:
+a program and its run printed from Applesoft with PR#1, which the screen
+doesn't show, and the picture of the mouse of MousePaint, printed as
+graphics and drawn on paper.
+
 ### [The Print Shop: cards, signs and banners](../guides/print-shop.md)
 
 [<img src="../guides/images/print-shop/borders.gif" width="320" alt="The borders of The Print Shop">](../guides/print-shop.md)

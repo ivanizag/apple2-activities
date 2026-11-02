@@ -55,6 +55,7 @@ var activities = []struct {
 	{"iic-inside-story", []string{iicInsideStoryMachine}, iicInsideStoryScreenshots},
 	{"iic-introduction", []string{iicIntroductionMachine}, iicIntroductionScreenshots},
 	{"iic-logo", []string{iicLogoMachine}, iicLogoScreenshots},
+	{"iic-printing", []string{iicPrintingMachine}, iicPrintingScreenshots},
 	{"iic-terminal", []string{iicAdaMachine, iicGraceMachine}, iicTerminalScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
 	{"karateka", []string{karatekaMachine, karatekaSideBMachine}, karatekaScreenshots},
@@ -342,6 +343,7 @@ var listings = []struct {
 	{"applesoft-snake", snakeListing},
 	{"cpm65", alphabetListing},
 	{"cpm65", powersListing},
+	{"iic-printing", squaresListing},
 	{"lode-runner", lodeRunnerLevel},
 	{"merlin", barsListing},
 	{"pascal-2048", game2048Listing},
@@ -380,6 +382,7 @@ var printouts = []struct {
 	guide, printout string
 }{
 	{"base64a", "../guides/images/base64a/letter.txt"},
+	{"iic-printing", "../guides/images/iic-printing/listing.txt"},
 	{"printing", "../guides/images/printing/listing.txt"},
 	{"printing", "../guides/images/printing/calendar.txt"},
 }
