@@ -3,9 +3,9 @@
 [Activities](../README.md) › [First steps](../sections/first-steps.md)
 
 The Apple IIc came with a disk for the work on disks and files, **System
-Utilities**: a menu of ProDOS, the newer system of disks of Apple, to copy files,
-delete, rename and lock them, duplicate and format whole disks, and list
-what is on them. It knew the three systems of the Apple II of the time,
+Utilities**: a menu of ProDOS, the newer system of disks of Apple, to copy
+files, delete, rename and lock them, duplicate and format whole disks, and
+list what is on them. It knew the three systems of the Apple II of the time,
 ProDOS, DOS 3.3 and Pascal, and the two drives of a IIc, the one in its
 side and the one that plugged into its back.
 
