@@ -2,6 +2,14 @@
 
 [Activities](../README.md) › Play
 
+### [Airheart: a game for 128 KB](../guides/airheart.md)
+
+[<img src="../guides/images/airheart/title.png" width="320" alt="The title of Airheart">](../guides/airheart.md)
+
+Dan Gorlin's game of 1986 for the 128 KB of the //e and the IIc, in double
+high resolution: its title, its legend, the game playing itself, and a
+raft steered with the joystick.
+
 ### [Akalabeth: Lord British's first world](../guides/akalabeth.md)
 
 [<img src="../guides/images/akalabeth/killed.png" width="320" alt="A dungeon in lines, a giant rat killed">](../guides/akalabeth.md)

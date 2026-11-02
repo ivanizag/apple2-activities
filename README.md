@@ -78,6 +78,7 @@ and a few lines on it.
 
 ## [Play](sections/play.md)
 
+- [Airheart: a game for 128 KB](guides/airheart.md): Dan Gorlin's raft on the sea of 1986, in double high resolution, on the IIc
 - [Akalabeth: Lord British's first world](guides/akalabeth.md): Richard Garriott's game in Applesoft before Ultima, a quest of Lord British taken and done
 - [Cranston Manor, from the start to the end](guides/cranston.md): Hi-Res Adventure #3, played to its end
 - [Castle Wolfenstein](guides/castle-wolfenstein.md): Silas Warner's escape from a castle of 1981, the game behind Wolfenstein 3D, guards shot and searched
