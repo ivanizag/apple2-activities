@@ -1,8 +1,8 @@
 # Things to do with an Apple II
 
-[izapple2](https://github.com/ivanizag/izapple2) emulates the Apple \]\[+ and
-the Apple //e and runs their real ROMs and software, so it is a way of finding
-out first hand what using one was like. Each page here takes one thing an
+[izapple2](https://github.com/ivanizag/izapple2) emulates the Apple \]\[, the
+\]\[+, the //e and the IIc, and runs their real ROMs and software, so it is a
+way of finding out first hand what using one was like. Each page here takes one thing an
 Apple II owner did, and walks through it step by step, with the command to
 start izapple2 for it and what you will see on the way.
 
