@@ -382,3 +382,15 @@ diskette put in then is not started: the IIc says `Check Disk Drive.` and
 stops. Not checked on a IIc, which may do the same. The pages of the IIc
 start with the diskette in the drive, on the command line, or put it in from
 Applesoft and start it with Open Apple-Control-Reset.
+
+### The side for 80 columns of The Apple at Work shows its menu scrambled
+
+`Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A
+(Apple-1984).dsk` starts, but its menu shows on the IIc as pieces of lines
+of 80 columns in 40, out of place. The side for 40 columns shows it well.
+izapple2's IIc has the switch of 80 and 40 columns always down, at 40, which
+may be what the side for 80 columns doesn't expect; not looked into.
+
+**Here, once fixed, or with the switch up:**
+[iic-at-work.md](guides/iic-at-work.md) can use side 1, or say what each
+side shows.
