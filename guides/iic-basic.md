@@ -5,8 +5,8 @@
 *Getting Down to BASIC* is the diskette of **Apple Presents the IIc**, the
 owner's guide of the IIc, that teaches Applesoft BASIC: six sections, an
 introduction and five lessons, from printing numbers to variables, each
-with the statements to type and the computer that answers. The lessons check what is typed, and say when it is
-not what they asked for.
+with the statements to type and the computer that answers. The lessons
+check what is typed, and say when it is not what they asked for.
 
 This page goes through its introduction, which asks for a name, and the
 first part of its lesson on `PRINT`: a number, and a sum.
