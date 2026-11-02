@@ -348,6 +348,23 @@ SoftCard II, on the //e with the card in its auxiliary slot instead of the
 - the disks in `disks.tsv`, and the line of the Premium SoftCard IIe taken
   out of *Other disks found*.
 
+### A Reset in the guide of the IIc leaves grey stripes
+
+With *Apple Presents the IIc - An Introduction* running, at its menu or at
+its last page, which asks for the next diskette and Open Apple-Control-Reset,
+the first Control-Reset, with Open Apple or without it, leaves the screen in
+grey stripes, and the IIc does nothing more. The processor goes around the
+interrupt handler of the ROM, at $C8xx, with no IRQ asserted, as if it ran
+into BRKs. A second Open Apple-Control-Reset starts the diskette in the
+drive. From Applesoft the first one does. Clearing the interrupts and the
+masks of the IOU of the IIc on Reset, and setting IOUDIS, didn't change it.
+On a IIc, Open Apple-Control-Reset should start again from the drive,
+whatever runs.
+
+**Here, once fixed:** take out of step 7 of
+[iic-introduction.md](guides/iic-introduction.md) the second Open
+Apple-Control-Reset.
+
 ### The self test of the IIc never ends
 
 Open Apple and Closed Apple held through Control-Reset start the self test

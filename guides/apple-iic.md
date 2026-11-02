@@ -80,9 +80,15 @@ izapple2 -model 2c -screen green
    The commas of `PRINT` go to the next column of 16 characters, and four
    fit in 80 columns.
 
+## Apple Presents the IIc
+
+The diskettes of the guide, a page each:
+
+- [Apple Presents the IIc: An Introduction](iic-introduction.md): the keyboard, a name typed, a diner, the colours and the 80 columns
+
 ## What next
 
-**Next:** [Life with DOS 3.3](dos33.md).
+**Next:** [Apple Presents the IIc: An Introduction](iic-introduction.md).
 
 [Switch on an Apple //e](apple-iie.md) is the machine inside it, and
 [Two Apple IIcs on the line](iic-terminal.md) uses its modem port.
