@@ -26,6 +26,7 @@ and a few lines on it.
 - [From Integer BASIC to Applesoft](guides/integer-and-applesoft.md): Applesoft from tape, and both BASICs on one machine with the Language Card
 - [Switch on an Apple //e](guides/apple-iie.md): lower case, 80 columns, MouseText and the self test
 - [The Apple //e, original and enhanced](guides/apple-iie-models.md): the //e of 1983 and the enhanced one of 1985, side by side
+- [Switch on an Apple IIc](guides/apple-iic.md): the Apple II to carry of 1984, Applesoft and its 80 columns
 - [Life with DOS 3.3](guides/dos33.md): the System Master, a catalog, and a diskette that starts your own program
 - [From 13 sectors to 16: DOS 3.2 and DOS 3.3](guides/dos32.md): 13 sectors, MUFFIN and BOOT13
 - [ProDOS](guides/prodos.md): the program selector, a RAM disk, and a diskette mapped in Copy II Plus
