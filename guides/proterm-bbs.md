@@ -195,7 +195,7 @@ and a host and port dials, as `ATDT` and a telephone number did.
 
 ## What next
 
-**Next:** [Forth in ROM](forth.md).
+**Next:** [Two Apple IIcs on the line](iic-terminal.md).
 
 [The SwyftCard](swyftcard.md) is another program of the //e that takes
 over the screen, and [The Apple //e](apple-iie.md) the machine.

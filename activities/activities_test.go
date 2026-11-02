@@ -48,6 +48,7 @@ var activities = []struct {
 	{"fantavision", []string{fantavisionMatinee, fantavisionMachine}, fantavisionScreenshots},
 	{"flight-simulator", []string{flightSimMachine}, flightSimScreenshots},
 	{"forth", []string{forthMachine}, forthScreenshots},
+	{"iic-terminal", []string{iicAdaMachine, iicGraceMachine}, iicTerminalScreenshots},
 	{"integer-and-applesoft", []string{basicsTape, basicsPlusNoCard, basicsPlus, basicsInteger}, basicsScreenshots},
 	{"karateka", []string{karatekaMachine, karatekaSideBMachine}, karatekaScreenshots},
 	{"lode-runner", []string{lodeRunnerMachine}, lodeRunnerScreenshots},
