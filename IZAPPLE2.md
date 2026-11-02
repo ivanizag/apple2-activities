@@ -16,16 +16,6 @@ on an Apple \]\[+ with the Mockingboard in slot 4.
 **Here:** an activity of music on the Mockingboard, with this disk: its
 menu, and a song recorded to a WAV file. Add the disk to `disks.tsv` again.
 
-### Another tape while the machine runs
-
-`LoadTape` puts another tape in the recorder while the machine runs, as
-`LoadDisk` a diskette. A page with several tapes starts the machine once for
-each.
-
-**Here:** [apple-ii-cassettes.md](guides/apple-ii-cassettes.md) could load
-its tapes one after the other into the same machine, with an operator call
-for `LoadTape`.
-
 ### The side for 80 columns of The Apple at Work
 
 `Apple Presents The IIc - The Apple At Work Side 1 80-Col 691-0014-A

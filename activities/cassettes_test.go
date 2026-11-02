@@ -15,26 +15,18 @@ const cassettesBreakout = `izapple2 -model none -board 2plus -cpu 6502 -screen c
     -mods four-colors \
     -tape disks/k7_apple_002000101_breakout.wav`
 
-// cassettesColor is the same machine with the tape of Color Graphics
-const cassettesColor = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/341-000x_integer.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -mods four-colors \
-    -tape disks/k7_apple_002000101_colorgraphics.wav`
-
-// cassettesHires is the same machine with the tape of the High-Resolution
-// Graphics demonstrations
-const cassettesHires = `izapple2 -model none -board 2plus -cpu 6502 -screen color \
-    -rom "<internal>/341-000x_integer.rom" \
-    -charrom "<internal>/Apple2rev7CharGen.rom" -forceCaps \
-    -mods four-colors \
-    -tape disks/k7_apple_600201600_highresolutiongraphics.wav`
+// The other two tapes, put in the recorder of the same machine
+const (
+	cassettesColor = "k7_apple_002000101_colorgraphics.wav"
+	cassettesHires = "k7_apple_600201600_highresolutiongraphics.wav"
+)
 
 /*
 cassettesScreenshots is the first Apple ][ and the programs that came with it
 on cassette: Breakout loaded and played with the paddle, the demonstrations of
 the colour graphics, and the ones of the high resolution graphics, their
-machine code read with the Monitor and their BASIC with LOAD.
+machine code read with the Monitor and their BASIC with LOAD. The tapes go
+one after the other into the recorder of the same machine, Reset in between.
 */
 func cassettesScreenshots(t *testing.T) {
 	pictures := newAlbum("apple-ii-cassettes", album.Color)
@@ -60,8 +52,10 @@ func cassettesScreenshots(t *testing.T) {
 	}
 	must(t, pictures.SaveRecording(game, "breakout", 100))
 
-	// Color Graphics, and its kaleidoscope
-	o = start(t, cassettesColor, nil)
+	// Color Graphics, and its kaleidoscope: Reset, to the Monitor, and the
+	// second tape in the recorder
+	o.Reset()
+	must(t, o.InsertTape(disk(t, cassettesColor)))
 	integerBasic(t, o)
 	must(t, o.TypeLines("LOAD"))
 	must(t, o.WaitForKeyboard(300))
@@ -77,8 +71,9 @@ func cassettesScreenshots(t *testing.T) {
 
 	// The High-Resolution Graphics: its machine code first, read by the
 	// Monitor into $C00 to $FFF, then its program in Integer BASIC
-	o = start(t, cassettesHires, nil)
-	o.RunSeconds(1)
+	o.Reset()
+	must(t, o.InsertTape(disk(t, cassettesHires)))
+	must(t, o.WaitForKeyboard(10))
 	must(t, o.TypeLines("C00.FFFR"))
 	must(t, o.WaitForKeyboard(300))
 	integerBasic(t, o)
@@ -93,7 +88,6 @@ func cassettesScreenshots(t *testing.T) {
 	donut.Capture(10)
 	donut.Run(60*60, 6)
 	must(t, pictures.SaveRecording(donut, "donut", 300))
-
 }
 
 // integerBasic goes from the Monitor of the Apple ][ to Integer BASIC, with
