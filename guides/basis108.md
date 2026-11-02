@@ -122,7 +122,7 @@ they are; what changes is how they look.
 
 ## What next
 
-**Next:** [Akalabeth: Lord British's first world](akalabeth.md).
+**Next:** [Airheart: a game for 128 KB](airheart.md).
 
 [The Base 64A](base64a.md) is another copy, from Taiwan, with a word
 processor in its ROM, and [Switch on an Apple \]\[+](switch-on.md) the
