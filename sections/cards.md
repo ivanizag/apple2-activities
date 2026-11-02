@@ -74,6 +74,14 @@ it calls Dura-Europos, a BBS of 1986 on an Apple //e, which draws its
 menus and games for ProTERM in MouseText, and plays a game of
 Concentration+ as a guest.
 
+### [Two Apple IIcs on the line](../guides/iic-terminal.md)
+
+[<img src="../guides/images/iic-terminal/grace-read.png" width="320" alt="Grace's IIc with the conversation">](../guides/iic-terminal.md)
+
+The IIc has its serial ports built in, and its modem port a terminal mode:
+Ada's IIc waits for a call, Grace's modem dials it, and they write to each
+other with nothing but the firmware.
+
 ### [Forth in ROM](../guides/forth.md)
 
 [<img src="../guides/images/forth/control.png" width="320" alt="Words defined in Forth, with loops and a decision">](../guides/forth.md)
