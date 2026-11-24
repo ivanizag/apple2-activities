@@ -148,7 +148,7 @@ be searched, with the space bar, standing on him, for his bullets: there are
 never more than ten, and fewer are soon spent. Walking into a wall flashes
 the screen with grey lines.
 
-From here the page does not give each key: they are hundreds, over seven
+From here the page does not give each key: they are hundreds, over eleven
 minutes of play. It says the way through the castle, floor by floor.
 
 8. **Cross the second floor**, up, up and right, four rooms and their
