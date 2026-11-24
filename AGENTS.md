@@ -32,7 +32,13 @@ go vet ./...
 A2_ACTIVITIES=1 go test -count=1 -run 'TestActivities/dos33' ./activities
 ```
 
-Without `A2_ACTIVITIES` the generators skip themselves. They write over the
+Without `A2_ACTIVITIES` the generators skip themselves. With `A2_VIDEO` set
+to a folder outside the repository, each machine a generator starts is also
+filmed, every frame with its sound, into `<guide>.mp4` there, in 1080p for
+YouTube: a card with the title of the page first, then the keys shown under
+the screen as they are pressed, and next to it `<guide>.chapters.txt`, the
+times of the pictures of the page for the description. It needs `ffmpeg`, and
+changes no picture. They write over the
 pictures of the pages they run. The one of
 [proterm-bbs.md](guides/proterm-bbs.md) calls a BBS on the internet, which
 may have changed or be gone: it runs only with `A2_BBS=1` too, when the

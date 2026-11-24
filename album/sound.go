@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io"
 	"math"
+	"sync"
 
 	"github.com/ivanizag/izapple2"
 
@@ -21,7 +22,6 @@ and the constant levels decaying to silence as on a real speaker.
 */
 type Sound struct {
 	a        *izapple2.Apple2
-	sources  []izapple2.AudioSource
 	sinks    []*levels
 	start    uint64
 	end      uint64
@@ -56,21 +56,59 @@ to keep.
 */
 func Listen(op *operator.Operator) *Sound {
 	a := op.Apple2()
-	s := &Sound{a: a, start: a.GetCycles(), clockMhz: a.GetClockMhz()}
-	for _, source := range a.GetAudioSources() {
-		sink := &levels{}
-		source.SetAudioSink(sink)
-		s.sources = append(s.sources, source)
-		s.sinks = append(s.sinks, sink)
+	listening.Lock()
+	defer listening.Unlock()
+	l := listening.of[a]
+	if l == nil {
+		// The first to listen connects the generators; the others share them
+		l = &listener{}
+		for _, source := range a.GetAudioSources() {
+			sink := &levels{}
+			source.SetAudioSink(sink)
+			l.sources = append(l.sources, source)
+			l.sinks = append(l.sinks, sink)
+		}
+		listening.of[a] = l
 	}
-	return s
+	l.count++
+	return &Sound{a: a, sinks: l.sinks, start: a.GetCycles(), clockMhz: a.GetClockMhz()}
 }
 
-// Stop stops listening
+/*
+A listener is the connection of the sound generators of a machine, shared by
+all who listen to it at the same time, as the video of a whole page and the
+clip of one of its steps: a generator has only one sink.
+*/
+type listener struct {
+	sources []izapple2.AudioSource
+	sinks   []*levels
+	count   int
+}
+
+// listening is the listener of each machine listened to
+var listening = struct {
+	sync.Mutex
+	of map[*izapple2.Apple2]*listener
+}{of: map[*izapple2.Apple2]*listener{}}
+
+// Stop stops listening; the generators are let go when nobody listens
 func (s *Sound) Stop() {
+	if s.end != 0 {
+		return
+	}
 	s.end = s.a.GetCycles()
-	for _, source := range s.sources {
-		source.SetAudioSink(nil)
+	listening.Lock()
+	defer listening.Unlock()
+	l := listening.of[s.a]
+	if l == nil {
+		return
+	}
+	l.count--
+	if l.count == 0 {
+		for _, source := range l.sources {
+			source.SetAudioSink(nil)
+		}
+		delete(listening.of, s.a)
 	}
 }
 

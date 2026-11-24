@@ -40,6 +40,25 @@ type Operator struct {
 	// next frame is due
 	realTime bool
 	nextDue  time.Time
+
+	// watchers are told of each frame run and each key pressed, as a video
+	// of the machine is
+	watchers []Watcher
+}
+
+/*
+A Watcher looks over the shoulder of the operator: it is told when a frame of
+the machine has run, and when a key is pressed, with its name as on the
+keyboard, as a video of the machine needs.
+*/
+type Watcher interface {
+	Frame()
+	Key(name string)
+}
+
+// Watch adds a watcher of the frames and the keys
+func (o *Operator) Watch(w Watcher) {
+	o.watchers = append(o.watchers, w)
 }
 
 /*
@@ -89,6 +108,9 @@ func (o *Operator) Run(frames int) {
 		}
 		o.a.RunCycles(CyclesPerFrame)
 		o.frames++
+		for _, w := range o.watchers {
+			w.Frame()
+		}
 	}
 }
 

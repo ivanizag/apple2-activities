@@ -31,6 +31,9 @@ type Recording struct {
 	frames []*image.Paletted
 	delays []int
 	last   *image.RGBA
+	// videoFrame is the frame of the video of the machine it started at, if
+	// it is filmed, for the chapters
+	videoFrame int
 }
 
 // LongestStill is the longest a picture stays, in hundredths of a second: a
@@ -40,7 +43,7 @@ const LongestStill = 300
 // Record starts a recording of the machine an operator is at, on the monitor
 // of the album. Nothing is taken until Capture or Run.
 func (a *Album) Record(op *operator.Operator) *Recording {
-	return &Recording{album: a, op: op, speed: 1}
+	return &Recording{album: a, op: op, speed: 1, videoFrame: videoFrame(op)}
 }
 
 // Faster makes the recording play the time Run runs the machine a number of
