@@ -22,16 +22,17 @@ import (
 /*
 A Video is the whole of what a machine does while an activity runs, every
 frame, with its sound, as an MP4 file to watch or put on YouTube. It starts
-with a card with the title of the activity, and the keys pressed are shown
-under the screen as they are pressed, each fading after a while; the game
-port, once used, on the left of the screen, a joystick or the paddles and the
-buttons, and the mouse on the right. The pictures
+with a card with the title of the activity. The screen takes the height of
+the video, and a column on its right shows what the hands do: the game port,
+once used, a joystick or the paddles and the buttons, the mouse, and at the
+bottom the keys as they are pressed, each fading after a while. The pictures
 the activity takes are marked in a list of chapters, with their times, for the
 description of the video. The last frame is held for a while at the end.
 
-The frames are made at half the size of 1080p, the screen in its frame and the
-keys under it, and ffmpeg doubles them, sharp, and encodes them; the sound is
-put in at the end, after the title.
+The frames are made at the size of the screen in its frame, 16:9 with the
+column, and ffmpeg makes them 1080p, two dots and a half for each, sharp: five
+times larger, then averaged down by two. The sound is put in at the end,
+after the title.
 */
 type Video struct {
 	op      *operator.Operator
@@ -56,11 +57,14 @@ type Video struct {
 	mouseDown  int
 }
 
-// The size of the frames made, and what ffmpeg makes them, 1080p
+// The size of the frames made, the screen in its frame and the column of the
+// hands on its right, and of the video ffmpeg makes of them, 1080p
 const (
-	videoWidth  = 960
-	videoHeight = 540
-	videoScale  = 2
+	videoWidth   = 768
+	videoHeight  = 432
+	columnWidth  = 168
+	outputWidth  = 1920
+	outputHeight = 1080
 )
 
 // The times of the video, in frames
@@ -110,7 +114,7 @@ func StartVideo(op *operator.Operator, monitor Monitor, path string, title strin
 		"-f", "rawvideo", "-pix_fmt", "rgba",
 		"-s", fmt.Sprintf("%dx%d", videoWidth, videoHeight),
 		"-r", fmt.Sprint(operator.FramesPerSecond), "-i", "-",
-		"-vf", fmt.Sprintf("scale=%d:%d:flags=neighbor", videoWidth*videoScale, videoHeight*videoScale),
+		"-vf", fmt.Sprintf("scale=iw*5:ih*5:flags=neighbor,scale=%d:%d:flags=area", outputWidth, outputHeight),
 		"-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
 		v.silentPath())
 	v.encoder.Stderr = os.Stderr
@@ -145,22 +149,24 @@ func (v *Video) Frame() {
 	v.frame++
 	draw.Draw(v.canvas, v.canvas.Bounds(), image.Black, image.Point{}, draw.Src)
 
-	// The screen in its frame, at the top, made smaller if it does not fit
+	// The screen in its frame, on the left, made smaller if it does not fit,
+	// as Super Hi-Res
 	screen := Frame(v.album.Screen(v.op))
 	b := screen.Bounds()
-	room := image.Rect(0, 0, videoWidth, videoHeight-keyStrip)
+	room := image.Rect(0, 0, videoWidth-columnWidth, videoHeight)
 	scale := min(1, float64(room.Dx())/float64(b.Dx()), float64(room.Dy())/float64(b.Dy()))
 	w, h := int(float64(b.Dx())*scale), int(float64(b.Dy())*scale)
-	at := image.Rect((videoWidth-w)/2, (room.Dy()-h)/2, (videoWidth+w)/2, (room.Dy()-h)/2+h)
+	at := image.Rect((room.Dx()-w)/2, (room.Dy()-h)/2, (room.Dx()-w)/2+w, (room.Dy()-h)/2+h)
 	if scale == 1 {
 		draw.Draw(v.canvas, at, screen, b.Min, draw.Over)
 	} else {
 		xdraw.NearestNeighbor.Scale(v.canvas, at, screen, b, draw.Over, nil)
 	}
 
-	v.drawKeys()
-	v.drawGamePort(at)
-	v.drawMouse(at)
+	// The column of the hands
+	y := v.drawGamePort(at.Min.Y + 12)
+	v.drawMouse(y)
+	v.drawKeys(at.Max.Y - 12)
 	v.write()
 }
 
@@ -184,8 +190,11 @@ func (v *Video) write() {
 	}
 }
 
-// keyStrip is the height of the strip under the screen with the keys
-const keyStrip = 90
+// The column of the hands: where its drawings start, and how wide they are
+const (
+	columnLeft  = videoWidth - columnWidth + 4
+	columnInner = columnWidth - 16
+)
 
 // The colours of the keys, as the keycaps of the Apple II, and of the title
 var (
@@ -195,9 +204,9 @@ var (
 	titleGrey = color.RGBA{0xa0, 0xa0, 0xa0, 0xff}
 )
 
-// drawKeys draws the last keys pressed, the newest on the right, the older
-// fading
-func (v *Video) drawKeys() {
+// drawKeys draws the last keys pressed in the column, in rows as they come,
+// ending at a height with the newest, the older fading
+func (v *Video) drawKeys(bottom int) {
 	var shown []shownKey
 	for _, k := range v.keys {
 		if v.frame-k.frame < keyFrames {
@@ -207,22 +216,34 @@ func (v *Video) drawKeys() {
 	shown = shown[max(0, len(shown)-keysShown):]
 	v.keys = shown
 
-	const textScale, pad, gap = 2, 6, 6
-	width := 0
+	// The keys in rows, as wide as the column
+	const pad, gap = 4, 4
+	height := 13 + 2*pad
+	var rows [][]shownKey
+	width := columnInner + 1
 	for _, k := range shown {
-		width += textWidth(k.name)*textScale + 2*pad + gap
+		w := textWidth(k.name) + 2*pad
+		if width+w > columnInner {
+			rows = append(rows, nil)
+			width = 0
+		}
+		rows[len(rows)-1] = append(rows[len(rows)-1], k)
+		width += w + gap
 	}
-	x := (videoWidth - width + gap) / 2
-	y := videoHeight - keyStrip + 22
-	height := 13*textScale + 2*pad
-	for _, k := range shown {
-		fade := 1 - float64(v.frame-k.frame)/keyFrames
-		w := textWidth(k.name)*textScale + 2*pad
-		box := image.Rect(x, y, x+w, y+height)
-		fill(v.canvas, box, keyEdge, fade)
-		fill(v.canvas, box.Inset(2), keyCap, fade)
-		drawText(v.canvas, k.name, x+pad, y+pad, textScale, keyLetter, fade)
-		x += w + gap
+
+	y := bottom - len(rows)*(height+gap) + gap
+	for _, row := range rows {
+		x := columnLeft
+		for _, k := range row {
+			fade := 1 - float64(v.frame-k.frame)/keyFrames
+			w := textWidth(k.name) + 2*pad
+			box := image.Rect(x, y, x+w, y+height)
+			fill(v.canvas, box, keyEdge, fade)
+			fill(v.canvas, box.Inset(1), keyCap, fade)
+			drawText(v.canvas, k.name, x+pad, y+pad, 1, keyLetter, fade)
+			x += w + gap
+		}
+		y += height + gap
 	}
 }
 
@@ -234,7 +255,7 @@ func (v *Video) drawTitle() {
 	for _, line := range lines {
 		longest = max(longest, textWidth(line))
 	}
-	scale := max(2, min(6, (videoWidth-80)/max(longest, 1)))
+	scale := max(1, min(4, (videoWidth-60)/max(longest, 1)))
 	lineHeight := 16 * scale
 	y := (videoHeight-lineHeight*len(lines))/2 - 20
 	for _, line := range lines {
@@ -242,7 +263,7 @@ func (v *Video) drawTitle() {
 		y += lineHeight
 	}
 	under := "on an Apple II, emulated by izapple2"
-	drawText(v.canvas, under, (videoWidth-textWidth(under)*2)/2, y+30, 2, titleGrey, 1)
+	drawText(v.canvas, under, (videoWidth-textWidth(under))/2, y+20, 1, titleGrey, 1)
 }
 
 // wrap splits a text in lines of at most so many characters, at its spaces
@@ -297,14 +318,14 @@ var (
 )
 
 // panelWidth is the width of the drawings of the game port and the mouse
-const panelWidth = 110
+const panelWidth = 120
 
 /*
-drawGamePort draws the game port on the left of the screen, once a paddle is
-plugged or a button pressed: a joystick as a square with where it points, a
+drawGamePort draws the game port at the top of the column, once a paddle is
+plugged or a button pressed, and tells where it ends: a joystick as a square with where it points, a
 paddle alone as a slider, and the buttons, lit while down.
 */
-func (v *Video) drawGamePort(screen image.Rectangle) {
+func (v *Video) drawGamePort(top int) int {
 	port := v.op.GamePort()
 	for i := range port.Plugged {
 		v.plugged[i] = v.plugged[i] || port.Plugged[i]
@@ -320,11 +341,10 @@ func (v *Video) drawGamePort(screen image.Rectangle) {
 		used = used || u
 	}
 	if !used {
-		return
+		return top
 	}
 
-	x := max(8, (screen.Min.X-panelWidth)/2)
-	y := screen.Min.Y + 40
+	x, y := columnLeft, top
 	for pair := 0; pair < 4; pair += 2 {
 		switch {
 		case v.plugged[pair] && v.plugged[pair+1]:
@@ -368,8 +388,9 @@ func (v *Video) drawGamePort(screen image.Rectangle) {
 		}
 		lit := v.buttonUsed[i] && v.frame-v.buttonDown[i] < litFrames
 		v.drawButton(image.Pt(x, y), fmt.Sprintf("Button %d", i), lit)
-		y += 30
+		y += 26
 	}
+	return y + 12
 }
 
 // drawButton draws a round button with its name, lit or not
@@ -384,11 +405,12 @@ func (v *Video) drawButton(at image.Point, name string, lit bool) {
 }
 
 /*
-drawMouse draws the mouse on the right of the screen, once moved or pressed:
+drawMouse draws the mouse in the column, under the game port, once moved or
+pressed:
 where it is, in a pad of the shape of the screen, and its button, lit while
 down. The pointer itself is the program's, on the screen.
 */
-func (v *Video) drawMouse(screen image.Rectangle) {
+func (v *Video) drawMouse(top int) {
 	pressed, used := v.op.MouseButton()
 	v.mouseUsed = v.mouseUsed || used
 	if !v.mouseUsed {
@@ -397,8 +419,7 @@ func (v *Video) drawMouse(screen image.Rectangle) {
 	if pressed {
 		v.mouseDown = v.frame
 	}
-	x := min(videoWidth-panelWidth-8, screen.Max.X+(videoWidth-screen.Max.X-panelWidth)/2)
-	y := screen.Min.Y + 40
+	x, y := columnLeft, top
 	drawText(v.canvas, "Mouse", x, y, 1, keyLetter, 1)
 	y += 18
 	height := panelWidth * 3 / 4
