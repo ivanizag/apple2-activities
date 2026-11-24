@@ -28,11 +28,12 @@ to its end, a picture of the screen after each command.
 
 ### [Castle Wolfenstein](../guides/castle-wolfenstein.md)
 
-[<img src="../guides/images/castle-wolfenstein/supplies.png" width="320" alt="A room of the castle, two guards down">](../guides/castle-wolfenstein.md)
+[<img src="../guides/images/castle-wolfenstein/escaped.png" width="320" alt="The prisoner running from the castle">](../guides/castle-wolfenstein.md)
 
-Silas Warner's game of 1981, from Total Replay: a prisoner with a gun and
-ten bullets, the guards who shout in German through the speaker, shot and
-searched, and the stairs to the next room.
+Silas Warner's game of 1981, from Total Replay, from the start to the end:
+a prisoner with a gun and ten bullets, the guards who shout in German
+through the speaker, shot and searched, a uniform found in a chest, and the
+castle crossed floor by floor, five of them, to the way out.
 
 ### [The Dark Crystal, from the start to the end](../guides/darkcrystal.md)
 

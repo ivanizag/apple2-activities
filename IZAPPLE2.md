@@ -178,14 +178,21 @@ back the same room, the player where he left it: the screen fills with grey
 lines, then with random dots, as the game loads, and the room drawn is the
 one left. The woz-a-day disk, which izapple2 writes from 2.6.0, does the same: it has a game saved on it,
 in a room with stairs and no guards, and walking out of it at the top, the
-grey lines come and the same room comes back. From the hard disk of Total Replay, the stairs work; a
-doorway out of the first room there brings it back too. Not known whether a
-real Apple II does the same with these diskettes; the game uses its own
-routines for the disk, which 4am's crack keeps.
+grey lines come and the same room comes back. Not known whether a real
+Apple II does the same with these diskettes; the game uses its own routines
+for the disk, which 4am's crack keeps.
+
+But the grey lines are also what the game shows when the prisoner walks
+into a wall, and he is two cells of the room tall: a doorway is passed only
+lined up with it, and a little off he walks into its side and the room
+flashes. From the hard disk of Total Replay the game goes through every
+doorway and up every stairs, to the way out of the castle; the first room
+there has no doorway, only the stairs. The diskettes should be tried again
+with that in mind before this is taken as a fault of izapple2.
 
 **Here, once fixed:** [castle-wolfenstein.md](guides/castle-wolfenstein.md)
 plays it from Total Replay, on a //e; it could play it from the diskette, on
-an Apple \]\[+ as in 1981, and walk through doorways.
+an Apple \]\[+ as in 1981.
 
 ### No Premium SoftCard IIe
 
