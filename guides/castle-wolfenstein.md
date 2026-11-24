@@ -15,11 +15,12 @@ in 1992 id Software, whose founders had played it, made **Wolfenstein 3D**
 after it, in three dimensions, and the name went on to a series of games.
 
 This page plays it from [Total Replay](total-replay.md), the collection of
-games on a hard disk: the story of the cellmate, the first room and its two
-guards, shot and searched, the stairs to the next room, and the game saved.
-The game runs in real time, as an arcade game: the keys of the page are
-pressed at set times, which a person playing would press as the guards
-come.
+games on a hard disk, from the start to the end: the story of the cellmate,
+the first room and its two guards, shot and searched, then the castle floor
+by floor, five of them, a German uniform found in a chest on the way, and
+out of the castle by the last room. The game runs in real time, as an arcade
+game: the keys of the page are pressed at set times, which a person playing
+would press as the guards come.
 
 ## What you need
 
@@ -35,9 +36,13 @@ is on Asimov, with the keys and a dictionary of what the guards say.
 The game was sold on a diskette, which it writes as it plays. The copies of
 it on DSK, as
 [4am's crack](https://archive.org/details/CastleWolfenstein_061984_4amCrack),
-start, but in izapple2 a room left brings back the same room (see
-[IZAPPLE2.md](../IZAPPLE2.md)); from Total Replay, the game goes from room
-to room by the stairs.
+start, but in izapple2 they have not been played past the first rooms (see
+[IZAPPLE2.md](../IZAPPLE2.md)); from Total Replay, the game goes all the way
+through the castle.
+
+A map of the castle, drawn by a player, is on
+[Masters of Wolfenstein](https://www.6502workshop.com/p/masters-of-wolfenstein.html),
+with tips on the game: it spoils the way out.
 
 ## The machine
 
@@ -127,19 +132,69 @@ who sees you calls out, and shoots.
 ## The stairs
 
 7. **Press `A`**, left along the corridor, and **`S`** to stop before the
-   doorway of the wall at the end; then **`W`**, up, to the stairs. The next
-   room, from its stairs, and two more guards.
+   doorway of the wall at the end; then **`W`**, up, to the stairs. The
+   second floor, from its stairs, and two more guards.
 
-   ![The stairs to the next room](images/castle-wolfenstein/stairs.gif)
+   ![The stairs to the second floor](images/castle-wolfenstein/stairs.gif)
 
-8. **Press Escape**, before they come: *SAVING THE GAME...*. The game is
-   saved in the castle, and starts there next time.
+## The castle
 
-   ![Saving the game](images/castle-wolfenstein/saving.png)
+The castle has five floors, each a square of rooms, one room on the first
+and up to five by five on the third; each floor has its stairs to the next
+somewhere in it. A room is left by a gap in its walls, into the room beside
+it, and the doors, closed, are opened with the keys: aimed at and the space
+bar, *TRYING YOUR KEYS (9 SECONDS)*, then *IT'S OPEN!*. A guard shot can
+be searched, with the space bar, standing on him, for his bullets: there are
+never more than ten, and fewer are soon spent. Walking into a wall flashes
+the screen with grey lines.
 
-   Total Replay comes back, at the game.
+From here the page does not give each key: they are hundreds, over eleven
+minutes of play. It says the way through the castle, floor by floor.
 
-   ![Back in Total Replay](images/castle-wolfenstein/saved.png)
+8. **Cross the second floor**, up, up and right, four rooms and their
+   guards: one searched has 8 bullets, and another, in the room of the
+   stairs, 10. **Walk into the stairs**: the third floor, the largest.
+
+   ![The third floor](images/castle-wolfenstein/floor3.png)
+
+9. **Go to a chest** a few rooms on, behind a guard who puts up his hands,
+   and **aim at it and press the space bar**: *IT WILL TAKE 27 SECONDS!*,
+   to unlock it.
+
+   ![A chest](images/castle-wolfenstein/chest.png)
+
+   It has uniforms.
+
+   ![Uniforms](images/castle-wolfenstein/uniforms.png)
+
+10. **Press `U`**: *GETTING UNIFORMS (10 SECONDS)*, and *YOU'RE IN
+    UNIFORM.* The guards now take you for one of them and let you walk by,
+    as long as you leave them alone. The SS stormtroopers, who follow you
+    from room to room, are not fooled.
+
+    ![In uniform](images/castle-wolfenstein/uniform.png)
+
+11. **Cross the rest of the third floor**, and the fourth, opening five
+    doors on the way. The fourth floor, from its stairs, and the fifth.
+
+    ![The fourth floor](images/castle-wolfenstein/floor4.png)
+
+    ![The fifth floor](images/castle-wolfenstein/floor5.png)
+
+12. **Cross the fifth floor**, five doors more: two guards shot in its
+    first room, and one searched, *7 BULLETS AND A GRENADE!*, for the two
+    SS of the third room.
+    The last room has five guards, and a gap in its right wall, out of the
+    castle. **Walk out of it**: the screen fills with dots and lines, and
+    the prisoner runs from the castle.
+
+    ![Out of the castle](images/castle-wolfenstein/escape.gif)
+
+    The game starts again, and you are promoted: your rank is now
+    corporal. The war plans, in one of the chests of the castle, were left
+    behind: the escape that takes them out is for another game.
+
+    ![Corporal](images/castle-wolfenstein/corporal.png)
 
 ## What next
 
