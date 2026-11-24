@@ -149,10 +149,7 @@ never more than ten, and fewer are soon spent. Walking into a wall flashes
 the screen with grey lines.
 
 From here the page does not give each key: they are hundreds, over seven
-minutes of play, and in [the generator](../activities/castlewolfenstein_test.go)
-of the page, with their times. They were found by a program that played
-the castle a room at a time, trying many ways through each and keeping one
-that got out alive.
+minutes of play. It says the way through the castle, floor by floor.
 
 8. **Cross the second floor**, up, up and right, four rooms and their
    guards: one searched has 8 bullets, and another, in the room of the
