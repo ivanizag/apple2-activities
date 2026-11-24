@@ -124,12 +124,16 @@ func StartVideo(op *operator.Operator, monitor Monitor, path string, title strin
 		title:  title,
 		canvas: image.NewRGBA(image.Rect(0, 0, videoWidth, videoHeight)),
 	}
+	// A few threads each, not as many as the host has: the machine gives
+	// the frames slower than ffmpeg takes them, and generators run side by
+	// side, each with a video
 	v.encoder = exec.Command("ffmpeg", "-y", "-loglevel", "error",
+		"-filter_threads", "2", "-threads", "4",
 		"-f", "rawvideo", "-pix_fmt", "rgba",
 		"-s", fmt.Sprintf("%dx%d", videoWidth, videoHeight),
 		"-r", fmt.Sprint(operator.FramesPerSecond), "-i", "-",
 		"-vf", fmt.Sprintf("scale=iw*5:ih*5:flags=neighbor,scale=%d:%d:flags=area", outputWidth, outputHeight),
-		"-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
+		"-c:v", "libx264", "-threads", "4", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
 		v.silentPath())
 	v.encoder.Stderr = os.Stderr
 	frames, err := v.encoder.StdinPipe()
