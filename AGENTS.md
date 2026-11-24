@@ -41,7 +41,8 @@ owner asks for it.
 With `A2_VIDEO` set to a folder outside the repository, each machine a
 generator starts is also filmed, every frame with its sound, into
 `<guide>.mp4` there, in 1080p for YouTube: a card with the title of the page
-first, then the keys shown under the screen as they are pressed. Next to it,
+first, then the keys shown under the screen as they are pressed, and the
+joystick, the paddles, their buttons and the mouse beside it once used. Next to it,
 `<guide>.chapters.txt` has the times of the pictures of the page, for the
 description. It needs `ffmpeg`, and changes no picture.
 

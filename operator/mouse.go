@@ -11,6 +11,8 @@ program decides how many places across it wants.
 type mouse struct {
 	x, y    uint16
 	pressed bool
+	// used is whether the mouse has been moved or pressed yet
+	used bool
 }
 
 // ReadMouse is where the mouse is, in the full range of 16 bits, and whether
@@ -32,6 +34,7 @@ const (
 func (o *Operator) MouseTo(x float64, y float64) {
 	o.mouse.x = toMouseRange(x)
 	o.mouse.y = toMouseRange(y)
+	o.mouse.used = true
 	o.Run(mouseMoveFrames)
 }
 
@@ -43,6 +46,7 @@ func toMouseRange(f float64) uint16 {
 // go of it
 func (o *Operator) Hold() {
 	o.mouse.pressed = true
+	o.mouse.used = true
 }
 
 // Release lets go of the button of the mouse
@@ -70,4 +74,10 @@ func (o *Operator) DoubleClick() {
 // MousePosition is where the mouse is, from 0 to 1 across and down
 func (o *Operator) MousePosition() (x float64, y float64) {
 	return float64(o.mouse.x) / 65536, float64(o.mouse.y) / 65536
+}
+
+// MouseButton says whether the button of the mouse is down, and whether the
+// mouse has been moved or pressed yet, for whoever watches the operator
+func (o *Operator) MouseButton() (pressed bool, used bool) {
+	return o.mouse.pressed, o.mouse.used
 }

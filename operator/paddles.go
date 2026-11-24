@@ -63,3 +63,19 @@ func (o *Operator) PressButton(button int) {
 
 // buttonFrames is how long a button is held when pressed
 const buttonFrames = 8
+
+/*
+GamePort is the state of the game port, for whoever watches the operator: where
+each paddle is turned to, whether it is plugged in, and which buttons are held
+down.
+*/
+type GamePort struct {
+	Paddles [4]uint8
+	Plugged [4]bool
+	Buttons [3]bool
+}
+
+// GamePort is the state of the game port now
+func (o *Operator) GamePort() GamePort {
+	return GamePort{o.paddles.value, o.paddles.plugged, o.paddles.button}
+}

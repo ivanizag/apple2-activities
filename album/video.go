@@ -23,7 +23,9 @@ import (
 A Video is the whole of what a machine does while an activity runs, every
 frame, with its sound, as an MP4 file to watch or put on YouTube. It starts
 with a card with the title of the activity, and the keys pressed are shown
-under the screen as they are pressed, each fading after a while. The pictures
+under the screen as they are pressed, each fading after a while; the game
+port, once used, on the left of the screen, a joystick or the paddles and the
+buttons, and the mouse on the right. The pictures
 the activity takes are marked in a list of chapters, with their times, for the
 description of the video. The last frame is held for a while at the end.
 
@@ -44,6 +46,14 @@ type Video struct {
 	keys    []shownKey
 	chapter []chapterMark
 	err     error
+
+	// The game port and the mouse are shown once used: the paddles plugged
+	// and the buttons used so far, and the last frame each button was down
+	plugged    [4]bool
+	buttonUsed [3]bool
+	buttonDown [3]int
+	mouseUsed  bool
+	mouseDown  int
 }
 
 // The size of the frames made, and what ffmpeg makes them, 1080p
@@ -149,6 +159,8 @@ func (v *Video) Frame() {
 	}
 
 	v.drawKeys()
+	v.drawGamePort(at)
+	v.drawMouse(at)
 	v.write()
 }
 
@@ -272,6 +284,142 @@ func drawText(dst *image.RGBA, text string, x int, y int, scale int, c color.RGB
 func fill(dst *image.RGBA, r image.Rectangle, c color.RGBA, opacity float64) {
 	mask := image.NewUniform(color.Alpha{A: uint8(opacity * 255)})
 	draw.DrawMask(dst, r, image.NewUniform(c), image.Point{}, mask, image.Point{}, draw.Over)
+}
+
+// litFrames is how long a button is shown lit after it is let go, as a press
+// of the operator lasts only a few frames
+const litFrames = 12
+
+// The colours of the game port and the mouse
+var (
+	panelLine = color.RGBA{0x60, 0x5a, 0x52, 0xff}
+	panelDot  = color.RGBA{0xf0, 0x60, 0x40, 0xff}
+)
+
+// panelWidth is the width of the drawings of the game port and the mouse
+const panelWidth = 110
+
+/*
+drawGamePort draws the game port on the left of the screen, once a paddle is
+plugged or a button pressed: a joystick as a square with where it points, a
+paddle alone as a slider, and the buttons, lit while down.
+*/
+func (v *Video) drawGamePort(screen image.Rectangle) {
+	port := v.op.GamePort()
+	for i := range port.Plugged {
+		v.plugged[i] = v.plugged[i] || port.Plugged[i]
+	}
+	for i, down := range port.Buttons {
+		if down {
+			v.buttonUsed[i] = true
+			v.buttonDown[i] = v.frame
+		}
+	}
+	used := false
+	for _, u := range append(v.plugged[:], v.buttonUsed[:]...) {
+		used = used || u
+	}
+	if !used {
+		return
+	}
+
+	x := max(8, (screen.Min.X-panelWidth)/2)
+	y := screen.Min.Y + 40
+	for pair := 0; pair < 4; pair += 2 {
+		switch {
+		case v.plugged[pair] && v.plugged[pair+1]:
+			label := "Joystick"
+			if pair > 0 {
+				label = "Joystick 2"
+			}
+			drawText(v.canvas, label, x, y, 1, keyLetter, 1)
+			y += 18
+			box := image.Rect(x, y, x+panelWidth, y+panelWidth)
+			fill(v.canvas, box, panelLine, 1)
+			fill(v.canvas, box.Inset(2), color.RGBA{A: 0xff}, 1)
+			mid := box.Min.Add(image.Pt(panelWidth/2, panelWidth/2))
+			fill(v.canvas, image.Rect(box.Min.X+2, mid.Y, box.Max.X-2, mid.Y+1), panelLine, 1)
+			fill(v.canvas, image.Rect(mid.X, box.Min.Y+2, mid.X+1, box.Max.Y-2), panelLine, 1)
+			dot := image.Pt(box.Min.X+6+int(port.Paddles[pair])*(panelWidth-12)/255,
+				box.Min.Y+6+int(port.Paddles[pair+1])*(panelWidth-12)/255)
+			disc(v.canvas, dot, 6, panelDot)
+			y += panelWidth + 16
+		default:
+			for i := pair; i < pair+2; i++ {
+				if !v.plugged[i] {
+					continue
+				}
+				drawText(v.canvas, fmt.Sprintf("Paddle %d", i), x, y, 1, keyLetter, 1)
+				y += 18
+				bar := image.Rect(x, y+6, x+panelWidth, y+10)
+				fill(v.canvas, bar, panelLine, 1)
+				knob := image.Pt(x+6+int(port.Paddles[i])*(panelWidth-12)/255, y+8)
+				disc(v.canvas, knob, 7, panelDot)
+				y += 30
+			}
+		}
+	}
+
+	for i := range port.Buttons {
+		// A button is shown once used, or with its paddle: the buttons 0 and
+		// 1 are those of the paddles 0 and 1, or of the joystick
+		if !v.buttonUsed[i] && !(i < 2 && v.plugged[i]) {
+			continue
+		}
+		lit := v.buttonUsed[i] && v.frame-v.buttonDown[i] < litFrames
+		v.drawButton(image.Pt(x, y), fmt.Sprintf("Button %d", i), lit)
+		y += 30
+	}
+}
+
+// drawButton draws a round button with its name, lit or not
+func (v *Video) drawButton(at image.Point, name string, lit bool) {
+	c := keyCap
+	if lit {
+		c = panelDot
+	}
+	disc(v.canvas, at.Add(image.Pt(10, 10)), 10, panelLine)
+	disc(v.canvas, at.Add(image.Pt(10, 10)), 8, c)
+	drawText(v.canvas, name, at.X+28, at.Y+4, 1, keyLetter, 1)
+}
+
+/*
+drawMouse draws the mouse on the right of the screen, once moved or pressed:
+where it is, in a pad of the shape of the screen, and its button, lit while
+down. The pointer itself is the program's, on the screen.
+*/
+func (v *Video) drawMouse(screen image.Rectangle) {
+	pressed, used := v.op.MouseButton()
+	v.mouseUsed = v.mouseUsed || used
+	if !v.mouseUsed {
+		return
+	}
+	if pressed {
+		v.mouseDown = v.frame
+	}
+	x := min(videoWidth-panelWidth-8, screen.Max.X+(videoWidth-screen.Max.X-panelWidth)/2)
+	y := screen.Min.Y + 40
+	drawText(v.canvas, "Mouse", x, y, 1, keyLetter, 1)
+	y += 18
+	height := panelWidth * 3 / 4
+	pad := image.Rect(x, y, x+panelWidth, y+height)
+	fill(v.canvas, pad, panelLine, 1)
+	fill(v.canvas, pad.Inset(2), color.RGBA{A: 0xff}, 1)
+	mx, my := v.op.MousePosition()
+	disc(v.canvas, image.Pt(x+4+int(mx*float64(panelWidth-8)), y+4+int(my*float64(height-8))), 5, panelDot)
+	y += height + 16
+	v.drawButton(image.Pt(x, y), "Button", v.frame-v.mouseDown < litFrames && v.mouseDown > 0)
+}
+
+// disc paints a filled circle
+func disc(dst *image.RGBA, centre image.Point, radius int, c color.RGBA) {
+	for dy := -radius; dy <= radius; dy++ {
+		for dx := -radius; dx <= radius; dx++ {
+			if dx*dx+dy*dy <= radius*radius {
+				dst.SetRGBA(centre.X+dx, centre.Y+dy, c)
+			}
+		}
+	}
 }
 
 /*
