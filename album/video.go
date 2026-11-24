@@ -52,6 +52,9 @@ type Video struct {
 	keyRowStart int
 	chapter     []chapterMark
 	err         error
+	// closed is whether the video is finished, and the frames after are not
+	// filmed
+	closed bool
 
 	// The game port and the mouse are shown once used: the paddles plugged
 	// and the buttons used so far, and the last frame each button was down
@@ -164,6 +167,9 @@ func (v *Video) silentPath() string {
 
 // Frame films a frame the machine has run
 func (v *Video) Frame() {
+	if v.closed {
+		return
+	}
 	v.frame++
 	draw.Draw(v.canvas, v.canvas.Bounds(), image.Black, image.Point{}, draw.Src)
 
@@ -190,6 +196,9 @@ func (v *Video) Frame() {
 
 // Key shows a key pressed
 func (v *Video) Key(name string) {
+	if v.closed {
+		return
+	}
 	// A key goes on in the row, or starts the next: when the row is full,
 	// after a Return, or after a pause
 	w := keyWidth(name)
@@ -485,9 +494,14 @@ func disc(dst *image.RGBA, centre image.Point, radius int, c color.RGBA) {
 /*
 Close finishes the video: the frames are encoded, the sound is put in after
 the title, and the chapters are written next to it, a line each with its
-time, as the description of a YouTube video takes them.
+time, as the description of a YouTube video takes them. The machine is not
+filmed after; closing again does nothing.
 */
 func (v *Video) Close() error {
+	if v.closed {
+		return nil
+	}
+	v.closed = true
 	videos.Lock()
 	delete(videos.of, v.op)
 	videos.Unlock()

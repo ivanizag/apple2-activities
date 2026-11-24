@@ -128,44 +128,64 @@ func (s *Sound) Seconds() float64 {
 	return float64(s.end-s.start) / (s.clockMhz * 1e6)
 }
 
-// samples renders the sound, mono, from -1 to 1
-func (s *Sound) samples() []float64 {
+// samplesChunk is how many samples are rendered at a time, so that a sound
+// of hours, as a video of a whole page, is not held in memory at once
+const samplesChunk = 1 << 16
+
+// count is how many samples the sound lasts
+func (s *Sound) count() int {
+	return int(float64(s.end-s.start) / (s.clockMhz * 1e6 / SoundRate))
+}
+
+// samples renders the sound, mono, from -1 to 1, a chunk at a time, each
+// given to emit
+func (s *Sound) samples(emit func([]float64) error) error {
 	cyclesPerSample := s.clockMhz * 1e6 / SoundRate
-	count := int(float64(s.end-s.start) / cyclesPerSample)
-	out := make([]float64, count)
+	count := s.count()
 
-	for _, sink := range s.sinks {
-		level := 0.0
-		next := 0
-		for i := range out {
-			from := float64(s.start) + float64(i)*cyclesPerSample
-			to := from + cyclesPerSample
-			// The average of the level over the window of the sample
-			sum := 0.0
-			at := from
-			for next < len(sink.changes) && float64(sink.changes[next].cycle) < to {
-				change := float64(sink.changes[next].cycle)
-				if change > at {
-					sum += level * (change - at)
-					at = change
-				}
-				level = float64(sink.changes[next].level)
-				next++
-			}
-			sum += level * (to - at)
-			out[i] += sum / cyclesPerSample
-		}
-	}
-
+	// Where each generator is, from one chunk to the next
+	levels := make([]float64, len(s.sinks))
+	nexts := make([]int, len(s.sinks))
 	// DC-blocking filter, about 30 Hz
 	const pole = 1 - 30*2*math.Pi/SoundRate
 	prevIn, prevOut := 0.0, 0.0
-	for i, sample := range out {
-		filtered := sample - prevIn + pole*prevOut
-		prevIn, prevOut = sample, filtered
-		out[i] = filtered
+
+	out := make([]float64, samplesChunk)
+	for first := 0; first < count; first += samplesChunk {
+		chunk := out[:min(samplesChunk, count-first)]
+		clear(chunk)
+		for k, sink := range s.sinks {
+			level, next := levels[k], nexts[k]
+			for j := range chunk {
+				from := float64(s.start) + float64(first+j)*cyclesPerSample
+				to := from + cyclesPerSample
+				// The average of the level over the window of the sample
+				sum := 0.0
+				at := from
+				for next < len(sink.changes) && float64(sink.changes[next].cycle) < to {
+					change := float64(sink.changes[next].cycle)
+					if change > at {
+						sum += level * (change - at)
+						at = change
+					}
+					level = float64(sink.changes[next].level)
+					next++
+				}
+				sum += level * (to - at)
+				chunk[j] += sum / cyclesPerSample
+			}
+			levels[k], nexts[k] = level, next
+		}
+		for j, sample := range chunk {
+			filtered := sample - prevIn + pole*prevOut
+			prevIn, prevOut = sample, filtered
+			chunk[j] = filtered
+		}
+		if err := emit(chunk); err != nil {
+			return err
+		}
 	}
-	return out
+	return nil
 }
 
 // Encode writes the sound as a WAV file, 16 bits mono
@@ -173,26 +193,27 @@ func (s *Sound) Encode(w io.Writer) error {
 	if s.end == 0 {
 		return errors.New("the sound was not stopped")
 	}
-	samples := s.samples()
-	data := make([]byte, 2*len(samples))
-	for i, sample := range samples {
-		v := int16(max(min(sample, 1), -1) * 32767)
-		binary.LittleEndian.PutUint16(data[2*i:], uint16(v))
-	}
-
+	size := 2 * s.count()
 	header := []any{
-		[4]byte{'R', 'I', 'F', 'F'}, uint32(36 + len(data)), [4]byte{'W', 'A', 'V', 'E'},
+		[4]byte{'R', 'I', 'F', 'F'}, uint32(36 + size), [4]byte{'W', 'A', 'V', 'E'},
 		[4]byte{'f', 'm', 't', ' '}, uint32(16), uint16(1), uint16(1),
 		uint32(SoundRate), uint32(SoundRate * 2), uint16(2), uint16(16),
-		[4]byte{'d', 'a', 't', 'a'}, uint32(len(data)),
+		[4]byte{'d', 'a', 't', 'a'}, uint32(size),
 	}
 	for _, field := range header {
 		if err := binary.Write(w, binary.LittleEndian, field); err != nil {
 			return err
 		}
 	}
-	_, err := w.Write(data)
-	return err
+	data := make([]byte, 2*samplesChunk)
+	return s.samples(func(chunk []float64) error {
+		for i, sample := range chunk {
+			v := int16(max(min(sample, 1), -1) * 32767)
+			binary.LittleEndian.PutUint16(data[2*i:], uint16(v))
+		}
+		_, err := w.Write(data[:2*len(chunk)])
+		return err
+	})
 }
 
 // SaveSound writes a sound of the album as a WAV file
