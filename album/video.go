@@ -45,8 +45,13 @@ type Video struct {
 	canvas  *image.RGBA
 	frame   int
 	keys    []shownKey
-	chapter []chapterMark
-	err     error
+	// The row of the keys the next key goes in, how much of it is taken,
+	// and the frame it was started at, for the rows to scroll up
+	keyRow      int
+	keyRowWidth int
+	keyRowStart int
+	chapter     []chapterMark
+	err         error
 
 	// The game port and the mouse are shown once used: the paddles plugged
 	// and the buttons used so far, and the last frame each button was down
@@ -71,10 +76,15 @@ const (
 const (
 	// titleFrames is how long the title is shown, before the machine starts
 	titleFrames = 4 * operator.FramesPerSecond
-	// keyFrames is how long a key is shown after it is pressed
-	keyFrames = 3 * operator.FramesPerSecond / 2
-	// keysShown is the most keys shown at once, the last pressed
-	keysShown = 16
+	// keyFrames is how long a key is shown after it is pressed, fading in
+	// its last second
+	keyFrames = 4 * operator.FramesPerSecond
+	// keyFadeFrames is how long a key takes to fade
+	keyFadeFrames = operator.FramesPerSecond
+	// keyPauseFrames is the pause after which a key starts a row of its own
+	keyPauseFrames = 3 * operator.FramesPerSecond / 2
+	// scrollFrames is how long the rows take to scroll up for a new one
+	scrollFrames = 8
 	// endFrames is how long the last frame is held at the end, which is
 	// often what the activity was for
 	endFrames = 3 * operator.FramesPerSecond
@@ -83,6 +93,10 @@ const (
 type shownKey struct {
 	name  string
 	frame int
+	// row and x are where it goes in the rows of the keys, kept as they
+	// scroll
+	row int
+	x   int
 }
 
 type chapterMark struct {
@@ -165,14 +179,38 @@ func (v *Video) Frame() {
 
 	// The column of the hands
 	y := v.drawGamePort(at.Min.Y + 12)
-	v.drawMouse(y)
-	v.drawKeys(at.Max.Y - 12)
+	y = v.drawMouse(y)
+	v.drawKeys(y, at.Max.Y-12)
 	v.write()
 }
 
 // Key shows a key pressed
 func (v *Video) Key(name string) {
-	v.keys = append(v.keys, shownKey{name, v.frame})
+	// A key goes on in the row, or starts the next: when the row is full,
+	// after a Return, or after a pause
+	w := keyWidth(name)
+	last := len(v.keys) > 0 && v.keys[len(v.keys)-1].name == "Return"
+	pause := len(v.keys) == 0 || v.frame-v.keys[len(v.keys)-1].frame > keyPauseFrames
+	if v.keyRowWidth > 0 && (v.keyRowWidth+w > columnInner || last || pause) {
+		v.keyRow++
+		v.keyRowWidth = 0
+		v.keyRowStart = v.frame
+	}
+	v.keys = append(v.keys, shownKey{name, v.frame, v.keyRow, v.keyRowWidth})
+	v.keyRowWidth += w + keyGap
+}
+
+// The keys of the column: their margin around the name, the gap between two
+// and their height, a row each
+const (
+	keyPad    = 4
+	keyGap    = 4
+	keyHeight = 13 + 2*keyPad
+)
+
+// keyWidth is the width of the key of a name
+func keyWidth(name string) int {
+	return textWidth(name) + 2*keyPad
 }
 
 // mark marks a picture of the activity in the chapters
@@ -204,46 +242,42 @@ var (
 	titleGrey = color.RGBA{0xa0, 0xa0, 0xa0, 0xff}
 )
 
-// drawKeys draws the last keys pressed in the column, in rows as they come,
-// ending at a height with the newest, the older fading
-func (v *Video) drawKeys(bottom int) {
-	var shown []shownKey
+/*
+drawKeys draws the keys pressed in the column, between two heights, in rows
+that scroll up as new ones start, the newest at the bottom. A key fades in its
+last second, and as it reaches the top.
+*/
+func (v *Video) drawKeys(top int, bottom int) {
+	var kept []shownKey
 	for _, k := range v.keys {
 		if v.frame-k.frame < keyFrames {
-			shown = append(shown, k)
+			kept = append(kept, k)
 		}
 	}
-	shown = shown[max(0, len(shown)-keysShown):]
-	v.keys = shown
-
-	// The keys in rows, as wide as the column
-	const pad, gap = 4, 4
-	height := 13 + 2*pad
-	var rows [][]shownKey
-	width := columnInner + 1
-	for _, k := range shown {
-		w := textWidth(k.name) + 2*pad
-		if width+w > columnInner {
-			rows = append(rows, nil)
-			width = 0
-		}
-		rows[len(rows)-1] = append(rows[len(rows)-1], k)
-		width += w + gap
+	v.keys = kept
+	if top >= bottom {
+		return
 	}
 
-	y := bottom - len(rows)*(height+gap) + gap
-	for _, row := range rows {
-		x := columnLeft
-		for _, k := range row {
-			fade := 1 - float64(v.frame-k.frame)/keyFrames
-			w := textWidth(k.name) + 2*pad
-			box := image.Rect(x, y, x+w, y+height)
-			fill(v.canvas, box, keyEdge, fade)
-			fill(v.canvas, box.Inset(1), keyCap, fade)
-			drawText(v.canvas, k.name, x+pad, y+pad, 1, keyLetter, fade)
-			x += w + gap
+	// The keys are drawn in the part of the column below the game port and
+	// the mouse, and cut at its edges as they scroll in and out
+	area := v.canvas.SubImage(image.Rect(columnLeft, top, videoWidth, bottom)).(*image.RGBA)
+	scroll := keyHeight + keyGap
+	if since := v.frame - v.keyRowStart; since < scrollFrames {
+		scroll = (keyHeight + keyGap) * since / scrollFrames
+	}
+	for _, k := range kept {
+		y := bottom - keyHeight - (v.keyRow-k.row)*(keyHeight+keyGap) + (keyHeight + keyGap - scroll)
+		fade := min(1, float64(keyFrames-(v.frame-k.frame))/keyFadeFrames)
+		fade = min(fade, float64(y-top)/float64(keyHeight+keyGap))
+		if fade <= 0 {
+			continue
 		}
-		y += height + gap
+		x := columnLeft + k.x
+		box := image.Rect(x, y, x+keyWidth(k.name), y+keyHeight)
+		fill(area, box, keyEdge, fade)
+		fill(area, box.Inset(1), keyCap, fade)
+		drawText(area, k.name, x+keyPad, y+keyPad, 1, keyLetter, fade)
 	}
 }
 
@@ -406,15 +440,15 @@ func (v *Video) drawButton(at image.Point, name string, lit bool) {
 
 /*
 drawMouse draws the mouse in the column, under the game port, once moved or
-pressed:
+pressed, and tells where it ends:
 where it is, in a pad of the shape of the screen, and its button, lit while
 down. The pointer itself is the program's, on the screen.
 */
-func (v *Video) drawMouse(top int) {
+func (v *Video) drawMouse(top int) int {
 	pressed, used := v.op.MouseButton()
 	v.mouseUsed = v.mouseUsed || used
 	if !v.mouseUsed {
-		return
+		return top
 	}
 	if pressed {
 		v.mouseDown = v.frame
@@ -430,6 +464,7 @@ func (v *Video) drawMouse(top int) {
 	disc(v.canvas, image.Pt(x+4+int(mx*float64(panelWidth-8)), y+4+int(my*float64(height-8))), 5, panelDot)
 	y += height + 16
 	v.drawButton(image.Pt(x, y), "Button", v.frame-v.mouseDown < litFrames && v.mouseDown > 0)
+	return y + 38
 }
 
 // disc paints a filled circle
