@@ -25,7 +25,7 @@ frame, with its sound, as an MP4 file to watch or put on YouTube. It starts
 with a card with the title of the activity, and the keys pressed are shown
 under the screen as they are pressed, each fading after a while. The pictures
 the activity takes are marked in a list of chapters, with their times, for the
-description of the video.
+description of the video. The last frame is held for a while at the end.
 
 The frames are made at half the size of 1080p, the screen in its frame and the
 keys under it, and ffmpeg doubles them, sharp, and encodes them; the sound is
@@ -61,6 +61,9 @@ const (
 	keyFrames = 3 * operator.FramesPerSecond / 2
 	// keysShown is the most keys shown at once, the last pressed
 	keysShown = 16
+	// endFrames is how long the last frame is held at the end, which is
+	// often what the activity was for
+	endFrames = 3 * operator.FramesPerSecond
 )
 
 type shownKey struct {
@@ -281,6 +284,9 @@ func (v *Video) Close() error {
 	delete(videos.of, v.op)
 	videos.Unlock()
 	v.sound.Stop()
+	for range endFrames {
+		v.write()
+	}
 	v.frames.Close()
 	if err := v.encoder.Wait(); err != nil && v.err == nil {
 		v.err = fmt.Errorf("ffmpeg could not encode the frames: %w", err)
