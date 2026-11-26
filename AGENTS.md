@@ -38,6 +38,14 @@ pictures of the pages they run. The one of
 may have changed or be gone: it runs only with `A2_BBS=1` too, when the
 owner asks for it.
 
+With `A2_VIDEO` set to a folder outside the repository, each machine a
+generator starts is also filmed, every frame with its sound, into
+`<guide>.mp4` there, in 1080p for YouTube: a card with the title of the page
+first, then the keys shown under the screen as they are pressed, and the
+joystick, the paddles, their buttons and the mouse beside it once used. Next to it,
+`<guide>.chapters.txt` has the times of the pictures of the page, for the
+description. It needs `ffmpeg`, and changes no picture.
+
 ## Workflow
 
 - **Every change goes in a pull request** for the owner to review and approve.

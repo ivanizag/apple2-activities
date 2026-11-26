@@ -130,7 +130,68 @@ func startAt(t testing.TB, command string, files map[string]string, at string) *
 	if err != nil {
 		t.Fatal(err)
 	}
+	if folder := os.Getenv("A2_VIDEO"); folder != "" {
+		film(t, o, folder, overrides["screen"])
+	}
 	return o
+}
+
+// filmed counts the machines filmed of each guide, for the names of their
+// videos when it starts more than one
+var filmed = map[string]int{}
+
+// filming is the videos of each guide still open, the oldest first
+var filming = map[string][]*album.Video{}
+
+// filmingAtOnce is the most videos of a guide open at once: two machines side
+// by side are filmed together, but a guide that starts one machine after
+// another, as for each CP/M, has the video of each finished as it starts a
+// third, for ffmpeg and the sound of each not to take memory all along
+const filmingAtOnce = 2
+
+/*
+film films a machine just started, for A2_VIDEO: the video of a guide is
+<guide>.mp4 in the folder, with the title of its page, and the list of its
+chapters next to it; a guide that starts a second machine gets <guide>-2.mp4
+for it.
+*/
+func film(t testing.TB, o *operator.Operator, folder string, screen string) {
+	t.Helper()
+	guide := filepath.Base(t.Name())
+	filmed[guide]++
+	name := guide
+	if n := filmed[guide]; n > 1 {
+		name = fmt.Sprintf("%v-%d", guide, n)
+	}
+	title := guide
+	if page, err := os.ReadFile(filepath.Join("../guides", guide+".md")); err == nil {
+		first, _, _ := strings.Cut(string(page), "\n")
+		title = strings.ReplaceAll(strings.TrimPrefix(first, "# "), `\`, "")
+	}
+	monitor := album.Color
+	if screen == "green" {
+		monitor = album.Green
+	}
+	if err := os.MkdirAll(folder, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	for len(filming[guide]) >= filmingAtOnce {
+		if err := filming[guide][0].Close(); err != nil {
+			t.Error(err)
+		}
+		filming[guide] = filming[guide][1:]
+	}
+	video, err := album.StartVideo(o, monitor, filepath.Join(folder, name+".mp4"), title)
+	if err != nil {
+		t.Fatal(err)
+	}
+	filming[guide] = append(filming[guide], video)
+	t.Cleanup(func() {
+		if err := video.Close(); err != nil {
+			t.Error(err)
+		}
+		filming[guide] = slices.DeleteFunc(filming[guide], func(v *album.Video) bool { return v == video })
+	})
 }
 
 // splitParams splits the parameters of a card at its commas, as izapple2

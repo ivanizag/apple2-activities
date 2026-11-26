@@ -122,12 +122,14 @@ func whiteText(colour *image.RGBA, mono *image.RGBA) {
 
 // Screenshot writes the screen of a machine as it is now, in its frame
 func (a *Album) Screenshot(o *operator.Operator, name string) error {
+	markPicture(o, name, -1)
 	return a.Write(a.Screen(o), name)
 }
 
 // ScreenshotOf writes the screen of a machine as it is now, in its frame with
 // a label under it, which says which machine it is when a page shows two
 func (a *Album) ScreenshotOf(o *operator.Operator, name string, label string) error {
+	markPicture(o, name, -1)
 	return a.WriteLabelled(a.Screen(o), name, label)
 }
 
@@ -153,6 +155,7 @@ func (a *Album) WriteLabelled(screen image.Image, name string, label string) err
 // SaveRecording writes a recording as a GIF, its last picture held for
 // longer, by hold hundredths of a second
 func (a *Album) SaveRecording(r *Recording, name string, hold int) error {
+	markPicture(r.op, name, r.videoFrame)
 	f, err := a.create(name + ".gif")
 	if err != nil {
 		return err

@@ -131,6 +131,9 @@ const promptStillFrames = 30
 
 // press hands a key to the machine and runs it until the program has read it
 func (o *Operator) press(code uint8) error {
+	for _, w := range o.watchers {
+		w.Key(keyName(code))
+	}
 	o.keyboard.pending = append(o.keyboard.pending, code)
 	if !o.WaitUntil(float64(keyTakenFrames)/FramesPerSecond, func() bool {
 		return len(o.keyboard.pending) == 0
@@ -171,4 +174,19 @@ func keyCode(name string) (uint8, error) {
 		return code, nil
 	}
 	return 0, fmt.Errorf("there is no key called %q", name)
+}
+
+// keyName is the name of the key that types a code, as on its cap
+func keyName(code uint8) string {
+	names := map[uint8]string{
+		13: "Return", 27: "Esc", 8: "Left", 21: "Right", 11: "Up", 10: "Down",
+		9: "Tab", 127: "Delete", 32: "Space",
+	}
+	if name, ok := names[code]; ok {
+		return name
+	}
+	if code < 32 {
+		return "Ctrl+" + string(rune(code+'@'))
+	}
+	return string(rune(code))
 }
